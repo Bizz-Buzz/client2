@@ -1,0 +1,53 @@
+{
+  "name": "bizzBuzz",
+  "version": "1.0.0",
+  "description": "bizzBuzz",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run watch:sass\" \"npm run start:js\"",
+    "start:js": "budo . -d --serve bundle.js --live",
+    "build:js": "browserify . -o bundle.js -g uglifyify",
+    "build:css": "sass --update sass/style.sass:index.css",
+    "test": "browserify test/index.js | node | tap-spec",
+    "watch:sass": "sass --watch sass/style.sass:index.css",
+    "dist": "mkdir -p dist && bash -c 'cp *.{js,html,css} dist'",
+    "push": "gh-pages -d dist",
+    "deploy": "npm run build:js && npm run build:css && npm run dist && npm run push"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harrison-symes/bizzBuzz"
+  },
+  "author": "harrison-symes",
+  "license": "MirOS",
+  "bugs": {
+    "url": "https://github.com/harrison-symes/bizzBuzz/issues"
+  },
+  "homepage": "https://github.com/harrison-symes/bizzBuzz",
+  "dependencies": {
+    "redux": "^3.6.0",
+    "sheet-router": "^4.1.4",
+    "superagent": "^3.3.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "budo": "^8.2.0",
+    "clone": "^2.1.0",
+    "concurrently": "^3.1.0",
+    "gh-pages": "^0.11.0",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1",
+    "uglifyify": "^3.0.1",
+    "watchify": "^3.7.0"
+  }
+}
