@@ -1,0 +1,46 @@
+@import ../helpers/variables
+
+.accDetsInput
+  width: 90%
+  background-color: $navyColor
+  border: none
+  border-bottom: 3px solid $lightGrey
+  color: $darkGrey
+  font-size: 1.5em
+  font-family: $textFont
+
+.accDetsInputLast
+  @extend .accDetsInput
+  border-bottom: none
+
+.accInputDiv
+  height: 40vh
+  margin-left: 10%
+
+::-webkit-input-placeholder
+  color: $darkGrey
+  font-family: $textFont
+
+.allButtons
+  background-color: $navyColor
+  border: 5px solid $lightGrey
+  padding: 0
+  color: $lightGrey
+
+.bigButton
+  @extend .allButtons
+  font-family: $headingFont
+  font-size: 2em
+  width: 80%
+  height: 10vh
+  margin-left: 10%
+  margin-bottom: 3vh
+
+.smallButton
+  @extend .bigButton
+  width: 65%
+  margin-left: 17.5%
+  font-family: $textFont
+  font-size: 1.3em
+  height: 7vh
+  margin-bottom: 5vh
