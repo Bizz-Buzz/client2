@@ -13,6 +13,7 @@ var app = document.createElement('div')
 document.querySelector('main').appendChild(app)
 
 const initialState = {
+  theme: 'default',
   title: "Bizz-Buzz",
   route: '/',
   isLoading: false,
