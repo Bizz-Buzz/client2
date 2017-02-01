@@ -1,0 +1,155 @@
+@import pages/login
+@import helpers/variables
+
+body
+  font-family: $textFont
+  background-color: $navyColor
+  position: relative
+  margin: 0
+  padding-bottom: 6rem
+  min-height: 100%
+
+.headings
+  margin: 0
+  color: $lightGrey
+  margin-left: 10%
+
+.mainHeading
+  @extend .headings
+  font-family: $headingFont
+  font-size: 3em
+
+.subHeading
+  @extend .headings
+  font-size: 0.8em
+
+.headingDiv
+  margin-top: 5vh
+  height: 30vh
+
+.authErrorMsg
+  @extend .subHeading
+  color: red
+  font-size: 1em
+
+.greeting
+  color: $lightGrey
+  text-align: center
+  font-size: 1.9em
+  font-family: $headingFont
+  width: 80%
+  margin: auto
+  margin-left: 10px
+
+#greetingName
+  margin-bottom: 5vh
+  font-size: 1em
+
+.bizzListItem
+  text-align: center
+  margin: auto
+  border: 5px solid $lightGrey
+  width: 80%
+  padding-top: 15px
+  padding-bottom: 15px
+  font-family: $textFont
+  font-size: 1.7em
+  color: $lightGrey
+  margin-bottom: 10px
+
+.buzzText
+  font-size: 1.3em
+  color: $lightGrey
+  margin-bottom: 2px
+
+.buzzItem
+  border: 2px solid $darkGrey
+  border-radius: 5px
+  margin-bottom: 5px
+
+.buzzPostTime
+  font-size: 0.8em
+  color: $darkGrey
+  text-align: right
+  margin-right: 10px
+  width: 40%
+  float: right
+
+.thing1
+  color: $lightGrey
+  margin: 0
+  margin-bottom: 3px
+
+.thing2
+  color: $darkGrey
+  margin: 0
+  margin-bottom: 20px
+
+.posterName
+  text-align: left
+  color: $darkGrey
+  font-size: 1em
+  margin-left: 10px
+  width: 40%
+
+.buzzList
+  text-align: center
+  margin: auto
+  width: 80%
+  height: 70vh
+  overflow-y: scroll
+
+.bizz
+  text-align: center
+
+#createBuzzButton
+  margin: 0
+  margin-bottom: 2vh
+  &:focus
+    outline: none
+
+.footer
+  position: fixed
+  right: 0
+  bottom: 0
+  left: 0
+  background-color: $lightGrey
+  height: 10vh
+
+.footerIcon
+  width: 15vw
+  margin-left: 15vw
+  margin-right: 15vw
+
+.backIcon
+  height: 7vh
+  float: left
+
+.header
+  height: 15vh
+
+.makeABuzzSubmit
+  font-family: $textFont
+  font-size: 0.7em
+  padding-top: 0.5em
+  padding-bottom: 0.5em
+  padding-left: 1em
+  padding-right: 1em
+  color: $lightGrey
+  border: 1px solid $darkGrey
+  border-radius: 100px
+  margin-left: 8px
+  background-color: $navyColor
+
+#makeABuzzInput
+  width: 60vw
+  margin-bottom: 2vh
+
+#bizzNameInput
+  margin-top: 100px
+
+.footerItem
+  margin: 3vw
+  color: $navyColor
+  font-size: 1em
+  padding: 5px
