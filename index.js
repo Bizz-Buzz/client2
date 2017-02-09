@@ -6,6 +6,7 @@ import { createStore } from 'redux'
 
 import Login from './components/login'
 import Signup from './components/signup'
+import Main from './components/main'
 
 var reducer = require('./reducer')
 
@@ -16,15 +17,18 @@ const initialState = {
   theme: 'default',
   title: "Bizz-Buzz",
   route: '/',
+  view: 'events',
   isLoading: false,
   loginDetails: {
-    username: '',
-    password: ''
+    username: ' ',
+    password: ' '
     },
   signupDetails: {},
   authError: null,
   user: {},
-  bizz: null
+  bizz: null,
+  events: [1, 2, 3]
+
 }
 
 var store = createStore(reducer, initialState)
@@ -34,6 +38,7 @@ const {getState, dispatch, subscribe} = store
 const route = Router({ default: '/404' }, [
   ['/', (params) => Login],
   ['/signUp', (params) => Signup],
+  ['/bizz', (params) => Main]
 ])
 
 subscribe(() => {

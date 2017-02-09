@@ -6,15 +6,14 @@ module.exports = ({loginDetails}, dispatch) => {
   const {username, password} = loginDetails
   console.log("sending login");
   request
-    .post(`http://localhost:3000/api/v1/users/login`)
+    .post(`${url}users/login`)
     .send({username, password})
     .withCredentials()
     .end((err, res) => {
       console.log(res);
       if (!err) {
        dispatch({ type: 'LOGIN_SUCCESS', payload: res.body })
-       }
-
-       else dispatch({ type: 'CHANGE_ROUTE', payload: '/' })
+      }
+      else dispatch({ type: 'CHANGE_ROUTE', payload: '/' })
     })
 }
