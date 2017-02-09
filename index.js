@@ -17,16 +17,14 @@ const initialState = {
   title: "Bizz-Buzz",
   route: '/',
   isLoading: false,
-  loginDetails: {},
+  loginDetails: {
+    username: '',
+    password: ''
+    },
   signupDetails: {},
   authError: null,
   user: {},
-  bizzList: [],
-  allBizzList: [],
-  bizz: null,
-  buzzShow: false,
-  followRequests: [],
-  createBizzName: ''
+  bizz: null
 }
 
 var store = createStore(reducer, initialState)
@@ -36,10 +34,6 @@ const {getState, dispatch, subscribe} = store
 const route = Router({ default: '/404' }, [
   ['/', (params) => Login],
   ['/signUp', (params) => Signup],
-  ['/bizzList', (params) => BizzList],
-  ['/viewBizz', (params) => ViewBizz],
-  ['/findBizz', (params) => FindBizz],
-  ['/createBizz', (params) => CreateBizz]
 ])
 
 subscribe(() => {
