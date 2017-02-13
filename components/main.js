@@ -1,5 +1,6 @@
 import React from 'react'
 import renderEvents from './views/events'
+import renderPosts from './views/posts'
 import header from './views/header'
 
 module.exports = ({ state, dispatch }) => {

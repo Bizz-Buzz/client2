@@ -32,6 +32,10 @@ module.exports = (state, action) => {
       newState.route = payload
       newState.authError = null
       return newState
+    case 'CHANGE_VIEW':
+      console.log({payload});
+      newState.view = payload
+      return newState
     default:
       return newState
   }
