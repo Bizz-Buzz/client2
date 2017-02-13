@@ -33,8 +33,14 @@ module.exports = (state, action) => {
       newState.authError = null
       return newState
     case 'CHANGE_VIEW':
-      console.log({payload});
       newState.view = payload
+      return newState
+    case 'RECIEVE_CONTENT':
+      newState[payload.content_type] = payload.content
+      newState.view = payload.content_type
+      return newState
+    case 'TOGGLE':
+      newState[payload] = !newState[payload]
       return newState
     default:
       return newState

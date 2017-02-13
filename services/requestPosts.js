@@ -6,6 +6,8 @@ module.exports = (state, dispatch) => {
     .get(`${url}posts`)
     .withCredentials()
     .end((err, res) => {
-      console.log({res});
+      if (!err) {
+        dispatch({type:'RECIEVE_CONTENT', payload: {content: res.body, content_type: 'posts'}})
+      } else console.log({err});
     })
 }
