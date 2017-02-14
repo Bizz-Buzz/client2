@@ -1,7 +1,7 @@
 import React from 'react'
+import renderCreateEvent from './createEvent'
 
 module.exports = (state, dispatch) => {
-  console.log(state.events);
   function renderEvent (event) {
     return <div className='event'>
       <div className="eventTitle">{event.title}</div>
@@ -15,6 +15,10 @@ module.exports = (state, dispatch) => {
   }
   return <div className="events">
       <h1>Events</h1>
+      {state.createEventToggle
+        ?renderCreateEvent(state, dispatch)
+        : <button onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>New Event</button>
+      }
       {renderEvents()}
     </div>
 }

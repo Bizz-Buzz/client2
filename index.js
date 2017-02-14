@@ -27,7 +27,10 @@ const initialState = {
   authError: null,
   user: {},
   bizz: null,
-  events: [1, 2, 3]
+  events: [],
+  createEventToggle: false,
+  posts: [],
+  createPostToggle: false
 
 }
 
