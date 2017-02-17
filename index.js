@@ -30,7 +30,8 @@ const initialState = {
   events: [],
   createEventToggle: false,
   posts: [],
-  createPostToggle: false
+  createPostToggle: false,
+  createPost: ''
 
 }
 
