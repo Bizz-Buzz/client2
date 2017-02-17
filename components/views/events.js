@@ -14,10 +14,10 @@ module.exports = (state, dispatch) => {
     return state.events.map((event) => renderEvent(event))
   }
   return <div className="events">
-      <h1>Events</h1>
+      <h1 className="inAppHeading">Events</h1>
       {state.createEventToggle
         ?renderCreateEvent(state, dispatch)
-        : <button onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>New Event</button>
+        : <button id="createEventButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>New Event</button>
       }
       {renderEvents()}
     </div>

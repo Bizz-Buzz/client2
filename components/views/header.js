@@ -6,9 +6,9 @@ import requestPosts from '../../services/requestPosts'
 module.exports = (state, dispatch) => {
   return <div className="header">
     <nav>
-      <span onClick={() => requestEvents(state, dispatch)}>Events </span>
-      <span onClick={() => requestPosts(state, dispatch)}>Posts </span>
-      <span onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'people'})}>Events </span>
+      <span className="navItem" onClick={() => requestEvents(state, dispatch)}>Events </span>
+      <span className="navItem" onClick={() => requestPosts(state, dispatch)}>Posts </span>
+      <span className="navItem" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'people'})}>Events </span>
     </nav>
   </div>
 
