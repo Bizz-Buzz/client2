@@ -44,8 +44,12 @@
   height: 5vh;
   color: #cbcbcb;
   width: 80%;
+  margin-top: 5%;
   margin-left: 10%;
-  margin-top: 5%; }
+  margin-right: 10%; }
+
+.navItem {
+  width: 26.6%; }
 
 body {
   font-family: "Raleway", sans-serif;
@@ -187,8 +191,5 @@ body {
   color: #243757;
   font-size: 1em;
   padding: 5px; }
-
-.navItem {
-  padding: 10%; }
 
 /*# sourceMappingURL=index.css.map */
