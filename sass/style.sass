@@ -1,4 +1,5 @@
 @import pages/login
+@import pages/header
 @import helpers/variables
 
 body
@@ -6,22 +7,25 @@ body
   background-color: $navyColor
   position: relative
   margin: 0
-  padding-bottom: 6rem
   min-height: 100%
 
 .headings
   margin: 0
   color: $lightGrey
-  margin-left: 10%
 
 .mainHeading
   @extend .headings
   font-family: $headingFont
   font-size: 3em
+  margin-left: 10%
 
 .subHeading
   @extend .headings
   font-size: 0.8em
+  margin-left: 10%
+
+.inAppHeading
+  @extend .headings
 
 .headingDiv
   margin-top: 5vh
@@ -102,11 +106,8 @@ body
 .bizz
   text-align: center
 
-#createBuzzButton
-  margin: 0
-  margin-bottom: 2vh
-  &:focus
-    outline: none
+#createEventButton
+  @extend .smallButton
 
 .footer
   position: fixed
@@ -124,9 +125,6 @@ body
 .backIcon
   height: 7vh
   float: left
-
-.header
-  height: 15vh
 
 .makeABuzzSubmit
   font-family: $textFont
@@ -153,3 +151,6 @@ body
   color: $navyColor
   font-size: 1em
   padding: 5px
+
+.navItem
+  padding: 10%
