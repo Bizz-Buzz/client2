@@ -5,7 +5,7 @@ module.exports = (state, dispatch) => {
   request
     .post(`${url}posts/new`)
     .withCredentials()
-		.send(state.createPost)
+		.send({content: state.createPost})
     .end((err, res) => {
       if (!err) {
         console.log({res});
