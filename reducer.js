@@ -54,6 +54,10 @@ module.exports = (state, action) => {
       newState.createPost = ''
       newState.createPostToggle = false
       return newState
+    case 'GET_POST_RESPONES':
+      newState.selectedPost = payload.post_id
+      newState.postResponses = payload.responses
+      return newState
     case 'TOGGLE':
       newState[payload] = !newState[payload]
       return newState
