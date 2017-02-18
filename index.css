@@ -1,0 +1,198 @@
+.accDetsInput, .accDetsInputLast {
+  width: 90%;
+  background-color: #243757;
+  border: none;
+  border-bottom: 3px solid #cbcbcb;
+  color: #666666;
+  font-size: 1.5em;
+  font-family: "Raleway", sans-serif; }
+
+.accDetsInputLast {
+  border-bottom: none; }
+
+.accInputDiv {
+  height: 40vh;
+  margin-left: 10%; }
+
+::-webkit-input-placeholder {
+  color: #666666;
+  font-family: "Raleway", sans-serif; }
+
+.allButtons, .bigButton, .smallButton, #createEventButton {
+  background-color: #243757;
+  border: 5px solid #cbcbcb;
+  padding: 0;
+  color: #cbcbcb; }
+
+.bigButton, .smallButton, #createEventButton {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  width: 80%;
+  height: 10vh;
+  margin-left: 10%;
+  margin-bottom: 3vh; }
+
+.smallButton, #createEventButton {
+  width: 65%;
+  margin-left: 17.5%;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3em;
+  height: 7vh;
+  margin-bottom: 5vh; }
+
+.header {
+  height: 5vh;
+  color: #cbcbcb;
+  width: 80%;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%; }
+
+.navItem {
+  margin: 9%; }
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #243757;
+  position: relative;
+  min-height: 100%; }
+
+.headings, .mainHeading, .subHeading, .authErrorMsg, .inAppHeading {
+  margin: 0;
+  color: #cbcbcb; }
+
+.mainHeading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 3em;
+  margin-left: 10%; }
+
+.subHeading, .authErrorMsg {
+  font-size: 0.8em;
+  margin-left: 10%; }
+
+.inAppHeading {
+  text-align: center;
+  margin-bottom: 2%; }
+
+.headingDiv {
+  margin-top: 5vh;
+  height: 30vh; }
+
+.authErrorMsg {
+  color: red;
+  font-size: 1em; }
+
+.greeting {
+  color: #cbcbcb;
+  text-align: center;
+  font-size: 1.9em;
+  font-family: "Open Sans", sans-serif;
+  width: 80%;
+  margin: auto;
+  margin-left: 10px; }
+
+#greetingName {
+  margin-bottom: 5vh;
+  font-size: 1em; }
+
+.bizzListItem {
+  text-align: center;
+  margin: auto;
+  border: 5px solid #cbcbcb;
+  width: 80%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.7em;
+  color: #cbcbcb;
+  margin-bottom: 10px; }
+
+.buzzText {
+  font-size: 1.3em;
+  color: #cbcbcb;
+  margin-bottom: 2px; }
+
+.buzzItem {
+  border: 2px solid #666666;
+  border-radius: 5px;
+  margin-bottom: 5px; }
+
+.buzzPostTime {
+  font-size: 0.8em;
+  color: #666666;
+  text-align: right;
+  margin-right: 10px;
+  width: 40%;
+  float: right; }
+
+.thing1 {
+  color: #cbcbcb;
+  margin: 0;
+  margin-bottom: 3px; }
+
+.thing2 {
+  color: #666666;
+  margin: 0;
+  margin-bottom: 20px; }
+
+.posterName {
+  text-align: left;
+  color: #666666;
+  font-size: 1em;
+  margin-left: 10px;
+  width: 40%; }
+
+.buzzList {
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  height: 70vh;
+  overflow-y: scroll; }
+
+.bizz {
+  text-align: center; }
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #cbcbcb;
+  height: 10vh; }
+
+.footerIcon {
+  width: 15vw;
+  margin-left: 15vw;
+  margin-right: 15vw; }
+
+.backIcon {
+  height: 7vh;
+  float: left; }
+
+.makeABuzzSubmit {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.7em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  color: #cbcbcb;
+  border: 1px solid #666666;
+  border-radius: 100px;
+  margin-left: 8px;
+  background-color: #243757; }
+
+#makeABuzzInput {
+  width: 60vw;
+  margin-bottom: 2vh; }
+
+#bizzNameInput {
+  margin-top: 100px; }
+
+.footerItem {
+  margin: 3vw;
+  color: #243757;
+  font-size: 1em;
+  padding: 5px; }
+
+/*# sourceMappingURL=index.css.map */
