@@ -1,6 +1,8 @@
 @import pages/login
 @import pages/header
+@import pages/events
 @import helpers/variables
+@import helpers/globalNeeds
 
 body
   font-family: $textFont
@@ -28,14 +30,14 @@ body
   text-align: center
   margin-bottom: 2%
 
-.headingDiv
-  margin-top: 5vh
-  height: 30vh
-
 .authErrorMsg
   @extend .subHeading
   color: red
   font-size: 1em
+
+.headingDiv
+  margin-top: 5vh
+  height: 30vh
 
 .greeting
   color: $lightGrey
@@ -49,23 +51,6 @@ body
 #greetingName
   margin-bottom: 5vh
   font-size: 1em
-
-.bizzListItem
-  text-align: center
-  margin: auto
-  border: 5px solid $lightGrey
-  width: 80%
-  padding-top: 15px
-  padding-bottom: 15px
-  font-family: $textFont
-  font-size: 1.7em
-  color: $lightGrey
-  margin-bottom: 10px
-
-.buzzText
-  font-size: 1.3em
-  color: $lightGrey
-  margin-bottom: 2px
 
 .buzzItem
   border: 2px solid $darkGrey
@@ -104,51 +89,5 @@ body
   height: 70vh
   overflow-y: scroll
 
-.bizz
-  text-align: center
-
 #createEventButton
   @extend .smallButton
-
-.footer
-  position: fixed
-  right: 0
-  bottom: 0
-  left: 0
-  background-color: $lightGrey
-  height: 10vh
-
-.footerIcon
-  width: 15vw
-  margin-left: 15vw
-  margin-right: 15vw
-
-.backIcon
-  height: 7vh
-  float: left
-
-.makeABuzzSubmit
-  font-family: $textFont
-  font-size: 0.7em
-  padding-top: 0.5em
-  padding-bottom: 0.5em
-  padding-left: 1em
-  padding-right: 1em
-  color: $lightGrey
-  border: 1px solid $darkGrey
-  border-radius: 100px
-  margin-left: 8px
-  background-color: $navyColor
-
-#makeABuzzInput
-  width: 60vw
-  margin-bottom: 2vh
-
-#bizzNameInput
-  margin-top: 100px
-
-.footerItem
-  margin: 3vw
-  color: $navyColor
-  font-size: 1em
-  padding: 5px

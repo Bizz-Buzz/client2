@@ -1,4 +1,4 @@
-.accDetsInput, .accDetsInputLast {
+.detsInput, .detsInputLast {
   width: 90%;
   background-color: #243757;
   border: none;
@@ -7,12 +7,28 @@
   font-size: 1.5em;
   font-family: "Raleway", sans-serif; }
 
-.accDetsInputLast {
+.detsInputLast {
   border-bottom: none; }
 
 .accInputDiv {
   height: 40vh;
   margin-left: 10%; }
+
+.header {
+  height: 5vh;
+  color: #cbcbcb;
+  margin-top: 5%;
+  width: 100%;
+  text-align: center; }
+
+.navItem {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-left: 5%;
+  margin-right: 5%; }
+  .navItem:hover {
+    text-decoration: underline; }
 
 ::-webkit-input-placeholder {
   color: #666666;
@@ -38,18 +54,82 @@
   font-family: "Raleway", sans-serif;
   font-size: 1.3em;
   height: 7vh;
-  margin-bottom: 5vh; }
+  margin-top: 5%; }
 
-.header {
-  height: 5vh;
-  color: #cbcbcb;
+.event, .createEvent {
+  text-align: center;
+  margin: auto;
+  border: 5px solid #cbcbcb;
   width: 80%;
-  margin-top: 5%;
-  margin-left: 10%;
-  margin-right: 10%; }
+  padding-top: 10px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Raleway", sans-serif;
+  color: #cbcbcb;
+  margin-bottom: 10px; }
 
-.navItem {
-  margin: 9%; }
+.eventTitle {
+  font-size: 1.7em; }
+
+.eventDescription {
+  font-size: 1.2em; }
+
+.eventName {
+  font-size: 1em;
+  float: left;
+  padding-bottom: 10px; }
+
+.eventTime {
+  font-size: 1em;
+  float: right;
+  padding-bottom: 10px; }
+
+.createEvent {
+  padding-bottom: 30px; }
+
+.createEventButtons {
+  color: #cbcbcb;
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+  background-color: #243757;
+  border: none; }
+
+.detsInput.eventInput, .eventInput.detsInputLast {
+  text-align: center;
+  font-size: 1.3em; }
+
+.leftButton {
+  float: left; }
+
+.rightButton {
+  float: right; }
+
+::-webkit-input-placeholder {
+  color: #666666;
+  font-family: "Raleway", sans-serif; }
+
+.allButtons, .bigButton, .smallButton, #createEventButton {
+  background-color: #243757;
+  border: 5px solid #cbcbcb;
+  padding: 0;
+  color: #cbcbcb; }
+
+.bigButton, .smallButton, #createEventButton {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  width: 80%;
+  height: 10vh;
+  margin-left: 10%;
+  margin-bottom: 3vh; }
+
+.smallButton, #createEventButton {
+  width: 65%;
+  margin-left: 17.5%;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3em;
+  height: 7vh;
+  margin-top: 5%; }
 
 body {
   font-family: "Raleway", sans-serif;
@@ -74,13 +154,13 @@ body {
   text-align: center;
   margin-bottom: 2%; }
 
-.headingDiv {
-  margin-top: 5vh;
-  height: 30vh; }
-
 .authErrorMsg {
   color: red;
   font-size: 1em; }
+
+.headingDiv {
+  margin-top: 5vh;
+  height: 30vh; }
 
 .greeting {
   color: #cbcbcb;
@@ -94,23 +174,6 @@ body {
 #greetingName {
   margin-bottom: 5vh;
   font-size: 1em; }
-
-.bizzListItem {
-  text-align: center;
-  margin: auto;
-  border: 5px solid #cbcbcb;
-  width: 80%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.7em;
-  color: #cbcbcb;
-  margin-bottom: 10px; }
-
-.buzzText {
-  font-size: 1.3em;
-  color: #cbcbcb;
-  margin-bottom: 2px; }
 
 .buzzItem {
   border: 2px solid #666666;
@@ -148,51 +211,5 @@ body {
   width: 80%;
   height: 70vh;
   overflow-y: scroll; }
-
-.bizz {
-  text-align: center; }
-
-.footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #cbcbcb;
-  height: 10vh; }
-
-.footerIcon {
-  width: 15vw;
-  margin-left: 15vw;
-  margin-right: 15vw; }
-
-.backIcon {
-  height: 7vh;
-  float: left; }
-
-.makeABuzzSubmit {
-  font-family: "Raleway", sans-serif;
-  font-size: 0.7em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
-  padding-right: 1em;
-  color: #cbcbcb;
-  border: 1px solid #666666;
-  border-radius: 100px;
-  margin-left: 8px;
-  background-color: #243757; }
-
-#makeABuzzInput {
-  width: 60vw;
-  margin-bottom: 2vh; }
-
-#bizzNameInput {
-  margin-top: 100px; }
-
-.footerItem {
-  margin: 3vw;
-  color: #243757;
-  font-size: 1em;
-  padding: 5px; }
 
 /*# sourceMappingURL=index.css.map */

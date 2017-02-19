@@ -19,11 +19,11 @@ module.exports = ({ state, dispatch }) => {
       <form>
         {state.authError ? <p className="authErrorMsg" >{state.authError}</p> : ""}
         <div className="accInputDiv">
-          <input className="accDetsInput" onChange={saveEmail} type='text' placeholder='Email' />
-          <input className="accDetsInput" onChange={savePassword} type='password' placeholder='Password' />
-          <input className="accDetsInput" onChange={saveConfirmPassword} type='password' placeholder='Confirm Password' />
-          <input className="accDetsInput" onChange={saveFirstName} type='text' placeholder="First Name" />
-          <input className="accDetsInputLast" onChange={saveLastName} type="text" placeholder="Last Name" />
+          <input className="detsInput" onChange={saveEmail} type='text' placeholder='Email' />
+          <input className="detsInput" onChange={savePassword} type='password' placeholder='Password' />
+          <input className="detsInput" onChange={saveConfirmPassword} type='password' placeholder='Confirm Password' />
+          <input className="detsInput" onChange={saveFirstName} type='text' placeholder="First Name" />
+          <input className="detsInputLast" onChange={saveLastName} type="text" placeholder="Last Name" />
         </div>
         <button className='bigButton' onClick={authorizeSignUp} type='submit'>Sign Up</button>
       </form>
