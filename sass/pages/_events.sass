@@ -1,0 +1,52 @@
+@import ../helpers/variables
+@import ../helpers/globalNeeds
+
+.event
+  text-align: center
+  margin: auto
+  border: 5px solid $lightGrey
+  width: 80%
+  padding-top: 10px
+  padding-bottom: 25px
+  padding-left: 10px
+  padding-right: 10px
+  font-family: $textFont
+  color: $lightGrey
+  margin-bottom: 10px
+
+.eventTitle
+  font-size: 1.7em
+
+.eventDescription
+  font-size: 1.2em
+
+.eventName
+  font-size: 1em
+  float: left
+  padding-bottom: 10px
+
+.eventTime
+  font-size: 1em
+  float: right
+  padding-bottom: 10px
+
+.createEvent
+  @extend .event
+  padding-bottom: 30px
+
+.createEventButtons
+  color: $lightGrey
+  font-size: 1em
+  font-family: $textFont
+  background-color: $navyColor
+  border: none
+
+.detsInput.eventInput
+  text-align: center
+  font-size: 1.3em
+
+.leftButton
+  float: left
+
+.rightButton
+  float: right
