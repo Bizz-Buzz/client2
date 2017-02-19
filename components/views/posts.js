@@ -23,7 +23,7 @@ module.exports = (state, dispatch) => {
         {renderPostResponseForm()}
         {state.postResponses.map((response) => renderResponse(response))}
       </div>
-    } else return <div className="postRespones">{post.respones} responses</div>
+    } else return <div className="postRespones">{post.responses} responses</div>
   }
   function renderPost(post) {
     return <div className="post" onClick={() => requestPostResponses(post.post_id, state, dispatch)}>

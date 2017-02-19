@@ -70,6 +70,9 @@ module.exports = (state, action) => {
         response_content: newState.postResponse,
         post_id: newState.selectedPost
       })
+      newState.posts.forEach((post) => {
+        if (post.post_id == newState.selectedPost) post.responses++
+      })
       newState.postResponse = ''
       return newState
     case 'TOGGLE':
