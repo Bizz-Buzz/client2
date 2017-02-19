@@ -54,9 +54,26 @@ module.exports = (state, action) => {
       newState.createPost = ''
       newState.createPostToggle = false
       return newState
-    case 'GET_POST_RESPONES':
+    case 'GET_POST_RESPONSES':
+      console.log({payload});
       newState.selectedPost = payload.post_id
       newState.postResponses = payload.responses
+      return newState
+    case 'UPDATE_RESPONSE':
+      newState.postResponse = payload
+      return newState
+    case 'NEW_POST_RESPONSE':
+      newState.postResponses.unshift({
+        first_name: newState.user.first_name,
+        last_name: newState.user.last_name,
+        post_response_id: payload,
+        response_content: newState.postResponse,
+        post_id: newState.selectedPost
+      })
+      newState.posts.forEach((post) => {
+        if (post.post_id == newState.selectedPost) post.responses++
+      })
+      newState.postResponse = ''
       return newState
     case 'TOGGLE':
       newState[payload] = !newState[payload]

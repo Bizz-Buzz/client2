@@ -31,9 +31,9 @@ const initialState = {
   createEventToggle: false,
   posts: [],
   createPostToggle: false,
-  createPost: '',
+  postResponse: '',
   selectedPost: null,
-  postRespones: []
+  postResponses: []
 
 }
 
