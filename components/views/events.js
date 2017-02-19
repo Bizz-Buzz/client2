@@ -14,10 +14,9 @@ module.exports = (state, dispatch) => {
     return state.events.map((event) => renderEvent(event))
   }
   return <div className="events">
-      <h1 className="inAppHeading">Events</h1>
       {state.createEventToggle
         ?renderCreateEvent(state, dispatch)
-        : <button id="createEventButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>New Event</button>
+        : <button className="createEventButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>New Event</button>
       }
       {renderEvents()}
     </div>
