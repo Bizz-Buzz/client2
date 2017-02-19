@@ -11,7 +11,7 @@
   border-bottom: none; }
 
 .accInputDiv {
-  height: 40vh;
+  height: 35vh;
   margin-left: 10%; }
 
 .header {
@@ -34,13 +34,13 @@
   color: #666666;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .smallButton, #createEventButton {
+.allButtons, .bigButton, .smallButton, .createEventButton, .createPostButton {
   background-color: #243757;
   border: 5px solid #cbcbcb;
   padding: 0;
   color: #cbcbcb; }
 
-.bigButton, .smallButton, #createEventButton {
+.bigButton, .smallButton, .createEventButton, .createPostButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
@@ -48,7 +48,7 @@
   margin-left: 10%;
   margin-bottom: 3vh; }
 
-.smallButton, #createEventButton {
+.smallButton, .createEventButton, .createPostButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;
@@ -56,7 +56,62 @@
   height: 7vh;
   margin-top: 5%; }
 
-.event, .createEvent {
+.event, .createEvent, .post, .createPost {
+  text-align: center;
+  margin: auto;
+  border: 5px solid #cbcbcb;
+  width: 80%;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Raleway", sans-serif;
+  color: #cbcbcb;
+  margin-bottom: 10px; }
+
+.eventTitle {
+  font-size: 1.7em; }
+
+.eventDescription {
+  font-size: 1.2em; }
+
+.eventName {
+  font-size: 1em;
+  float: left;
+  padding-bottom: 10px; }
+
+.eventTime {
+  font-size: 1em;
+  float: right;
+  padding-bottom: 10px; }
+
+::-webkit-input-placeholder {
+  color: #666666;
+  font-family: "Raleway", sans-serif; }
+
+.allButtons, .bigButton, .smallButton, .createEventButton, .createPostButton {
+  background-color: #243757;
+  border: 5px solid #cbcbcb;
+  padding: 0;
+  color: #cbcbcb; }
+
+.bigButton, .smallButton, .createEventButton, .createPostButton {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  width: 80%;
+  height: 10vh;
+  margin-left: 10%;
+  margin-bottom: 3vh; }
+
+.smallButton, .createEventButton, .createPostButton {
+  width: 65%;
+  margin-left: 17.5%;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3em;
+  height: 7vh;
+  margin-top: 5%; }
+
+.event, .createEvent, .post, .createPost {
   text-align: center;
   margin: auto;
   border: 5px solid #cbcbcb;
@@ -88,7 +143,7 @@
 .createEvent {
   padding-bottom: 30px; }
 
-.createEventButtons {
+.createEventButtons, .createPostButtons {
   color: #cbcbcb;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
@@ -105,17 +160,40 @@
 .rightButton {
   float: right; }
 
+.postContent {
+  font-size: 1.5em; }
+
+.postedBy {
+  font-size: 1.2em; }
+
+.postedAt {
+  font-size: 1em;
+  float: right;
+  padding-bottom: 10px; }
+
+.postRespones {
+  font-size: 1em;
+  float: left;
+  padding-bottom: 10px; }
+
+.createPost {
+  padding-bottom: 30px; }
+
+.detsInput.postInput, .postInput.detsInputLast {
+  text-align: center;
+  font-size: 1.3em; }
+
 ::-webkit-input-placeholder {
   color: #666666;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .smallButton, #createEventButton {
+.allButtons, .bigButton, .smallButton, .createEventButton, .createPostButton {
   background-color: #243757;
   border: 5px solid #cbcbcb;
   padding: 0;
   color: #cbcbcb; }
 
-.bigButton, .smallButton, #createEventButton {
+.bigButton, .smallButton, .createEventButton, .createPostButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
@@ -123,7 +201,7 @@
   margin-left: 10%;
   margin-bottom: 3vh; }
 
-.smallButton, #createEventButton {
+.smallButton, .createEventButton, .createPostButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;
