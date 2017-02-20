@@ -1,9 +1,9 @@
 .detsInput, .detsInputLast {
   width: 90%;
-  background-color: #243757;
+  background-color: #dedede;
   border: none;
-  border-bottom: 3px solid #cbcbcb;
-  color: #666666;
+  border-bottom: 3px solid #393939;
+  color: #df8764;
   font-size: 1.5em;
   font-family: "Raleway", sans-serif; }
 
@@ -16,10 +16,13 @@
 
 .header {
   height: 5vh;
-  color: #cbcbcb;
-  margin-top: 5%;
+  color: #393939;
+  margin: 0;
+  padding-top: 10px;
   width: 100%;
-  text-align: center; }
+  background-color: #df8764;
+  text-align: center;
+  margin-bottom: 3%; }
 
 .navItem {
   text-align: center;
@@ -31,14 +34,14 @@
     text-decoration: underline; }
 
 ::-webkit-input-placeholder {
-  color: #666666;
+  color: #df8764;
   font-family: "Raleway", sans-serif; }
 
 .allButtons, .bigButton, .smallButton, .createEventButton, .createPostButton {
-  background-color: #243757;
-  border: 5px solid #cbcbcb;
+  background-color: #dedede;
+  border: 5px solid #393939;
   padding: 0;
-  color: #cbcbcb; }
+  color: #393939; }
 
 .bigButton, .smallButton, .createEventButton, .createPostButton {
   font-family: "Open Sans", sans-serif;
@@ -59,14 +62,14 @@
 .event, .createEvent, .post, .createPost {
   text-align: center;
   margin: auto;
-  border: 5px solid #cbcbcb;
+  border: 5px solid #393939;
   width: 80%;
   padding-top: 10px;
   padding-bottom: 25px;
   padding-left: 10px;
   padding-right: 10px;
   font-family: "Raleway", sans-serif;
-  color: #cbcbcb;
+  color: #393939;
   margin-bottom: 10px; }
 
 .eventTitle {
@@ -86,14 +89,14 @@
   padding-bottom: 10px; }
 
 ::-webkit-input-placeholder {
-  color: #666666;
+  color: #df8764;
   font-family: "Raleway", sans-serif; }
 
 .allButtons, .bigButton, .smallButton, .createEventButton, .createPostButton {
-  background-color: #243757;
-  border: 5px solid #cbcbcb;
+  background-color: #dedede;
+  border: 5px solid #393939;
   padding: 0;
-  color: #cbcbcb; }
+  color: #393939; }
 
 .bigButton, .smallButton, .createEventButton, .createPostButton {
   font-family: "Open Sans", sans-serif;
@@ -114,14 +117,14 @@
 .event, .createEvent, .post, .createPost {
   text-align: center;
   margin: auto;
-  border: 5px solid #cbcbcb;
+  border: 5px solid #393939;
   width: 80%;
   padding-top: 10px;
   padding-bottom: 25px;
   padding-left: 10px;
   padding-right: 10px;
   font-family: "Raleway", sans-serif;
-  color: #cbcbcb;
+  color: #393939;
   margin-bottom: 10px; }
 
 .eventTitle {
@@ -143,11 +146,11 @@
 .createEvent {
   padding-bottom: 30px; }
 
-.createEventButtons, .createPostButtons {
-  color: #cbcbcb;
+.createEventButtons, .createPostButtons, .createResButtons {
+  color: #393939;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
-  background-color: #243757;
+  background-color: #dedede;
   border: none; }
 
 .detsInput.eventInput, .eventInput.detsInputLast {
@@ -183,15 +186,24 @@
   text-align: center;
   font-size: 1.3em; }
 
+.postResponses {
+  margin-top: 5%;
+  width: 80%;
+  margin: auto; }
+
+.createResButtons {
+  margin-left: 60%;
+  margin-bottom: 5%; }
+
 ::-webkit-input-placeholder {
-  color: #666666;
+  color: #df8764;
   font-family: "Raleway", sans-serif; }
 
 .allButtons, .bigButton, .smallButton, .createEventButton, .createPostButton {
-  background-color: #243757;
-  border: 5px solid #cbcbcb;
+  background-color: #dedede;
+  border: 5px solid #393939;
   padding: 0;
-  color: #cbcbcb; }
+  color: #393939; }
 
 .bigButton, .smallButton, .createEventButton, .createPostButton {
   font-family: "Open Sans", sans-serif;
@@ -211,13 +223,18 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #243757;
+  background-color: #dedede;
   position: relative;
-  min-height: 100%; }
+  min-height: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  border-top-width: 10px; }
 
 .headings, .mainHeading, .subHeading, .authErrorMsg, .inAppHeading {
   margin: 0;
-  color: #cbcbcb; }
+  color: #393939; }
 
 .mainHeading {
   font-family: "Open Sans", sans-serif;
@@ -241,7 +258,7 @@ body {
   height: 30vh; }
 
 .greeting {
-  color: #cbcbcb;
+  color: #393939;
   text-align: center;
   font-size: 1.9em;
   font-family: "Open Sans", sans-serif;
@@ -254,31 +271,31 @@ body {
   font-size: 1em; }
 
 .buzzItem {
-  border: 2px solid #666666;
+  border: 2px solid #df8764;
   border-radius: 5px;
   margin-bottom: 5px; }
 
 .buzzPostTime {
   font-size: 0.8em;
-  color: #666666;
+  color: #df8764;
   text-align: right;
   margin-right: 10px;
   width: 40%;
   float: right; }
 
 .thing1 {
-  color: #cbcbcb;
+  color: #393939;
   margin: 0;
   margin-bottom: 3px; }
 
 .thing2 {
-  color: #666666;
+  color: #df8764;
   margin: 0;
   margin-bottom: 20px; }
 
 .posterName {
   text-align: left;
-  color: #666666;
+  color: #df8764;
   font-size: 1em;
   margin-left: 10px;
   width: 40%; }

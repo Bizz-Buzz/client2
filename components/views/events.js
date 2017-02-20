@@ -6,8 +6,10 @@ module.exports = (state, dispatch) => {
     return <div className='event'>
       <div className="eventTitle">{event.title}</div>
       <div className="eventDescription">{event.description}</div>
-      <div className="eventName">{event.first_name} {event.last_name}</div>
-      <div className="eventTime">Time/Date: {event.date_time}</div>
+      <div className="eventPostDetails">
+        <div className="eventName">{event.first_name} {event.last_name}</div>
+        <div className="eventTime">Time/Date: {event.date_time}</div>
+      </div>
     </div>
   }
   function renderEvents () {
