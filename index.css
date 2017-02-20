@@ -18,14 +18,14 @@
   height: 5vh;
   color: #393939;
   margin: 0;
-  padding-top: 10px;
+  padding-top: 2%;
   width: 100%;
   background-color: #df8764;
-  text-align: center;
-  margin-bottom: 3%; }
+  text-align: center; }
 
 .navItem {
   text-align: center;
+  font-size: 1.3em;
   position: relative;
   display: inline-block;
   margin-left: 5%;
@@ -170,13 +170,13 @@
   font-size: 1.2em; }
 
 .postedAt {
-  font-size: 1em;
+  font-size: 0.8em;
   float: right;
-  padding-bottom: 10px; }
+  margin-left: 50%; }
 
 .postRespones {
   font-size: 1em;
-  float: left;
+  float: right;
   padding-bottom: 10px; }
 
 .createPost {
@@ -192,8 +192,10 @@
   margin: auto; }
 
 .createResButtons {
-  margin-left: 60%;
   margin-bottom: 5%; }
+
+.postResponseInput {
+  margin-bottom: 15%; }
 
 ::-webkit-input-placeholder {
   color: #df8764;
