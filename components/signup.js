@@ -25,9 +25,9 @@ module.exports = ({ state, dispatch }) => {
           <input className="detsInput" onChange={saveFirstName} type='text' placeholder="First Name" />
           <input className="detsInputLast" onChange={saveLastName} type="text" placeholder="Last Name" />
         </div>
-        <button className='bigButton' onClick={authorizeSignUp} type='submit'>Sign Up</button>
+        <button className='signUpButton' onClick={authorizeSignUp} type='submit'>Sign Up</button>
       </form>
-      <button className='smallButton' onClick={() => dispatch({type: 'CHANGE_ROUTE', payload: '/'})} type='submit'>Cancel</button>
+      <button className='cancelSignUpButton' onClick={() => dispatch({type: 'CHANGE_ROUTE', payload: '/'})} type='submit'>Cancel</button>
     </div>
   )
 }

@@ -21,9 +21,9 @@ module.exports = ({state, dispatch}) => {
             <input className="detsInput" onChange={saveEmail} type="text" placeholder="Email Address" />
             <input className="detsInputLast" onChange={savePassword} type="password" placeholder="Password" />
           </div>
-          <button className="primary bigButton" onClick={loginButton} type="submit">LOGIN</button>
+          <button className="primary loginButton" onClick={loginButton} type="submit">LOGIN</button>
         </form>
-        <button className='primary smallButton' onClick={goToSignUp}>Create Account</button>
+        <button className='primary createAccountButton' onClick={goToSignUp}>Create Account</button>
     </div>
   )
 }
