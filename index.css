@@ -14,6 +14,12 @@
   height: 35vh;
   margin-left: 10%; }
 
+.loginButton {
+  margin-bottom: 3vh; }
+
+.signUpButton {
+  margin-bottom: 3vh; }
+
 .header {
   height: 5vh;
   color: #393939;
@@ -21,7 +27,8 @@
   padding-top: 2%;
   width: 100%;
   background-color: #df8764;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 2%; }
 
 .navItem {
   text-align: center;
@@ -37,23 +44,20 @@
   color: #df8764;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .smallButton, .createEventButton, .createPostButton {
+.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   background-color: #dedede;
   border: 5px solid #393939;
   padding: 0;
   color: #393939; }
-  .allButtons:hover, .bigButton:hover, .smallButton:hover, .createEventButton:hover, .createPostButton:hover {
-    background-color: #df8764; }
 
-.bigButton, .smallButton, .createEventButton, .createPostButton {
+.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
   height: 10vh;
-  margin-left: 10%;
-  margin-bottom: 3vh; }
+  margin-left: 10%; }
 
-.smallButton, .createEventButton, .createPostButton {
+.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;
@@ -61,7 +65,7 @@
   height: 7vh;
   margin-top: 1%; }
 
-.event, .createEvent, .post, .createPost {
+.event, .createEvent, .post, .createPost, .group {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -83,34 +87,35 @@
 .eventName {
   font-size: 1em;
   float: left;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  color: #df8764; }
 
 .eventTime {
   font-size: 1em;
   float: right;
   padding-bottom: 10px; }
+
+.createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  margin-bottom: 3vh; }
 
 ::-webkit-input-placeholder {
   color: #df8764;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .smallButton, .createEventButton, .createPostButton {
+.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   background-color: #dedede;
   border: 5px solid #393939;
   padding: 0;
   color: #393939; }
-  .allButtons:hover, .bigButton:hover, .smallButton:hover, .createEventButton:hover, .createPostButton:hover {
-    background-color: #df8764; }
 
-.bigButton, .smallButton, .createEventButton, .createPostButton {
+.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
   height: 10vh;
-  margin-left: 10%;
-  margin-bottom: 3vh; }
+  margin-left: 10%; }
 
-.smallButton, .createEventButton, .createPostButton {
+.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;
@@ -118,7 +123,7 @@
   height: 7vh;
   margin-top: 1%; }
 
-.event, .createEvent, .post, .createPost {
+.event, .createEvent, .post, .createPost, .group {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -140,12 +145,16 @@
 .eventName {
   font-size: 1em;
   float: left;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  color: #df8764; }
 
 .eventTime {
   font-size: 1em;
   float: right;
   padding-bottom: 10px; }
+
+.createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  margin-bottom: 3vh; }
 
 .createEvent {
   padding-bottom: 30px;
@@ -182,7 +191,8 @@
 .postRespones {
   font-size: 1em;
   float: right;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  color: #df8764; }
 
 .createPost {
   padding-bottom: 30px;
@@ -206,27 +216,43 @@
 .postResponseInput {
   margin-bottom: 15%; }
 
+.group {
+  padding: 0; }
+
+.groupName {
+  font-size: 1.5em;
+  margin-top: 2%;
+  margin-bottom: 1%; }
+
+.groupMemberCount {
+  font-size: 0.9em;
+  margin: 3%;
+  color: #df8764; }
+
+.findGroupButton {
+  margin-bottom: 1%; }
+
+.createGroupButton {
+  margin-bottom: 2.5%; }
+
 ::-webkit-input-placeholder {
   color: #df8764;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .smallButton, .createEventButton, .createPostButton {
+.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   background-color: #dedede;
   border: 5px solid #393939;
   padding: 0;
   color: #393939; }
-  .allButtons:hover, .bigButton:hover, .smallButton:hover, .createEventButton:hover, .createPostButton:hover {
-    background-color: #df8764; }
 
-.bigButton, .smallButton, .createEventButton, .createPostButton {
+.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
   height: 10vh;
-  margin-left: 10%;
-  margin-bottom: 3vh; }
+  margin-left: 10%; }
 
-.smallButton, .createEventButton, .createPostButton {
+.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;

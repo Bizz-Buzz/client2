@@ -12,7 +12,7 @@ module.exports = (state, dispatch) => {
     return state.groups.map((group) => renderGroup(group))
   }
   return <div className="groups">
-			<button onClick={() => requestUnjoinedGroups(state, dispatch)}>Find Groups</button>
+			<button className="findGroupButton" onClick={() => requestUnjoinedGroups(state, dispatch)}>Find Groups</button>
 
 			{state.createGroupToggle
 	      ? renderCreateGroup(state, dispatch)
