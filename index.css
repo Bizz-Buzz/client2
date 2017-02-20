@@ -42,6 +42,8 @@
   border: 5px solid #393939;
   padding: 0;
   color: #393939; }
+  .allButtons:hover, .bigButton:hover, .smallButton:hover, .createEventButton:hover, .createPostButton:hover {
+    background-color: #df8764; }
 
 .bigButton, .smallButton, .createEventButton, .createPostButton {
   font-family: "Open Sans", sans-serif;
@@ -57,7 +59,7 @@
   font-family: "Raleway", sans-serif;
   font-size: 1.3em;
   height: 7vh;
-  margin-top: 5%; }
+  margin-top: 1%; }
 
 .event, .createEvent, .post, .createPost {
   text-align: center;
@@ -97,6 +99,8 @@
   border: 5px solid #393939;
   padding: 0;
   color: #393939; }
+  .allButtons:hover, .bigButton:hover, .smallButton:hover, .createEventButton:hover, .createPostButton:hover {
+    background-color: #df8764; }
 
 .bigButton, .smallButton, .createEventButton, .createPostButton {
   font-family: "Open Sans", sans-serif;
@@ -112,7 +116,7 @@
   font-family: "Raleway", sans-serif;
   font-size: 1.3em;
   height: 7vh;
-  margin-top: 5%; }
+  margin-top: 1%; }
 
 .event, .createEvent, .post, .createPost {
   text-align: center;
@@ -144,7 +148,8 @@
   padding-bottom: 10px; }
 
 .createEvent {
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  margin-top: 1%; }
 
 .createEventButtons, .createPostButtons, .createResButtons {
   color: #393939;
@@ -172,7 +177,7 @@
 .postedAt {
   font-size: 0.8em;
   float: right;
-  margin-left: 50%; }
+  margin-left: 60%; }
 
 .postRespones {
   font-size: 1em;
@@ -180,7 +185,11 @@
   padding-bottom: 10px; }
 
 .createPost {
-  padding-bottom: 30px; }
+  padding-bottom: 30px;
+  margin-top: 1%; }
+
+.createPostButtons {
+  margin-top: 1%; }
 
 .detsInput.postInput, .postInput.detsInputLast {
   text-align: center;
@@ -206,6 +215,8 @@
   border: 5px solid #393939;
   padding: 0;
   color: #393939; }
+  .allButtons:hover, .bigButton:hover, .smallButton:hover, .createEventButton:hover, .createPostButton:hover {
+    background-color: #df8764; }
 
 .bigButton, .smallButton, .createEventButton, .createPostButton {
   font-family: "Open Sans", sans-serif;
@@ -221,7 +232,7 @@
   font-family: "Raleway", sans-serif;
   font-size: 1.3em;
   height: 7vh;
-  margin-top: 5%; }
+  margin-top: 1%; }
 
 body {
   font-family: "Raleway", sans-serif;
