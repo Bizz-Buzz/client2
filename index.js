@@ -36,7 +36,10 @@ const initialState = {
   postResponses: [],
   groups: [],
   createGroupToggle: false,
-  createGroup: {}
+  createGroup: {
+    parent_id: 1,
+    invite_only: false
+  }
 
 }
 
