@@ -27,10 +27,14 @@ module.exports = (state, dispatch) => {
   }
   function renderPost(post) {
     return <div className="post" onClick={() => requestPostResponses(post.post_id, state, dispatch)}>
+      <div className="postDets">
+        <div className="postedAt leftButton">{post.post_created_at}</div>
+      </div>
       <div className="postContent">{post.content}</div>
       <div className="postedBy">{post.first_name} {post.last_name}</div>
-      <div className="postedAt">{post.post_created_at}</div>
-      {renderRespones(post)}
+      <div className="postDets">
+        {renderRespones(post)}
+      </div>
     </div>
   }
   function renderPosts() {
