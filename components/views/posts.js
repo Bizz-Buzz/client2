@@ -9,7 +9,7 @@ module.exports = (state, dispatch) => {
       <input type="text" className="detsInput postInput" onChange={(e) => dispatch({type: "UPDATE_RESPONSE", payload: e.target.value})}placeholder="response"/>
       {state.postResponse.length < 200
       ? <button className="createResButtons rightButton" onClick={() => postPostResponse(state, dispatch)}>Respond</button>
-      : <p>Too many characters</p>}
+      : <p className="authErrorMsg">Too many characters</p>}
     </div>
   }
   function renderResponse(response) {

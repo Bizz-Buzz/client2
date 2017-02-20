@@ -7,7 +7,7 @@ module.exports = (state, dispatch) => {
   }
   return <div className="createPost">
     <input type="text" className="detsInput postInput" onChange={(e) => updatePostDetails(e.target.value)}placeholder="content"/>
-    <button className="createPostButtons leftButton" onClick={() => postPost(state, dispatch)}>Post</button>
-    <button className="createPostButtons rightButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createPostToggle'})}>Cancel</button>
+    <button className="createPostButtons leftButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createPostToggle'})}>Cancel</button>
+    <button className="createPostButtons rightButton" onClick={() => postPost(state, dispatch)}>Post</button>
   </div>
 }
