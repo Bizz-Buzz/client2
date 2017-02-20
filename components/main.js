@@ -2,6 +2,7 @@ import React from 'react'
 import renderEvents from './views/events'
 import renderCreateEvent from './views/createEvent'
 import renderPosts from './views/posts'
+import renderGroups from './views/groups'
 import header from './views/header'
 
 module.exports = ({ state, dispatch }) => {
@@ -13,6 +14,8 @@ module.exports = ({ state, dispatch }) => {
       case 'posts':
         console.log("render posts");
         return renderPosts(state, dispatch)
+      case 'groups':
+        return renderGroups(state, dispatch)
       default:
         return renderEvents(state, dispatch)
     }

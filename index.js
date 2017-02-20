@@ -33,7 +33,10 @@ const initialState = {
   createPostToggle: false,
   postResponse: '',
   selectedPost: null,
-  postResponses: []
+  postResponses: [],
+  groups: [],
+  createGroupToggle: false,
+  createGroup: {}
 
 }
 

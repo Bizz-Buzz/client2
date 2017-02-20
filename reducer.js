@@ -76,7 +76,11 @@ module.exports = (state, action) => {
       newState.postResponse = ''
       return newState
     case 'TOGGLE':
+      console.log('toggling', payload);
       newState[payload] = !newState[payload]
+      return newState
+    case 'UPDATE_CREATE_GROUP':
+      newState.createGroup[payload.content_type] = payload.content
       return newState
     default:
       return newState
