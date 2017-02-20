@@ -143,7 +143,7 @@
 .createEvent {
   padding-bottom: 30px; }
 
-.createEventButtons, .createPostButtons {
+.createEventButtons, .createPostButtons, .createResButtons {
   color: #cbcbcb;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
@@ -182,6 +182,15 @@
 .detsInput.postInput, .postInput.detsInputLast {
   text-align: center;
   font-size: 1.3em; }
+
+.postResponses {
+  margin-top: 5%;
+  width: 80%;
+  margin: auto; }
+
+.createResButtons {
+  margin-left: 60%;
+  margin-bottom: 5%; }
 
 ::-webkit-input-placeholder {
   color: #666666;
