@@ -40,7 +40,7 @@ module.exports = (state, dispatch) => {
   function renderPosts() {
     return state.posts.map((post) => renderPost(post))
   }
-  return <div>
+  return <div className="postPageDiv">
     {state.createPostToggle
       ?renderCreatePost(state, dispatch)
       : <button className="createPostButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createPostToggle'})}>New Post</button>
