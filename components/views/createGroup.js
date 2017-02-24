@@ -12,7 +12,7 @@ module.exports = (state, dispatch) => {
 		var parentOptions = state.groups.filter((group) => {
 			return group.isAdmin
 		})
-		return <select onChange={(e) => updateCreateGroupDetails(e.target.value, 'parent_id')} >
+		return <select className="selectParentGroup" onChange={(e) => updateCreateGroupDetails(e.target.value, 'parent_id')} >
 			{parentOptions.map((option) => renderOption(option))}
 		</select>
 	}
@@ -21,7 +21,7 @@ module.exports = (state, dispatch) => {
 			{(state.createGroup.inviteOnly)
 				? <p>Invite Only</p>
 				: <p>Open Group</p>}
-			<button onClick={() => updateCreateGroupDetails(!state.createGroup.invite_only, "invite_only")}>Toggle</button>
+			<button className="toggleButton" onClick={() => updateCreateGroupDetails(!state.createGroup.invite_only, "invite_only")}>Toggle</button>
 		</div>
 	}
   return <div className="createGroup">
