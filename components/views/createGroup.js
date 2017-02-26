@@ -5,6 +5,10 @@ module.exports = (state, dispatch) => {
 	function updateCreateGroupDetails(content, content_type) {
     dispatch({type: 'UPDATE_CREATE_GROUP', payload: {content, content_type}})
   }
+	function renderGroupInviteOption() {
+		if (state.createGroup.invite_only) return <p>Invite Only</p>
+		return <p>Open Group</p>
+	}
 	function renderOption(option) {
 		return <option value={option.group_id}>{option.group_name}</option>
 	}
@@ -13,14 +17,13 @@ module.exports = (state, dispatch) => {
 			return group.isAdmin
 		})
 		return <select className="selectParentGroup" onChange={(e) => updateCreateGroupDetails(e.target.value, 'parent_id')} >
+			<p className="selectParentGroup" >Select Parent Group</p>
 			{parentOptions.map((option) => renderOption(option))}
 		</select>
 	}
 	function inviteConditionHandler() {
 		return <div>
-			{(state.createGroup.inviteOnly)
-				? <p>Invite Only</p>
-				: <p>Open Group</p>}
+			{renderGroupInviteOption(4)}
 			<button className="toggleButton" onClick={() => updateCreateGroupDetails(!state.createGroup.invite_only, "invite_only")}>Toggle</button>
 		</div>
 	}

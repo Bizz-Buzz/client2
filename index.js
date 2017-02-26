@@ -35,11 +35,13 @@ const initialState = {
   selectedPost: null,
   postResponses: [],
   groups: [],
+  selectedGroup: null,
   createGroupToggle: false,
   createGroup: {
     parent_id: 1,
     invite_only: false
   }
+
 
 }
 
