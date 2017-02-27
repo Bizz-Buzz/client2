@@ -32,6 +32,7 @@ module.exports = (state, dispatch) => {
       </div>
       <div className="postContent">{post.content}</div>
       <div className="postedBy">{post.first_name} {post.last_name}</div>
+      <div className="postedBy">{post.group_name}</div>
       <div className="postDets">
         {renderRespones(post)}
       </div>

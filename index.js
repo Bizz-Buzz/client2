@@ -33,7 +33,8 @@ const initialState = {
   posts: [],
   createPost: {
     is_alert: false,
-    content: ''
+    content: '',
+    group_id: 1
   },
   createPostToggle: false,
   alertsOnly: false,

@@ -17,7 +17,7 @@ module.exports = (state, dispatch) => {
 		var parentOptions = state.groups.filter((group) => {
 			return group.isAdmin
 		})
-		return <select className="selectParentGroup" onChange={(e) => updatePostDetails(e.target.value, 'parent_id')} >
+		return <select className="selectParentGroup" onChange={(e) => updatePostDetails(e.target.value, 'group_id')} >
 			<p className="selectParentGroup" >Post to</p>
       <option value={state.currentGroup.group_id}>{state.currentGroup.group_name}</option>
 			{parentOptions.map((option) => renderOption(option))}
