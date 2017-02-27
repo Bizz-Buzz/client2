@@ -52,7 +52,8 @@ module.exports = (state, action) => {
         responses: 0,
         is_alert: newState.createPost.is_alert
       })
-      newState.createPost = ''
+      newState.createPost.is_alert = false
+      newState.createPost.content = ''
       newState.createPostToggle = false
       return newState
     case 'GET_POST_RESPONSES':

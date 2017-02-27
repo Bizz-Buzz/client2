@@ -26,7 +26,7 @@ module.exports = (state, dispatch) => {
     } else return <div className="postRespones">{post.responses} responses</div>
   }
   function renderPost(post) {
-    return <div className="post" onClick={() => requestPostResponses(post.post_id, state, dispatch)}>
+    return <div className="post " onClick={() => requestPostResponses(post.post_id, state, dispatch)}>
       <div className="postDets">
         <div className="postedAt leftButton">{post.post_created_at}</div>
       </div>

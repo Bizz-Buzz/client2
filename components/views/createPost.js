@@ -22,6 +22,9 @@ module.exports = (state, dispatch) => {
     <input type="text" className="detsInput postInput" onChange={(e) => updatePostDetails(e.target.value, 'content')}placeholder="content"/>
     <button className="createPostButtons leftButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createPostToggle'})}>Cancel</button>
     {alertHandler()}
-    <button className="createPostButtons rightButton" onClick={() => postPost(state, dispatch)}>Post</button>
+    {state.createPost.content.length > 10
+    ? <button className="createPostButtons rightButton" onClick={() => postPost(state, dispatch)}>Post</button>
+    : <p>Post too short</p>}
+
   </div>
 }

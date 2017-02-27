@@ -36,6 +36,7 @@ module.exports = (state, dispatch) => {
 
   }
   return <div className="findGroup">
+    <button className='findGroupButton' onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'groups'})}>Back to Groups</button>
     {renderGroups()}
   </div>
 }
