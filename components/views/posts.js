@@ -26,25 +26,48 @@ module.exports = (state, dispatch) => {
     } else return <div className="postRespones">{post.responses} responses</div>
   }
   function renderPost(post) {
-    return <div className="post" onClick={() => requestPostResponses(post.post_id, state, dispatch)}>
+    return <div className="post " onClick={() => requestPostResponses(post.post_id, state, dispatch)}>
       <div className="postDets">
         <div className="postedAt leftButton">{post.post_created_at}</div>
       </div>
       <div className="postContent">{post.content}</div>
       <div className="postedBy">{post.first_name} {post.last_name}</div>
+      <div className="postedBy">{post.group_name}</div>
       <div className="postDets">
         {renderRespones(post)}
       </div>
     </div>
   }
+  function renderAlerts() {
+    var alerts = state.posts.filter((post) => {
+      return post.is_alert == true
+    })
+    return alerts
+  }
   function renderPosts() {
-    return state.posts.map((post) => renderPost(post))
+    if (state.alertsOnly) {
+      var alerts = renderAlerts()
+      console.log({alerts});
+      return alerts.map((post) => renderPost(post))
+    } else {
+      return state.posts.map((post) => renderPost(post))
+    }
+  }
+  function toggleCreatePost() {
+    if (state.createPostToggle) return renderCreatePost(state, dispatch)
+    else return <button className="createPostButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createPostToggle'})}>New Post</button>
+  }
+  function toggleAlertsOnly() {
+    dispatch({type: "TOGGLE", payload: 'alertsOnly'})
+  }
+  function AlertToggleButton() {
+    if (state.alertsOnly) {
+      return <button onClick={() => toggleAlertsOnly()}className='createPostButton'>All Posts</button>
+    } else return <button onClick={() => toggleAlertsOnly()} className='createPostButton'>Alerts Only</button>
   }
   return <div>
-    {state.createPostToggle
-      ?renderCreatePost(state, dispatch)
-      : <button className="createPostButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createPostToggle'})}>New Post</button>
-    }
+    {toggleCreatePost()}
+    {AlertToggleButton()}
     {renderPosts()}
   </div>
 }

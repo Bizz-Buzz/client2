@@ -5,7 +5,6 @@ module.exports = (state, action) => {
   const {payload, type} = action
   switch (type) {
     case "TOGGLE_LOADING":
-      console.log("loading toggled");
       newState.isLoading = !newState.isLoading
       return newState
     case "AUTH_ERROR":
@@ -16,13 +15,14 @@ module.exports = (state, action) => {
       return newState
     case 'UPDATE_SIGNUP_DETAILS':
       newState.signupDetails[payload.change] = payload.value
-      console.log(newState.signupDetails);
       return newState
     case 'LOGIN_SUCCESS':
       newState.user = payload.user
       newState.events = payload.events
+      newState.currentGroup = payload.currentGroup[0]
+      newState.groups = payload.groups
       newState.route = '/bizz'
-      newState.view = 'events'
+      newState.view = 'groups'
       return newState
     case 'SIGNUP_SUCCESS':
       newState.route = '/login'
@@ -35,27 +35,23 @@ module.exports = (state, action) => {
     case 'CHANGE_VIEW':
       newState.view = payload
       return newState
+    case 'CHANGE_GROUP':
+      newState.currentGroup = payload
+      return newState
     case 'RECIEVE_CONTENT':
       newState[payload.content_type] = payload.content
       newState.view = payload.content_type
       return newState
     case 'UPDATE_CREATE_POST':
-      newState.createPost = payload
+      newState.createPost[payload.content_type] = payload.content
       return newState
     case 'POST_POST':
-      newState.posts.unshift({
-        post_id: payload,
-        content: newState.createPost,
-        first_name: newState.user.first_name,
-        last_name: newState.user.last_name,
-        post_created_at: 'Just Now',
-        responses: 0
-      })
-      newState.createPost = ''
+      newState.posts = payload
+      newState.createPost.is_alert = false
+      newState.createPost.content = ''
       newState.createPostToggle = false
       return newState
     case 'GET_POST_RESPONSES':
-      console.log({payload});
       newState.selectedPost = payload.post_id
       newState.postResponses = payload.responses
       return newState
@@ -76,11 +72,18 @@ module.exports = (state, action) => {
       newState.postResponse = ''
       return newState
     case 'TOGGLE':
-      console.log('toggling', payload);
       newState[payload] = !newState[payload]
       return newState
     case 'UPDATE_CREATE_GROUP':
       newState.createGroup[payload.content_type] = payload.content
+      return newState
+    case 'RECIEVE_GROUP':
+      console.log({payload});
+      newState.groups.unshift(payload)
+      newState.createGroupToggle = false
+      return newState
+    case 'SELECT_GROUP':
+      newState.selectedGroup = payload
       return newState
     default:
       return newState
