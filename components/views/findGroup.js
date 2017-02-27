@@ -15,7 +15,7 @@ module.exports = (state, dispatch) => {
     if (state.selectedGroup == group.group_id) {
       return <div>
         <p className="group_description">{group.group_description}</p>
-        renderRequestButtons(group)
+        {renderRequestButtons(group)}
       </div>
     } else return
 
