@@ -19,8 +19,10 @@ module.exports = (state, action) => {
     case 'LOGIN_SUCCESS':
       newState.user = payload.user
       newState.events = payload.events
+      newState.currentGroup = payload.currentGroup[0]
+      newState.groups = payload.groups
       newState.route = '/bizz'
-      newState.view = 'events'
+      newState.view = 'groups'
       return newState
     case 'SIGNUP_SUCCESS':
       newState.route = '/login'
@@ -32,6 +34,9 @@ module.exports = (state, action) => {
       return newState
     case 'CHANGE_VIEW':
       newState.view = payload
+      return newState
+    case 'CHANGE_GROUP':
+      newState.currentGroup = payload
       return newState
     case 'RECIEVE_CONTENT':
       newState[payload.content_type] = payload.content

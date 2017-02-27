@@ -26,6 +26,7 @@ const initialState = {
   signupDetails: {},
   authError: null,
   user: {},
+  currentGroup: [],
   bizz: null,
   events: [],
   createEventToggle: false,
