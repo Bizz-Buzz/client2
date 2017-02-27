@@ -30,17 +30,24 @@ const initialState = {
   events: [],
   createEventToggle: false,
   posts: [],
+  createPost: {
+    is_alert: false,
+    content: null
+  },
   createPostToggle: false,
+  alertsOnly: false,
   postResponse: '',
   selectedPost: null,
   postResponses: [],
   groups: [],
+  findGroup: [],
   selectedGroup: null,
   createGroupToggle: false,
   createGroup: {
     parent_id: 1,
     invite_only: false
-  }
+  },
+
 
 
 }

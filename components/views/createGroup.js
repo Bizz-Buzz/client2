@@ -23,7 +23,7 @@ module.exports = (state, dispatch) => {
 	}
 	function inviteConditionHandler() {
 		return <div>
-			{renderGroupInviteOption(4)}
+			{renderGroupInviteOption()}
 			<button className="toggleButton" onClick={() => updateCreateGroupDetails(!state.createGroup.invite_only, "invite_only")}>Toggle</button>
 		</div>
 	}

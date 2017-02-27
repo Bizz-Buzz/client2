@@ -37,14 +37,36 @@ module.exports = (state, dispatch) => {
       </div>
     </div>
   }
+  function renderAlerts() {
+    var alerts = state.posts.filter((post) => {
+      return post.is_alert == true
+    })
+    return alerts
+  }
   function renderPosts() {
-    return state.posts.map((post) => renderPost(post))
+    if (state.alertsOnly) {
+      var alerts = renderAlerts()
+      console.log({alerts});
+      return alerts.map((post) => renderPost(post))
+    } else {
+      return state.posts.map((post) => renderPost(post))
+    }
+  }
+  function toggleCreatePost() {
+    if (state.createPostToggle) return renderCreatePost(state, dispatch)
+    else return <button className="createPostButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createPostToggle'})}>New Post</button>
+  }
+  function toggleAlertsOnly() {
+    dispatch({type: "TOGGLE", payload: 'alertsOnly'})
+  }
+  function AlertToggleButton() {
+    if (state.alertsOnly) {
+      return <button onClick={() => toggleAlertsOnly()}className='createPostButton'>All Posts</button>
+    } else return <button onClick={() => toggleAlertsOnly()} className='createPostButton'>Alerts Only</button>
   }
   return <div>
-    {state.createPostToggle
-      ?renderCreatePost(state, dispatch)
-      : <button className="createPostButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createPostToggle'})}>New Post</button>
-    }
+    {toggleCreatePost()}
+    {AlertToggleButton()}
     {renderPosts()}
   </div>
 }

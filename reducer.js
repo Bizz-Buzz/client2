@@ -38,16 +38,19 @@ module.exports = (state, action) => {
       newState.view = payload.content_type
       return newState
     case 'UPDATE_CREATE_POST':
-      newState.createPost = payload
+      newState.createPost[payload.content_type] = payload.content
       return newState
     case 'POST_POST':
+      console.log({newState});
+      console.log({payload});
       newState.posts.unshift({
         post_id: payload,
-        content: newState.createPost,
+        content: newState.createPost.content,
         first_name: newState.user.first_name,
         last_name: newState.user.last_name,
         post_created_at: 'Just Now',
-        responses: 0
+        responses: 0,
+        is_alert: newState.createPost.is_alert
       })
       newState.createPost = ''
       newState.createPostToggle = false
