@@ -28,7 +28,10 @@
   width: 100%;
   background-color: #df8764;
   text-align: center;
-  margin-bottom: 2%; }
+  margin-bottom: 2%;
+  position: fixed;
+  height: 5vh;
+  top: 0; }
 
 .navItem {
   text-align: center;
@@ -178,15 +181,31 @@
   float: right; }
 
 .postContent {
-  font-size: 1.5em; }
+  font-size: 1.2em; }
 
 .postedBy {
-  font-size: 1.2em; }
+  font-size: 1em; }
 
 .postedAt {
   font-size: 0.8em;
   float: right;
-  margin-left: 60%; }
+  margin-left: 50%; }
+  @media screen and (min-width: 499px) {
+    .postedAt {
+      margin-left: 63.5%;
+      font-size: 1em; } }
+  @media screen and (min-width: 768px) {
+    .postedAt {
+      margin-left: 70%;
+      font-size: 1em; } }
+  @media screen and (min-width: 768px) {
+    .postedAt {
+      margin-left: 75%;
+      font-size: 1em; } }
+  @media screen and (min-width: 1440px) {
+    .postedAt {
+      margin-left: 85%;
+      font-size: 1.3em; } }
 
 .postRespones {
   font-size: 1em;
@@ -229,6 +248,9 @@
   margin: 3%;
   color: #df8764; }
 
+.groups, .events, .postPageDiv {
+  margin-top: 9vh; }
+
 .findGroupButton {
   margin-bottom: 1%; }
 
@@ -248,7 +270,7 @@
   background-color: #df8764;
   font-size: 1em;
   padding: 1%;
-  width: 35%; }
+  width: 50%; }
 
 ::-webkit-input-placeholder {
   color: #df8764;
