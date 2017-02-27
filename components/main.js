@@ -3,6 +3,7 @@ import renderEvents from './views/events'
 import renderCreateEvent from './views/createEvent'
 import renderPosts from './views/posts'
 import renderGroups from './views/groups'
+import renderFindGroup from './views/findGroup'
 import header from './views/header'
 
 module.exports = ({ state, dispatch }) => {
@@ -16,6 +17,8 @@ module.exports = ({ state, dispatch }) => {
         return renderPosts(state, dispatch)
       case 'groups':
         return renderGroups(state, dispatch)
+      case 'findGroup':
+        return renderFindGroup(state, dispatch)
       default:
         return renderEvents(state, dispatch)
     }
