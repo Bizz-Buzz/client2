@@ -275,6 +275,9 @@
   padding: 1%;
   width: 50%; }
 
+.findGroup {
+  margin-top: 9vh; }
+
 ::-webkit-input-placeholder {
   color: #df8764;
   font-family: "Raleway", sans-serif; }
