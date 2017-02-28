@@ -27,8 +27,8 @@ module.exports = (state, dispatch) => {
 	}
   function renderAlertOption() {
     if (state.createPost.is_alert) {
-      return <p>Alert</p>
-    } return <p>Post</p>
+      return <p className="postTypeToggle alertType">Alert</p>
+    } return <p className="postTypeToggle postType">Post</p>
   }
   function alertHandler() {
 		return <div>

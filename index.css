@@ -180,6 +180,9 @@
 .rightButton {
   float: right; }
 
+.posts {
+  margin-top: 9vh; }
+
 .postContent {
   font-size: 1.2em; }
 
@@ -223,6 +226,16 @@
 .detsInput.postInput, .postInput.detsInputLast {
   text-align: center;
   font-size: 1.3em; }
+
+.postTypeToggle {
+  margin-left: 80%;
+  margin-top: 1%; }
+
+.postType {
+  color: #df8764; }
+
+.alertType {
+  color: red; }
 
 .postResponses {
   margin-top: 5%;
@@ -271,6 +284,9 @@
   font-size: 1em;
   padding: 1%;
   width: 50%; }
+
+.findGroup {
+  margin-top: 9vh; }
 
 ::-webkit-input-placeholder {
   color: #df8764;
