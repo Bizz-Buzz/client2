@@ -68,6 +68,12 @@
   height: 7vh;
   margin-top: 1%; }
 
+.leftButton {
+  float: left; }
+
+.rightButton {
+  float: right; }
+
 .event, .createEvent, .post, .createPost, .group, .createGroup {
   text-align: center;
   margin: auto;
@@ -97,9 +103,6 @@
   font-size: 1em;
   float: right;
   padding-bottom: 10px; }
-
-.createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
-  margin-bottom: 3vh; }
 
 ::-webkit-input-placeholder {
   color: #df8764;
@@ -126,6 +129,12 @@
   height: 7vh;
   margin-top: 1%; }
 
+.leftButton {
+  float: left; }
+
+.rightButton {
+  float: right; }
+
 .event, .createEvent, .post, .createPost, .group, .createGroup {
   text-align: center;
   margin: auto;
@@ -156,12 +165,12 @@
   float: right;
   padding-bottom: 10px; }
 
-.createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
-  margin-bottom: 3vh; }
-
 .createEvent {
   padding-bottom: 30px;
   margin-top: 1%; }
+
+.createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  margin-bottom: 3vh; }
 
 .createEventButtons, .createPostButtons, .createResButtons, .toggleButton, .selectParentGroup, .createGroupButtons {
   color: #393939;
@@ -173,12 +182,6 @@
 .detsInput.eventInput, .eventInput.detsInputLast {
   text-align: center;
   font-size: 1.3em; }
-
-.leftButton {
-  float: left; }
-
-.rightButton {
-  float: right; }
 
 .posts {
   margin-top: 9vh; }
@@ -312,6 +315,12 @@
   font-size: 1.3em;
   height: 7vh;
   margin-top: 1%; }
+
+.leftButton {
+  float: left; }
+
+.rightButton {
+  float: right; }
 
 body {
   font-family: "Raleway", sans-serif;
