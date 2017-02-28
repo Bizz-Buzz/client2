@@ -66,7 +66,7 @@ module.exports = (state, dispatch) => {
     } else return <button onClick={() => toggleAlertsOnly()} className='createPostButton'>Alerts Only</button>
   }
 
-  return <div>
+  return <div className="posts">
     {toggleCreatePost()}
     {AlertToggleButton()}
 

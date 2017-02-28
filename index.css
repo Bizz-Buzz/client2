@@ -180,6 +180,9 @@
 .rightButton {
   float: right; }
 
+.posts {
+  margin-top: 9vh; }
+
 .postContent {
   font-size: 1.2em; }
 
