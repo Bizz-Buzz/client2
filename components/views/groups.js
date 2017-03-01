@@ -18,7 +18,7 @@ module.exports = (state, dispatch) => {
         <p className="group_description">{group.group_description}</p>
         {state.currentGroup.group_id == group.group_id
         ? <p>This is your current group</p>
-        : <button onClick={() => dispatch({type: 'CHANGE_GROUP', payload: group})}>Switch Group</button>}
+        : <button className="changeGroupButton" onClick={() => dispatch({type: 'CHANGE_GROUP', payload: group})}>Switch Group</button>}
 
       </div>
     } else return
