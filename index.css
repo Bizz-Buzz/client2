@@ -223,6 +223,9 @@
   padding-bottom: 10px;
   color: #df8764; }
 
+.alertTypePost {
+  background-color: #d2b6b6; }
+
 .createPost {
   padding-bottom: 30px;
   margin-top: 1%; }
@@ -234,14 +237,14 @@
   text-align: center;
   font-size: 1.3em; }
 
-.postTypeToggle {
+.postTypeToggleButton {
   margin-left: 80%;
   margin-top: 1%; }
 
-.postType {
+.postTypeToggleShow {
   color: #df8764; }
 
-.alertType {
+.alertTypeToggleShow {
   color: red; }
 
 .postResponses {
