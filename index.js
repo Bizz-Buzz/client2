@@ -27,7 +27,9 @@ const initialState = {
   authError: null,
   user: {},
   currentGroup: [],
-  bizz: null,
+  search: {
+    eventsSearch: null
+  },
   events: [],
   RSVPs: [],
   createEventToggle: false,

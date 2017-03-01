@@ -4,6 +4,12 @@ import postRSVP from '../../services/postRSVP'
 import dateTime from '../../services/dateTime'
 
 module.exports = (state, dispatch) => {
+  function renderSearch () {
+    return <form>
+      <input onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'eventsSearch'} })} type="text" placeholder="Search posts"/>
+      <input type="reset" value="Reset"/>
+    </form>
+  }
   function renderRsvpButtons (event) {
     var RSVP = state.RSVPs.find((RSVP) => {
       return RSVP.event_id == event.event_id
@@ -68,7 +74,17 @@ module.exports = (state, dispatch) => {
     </div>
   }
   function renderEvents () {
-    return state.events.map((event) => renderEvent(event))
+    var events
+    if (state.search.eventsSearch === '' || !state.search.eventsSearch) events = state.events
+    else events = state.events.filter((event) => {
+      return (event.title.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || ''))
+      || (event.first_name.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || ''))
+      || (event.last_name.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || ''))
+      || (event.description.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || ''))
+      || (`${event.first_name.toLowerCase()} ${event.last_name.toLowerCase()}`.includes(state.search.eventsSearch.toLowerCase() || ''))
+    })
+
+    return events.map((event) => renderEvent(event))
   }
   return <div className="events">
       {state.createEventToggle
@@ -76,6 +92,7 @@ module.exports = (state, dispatch) => {
         : <button className="createEventButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>New Event</button>
       }
       <div className="eventSorting">Today</div>
+      {renderSearch()}
       {renderEvents()}
     </div>
 }
