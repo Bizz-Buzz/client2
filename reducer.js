@@ -88,6 +88,14 @@ module.exports = (state, action) => {
     case 'UPDATE_CREATE_EVENT':
       newState.createEvent[payload.content_type] = payload.content
       return newState
+    case 'RECIEVE_EVENT':
+      newState.events.unshift(payload)
+      var keys = Object.keys(newState.createEvent)
+      keys.forEach((prop) => prop = null)
+      return newState
+    case 'SELECT_EVENT':
+      newState.selectedEvent = payload
+      return newState
     default:
       return newState
   }

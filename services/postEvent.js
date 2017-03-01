@@ -1,14 +1,15 @@
 import request from 'superagent'
 import url from '../requestUrl'
 
-module.exports = (state, dispatch) => {
+module.exports = ({createEvent}, dispatch) => {
   request
-    .get(`${url}events`)
+    .post(`${url}events/new`)
     .withCredentials()
+    .send(createEvent)
     .end((err, res) => {
       if (!err) {
         console.log({res});
-        dispatch({type:'RECIEVE_CONTENT', payload: {content: res.body, content_type: 'events'}})
+        dispatch({type: 'RECIEVE_EVENT', payload: res.body})
       } else console.log({err});
     })
 }

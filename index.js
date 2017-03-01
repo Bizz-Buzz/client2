@@ -46,18 +46,20 @@ const initialState = {
   selectedGroup: null,
   createGroupToggle: false,
   createGroup: {
-    parent_id: 1,
+    parent_id: null,
     invite_only: false
   },
   createEvent: {
-    day_id: 1,
-    month_id: 2,
-    year_id: 2017,
-    hour_id: 1,
-    minute_id: 1,
-  }
-
-
+    day_id: null,
+    month_id: null,
+    year_id: null,
+    hour_id: null,
+    minute_id: null,
+    group_id: null,
+    title: null,
+    description: null
+  },
+  selectedEvent: null
 
 }
 
