@@ -104,11 +104,9 @@ module.exports = (state, action) => {
       return newState
     case 'CREATE_RSVP':
       newState.RSVPs = payload.RSVPs
-      var change = 1
-      if (payload.going == false) change = -1
       newState.events.forEach((event) => {
         if (event.event_id == payload.event_id) {
-          event.RSVP_count += change
+          event.RSVP_count += payload.change
         }
       })
       return newState

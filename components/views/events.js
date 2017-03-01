@@ -12,17 +12,17 @@ module.exports = (state, dispatch) => {
     if (RSVP) {
       if (RSVP.going == true) {
         return <div className="eventButtons">
-          <button onClick={() => postRSVP(event.event_id, false, dispatch)}>No Longer Attending</button>
+          <button onClick={() => postRSVP(event.event_id, false, dispatch, -1)}>No Longer Attending</button>
         </div>
       } else {
         return <div className="eventButtons">
-          <button onClick={() => postRSVP(event.event_id, true, dispatch)}>Can Attend</button>
+          <button onClick={() => postRSVP(event.event_id, true, dispatch, 1)}>Can Attend</button>
         </div>
       }
     } else {
       return <div className="eventButtons">
-        <button onClick={() => postRSVP(event.event_id, true, dispatch)}>Attending</button>
-        <button onClick={() => postRSVP(event.event_id, false, dispatch)}>Not Attending</button>
+        <button onClick={() => postRSVP(event.event_id, true, dispatch, 1)}>Attending</button>
+        <button onClick={() => postRSVP(event.event_id, false, dispatch, 0)}>Not Attending</button>
       </div>
     }
     console.log({RSVP});
