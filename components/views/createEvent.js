@@ -83,7 +83,7 @@ module.exports = (state, dispatch) => {
     </div>
   }
   function renderDateTimeSelect() {
-    return <div className="dateTime">
+    return <form className="dateTime">
       <div className="dateSelect">
       {renderMonthSelect()}
       {renderDaySelect()}
@@ -94,7 +94,7 @@ module.exports = (state, dispatch) => {
         {renderMinuteSelect()}
       </div>
       {renderGroupSelect()}
-    </div>
+    </form>
   }
   function renderCreateButton() {
     var event = state.createEvent
