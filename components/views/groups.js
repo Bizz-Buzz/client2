@@ -3,6 +3,12 @@ import renderCreateGroup from './createGroup'
 import requestUnjoinedGroups from '../../services/requestFindGroups'
 
 module.exports = (state, dispatch) => {
+  function renderSearch () {
+    return <form>
+      <input onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'groupsSearch'} })} type="text" placeholder="Search Groups"/>
+      <input className="resetSearch" onClick={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: null, search_type: 'groupsSearch'} })} type="reset" value="Reset"/>
+    </form>
+  }
   function renderRequestButtons (group) {
     if (group.invite_only) {
       return <div>
@@ -32,7 +38,16 @@ module.exports = (state, dispatch) => {
     </div>
   }
   function renderGroups () {
-    return state.groups.map((group) => renderGroup(group))
+    var groups
+
+    if (state.search.groupsSearch === '' || !state.search.groupsSearch) groups = state.groups
+    else groups = state.groups.filter((group) => {
+      return (group.group_name.toLowerCase().includes(state.search.groupsSearch.toLowerCase() || ''))
+      || (group.group_description.toLowerCase().includes(state.search.groupsSearch.toLowerCase() || ''))
+      || (group.member_count >= Number(state.groupsSearch))
+    })
+
+    return groups.map((group) => renderGroup(group))
   }
   return <div className="groups">
 			<button className="findGroupButton" onClick={() => requestUnjoinedGroups(state, dispatch)}>Find Groups</button>
@@ -41,6 +56,7 @@ module.exports = (state, dispatch) => {
 	      ? renderCreateGroup(state, dispatch)
 	      : <button className="createGroupButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createGroupToggle'})}>New Group</button>
 	    }
+      {renderSearch()}
       {renderGroups()}
   </div>
 }

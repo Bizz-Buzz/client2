@@ -6,7 +6,7 @@ import dateTime from '../../services/dateTime'
 module.exports = (state, dispatch) => {
   function renderSearch () {
     return <form>
-      <input onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'eventsSearch'} })} type="text" placeholder="Search events"/>
+      <input onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'eventsSearch'} })} type="text" placeholder="Search Events"/>
       <input className="resetSearch" onClick={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: null, search_type: 'eventsSearch'} })} type="reset" value="Reset"/>
     </form>
   }
