@@ -172,7 +172,7 @@
 .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   margin-bottom: 3vh; }
 
-.createEventButtons, .createPostButtons, .createResButtons, .toggleButton, .selectParentGroup, .createGroupButtons {
+.createEventButtons, .createPostButtons, .createResButtons, .toggleButton, .changeGroupButton, .selectParentGroup, .createGroupButtons {
   color: #393939;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
@@ -225,6 +225,10 @@
 
 .alertTypePost {
   background-color: #d2b6b6; }
+  .alertTypePost input {
+    background-color: #d2b6b6; }
+  .alertTypePost button {
+    background-color: #d2b6b6; }
 
 .createPost {
   padding-bottom: 30px;
@@ -287,7 +291,7 @@
   padding-bottom: 30px;
   margin-top: 1%; }
 
-.toggleButton, .selectParentGroup {
+.toggleButton, .changeGroupButton, .selectParentGroup {
   border: 2px solid black;
   margin: 2%;
   background-color: #df8764;
