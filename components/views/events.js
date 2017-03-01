@@ -1,15 +1,48 @@
 import React from 'react'
 import renderCreateEvent from './createEvent'
+import dateTime from '../../services/dateTime'
 
 module.exports = (state, dispatch) => {
-  function renderEvent (event) {
-    return <div className='event'>
-      <div className="eventTitle">{event.title}</div>
+  function renderMore (event) {
+    return <div className="eventSelected">
       <div className="eventDescription">{event.description}</div>
-      <div className="eventPostDetails">
-        <div className="eventName">{event.first_name} {event.last_name}</div>
-        <div className="eventTime">Time/Date: {event.date_time}</div>
+      <div className="eventButtons">
+        <button>Going</button>
+        <button>"Can't Go"</button>
       </div>
+    </div>
+  }
+  function renderDate (event) {
+    var syntax = 'th'
+    if (event.day_id === 1) syntax = 'st'
+    else if (event.day_id === 2) syntax = 'nd'
+    else if (event.day_id === 3) syntax = 'rd'
+
+    return <div className="eventDate">{`${(event.day_id).toString() + syntax} ${dateTime.months[event.month_id].name} ${event.year_id}`}</div>
+  }
+  function renderTime (event) {
+    var minutes = event.minute_id
+    if (minutes < 10) minutes = `0${minutes.toString()}`
+    var hours = event.hour_id
+    if (hours < 10) hours = `0${hours.toString()}`
+    return <div className="eventTime">{`${hours} : ${minutes}`}</div>
+  }
+  function renderDateTime (event) {
+
+    return <div className="eventDateTime">
+      {renderDate(event)}
+      {renderTime(event)}
+    </div>
+  }
+  function renderEvent (event) {
+    return <div onClick={() => dispatch({type: 'SELECT_EVENT', payload: event.event_id})} className='event'>
+      <div className="eventTitle">{event.title}</div>
+        {renderDateTime(event)}
+        {state.selectedEvent == event.event_id
+          ? renderMore(event)
+          : ''
+        }
+      <div className="eventName">{event.first_name} {event.last_name}</div>
     </div>
   }
   function renderEvents () {
@@ -20,6 +53,7 @@ module.exports = (state, dispatch) => {
         ?renderCreateEvent(state, dispatch)
         : <button className="createEventButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>New Event</button>
       }
+      <div className="eventToday">Today</div>
       {renderEvents()}
     </div>
 }

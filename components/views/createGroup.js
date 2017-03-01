@@ -17,7 +17,7 @@ module.exports = (state, dispatch) => {
 			return group.isAdmin
 		})
 		return <select className="selectParentGroup" onChange={(e) => updateCreateGroupDetails(e.target.value, 'parent_id')} >
-			<p className="selectParentGroup" >Select Parent Group</p>
+			<option value=" " disabled selected>Parent Group</option>
 			{parentOptions.map((option) => renderOption(option))}
 		</select>
 	}
