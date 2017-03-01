@@ -4,6 +4,12 @@ import requestPostResponses from '../../services/requestPostRespones'
 import postPostResponse from '../../services/postPostResponse'
 
 module.exports = (state, dispatch) => {
+  function renderSearch () {
+    return <form className="searchForm">
+      <input className="searchInput" onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'postsSearch'} })} type="text" placeholder="Search posts"/>
+      <input className="resetSearch" onClick={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: null, search_type: 'postsSearch'} })} type="reset" value="Reset"/>
+    </form>
+  }
   function renderPostResponseForm() {
     return <div className="postResponseInput">
       <input type="text" className="detsInput postInput customClass" onChange={(e) => dispatch({type: "UPDATE_RESPONSE", payload: e.target.value})}placeholder="response"/>
@@ -47,13 +53,23 @@ module.exports = (state, dispatch) => {
     return alerts
   }
   function renderPosts() {
+    var posts
     if (state.alertsOnly) {
       var alerts = renderAlerts()
-      console.log({alerts});
-      return alerts.map((post) => renderPost(post))
-    } else {
-      return state.posts.map((post) => renderPost(post))
+      posts = alerts
     }
+
+    if (state.search.postsSearch === '' || !state.search.postsSearch) posts = state.posts
+    else posts = state.posts.filter((post) => {
+      return (post.group_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || ''))
+      || (post.first_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || ''))
+      || (post.last_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || ''))
+      || (post.content.toLowerCase().includes(state.search.postsSearch.toLowerCase() || ''))
+      || (`${post.first_name.toLowerCase()} ${post.last_name.toLowerCase()}`.includes(state.search.postsSearch.toLowerCase() || ''))
+    })
+
+    return posts.map((post) => renderPost(post))
+
   }
   function toggleCreatePost() {
     if (state.createPostToggle) return renderCreatePost(state, dispatch)
@@ -71,6 +87,7 @@ module.exports = (state, dispatch) => {
   return <div className="posts">
     {toggleCreatePost()}
     {AlertToggleButton()}
+    {renderSearch()}
     {renderPosts()}
   </div>
 }
