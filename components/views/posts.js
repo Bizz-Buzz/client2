@@ -27,7 +27,7 @@ module.exports = (state, dispatch) => {
   }
   function renderPost(post) {
     var customClass
-    post.is_alert ? customClass = 'alertType post' : customClass = 'postType post'
+    post.is_alert ? customClass = 'alertTypePost post' : customClass = 'postTypePost post'
     return <div className={customClass} onClick={() => requestPostResponses(post.post_id, state, dispatch)}>
       <div className="postDets">
         <div className="postedAt rightButton">{post.post_created_at}</div>
