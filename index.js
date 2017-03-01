@@ -29,6 +29,7 @@ const initialState = {
   currentGroup: [],
   bizz: null,
   events: [],
+  RSVPs: [],
   createEventToggle: false,
   posts: [],
   createPost: {

@@ -8,7 +8,7 @@ module.exports = (state, dispatch) => {
     .end((err, res) => {
       if (!err) {
         console.log({res});
-        dispatch({type:'RECIEVE_CONTENT', payload: {content: res.body, content_type: 'events'}})
+        dispatch({type:'RECIEVE_EVENTS', payload: res.body})
       } else console.log({err});
     })
 }
