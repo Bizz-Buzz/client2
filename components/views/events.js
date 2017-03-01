@@ -1,15 +1,37 @@
 import React from 'react'
 import renderCreateEvent from './createEvent'
+import postRSVP from '../../services/postRSVP'
 import dateTime from '../../services/dateTime'
 
 module.exports = (state, dispatch) => {
+  function renderRsvpButtons (event) {
+    var RSVP = state.RSVPs.find((RSVP) => {
+      return RSVP.event_id == event.event_id
+    })
+    console.log({RSVP});
+    if (RSVP) {
+      if (RSVP.going == true) {
+        return <div className="eventButtons">
+          <button onClick={() => postRSVP(event.event_id, false, dispatch, -1)}>No Longer Attending</button>
+        </div>
+      } else {
+        return <div className="eventButtons">
+          <button onClick={() => postRSVP(event.event_id, true, dispatch, 1)}>Can Attend</button>
+        </div>
+      }
+    } else {
+      return <div className="eventButtons">
+        <button onClick={() => postRSVP(event.event_id, true, dispatch, 1)}>Attending</button>
+        <button onClick={() => postRSVP(event.event_id, false, dispatch, 0)}>Not Attending</button>
+      </div>
+    }
+    console.log({RSVP});
+  }
   function renderMore (event) {
     return <div className="eventSelected">
       <div className="eventDescription">{event.description}</div>
-      <div className="eventButtons">
-        <button>Going</button>
-        <button>"Can't Go"</button>
-      </div>
+      {renderRsvpButtons(event)}
+      <div className="eventRsvpCount">{event.RSVP_count} attending</div>
     </div>
   }
   function renderDate (event) {
@@ -53,7 +75,7 @@ module.exports = (state, dispatch) => {
         ?renderCreateEvent(state, dispatch)
         : <button className="createEventButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>New Event</button>
       }
-      <div className="eventToday">Today</div>
+      <div className="eventSorting">Today</div>
       {renderEvents()}
     </div>
 }
