@@ -1,14 +1,5 @@
 @import ../pages/events
 
-.createEvent
-  @extend .event
-  padding-bottom: 30px
-  margin-top: 1%
-
-.createEventButton
-  @extend .smallButton
-  margin-bottom: 3vh
-
 .createEventButtons
   color: $darkColor
   font-size: 1em
@@ -16,8 +7,33 @@
   background-color: $background
   border: none
 
+.createEvent
+  @extend .event
+  padding-bottom: 30px
+  margin-top: 1%
+  select
+    @extend .createEventButtons
+    border: 2px solid black
+    margin: 2%
+    margin-left: 5%
+    background-color: $popOfColor
+    font-size: 1em
+    padding: 1%
+
+
+.createEventButton
+  @extend .smallButton
+  margin-bottom: 3vh
+
 .detsInput.eventInput
   text-align: center
   font-size: 1.3em
 
-.createEventButtonsDiv
+.dateSelect
+  display: inline-flex
+  margin-top: 2%
+  margin-left: 10%
+  margin-right: 15%
+
+.yearSelect
+  margin-left: 2000px
