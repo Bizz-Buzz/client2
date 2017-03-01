@@ -165,23 +165,39 @@
   float: right;
   padding-bottom: 10px; }
 
-.createEvent {
-  padding-bottom: 30px;
-  margin-top: 1%; }
-
-.createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
-  margin-bottom: 3vh; }
-
-.createEventButtons, .createPostButtons, .createResButtons, .toggleButton, .changeGroupButton, .selectParentGroup, .createGroupButtons {
+.createEventButtons, .createEvent select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton {
   color: #393939;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
   background-color: #dedede;
   border: none; }
 
+.createEvent {
+  padding-bottom: 30px;
+  margin-top: 1%; }
+  .createEvent select {
+    border: 2px solid black;
+    margin: 2%;
+    margin-left: 5%;
+    background-color: #df8764;
+    font-size: 1em;
+    padding: 1%; }
+
+.createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  margin-bottom: 3vh; }
+
 .detsInput.eventInput, .eventInput.detsInputLast {
   text-align: center;
   font-size: 1.3em; }
+
+.dateSelect {
+  display: inline-flex;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 15%; }
+
+.yearSelect {
+  margin-left: 2000px; }
 
 .posts {
   margin-top: 9vh; }
@@ -224,7 +240,8 @@
   color: #df8764; }
 
 .alertTypePost {
-  background-color: #d2b6b6; }
+  background-color: #d2b6b6;
+  border-color: #df8764; }
   .alertTypePost input {
     background-color: #d2b6b6; }
   .alertTypePost button {
@@ -291,7 +308,7 @@
   padding-bottom: 30px;
   margin-top: 1%; }
 
-.toggleButton, .changeGroupButton, .selectParentGroup {
+.toggleButton, .selectParentGroup, .changeGroupButton {
   border: 2px solid black;
   margin: 2%;
   background-color: #df8764;

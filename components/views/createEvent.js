@@ -57,8 +57,8 @@ module.exports = (state, dispatch) => {
     return options
   }
   function renderYearSelect() {
-    return <div className="yearSelect">
-      <select onCHange={(e) => updateCreateEvent(e.target.value, 'year_id')}>
+    return <div className="yearSelectDiv">
+      <select className="yearSelect" onCHange={(e) => updateCreateEvent(e.target.value, 'year_id')}>
         {renderYearOptions(2017)}
       </select>
     </div>
