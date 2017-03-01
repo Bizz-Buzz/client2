@@ -85,6 +85,9 @@ module.exports = (state, action) => {
     case 'SELECT_GROUP':
       newState.selectedGroup = payload
       return newState
+    case 'UPDATE_CREATE_EVENT':
+      newState.createEvent[payload.content_type] = payload.content
+      return newState
     default:
       return newState
   }

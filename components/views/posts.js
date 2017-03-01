@@ -71,7 +71,6 @@ module.exports = (state, dispatch) => {
   return <div className="posts">
     {toggleCreatePost()}
     {AlertToggleButton()}
-
     {renderPosts()}
   </div>
 }
