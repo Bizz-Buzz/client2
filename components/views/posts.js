@@ -30,7 +30,7 @@ module.exports = (state, dispatch) => {
     post.is_alert ? customClass = 'alertType post' : customClass = 'postType post'
     return <div className={customClass} onClick={() => requestPostResponses(post.post_id, state, dispatch)}>
       <div className="postDets">
-        <div className="postedAt leftButton">{post.post_created_at}</div>
+        <div className="postedAt rightButton">{post.post_created_at}</div>
       </div>
       <div className="postContent">{post.content}</div>
       <div className="postedBy">{post.first_name} {post.last_name}</div>
