@@ -5,6 +5,28 @@ module.exports = (state, dispatch) => {
   function updateCreateEvent (content, content_type) {
     dispatch({type: 'UPDATE_CREATE_EVENT', payload: {content, content_type}})
   }
+  function renderMinuteSelect() {
+    var options = []
+    for (var i = 1; i < 60; i++)options.push(i)
+    return (<select onChange={(e) => updateCreateEvent(e.target.value, 'minute_id')}>
+    {options.map((minute_id => {
+      var minutes = minute_id
+      if (minutes < 10) minutes = `0${minutes.toString()}`
+      return <option value={minute_id.toPrecision(2)}>{minutes}</option>
+    }))}
+    </select>)
+  }
+  function renderHourSelect() {
+    var options = []
+    for (var i = 1; i < 24; i++)options.push(i)
+    return (<select onChange={(e) => updateCreateEvent(e.target.value, 'hour_id')}>
+    {options.map((hour_id => {
+      var hours = hour_id
+      if (hours < 10) hours = `0${hours.toString()}`
+    return <option value={hour_id}>{hours}</option>
+    }))}
+    </select>)
+  }
   function renderDays(dayCount) {
     console.log({dayCount});
     var options = []
@@ -14,8 +36,6 @@ module.exports = (state, dispatch) => {
     }))
   }
   function renderDaySelect() {
-    console.log({dateTime});
-    console.log({state});
     return <select onChange={(e) => updateCreateEvent(e.target.value, 'day_id')} className="daySelect">
       {renderDays(dateTime.months[state.createEvent.month_id].dayCount)}
     </select>
@@ -45,9 +65,15 @@ module.exports = (state, dispatch) => {
   }
   function renderDateTimeSelect() {
     return <div className="dateTime">
+      <div className="dateSelect">
       {renderDaySelect()}
       {renderMonthSelect()}
       {renderYearSelect()}
+      </div>
+      <div className="timeSelect">
+        {renderHourSelect()}:
+        {renderMinuteSelect()}
+      </div>
     </div>
   }
   return <div className="createEvent">
