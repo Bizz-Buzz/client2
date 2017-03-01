@@ -8,6 +8,7 @@ module.exports = (state, dispatch) => {
     var RSVP = state.RSVPs.find((RSVP) => {
       return RSVP.event_id == event.event_id
     })
+    console.log({RSVP});
     if (RSVP) {
       if (RSVP.going == true) {
         return <div className="eventButtons">
@@ -19,7 +20,7 @@ module.exports = (state, dispatch) => {
         </div>
       }
     } else {
-      <div className="eventButtons">
+      return <div className="eventButtons">
         <button onClick={() => postRSVP(event.event_id, true, dispatch)}>Attending</button>
         <button onClick={() => postRSVP(event.event_id, false, dispatch)}>Not Attending</button>
       </div>
@@ -30,6 +31,7 @@ module.exports = (state, dispatch) => {
     return <div className="eventSelected">
       <div className="eventDescription">{event.description}</div>
       {renderRsvpButtons(event)}
+      <div className="eventRsvpCount">{event.RSVP_count} attending</div>
     </div>
   }
   function renderDate (event) {
