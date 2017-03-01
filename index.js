@@ -49,6 +49,13 @@ const initialState = {
     parent_id: 1,
     invite_only: false
   },
+  createEvent: {
+    day_id: 1,
+    month_id: 2,
+    year_id: 2017,
+    hour_id: 1,
+    minute_id: 1,
+  }
 
 
 
