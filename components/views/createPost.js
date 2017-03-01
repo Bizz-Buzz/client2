@@ -8,7 +8,7 @@ module.exports = (state, dispatch) => {
     }})
   }
   function renderOption(option) {
-    if (option.group_id != state.currentGroup.group_id && option.isAdmin) {
+    if (option.isAdmin) {
       return <option value={option.group_id}>{option.group_name}</option>
     } else return <p></p>
 
@@ -18,10 +18,7 @@ module.exports = (state, dispatch) => {
 			return group.isAdmin
 		})
 		return <select className="selectParentGroup" onChange={(e) => updatePostDetails(e.target.value, 'group_id')} >
-			<p className="selectParentGroup" >Post to</p>
-      {state.currentGroup.isAdmin
-      ? <option value={state.currentGroup.group_id}>{state.currentGroup.group_name}</option>
-      : <p></p>}
+			<option value=" " disabled selected>Group</option>
 			{parentOptions.map((option) => renderOption(option))}
 		</select>
 	}
