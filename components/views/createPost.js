@@ -38,7 +38,7 @@ module.exports = (state, dispatch) => {
     <button className="createPostButtons leftButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createPostToggle'})}>Cancel</button>
     {alertHandler()}
     {groupHandler()}
-    {state.createPost.content.length > 10
+    {state.createPost.content.length >= 6
     ? <button className="createPostButtons rightButton" onClick={() => postPost(state, dispatch)}>Post</button>
     : <p>Post too short</p>}
 

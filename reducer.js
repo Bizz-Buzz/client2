@@ -38,6 +38,9 @@ module.exports = (state, action) => {
     case 'CHANGE_GROUP':
       newState.currentGroup = payload
       return newState
+    case 'UPDATE_SEARCH':
+      newState.search[payload.search_type] = payload.search
+      return newState
     case 'RECIEVE_CONTENT':
       newState[payload.content_type] = payload.content
       newState.view = payload.content_type
