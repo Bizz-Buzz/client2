@@ -5,8 +5,8 @@ import dateTime from '../../services/dateTime'
 
 module.exports = (state, dispatch) => {
   function renderSearch () {
-    return <form>
-      <input onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'eventsSearch'} })} type="text" placeholder="Search Events"/>
+    return <form className="searchForm">
+      <input className="detsInput searchEvents" onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'eventsSearch'} })} type="text" placeholder="Search Events"/>
       <input className="resetSearch" onClick={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: null, search_type: 'eventsSearch'} })} type="reset" value="Reset"/>
     </form>
   }
@@ -91,8 +91,8 @@ module.exports = (state, dispatch) => {
         ?renderCreateEvent(state, dispatch)
         : <button className="createEventButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>New Event</button>
       }
-      <div className="eventSorting">Today</div>
       {renderSearch()}
+      <div className="eventSorting">Today</div>
       {renderEvents()}
     </div>
 }
