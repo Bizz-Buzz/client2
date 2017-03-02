@@ -74,6 +74,14 @@
 .rightButton {
   float: right; }
 
+.searchForm {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%; }
+
+.resetSearch {
+  margin: auto; }
+
 .event, .createEvent, .post, .createPost, .group, .createGroup {
   text-align: center;
   margin: auto;
@@ -103,6 +111,17 @@
   font-size: 1em;
   float: right;
   padding-bottom: 10px; }
+
+.searchEvents {
+  text-align: center;
+  width: 90vw;
+  margin: auto; }
+
+.eventSorting {
+  width: 10vw;
+  margin-left: 45vw;
+  margin-right: 45vw;
+  margin-bottom: 1%; }
 
 ::-webkit-input-placeholder {
   color: #df8764;
@@ -135,6 +154,14 @@
 .rightButton {
   float: right; }
 
+.searchForm {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%; }
+
+.resetSearch {
+  margin: auto; }
+
 .event, .createEvent, .post, .createPost, .group, .createGroup {
   text-align: center;
   margin: auto;
@@ -165,7 +192,18 @@
   float: right;
   padding-bottom: 10px; }
 
-.createEventButtons, .createEvent select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton {
+.searchEvents {
+  text-align: center;
+  width: 90vw;
+  margin: auto; }
+
+.eventSorting {
+  width: 10vw;
+  margin-left: 45vw;
+  margin-right: 45vw;
+  margin-bottom: 1%; }
+
+.createEventButtons, .resetSearch, .createEvent select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton {
   color: #393939;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
@@ -247,6 +285,11 @@
   .alertTypePost button {
     background-color: #d2b6b6; }
 
+.searchPosts {
+  text-align: center;
+  width: 90vw;
+  margin: auto; }
+
 .createPost {
   padding-bottom: 30px;
   margin-top: 1%; }
@@ -294,6 +337,11 @@
 
 .groups, .events, .postPageDiv {
   margin-top: 9vh; }
+
+.searchGroups {
+  text-align: center;
+  width: 90vw;
+  margin: auto; }
 
 .findGroupButton {
   margin-bottom: 1%; }
@@ -349,6 +397,14 @@
 
 .rightButton {
   float: right; }
+
+.searchForm {
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%; }
+
+.resetSearch {
+  margin: auto; }
 
 body {
   font-family: "Raleway", sans-serif;

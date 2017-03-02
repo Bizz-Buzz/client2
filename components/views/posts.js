@@ -6,7 +6,7 @@ import postPostResponse from '../../services/postPostResponse'
 module.exports = (state, dispatch) => {
   function renderSearch () {
     return <form className="searchForm">
-      <input className="searchInput" onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'postsSearch'} })} type="text" placeholder="Search Posts"/>
+      <input className="detsInput searchPosts" onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'postsSearch'} })} type="text" placeholder="Search Posts"/>
       <input className="resetSearch" onClick={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: null, search_type: 'postsSearch'} })} type="reset" value="Reset"/>
     </form>
   }

@@ -4,8 +4,8 @@ import requestUnjoinedGroups from '../../services/requestFindGroups'
 
 module.exports = (state, dispatch) => {
   function renderSearch () {
-    return <form>
-      <input onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'groupsSearch'} })} type="text" placeholder="Search Groups"/>
+    return <form className="searchForm">
+      <input className="detsInput searchGroups" onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'groupsSearch'} })} type="text" placeholder="Search Groups"/>
       <input className="resetSearch" onClick={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: null, search_type: 'groupsSearch'} })} type="reset" value="Reset"/>
     </form>
   }
