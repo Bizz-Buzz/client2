@@ -1,65 +1,369 @@
-.accDetsInput, .accDetsInputLast {
+.detsInput, .detsInputLast {
   width: 90%;
-  background-color: #243757;
+  background-color: #dedede;
   border: none;
-  border-bottom: 3px solid #cbcbcb;
-  color: #666666;
+  border-bottom: 3px solid #393939;
+  color: #df8764;
   font-size: 1.5em;
   font-family: "Raleway", sans-serif; }
 
-.accDetsInputLast {
+.detsInputLast {
   border-bottom: none; }
 
 .accInputDiv {
-  height: 40vh;
+  height: 35vh;
   margin-left: 10%; }
 
+.loginButton {
+  margin-bottom: 3vh; }
+
+.signUpButton {
+  margin-bottom: 3vh; }
+
+.header {
+  height: 5vh;
+  color: #393939;
+  margin: 0;
+  padding-top: 2%;
+  width: 100%;
+  background-color: #df8764;
+  text-align: center;
+  margin-bottom: 2%;
+  position: fixed;
+  height: 5vh;
+  top: 0; }
+
+.navItem {
+  text-align: center;
+  font-size: 1.3em;
+  position: relative;
+  display: inline-block;
+  margin-left: 5%;
+  margin-right: 5%; }
+  .navItem:hover {
+    text-decoration: underline; }
+
 ::-webkit-input-placeholder {
-  color: #666666;
+  color: #df8764;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .smallButton, #createEventButton {
-  background-color: #243757;
-  border: 5px solid #cbcbcb;
+.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  background-color: #dedede;
+  border: 5px solid #393939;
   padding: 0;
-  color: #cbcbcb; }
+  color: #393939; }
 
-.bigButton, .smallButton, #createEventButton {
+.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
   height: 10vh;
-  margin-left: 10%;
-  margin-bottom: 3vh; }
+  margin-left: 10%; }
 
-.smallButton, #createEventButton {
+.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;
   font-size: 1.3em;
   height: 7vh;
-  margin-bottom: 5vh; }
+  margin-top: 1%; }
 
-.header {
-  height: 5vh;
-  color: #cbcbcb;
+.leftButton {
+  float: left; }
+
+.rightButton {
+  float: right; }
+
+.event, .createEvent, .post, .createPost, .group, .createGroup {
+  text-align: center;
+  margin: auto;
+  border: 5px solid #393939;
   width: 80%;
-  margin-top: 5%;
-  margin-left: 10%;
-  margin-right: 10%; }
+  padding-top: 10px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Raleway", sans-serif;
+  color: #393939;
+  margin-bottom: 10px; }
 
-.navItem {
-  margin: 9%; }
+.eventTitle {
+  font-size: 1.7em; }
+
+.eventDescription {
+  font-size: 1.2em; }
+
+.eventName {
+  font-size: 1em;
+  float: left;
+  padding-bottom: 10px;
+  color: #df8764; }
+
+.eventTime {
+  font-size: 1em;
+  float: right;
+  padding-bottom: 10px; }
+
+::-webkit-input-placeholder {
+  color: #df8764;
+  font-family: "Raleway", sans-serif; }
+
+.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  background-color: #dedede;
+  border: 5px solid #393939;
+  padding: 0;
+  color: #393939; }
+
+.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  width: 80%;
+  height: 10vh;
+  margin-left: 10%; }
+
+.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  width: 65%;
+  margin-left: 17.5%;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3em;
+  height: 7vh;
+  margin-top: 1%; }
+
+.leftButton {
+  float: left; }
+
+.rightButton {
+  float: right; }
+
+.event, .createEvent, .post, .createPost, .group, .createGroup {
+  text-align: center;
+  margin: auto;
+  border: 5px solid #393939;
+  width: 80%;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "Raleway", sans-serif;
+  color: #393939;
+  margin-bottom: 10px; }
+
+.eventTitle {
+  font-size: 1.7em; }
+
+.eventDescription {
+  font-size: 1.2em; }
+
+.eventName {
+  font-size: 1em;
+  float: left;
+  padding-bottom: 10px;
+  color: #df8764; }
+
+.eventTime {
+  font-size: 1em;
+  float: right;
+  padding-bottom: 10px; }
+
+.createEventButtons, .createEvent select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton {
+  color: #393939;
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+  background-color: #dedede;
+  border: none; }
+
+.createEvent {
+  padding-bottom: 30px;
+  margin-top: 1%; }
+  .createEvent select {
+    border: 2px solid black;
+    margin: 2%;
+    margin-left: 5%;
+    background-color: #df8764;
+    font-size: 1em;
+    padding: 1%; }
+
+.createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  margin-bottom: 3vh; }
+
+.detsInput.eventInput, .eventInput.detsInputLast {
+  text-align: center;
+  font-size: 1.3em; }
+
+.dateSelect {
+  display: inline-flex;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 15%; }
+
+.yearSelect {
+  margin-left: 2000px; }
+
+.posts {
+  margin-top: 9vh; }
+
+.postContent {
+  font-size: 1.2em; }
+
+.postedBy {
+  font-size: 1em; }
+
+.postedAt {
+  font-size: 0.8em;
+  float: right;
+  margin-left: 50%; }
+  @media screen and (min-width: 425px) {
+    .postedAt {
+      margin-left: 63%;
+      font-size: 1em; } }
+  @media screen and (min-width: 499px) {
+    .postedAt {
+      margin-left: 63.5%;
+      font-size: 1em; } }
+  @media screen and (min-width: 768px) {
+    .postedAt {
+      margin-left: 70%;
+      font-size: 1em; } }
+  @media screen and (min-width: 768px) {
+    .postedAt {
+      margin-left: 75%;
+      font-size: 1em; } }
+  @media screen and (min-width: 1440px) {
+    .postedAt {
+      margin-left: 85%;
+      font-size: 1.3em; } }
+
+.postRespones {
+  font-size: 1em;
+  float: right;
+  padding-bottom: 10px;
+  color: #df8764; }
+
+.alertTypePost {
+  background-color: #d2b6b6;
+  border-color: #df8764; }
+  .alertTypePost input {
+    background-color: #d2b6b6; }
+  .alertTypePost button {
+    background-color: #d2b6b6; }
+
+.createPost {
+  padding-bottom: 30px;
+  margin-top: 1%; }
+
+.createPostButtons {
+  margin-top: 1%; }
+
+.detsInput.postInput, .postInput.detsInputLast {
+  text-align: center;
+  font-size: 1.3em; }
+
+.postTypeToggleButton {
+  margin-left: 80%;
+  margin-top: 1%; }
+
+.postTypeToggleShow {
+  color: #df8764; }
+
+.alertTypeToggleShow {
+  color: red; }
+
+.postResponses {
+  margin-top: 5%;
+  width: 80%;
+  margin: auto; }
+
+.createResButtons {
+  margin-bottom: 5%; }
+
+.postResponseInput {
+  margin-bottom: 15%; }
+
+.group {
+  padding: 0; }
+
+.groupName {
+  font-size: 1.5em;
+  margin-top: 2%;
+  margin-bottom: 1%; }
+
+.groupMemberCount {
+  font-size: 0.9em;
+  margin: 3%;
+  color: #df8764; }
+
+.groups, .events, .postPageDiv {
+  margin-top: 9vh; }
+
+.findGroupButton {
+  margin-bottom: 1%; }
+
+.createGroupButton {
+  margin-bottom: 2.5%; }
+
+.groupInput {
+  text-align: center; }
+
+.createGroup {
+  padding-bottom: 30px;
+  margin-top: 1%; }
+
+.toggleButton, .selectParentGroup, .changeGroupButton {
+  border: 2px solid black;
+  margin: 2%;
+  background-color: #df8764;
+  font-size: 1em;
+  padding: 1%;
+  width: 50%; }
+
+.findGroup {
+  margin-top: 9vh; }
+
+::-webkit-input-placeholder {
+  color: #df8764;
+  font-family: "Raleway", sans-serif; }
+
+.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  background-color: #dedede;
+  border: 5px solid #393939;
+  padding: 0;
+  color: #393939; }
+
+.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  width: 80%;
+  height: 10vh;
+  margin-left: 10%; }
+
+.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+  width: 65%;
+  margin-left: 17.5%;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3em;
+  height: 7vh;
+  margin-top: 1%; }
+
+.leftButton {
+  float: left; }
+
+.rightButton {
+  float: right; }
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: #243757;
+  background-color: #dedede;
   position: relative;
-  min-height: 100%; }
+  min-height: 100%;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  border-top-width: 10px; }
 
 .headings, .mainHeading, .subHeading, .authErrorMsg, .inAppHeading {
   margin: 0;
-  color: #cbcbcb; }
+  color: #393939; }
 
 .mainHeading {
   font-family: "Open Sans", sans-serif;
@@ -74,16 +378,16 @@ body {
   text-align: center;
   margin-bottom: 2%; }
 
-.headingDiv {
-  margin-top: 5vh;
-  height: 30vh; }
-
 .authErrorMsg {
   color: red;
   font-size: 1em; }
 
+.headingDiv {
+  margin-top: 5vh;
+  height: 30vh; }
+
 .greeting {
-  color: #cbcbcb;
+  color: #393939;
   text-align: center;
   font-size: 1.9em;
   font-family: "Open Sans", sans-serif;
@@ -95,49 +399,32 @@ body {
   margin-bottom: 5vh;
   font-size: 1em; }
 
-.bizzListItem {
-  text-align: center;
-  margin: auto;
-  border: 5px solid #cbcbcb;
-  width: 80%;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.7em;
-  color: #cbcbcb;
-  margin-bottom: 10px; }
-
-.buzzText {
-  font-size: 1.3em;
-  color: #cbcbcb;
-  margin-bottom: 2px; }
-
 .buzzItem {
-  border: 2px solid #666666;
+  border: 2px solid #df8764;
   border-radius: 5px;
   margin-bottom: 5px; }
 
 .buzzPostTime {
   font-size: 0.8em;
-  color: #666666;
+  color: #df8764;
   text-align: right;
   margin-right: 10px;
   width: 40%;
   float: right; }
 
 .thing1 {
-  color: #cbcbcb;
+  color: #393939;
   margin: 0;
   margin-bottom: 3px; }
 
 .thing2 {
-  color: #666666;
+  color: #df8764;
   margin: 0;
   margin-bottom: 20px; }
 
 .posterName {
   text-align: left;
-  color: #666666;
+  color: #df8764;
   font-size: 1em;
   margin-left: 10px;
   width: 40%; }
@@ -148,51 +435,5 @@ body {
   width: 80%;
   height: 70vh;
   overflow-y: scroll; }
-
-.bizz {
-  text-align: center; }
-
-.footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #cbcbcb;
-  height: 10vh; }
-
-.footerIcon {
-  width: 15vw;
-  margin-left: 15vw;
-  margin-right: 15vw; }
-
-.backIcon {
-  height: 7vh;
-  float: left; }
-
-.makeABuzzSubmit {
-  font-family: "Raleway", sans-serif;
-  font-size: 0.7em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
-  padding-right: 1em;
-  color: #cbcbcb;
-  border: 1px solid #666666;
-  border-radius: 100px;
-  margin-left: 8px;
-  background-color: #243757; }
-
-#makeABuzzInput {
-  width: 60vw;
-  margin-bottom: 2vh; }
-
-#bizzNameInput {
-  margin-top: 100px; }
-
-.footerItem {
-  margin: 3vw;
-  color: #243757;
-  font-size: 1em;
-  padding: 5px; }
 
 /*# sourceMappingURL=index.css.map */

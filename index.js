@@ -26,14 +26,43 @@ const initialState = {
   signupDetails: {},
   authError: null,
   user: {},
-  bizz: null,
+  currentGroup: [],
+  search: {
+    eventsSearch: null
+  },
   events: [],
+  RSVPs: [],
   createEventToggle: false,
   posts: [],
+  createPost: {
+    is_alert: false,
+    content: '',
+    group_id: 1
+  },
   createPostToggle: false,
-  createPost: '',
+  alertsOnly: false,
+  postResponse: '',
   selectedPost: null,
-  postRespones: []
+  postResponses: [],
+  groups: [],
+  findGroup: [],
+  selectedGroup: null,
+  createGroupToggle: false,
+  createGroup: {
+    parent_id: null,
+    invite_only: false
+  },
+  createEvent: {
+    day_id: null,
+    month_id: null,
+    year_id: null,
+    hour_id: null,
+    minute_id: null,
+    group_id: null,
+    title: null,
+    description: null
+  },
+  selectedEvent: null
 
 }
 
