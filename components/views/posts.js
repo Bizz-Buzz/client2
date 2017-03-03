@@ -46,21 +46,19 @@ module.exports = (state, dispatch) => {
       </div>
     </div>
   }
-  function renderAlerts() {
-    var alerts = state.posts.filter((post) => {
+  function filterAlerts(posts) {
+    var alerts = posts.filter((post) => {
       return post.is_alert == true
     })
     return alerts
   }
   function renderPosts() {
-    var posts
+    var posts = state.posts
     if (state.alertsOnly) {
-      var alerts = renderAlerts()
-      posts = alerts
+      posts = filterAlerts(posts)
     }
-
-    if (state.search.postsSearch === '' || !state.search.postsSearch) posts = state.posts
-    else posts = state.posts.filter((post) => {
+    if (state.search.postsSearch === '' || !state.search.postsSearch) posts = posts
+    else posts = posts.filter((post) => {
       return (post.group_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || ''))
       || (post.first_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || ''))
       || (post.last_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || ''))
