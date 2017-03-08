@@ -86,17 +86,18 @@ module.exports = (state, dispatch) => {
       {renderYearSelect()}
       </div>
       <div className="timeSelect">
-        {renderHourSelect()} :
+        {renderHourSelect()}
         {renderMinuteSelect()}
       </div>
       {renderGroupSelect()}
+      {renderCreateButton()}
     </form>
   }
   function renderCreateButton() {
     var event = state.createEvent
     if (!event.group_id || !event.minute_id || !event.hour_id || !event.day_id || !event.month_id || !event.year_id || !event.title || !event.description) {
-      return <div className="inputInvalid">Please Select All Fields</div>
-    } else return <button onClick={() => postEvent(state, dispatch)} className="createEventButtons rightButton">Create Event</button>
+      return <div className="authErrorMsg pleaseSelectAllError">Please Select All Fields</div>
+    } else return <button onClick={() => postEvent(state, dispatch)} className="toggleButton">Create Event</button>
   }
   return <div className="createEvent">
     <input onChange={(e) => updateCreateEvent(e.target.value, 'title')} className="detsInput eventInput" type="text" placeholder="Event Title"/>
@@ -104,7 +105,6 @@ module.exports = (state, dispatch) => {
     {renderDateTimeSelect()}
     <div className="createEventButtonsDiv">
       <button className="createEventButtons leftButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>Cancel</button>
-      {renderCreateButton()}
     </div>
   </div>
 }
