@@ -65,12 +65,12 @@ const initialState = {
   selectedEvent: null,
   leaveRequestDetails: {
     group_id: null,
-    leaveReason: '',
+    leave_reason: '',
     year_id: null,
     month_id: null,
     day_id: null,
     leave_days: null,
-    isSickLeave: true
+    is_sick_leave: true
   },
   adminMessageDetails: {
     group_id: null,
