@@ -116,6 +116,9 @@ module.exports = (state, action) => {
     case 'UPDATE_LEAVE_REQUEST_DETAILS':
       newState.leaveRequestDetails[payload.content_type] = payload.content
       return newState
+    case 'UPDATE_ADMIN_MESSAGE_DETAILS':
+      newState.adminMessageDetails[payload.content_type] = payload.content_type
+      return newState
     default:
       return newState
   }
