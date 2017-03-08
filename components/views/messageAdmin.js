@@ -17,7 +17,7 @@ module.exports = (state, dispatch) => {
   function renderSendAdminMessage() {
     if (!state.adminMessageDetails.message || !state.adminMessageDetails.group_id) {
       return <div className="authErrorMsg pleaseSelectAllError">Please fill in all fields</div>
-    } else return <button>Send Message</button>
+    } else return <button className="toggleButton">Send Message</button>
   }
   return <div className="messageAdminForm">
     <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Back</button>
