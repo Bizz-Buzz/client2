@@ -20,7 +20,7 @@ module.exports = (state, dispatch) => {
   }
   function renderMinuteSelect() {
     var options = []
-    for (var i = 1; i < 60; i++)options.push(i)
+    for (var i = 0; i < 60; i++)options.push(i)
     return (<select className="minuteSelect" onChange={(e) => updateCreateEvent(e.target.value, 'minute_id')}>
       <option value=" " disabled selected>Minute</option>
       {options.map((minute_id => {
@@ -32,7 +32,7 @@ module.exports = (state, dispatch) => {
   }
   function renderHourSelect() {
     var options = []
-    for (var i = 1; i < 24; i++)options.push(i)
+    for (var i = 0; i < 24; i++)options.push(i)
     return (<select className="hourSelect" onChange={(e) => updateCreateEvent(e.target.value, 'hour_id')}>
       <option value=" " disabled selected>Hour</option>
       {options.map((hour_id => {

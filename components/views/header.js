@@ -10,7 +10,6 @@ module.exports = (state, dispatch) => {
       <span className="navItem" onClick={() => requestPosts(state, dispatch)}>Posts </span>
       <span className="navItem" onClick={() => requestGroups(state, dispatch)}>Groups</span>
       <span className="navItem" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Communication</span>
-
     </nav>
   </div>
 }
