@@ -17,7 +17,7 @@ module.exports = ({ state, dispatch }) => {
         <h1 className="mainHeading">CREATE ACCOUNT</h1>
       </div>
       <form>
-        {state.authError ? <p className="authErrorMsg" >{state.authError}</p> : ""}
+        {state.authError ? <p className="authErrorMsgSignUp" >{state.authError}</p> : ""}
         <div className="accInputDiv">
           <input className="detsInput" onChange={saveEmail} type='text' placeholder='Email' />
           <input className="detsInput" onChange={savePassword} type='password' placeholder='Password' />

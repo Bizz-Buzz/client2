@@ -20,7 +20,7 @@ module.exports = (state, dispatch) => {
     } else return <button>Send Message</button>
   }
   return <div className="groups">
-    <button onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Back</button>
+    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Back</button>
     <div className="messageAdminForm">
       {renderGroupSelect()}
       <input onChange={(e) => updateAdminMessageDetails(e.target.value, 'message')} type="text" placeholder="message"></input>

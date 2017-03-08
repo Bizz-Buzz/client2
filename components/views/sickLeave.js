@@ -6,6 +6,6 @@ module.exports = (state, dispatch) => {
     <div>
       Sick Leave
     </div>
-    <button onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Back</button>
+    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Back</button>
   </div>
 }

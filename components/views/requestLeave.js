@@ -25,14 +25,12 @@ module.exports = (state, dispatch) => {
     </select>
   }
   function renderMonthSelect() {
-    return <div>
-      <select  className="monthSelect" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'month_id')}>
+    return <select  className="monthSelect" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'month_id')}>
         <option value=" " disabled selected>Month</option>
         {dateTime.months.map((month) => {
           return <option value={month.id}>{month.name}</option>
         })}
       </select>
-    </div>
   }
   function renderYearOptions(current_year) {
     var options = []
@@ -42,13 +40,11 @@ module.exports = (state, dispatch) => {
     return options
   }
   function renderYearSelect() {
-    return <div>
-      <select className="yearSelect" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'year_id')}>
+    return <select className="yearSelect" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'year_id')}>
         <option value=" " disabled selected>Year</option>
 
         {renderYearOptions(2017)}
       </select>
-    </div>
   }
   function renderLeaveDaysOptions(count) {
     var arr = []
@@ -80,10 +76,10 @@ module.exports = (state, dispatch) => {
 
   function renderLeaveForm() {
     return <div className="leaveForm">
-      <button onClick={(e) => updateLeaveRequestDetails(!state.leaveRequestDetails.isSickLeave, 'isSickLeave')}>Change Leave Type</button>
+      <button className="toggleButton" onClick={(e) => updateLeaveRequestDetails(!state.leaveRequestDetails.isSickLeave, 'isSickLeave')}>Change Leave Type</button>
       {renderLeaveType()}
       {renderDateTimeSelect()}
-      <input onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leaveReason')} type="text" placeholder="Reason for Leave"></input>
+      <input className="detsInput" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leaveReason')} type="text" placeholder="Reason for Leave"></input>
 
     </div>
   }
@@ -108,8 +104,8 @@ module.exports = (state, dispatch) => {
       return <div className="authErrorMsg pleaseSelectAllError">Please Select All Fields</div>
     } else return <button className="toggleButton">Create Event</button>
   }
-  return (<div className="groups">
-    <button onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Go Back</button>
+  return (<div className="applyLeaveDiv">
+    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Go Back</button>
     <div>
       {renderGroupSelect()}
       {renderContact()}
@@ -117,7 +113,6 @@ module.exports = (state, dispatch) => {
       {renderRequestButton()}
       <button>Send Leave Request</button>
     </div>
-
   </div>)
 
 }

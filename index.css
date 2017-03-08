@@ -24,13 +24,12 @@
   height: 5vh;
   color: #393939;
   margin: 0;
-  padding-top: 2%;
   width: 100%;
   background-color: #df8764;
   text-align: center;
   margin-bottom: 2%;
   position: fixed;
-  height: 5vh;
+  height: 10vh;
   top: 0; }
 
 .navItem {
@@ -39,7 +38,8 @@
   position: relative;
   display: inline-block;
   margin-left: 5%;
-  margin-right: 5%; }
+  margin-right: 5%;
+  padding: 0.8%; }
   .navItem:hover {
     text-decoration: underline; }
 
@@ -47,20 +47,20 @@
   color: #df8764;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   background-color: #dedede;
   border: 5px solid #393939;
   padding: 0;
   color: #393939; }
 
-.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
   height: 10vh;
   margin-left: 10%; }
 
-.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;
@@ -82,7 +82,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .post, .createPost, .group, .createGroup {
+.event, .createEvent, .applyLeaveDiv, .post, .createPost, .group, .createGroup {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -127,20 +127,20 @@
   color: #df8764;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   background-color: #dedede;
   border: 5px solid #393939;
   padding: 0;
   color: #393939; }
 
-.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
   height: 10vh;
   margin-left: 10%; }
 
-.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;
@@ -162,7 +162,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .post, .createPost, .group, .createGroup {
+.event, .createEvent, .applyLeaveDiv, .post, .createPost, .group, .createGroup {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -203,23 +203,23 @@
   margin-right: 45vw;
   margin-bottom: 1%; }
 
-.createEventButtons, .resetSearch, .createEvent select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton {
+.createEventButtons, .resetSearch, .createEvent select, .applyLeaveDiv select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton {
   color: #393939;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
   background-color: #dedede;
   border: none; }
 
-.createEvent {
+.createEvent, .applyLeaveDiv {
   padding-bottom: 30px;
   margin-top: 1%; }
-  .createEvent select {
+  .createEvent select, .applyLeaveDiv select {
     border: 2px solid black;
     margin-left: 5%;
     background-color: #df8764;
     font-size: 1em; }
 
-.createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   margin-bottom: 3vh; }
 
 .detsInput.eventInput, .eventInput.detsInputLast {
@@ -237,7 +237,7 @@
   margin: 3%; }
 
 .minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect {
-  width: 18vw; }
+  width: 20vw; }
 
 .posts {
   margin-top: 9vh; }
@@ -333,8 +333,8 @@
   margin: 3%;
   color: #df8764; }
 
-.groups, .events, .postPageDiv {
-  margin-top: 9vh; }
+.groups, .events, .posts, .communication, .applyLeaveDiv {
+  margin-top: 11vh; }
 
 .searchGroups {
   text-align: center;
@@ -370,20 +370,20 @@
   color: #df8764;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   background-color: #dedede;
   border: 5px solid #393939;
   padding: 0;
   color: #393939; }
 
-.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
   height: 10vh;
   margin-left: 10%; }
 
-.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
+.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;
@@ -416,7 +416,7 @@ body {
   padding-top: 0px;
   border-top-width: 10px; }
 
-.headings, .mainHeading, .subHeading, .authErrorMsg, .inAppHeading {
+.headings, .mainHeading, .subHeading, .authErrorMsg, .authErrorMsgSignUp, .inAppHeading {
   margin: 0;
   color: #393939; }
 
@@ -425,7 +425,7 @@ body {
   font-size: 3em;
   margin-left: 10%; }
 
-.subHeading, .authErrorMsg {
+.subHeading, .authErrorMsg, .authErrorMsgSignUp {
   font-size: 0.8em;
   margin-left: 10%; }
 
@@ -434,6 +434,11 @@ body {
   margin-bottom: 2%; }
 
 .authErrorMsg {
+  color: red;
+  font-size: 1em;
+  margin-left: 0%; }
+
+.authErrorMsgSignUp {
   color: red;
   font-size: 1em; }
 
