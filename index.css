@@ -333,9 +333,6 @@
   margin: 3%;
   color: #df8764; }
 
-.groups, .events, .posts, .communication, .applyLeaveDiv, .messageAdminForm, .emergencyDiv {
-  margin-top: 11vh; }
-
 .searchGroups {
   text-align: center;
   width: 90vw;
@@ -404,6 +401,9 @@
 
 .resetSearch {
   margin: auto; }
+
+.contentDiv {
+  margin-top: 11vh; }
 
 body {
   font-family: "Raleway", sans-serif;

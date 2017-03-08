@@ -38,6 +38,8 @@ module.exports = ({ state, dispatch }) => {
 
   return <div>
     {header(state, dispatch)}
-    {viewHandler()}
+    <div className="contentDiv">
+      {viewHandler()}
+    </div>
   </div>
 }
