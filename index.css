@@ -235,6 +235,10 @@
   margin-right: 15%;
   margin: auto; }
 
+.dateSelect {
+  width: 100%;
+  display: inline-flex; }
+
 .posts {
   margin-top: 9vh; }
 
@@ -356,7 +360,8 @@
   background-color: #df8764;
   font-size: 1em;
   padding: 1%;
-  width: 50%; }
+  width: 50%;
+  border-radius: 0%; }
 
 .findGroup {
   margin-top: 9vh; }
