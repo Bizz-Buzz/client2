@@ -1,6 +1,6 @@
 import React from 'react'
 import dateTime from '../../services/dateTime'
-
+import postLeaveRequest from '../../services/postLeaveRequest'
 
 module.exports = (state, dispatch) => {
   var currentGroup = state.groups.find((group) => {
@@ -76,10 +76,10 @@ module.exports = (state, dispatch) => {
 
   function renderLeaveForm() {
     return <div className="leaveForm">
-      <button className="toggleButton" onClick={(e) => updateLeaveRequestDetails(!state.leaveRequestDetails.isSickLeave, 'isSickLeave')}>Change Leave Type</button>
+      <button className="toggleButton" onClick={(e) => updateLeaveRequestDetails(!state.leaveRequestDetails.is_sick_leave, 'is_sick_leave')}>Change Leave Type</button>
       {renderLeaveType()}
       {renderDateTimeSelect()}
-      <input className="detsInput" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leaveReason')} type="text" placeholder="Reason for Leave"></input>
+      <input className="detsInput" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leave_reason')} type="text" placeholder="Reason for Leave"></input>
 
     </div>
   }
@@ -100,9 +100,9 @@ module.exports = (state, dispatch) => {
   }
   function renderRequestButton() {
     var request = state.leaveRequestDetails
-    if (!request.group_id || !request.day_id || !request.month_id || !request.year_id || !request.leaveReason || !request.leave_days) {
+    if (!request.group_id || !request.day_id || !request.month_id || !request.year_id || !request.leave_reason || !request.leave_days) {
       return <div className="authErrorMsg pleaseSelectAllError">Please Select All Fields</div>
-    } else return <button className="toggleButton">Create Event</button>
+    } else return <button onClick={() => postLeaveRequest(state, dispatch)} className="toggleButton">Send Leave Request</button>
   }
   return (<div className="applyLeaveDiv">
     <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Go Back</button>
@@ -111,7 +111,6 @@ module.exports = (state, dispatch) => {
       {renderContact()}
       {renderLeaveForm()}
       {renderRequestButton()}
-      <button>Send Leave Request</button>
     </div>
   </div>)
 
