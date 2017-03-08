@@ -2,7 +2,7 @@ import React from 'react'
 
 
 module.exports = (state, dispatch) => {
-  return <div className="groups">
+  return <div className="emergencyDiv">
     <div>
       Emergency Reporting
     </div>

@@ -19,11 +19,11 @@ module.exports = (state, dispatch) => {
       return <div className="authErrorMsg pleaseSelectAllError">Please fill in all fields</div>
     } else return <button>Send Message</button>
   }
-  return <div className="groups">
+  return <div className="messageAdminForm">
     <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Back</button>
-    <div className="messageAdminForm">
+    <div>
       {renderGroupSelect()}
-      <input onChange={(e) => updateAdminMessageDetails(e.target.value, 'message')} type="text" placeholder="message"></input>
+      <input className="detsInput" onChange={(e) => updateAdminMessageDetails(e.target.value, 'message')} type="text" placeholder="message"></input>
       {renderSendAdminMessage()}
     </div>
   </div>
