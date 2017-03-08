@@ -4,10 +4,12 @@ import renderCreateEvent from './views/createEvent'
 import renderPosts from './views/posts'
 import renderGroups from './views/groups'
 import renderFindGroup from './views/findGroup'
-import renderCommunication from './views/communication'
+import renderAdmin from './views/admin'
 import renderRequestLeave from './views/requestLeave'
 import renderEmergencyReport from './views/emergencyReport'
 import renderMessageAdmin from './views/messageAdmin'
+import renderAdminSuccess from './views/adminSuccess'
+import renderGroupAdmin from './views/groupAdmin'
 import header from './views/header'
 
 module.exports = ({ state, dispatch }) => {
@@ -23,14 +25,18 @@ module.exports = ({ state, dispatch }) => {
         return renderGroups(state, dispatch)
       case 'findGroup':
         return renderFindGroup(state, dispatch)
-      case 'communication':
-        return renderCommunication(state, dispatch)
+      case 'admin':
+        return renderAdmin(state, dispatch)
       case 'requestLeave':
         return renderRequestLeave(state, dispatch)
       case 'emergency':
         return renderEmergencyReport(state, dispatch)
       case 'messageAdmin':
         return renderMessageAdmin(state, dispatch)
+      case 'adminSuccess':
+        return renderAdminSuccess(state, dispatch)
+      case 'groupAdmin':
+        return renderGroupAdmin(state, dispatch)
       default:
         return renderEvents(state, dispatch)
     }

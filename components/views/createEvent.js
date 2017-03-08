@@ -79,7 +79,7 @@ module.exports = (state, dispatch) => {
       </select>
   }
   function renderDateTimeSelect() {
-    return <form className="dateTime">
+    return <div className="dateTime">
       <div className="dateSelect">
       {renderMonthSelect()}
       {renderDaySelect()}
@@ -89,20 +89,25 @@ module.exports = (state, dispatch) => {
         {renderHourSelect()}
         {renderMinuteSelect()}
       </div>
-      {renderGroupSelect()}
-      {renderCreateButton()}
-    </form>
+
+    </div>
+  }
+  function postEventFunction (e) {
+    e.preventDefault()
+    postEvent(state, dispatch)
   }
   function renderCreateButton() {
     var event = state.createEvent
     if (!event.group_id || !event.minute_id || !event.hour_id || !event.day_id || !event.month_id || !event.year_id || !event.title || !event.description) {
-      return <div className="authErrorMsg pleaseSelectAllError">Please Select All Fields</div>
-    } else return <button onClick={() => postEvent(state, dispatch)} className="toggleButton">Create Event</button>
+      return <div className="authErrorMsg pleaseSelectAllError">Please Fill In All Fields</div>
+    } else return <button onClick={(e) => postEventFunction(e)} className="toggleButton">Create Event</button>
   }
   return <div className="createEvent">
     <input onChange={(e) => updateCreateEvent(e.target.value, 'title')} className="detsInput eventInput" type="text" placeholder="Event Title"/>
     <input onChange={(e) => updateCreateEvent(e.target.value, 'description')} className="detsInputLast eventInput" type="text" placeholder="Event Description"/>
     {renderDateTimeSelect()}
+    {renderGroupSelect()}
+    {renderCreateButton()}
     <div className="createEventButtonsDiv">
       <button className="createEventButtons leftButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createEventToggle'})}>Cancel</button>
     </div>

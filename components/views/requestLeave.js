@@ -68,14 +68,14 @@ module.exports = (state, dispatch) => {
   }
   function renderLeaveType() {
     return <div className="leaveType">{
-      state.leaveRequestDetails.isSickLeave
+      state.leaveRequestDetails.is_sick_leave
         ? "Sick Leave"
         : "Annual Leave"
     } </div>
   }
 
-  function renderLeaveForm() {
-    return <div className="leaveForm">
+  function renderLeavediv() {
+    return <div className="leavediv">
       <button className="toggleButton" onClick={(e) => updateLeaveRequestDetails(!state.leaveRequestDetails.is_sick_leave, 'is_sick_leave')}>Change Leave Type</button>
       {renderLeaveType()}
       {renderDateTimeSelect()}
@@ -105,11 +105,11 @@ module.exports = (state, dispatch) => {
     } else return <button onClick={() => postLeaveRequest(state, dispatch)} className="toggleButton">Send Leave Request</button>
   }
   return (<div className="applyLeaveDiv">
-    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Go Back</button>
+    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Go Back</button>
     <div>
       {renderGroupSelect()}
       {renderContact()}
-      {renderLeaveForm()}
+      {renderLeavediv()}
       {renderRequestButton()}
     </div>
   </div>)

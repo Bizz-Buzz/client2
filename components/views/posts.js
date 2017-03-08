@@ -5,12 +5,12 @@ import postPostResponse from '../../services/postPostResponse'
 
 module.exports = (state, dispatch) => {
   function renderSearch () {
-    return <form className="searchForm">
+    return <div className="searchdiv">
       <input className="detsInput searchPosts" onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'postsSearch'} })} type="text" placeholder="Search Posts"/>
       <input className="resetSearch" onClick={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: null, search_type: 'postsSearch'} })} type="reset" value="Reset"/>
-    </form>
+    </div>
   }
-  function renderPostResponseForm() {
+  function renderPostResponsediv() {
     return <div className="postResponseInput">
       <input type="text" className="detsInput postInput customClass" onChange={(e) => dispatch({type: "UPDATE_RESPONSE", payload: e.target.value})}placeholder="response"/>
       {state.postResponse.length < 200
@@ -20,13 +20,13 @@ module.exports = (state, dispatch) => {
   }
   function renderResponse(response) {
     return <div className="postResponse">
-      {response.response_content} - {response.first_name} {response.last_name}
+      <p className="responseName">{response.last_name}:</p><p className="responseContent">{response.response_content}</p>
     </div>
   }
   function renderRespones(post) {
     if (state.selectedPost == post.post_id) {
       return <div className="postResponses">
-        {renderPostResponseForm()}
+        {renderPostResponsediv()}
         {state.postResponses.map((response) => renderResponse(response))}
       </div>
     } else return <div className="postRespones">{post.responses} responses</div>

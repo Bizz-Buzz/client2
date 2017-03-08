@@ -41,6 +41,5 @@ module.exports = (state, dispatch) => {
     {state.createPost.content.length >= 6
     ? <button className="createPostButtons rightButton" onClick={() => postPost(state, dispatch)}>Post</button>
     : <p>Post too short</p>}
-
   </div>
 }

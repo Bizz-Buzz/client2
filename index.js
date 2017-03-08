@@ -74,7 +74,7 @@ const initialState = {
   },
   adminMessageDetails: {
     group_id: null,
-    message: null
+    content: null
   }
 }
 

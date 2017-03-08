@@ -16,7 +16,7 @@ module.exports = ({ state, dispatch }) => {
       <div className='headingDiv'>
         <h1 className="mainHeading">CREATE ACCOUNT</h1>
       </div>
-      <form>
+      <div>
         {state.authError ? <p className="authErrorMsgSignUp" >{state.authError}</p> : ""}
         <div className="accInputDiv">
           <input className="detsInput" onChange={saveEmail} type='text' placeholder='Email' />
@@ -26,7 +26,7 @@ module.exports = ({ state, dispatch }) => {
           <input className="detsInputLast" onChange={saveLastName} type="text" placeholder="Last Name" />
         </div>
         <button className='signUpButton' onClick={authorizeSignUp} type='submit'>Sign Up</button>
-      </form>
+      </div>
       <button className='cancelSignUpButton' onClick={() => dispatch({type: 'CHANGE_ROUTE', payload: '/'})} type='submit'>Cancel</button>
     </div>
   )
