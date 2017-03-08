@@ -15,7 +15,7 @@
     "deploy": "npm run build:js && npm run build:css && npm run dist && npm run push"
   },
   "browserify": {
-    "transdiv": [
+    "transform": [
       "babelify"
     ]
   },
