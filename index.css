@@ -215,7 +215,6 @@
   margin-top: 1%; }
   .createEvent select, .applyLeaveDiv select, .messageAdminForm select, .emergencyDiv select {
     border: 2px solid black;
-    margin-left: 5%;
     background-color: #df8764;
     font-size: 1em; }
 
@@ -237,7 +236,9 @@
   margin: 3%; }
 
 .minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect {
-  width: 20vw; }
+  width: 20vw;
+  margin-left: 2.5%;
+  margin-right: 2.5%; }
 
 .posts {
   margin-top: 9vh; }
