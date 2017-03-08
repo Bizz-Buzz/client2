@@ -10,7 +10,7 @@ module.exports = (state, dispatch) => {
     .end((err, res) => {
       console.log(res);
       if (!err) {
-       console.log(res.body);
+       dispatch({type: 'ADMIN_POST_SUCCESS', payload: 'Leave Request Sent'})
       }
       else dispatch({ type: 'CHANGE_VIEW', payload: 'leaveRequests' })
     })

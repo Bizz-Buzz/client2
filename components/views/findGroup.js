@@ -3,10 +3,10 @@ import renderCreateGroup from './createGroup'
 
 module.exports = (state, dispatch) => {
   function renderSearch () {
-    return <form className="searchForm">
+    return <div className="searchdiv">
       <input className="detsInput searchGroups" onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'findGroupSearch'} })} type="text" placeholder="Search Groups"/>
       <input className="resetSearch" onClick={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: null, search_type: 'findGroupSearch'} })} type="reset" value="Reset"/>
-    </form>
+    </div>
   }
   function renderRequestButtons (group) {
     if (group.invite_only) {

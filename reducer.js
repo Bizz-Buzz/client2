@@ -100,7 +100,8 @@ module.exports = (state, action) => {
     case 'RECIEVE_EVENT':
       newState.events.unshift(payload)
       var keys = Object.keys(newState.createEvent)
-      keys.forEach((prop) => prop = null)
+      console.log({keys});
+      keys.forEach((prop) => newState.createEvent[prop] = null)
       return newState
     case 'SELECT_EVENT':
       newState.selectedEvent = payload
@@ -118,6 +119,10 @@ module.exports = (state, action) => {
       return newState
     case 'UPDATE_ADMIN_MESSAGE_DETAILS':
       newState.adminMessageDetails[payload.content_type] = payload.content_type
+      return newState
+    case 'ADMIN_POST_SUCCESS':
+      newState.successAlert = payload
+      newState.view = 'adminSuccess'
       return newState
     default:
       return newState

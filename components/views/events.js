@@ -5,10 +5,10 @@ import dateTime from '../../services/dateTime'
 
 module.exports = (state, dispatch) => {
   function renderSearch () {
-    return <form className="searchForm">
+    return <div className="searchdiv">
       <input className="detsInput searchEvents" onChange={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: e.target.value, search_type: 'eventsSearch'} })} type="text" placeholder="Search Events"/>
       <input className="resetSearch" onClick={(e) => dispatch({type: 'UPDATE_SEARCH', payload: {search: null, search_type: 'eventsSearch'} })} type="reset" value="Reset"/>
-    </form>
+    </div>
   }
   function renderRsvpButtons (event) {
     var RSVP = state.RSVPs.find((RSVP) => {
