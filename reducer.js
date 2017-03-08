@@ -128,6 +128,9 @@ module.exports = (state, action) => {
       newState.admin = payload
       newState.view = 'groupAdmin'
       return newState
+    case 'CHANGE_ADMIN_VIEW':
+      newState.adminView = payload
+      return newState
     default:
       return newState
   }
