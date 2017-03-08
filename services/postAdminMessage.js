@@ -2,7 +2,6 @@ import request from 'superagent'
 import url from '../requestUrl'
 
 module.exports = ({adminMessageDetails}, dispatch) => {
-  console.log("memes");
   request
     .post(`${url}admin/messages/new`)
     .withCredentials()

@@ -1,14 +1,15 @@
 import React from 'react'
+import request from 'superagent'
+import url from '../requestUrl'
 
-module.exports = ({createEvent}, dispatch) => {
+module.exports = (state, dispatch) => {
   request
-    .admin(`${url}admin`)
+    .get(`${url}admin`)
     .withCredentials()
-    .send(createEvent)
     .end((err, res) => {
       if (!err) {
         console.log({res});
-        dispatch({type: 'RECIEVE_EVENT', payload: res.body})
+        dispatch({type: 'RECIEVE_ADMIN_DATA', payload: res.body})
       } else console.log({err});
     })
 }
