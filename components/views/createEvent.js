@@ -21,7 +21,7 @@ module.exports = (state, dispatch) => {
   function renderMinuteSelect() {
     var options = []
     for (var i = 1; i < 60; i++)options.push(i)
-    return (<select onChange={(e) => updateCreateEvent(e.target.value, 'minute_id')}>
+    return (<select className="minuteSelect" onChange={(e) => updateCreateEvent(e.target.value, 'minute_id')}>
       <option value=" " disabled selected>Minute</option>
       {options.map((minute_id => {
         var minutes = minute_id
@@ -33,7 +33,7 @@ module.exports = (state, dispatch) => {
   function renderHourSelect() {
     var options = []
     for (var i = 1; i < 24; i++)options.push(i)
-    return (<select onChange={(e) => updateCreateEvent(e.target.value, 'hour_id')}>
+    return (<select className="hourSelect" onChange={(e) => updateCreateEvent(e.target.value, 'hour_id')}>
       <option value=" " disabled selected>Hour</option>
       {options.map((hour_id => {
         var hours = hour_id
@@ -57,8 +57,8 @@ module.exports = (state, dispatch) => {
     </select>
   }
   function renderMonthSelect() {
-    return <div className="monthSelect">
-      <select  onChange={(e) => updateCreateEvent(e.target.value, 'month_id')}>
+    return <div>
+      <select  className="monthSelect" onChange={(e) => updateCreateEvent(e.target.value, 'month_id')}>
         <option value=" " disabled selected>Month</option>
         {dateTime.months.map((month) => {
           return <option value={month.id}>{month.name}</option>
@@ -74,8 +74,8 @@ module.exports = (state, dispatch) => {
     return options
   }
   function renderYearSelect() {
-    return <div className="yearSelectDiv">
-      <select onChange={(e) => updateCreateEvent(e.target.value, 'year_id')}>
+    return <div>
+      <select className="yearSelect" onChange={(e) => updateCreateEvent(e.target.value, 'year_id')}>
         <option value=" " disabled selected>Year</option>
 
         {renderYearOptions(2017)}
