@@ -236,6 +236,9 @@
 .dateSelect {
   margin: 3%; }
 
+.minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect {
+  width: 18vw; }
+
 .posts {
   margin-top: 9vh; }
 
