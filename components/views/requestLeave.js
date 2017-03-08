@@ -103,12 +103,14 @@ module.exports = (state, dispatch) => {
     </select>
   }
   return (<div className="groups">
+    <button onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Go Back</button>
     <div>
       {renderGroupSelect()}
       {renderContact()}
       {renderLeaveForm()}
+      <button>Send Leave Request</button>
     </div>
-    <button onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Back</button>
+
   </div>)
 
 }
