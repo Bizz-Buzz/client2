@@ -7,8 +7,10 @@
 @import pages/createPosts
 @import pages/postRes
 @import pages/group
+@import pages/communication
 @import pages/createGroup
 @import pages/findGroup
+@import pages/applyLeave
 @import helpers/variables
 @import helpers/globalNeeds
 
@@ -46,6 +48,12 @@ body
   margin-bottom: 2%
 
 .authErrorMsg
+  @extend .subHeading
+  color: red
+  font-size: 1em
+  margin-left: 0%
+
+.authErrorMsgSignUp
   @extend .subHeading
   color: red
   font-size: 1em
