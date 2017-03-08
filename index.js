@@ -62,8 +62,12 @@ const initialState = {
     title: null,
     description: null
   },
-  selectedEvent: null
-
+  selectedEvent: null,
+  leaveRequestDetails: {
+    group_id: null,
+    leaveReason: '',
+    isSickLeave: true
+  }
 }
 
 var store = createStore(reducer, initialState)

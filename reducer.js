@@ -113,6 +113,9 @@ module.exports = (state, action) => {
         }
       })
       return newState
+    case 'UPDATE_LEAVE_REQUEST_DETAILS':
+      newState.leaveRequestDetails[payload.content_type] = payload.content
+      return newState
     default:
       return newState
   }
