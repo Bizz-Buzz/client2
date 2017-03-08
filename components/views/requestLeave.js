@@ -68,7 +68,7 @@ module.exports = (state, dispatch) => {
   }
   function renderLeaveType() {
     return <div className="leaveType">{
-      state.leaveRequestDetails.isSickLeave
+      state.leaveRequestDetails.is_sick_leave
         ? "Sick Leave"
         : "Annual Leave"
     } </div>
