@@ -215,11 +215,9 @@
   margin-top: 1%; }
   .createEvent select {
     border: 2px solid black;
-    margin: 2%;
     margin-left: 5%;
     background-color: #df8764;
-    font-size: 1em;
-    padding: 1%; }
+    font-size: 1em; }
 
 .createEventButton, .createPostButton, .findGroupButton, .createGroupButton {
   margin-bottom: 3vh; }
@@ -236,8 +234,7 @@
   margin: auto; }
 
 .dateSelect {
-  width: 100%;
-  display: inline-flex; }
+  margin: 3%; }
 
 .posts {
   margin-top: 9vh; }

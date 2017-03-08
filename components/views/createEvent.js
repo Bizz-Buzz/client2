@@ -57,14 +57,12 @@ module.exports = (state, dispatch) => {
     </select>
   }
   function renderMonthSelect() {
-    return <div>
-      <select  className="monthSelect" onChange={(e) => updateCreateEvent(e.target.value, 'month_id')}>
+    return <select  className="monthSelect" onChange={(e) => updateCreateEvent(e.target.value, 'month_id')}>
         <option value=" " disabled selected>Month</option>
         {dateTime.months.map((month) => {
           return <option value={month.id}>{month.name}</option>
         })}
       </select>
-    </div>
   }
   function renderYearOptions(current_year) {
     var options = []
@@ -74,13 +72,11 @@ module.exports = (state, dispatch) => {
     return options
   }
   function renderYearSelect() {
-    return <div>
-      <select className="yearSelect" onChange={(e) => updateCreateEvent(e.target.value, 'year_id')}>
+    return <select className="yearSelect" onChange={(e) => updateCreateEvent(e.target.value, 'year_id')}>
         <option value=" " disabled selected>Year</option>
 
         {renderYearOptions(2017)}
       </select>
-    </div>
   }
   function renderDateTimeSelect() {
     return <form className="dateTime">
