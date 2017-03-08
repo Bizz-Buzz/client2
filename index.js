@@ -75,6 +75,12 @@ const initialState = {
   adminMessageDetails: {
     group_id: null,
     content: null
+  },
+  adminView: null,
+  admin: {
+    emergency: [],
+    adminMessages: [],
+    leaveRequests: []
   }
 }
 
