@@ -82,7 +82,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .applyLeaveDiv, .post, .createPost, .group, .createGroup {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -162,7 +162,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .applyLeaveDiv, .post, .createPost, .group, .createGroup {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -203,17 +203,17 @@
   margin-right: 45vw;
   margin-bottom: 1%; }
 
-.createEventButtons, .resetSearch, .createEvent select, .applyLeaveDiv select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton {
+.createEventButtons, .resetSearch, .createEvent select, .applyLeaveDiv select, .messageAdminForm select, .emergencyDiv select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton {
   color: #393939;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
   background-color: #dedede;
   border: none; }
 
-.createEvent, .applyLeaveDiv {
+.createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv {
   padding-bottom: 30px;
   margin-top: 1%; }
-  .createEvent select, .applyLeaveDiv select {
+  .createEvent select, .applyLeaveDiv select, .messageAdminForm select, .emergencyDiv select {
     border: 2px solid black;
     margin-left: 5%;
     background-color: #df8764;
@@ -333,9 +333,6 @@
   margin: 3%;
   color: #df8764; }
 
-.groups, .events, .posts, .communication, .applyLeaveDiv {
-  margin-top: 11vh; }
-
 .searchGroups {
   text-align: center;
   width: 90vw;
@@ -404,6 +401,9 @@
 
 .resetSearch {
   margin: auto; }
+
+.contentDiv {
+  margin-top: 11vh; }
 
 body {
   font-family: "Raleway", sans-serif;
