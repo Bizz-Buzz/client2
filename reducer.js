@@ -118,11 +118,15 @@ module.exports = (state, action) => {
       newState.leaveRequestDetails[payload.content_type] = payload.content
       return newState
     case 'UPDATE_ADMIN_MESSAGE_DETAILS':
-      newState.adminMessageDetails[payload.content_type] = payload.content_type
+      newState.adminMessageDetails[payload.content_type] = payload.content
       return newState
     case 'ADMIN_POST_SUCCESS':
       newState.successAlert = payload
       newState.view = 'adminSuccess'
+      return newState
+    case 'RECIEVE_ADMIN_DATA':
+      newState.admin = payload
+      newState.view = 'groupAdmin'
       return newState
     default:
       return newState

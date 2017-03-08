@@ -1,5 +1,5 @@
 import React from 'react'
-
+import postAdminMessage from '../../services/postAdminMessage'
 
 module.exports = (state, dispatch) => {
   function updateAdminMessageDetails(content, content_type) {
@@ -14,16 +14,20 @@ module.exports = (state, dispatch) => {
       {state.groups.map((group) => renderGroupOption(group))}
     </select>
   }
+  function postAdminMessageFunction(e) {
+    e.preventDefault()
+    postAdminMessage(state, dispatch)
+  }
   function renderSendAdminMessage() {
-    if (!state.adminMessageDetails.message || !state.adminMessageDetails.group_id) {
+    if (!state.adminMessageDetails.content || !state.adminMessageDetails.group_id) {
       return <div className="authErrorMsg pleaseSelectAllError">Please fill in all fields</div>
-    } else return <button>Send Message</button>
+    } else return <button onClick={(e) => postAdminMessage(state, dispatch)}>Send Message</button>
   }
   return <div className="groups">
-    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Back</button>
+    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Back</button>
     <div className="messageAdminForm">
       {renderGroupSelect()}
-      <input onChange={(e) => updateAdminMessageDetails(e.target.value, 'message')} type="text" placeholder="message"></input>
+      <input onChange={(e) => updateAdminMessageDetails(e.target.value, 'content')} type="text" placeholder="message"></input>
       {renderSendAdminMessage()}
     </div>
   </div>
