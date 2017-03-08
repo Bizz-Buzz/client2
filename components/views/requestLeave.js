@@ -5,7 +5,7 @@ import dateTime from '../../services/dateTime'
 module.exports = (state, dispatch) => {
   var currentGroup = state.groups.find((group) => {
     return group.group_id == state.leaveRequestDetails.group_id
-  }) || 1
+  }) || state.currentGroup.group_id
   function updateLeaveRequestDetails(content, content_type) {
     console.log({content, content_type});
     dispatch({type: 'UPDATE_LEAVE_REQUEST_DETAILS', payload: {content, content_type}})
@@ -64,7 +64,7 @@ module.exports = (state, dispatch) => {
         {renderDaySelect()}
         {renderYearSelect()}
       </div>
-      <select onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leaveDays')}>
+      <select onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leave_days')}>
         <option disabled selected>Leave Days</option>
         {renderLeaveDaysOptions(50)}
       </select>
@@ -102,12 +102,19 @@ module.exports = (state, dispatch) => {
       {state.groups.map((group) => renderGroupOption(group))}
     </select>
   }
+  function renderRequestButton() {
+    var request = state.leaveRequestDetails
+    if (!request.group_id || !request.day_id || !request.month_id || !request.year_id || !request.leaveReason || !request.leave_days) {
+      return <div className="authErrorMsg pleaseSelectAllError">Please Select All Fields</div>
+    } else return <button className="toggleButton">Create Event</button>
+  }
   return (<div className="groups">
     <button onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'communication'})}>Go Back</button>
     <div>
       {renderGroupSelect()}
       {renderContact()}
       {renderLeaveForm()}
+      {renderRequestButton()}
       <button>Send Leave Request</button>
     </div>
 

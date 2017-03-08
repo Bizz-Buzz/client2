@@ -66,7 +66,15 @@ const initialState = {
   leaveRequestDetails: {
     group_id: null,
     leaveReason: '',
+    year_id: null,
+    month_id: null,
+    day_id: null,
+    leave_days: null,
     isSickLeave: true
+  },
+  adminMessageDetails: {
+    group_id: null,
+    message: null
   }
 }
 
