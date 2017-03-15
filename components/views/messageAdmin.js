@@ -9,7 +9,7 @@ module.exports = (state, dispatch) => {
     return <option value={group.group_id}>{group.group_name}</option>
   }
   function renderGroupSelect() {
-    return <select onChange={(e) => updateAdminMessageDetails(e.target.value, 'group_id')}>
+    return <select className="selectParentGroup" onChange={(e) => updateAdminMessageDetails(e.target.value, 'group_id')}>
       <option selected disabled>Select Group</option>
       {state.groups.map((group) => renderGroupOption(group))}
     </select>
@@ -25,7 +25,7 @@ module.exports = (state, dispatch) => {
   }
 
   return <div className="messageAdminForm">
-    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Back</button>
+    <button className="goBackButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Back</button>
     <div>
       {renderGroupSelect()}
       <input className="detsInput messageAdminDets" onChange={(e) => updateAdminMessageDetails(e.target.value, 'content')} type="text" placeholder="message"></input>

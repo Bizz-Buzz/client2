@@ -45,13 +45,11 @@
 
 .adminHeader {
   text-align: center;
-  margin-top: 2%;
   margin-bottom: 2%; }
 
 .adminNavItem {
   text-align: center;
   font-size: 1em;
-  position: relative;
   display: inline-block;
   margin-left: 3%;
   margin-right: 3%;
@@ -98,6 +96,35 @@
 .resetSearch {
   margin: auto; }
 
+.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
+  font-size: 0.8em;
+  border: 2px dashed #6dd5af;
+  border-style: dashed;
+  border-radius: 3px;
+  background-color: #ddf5f9;
+  margin: 1%; }
+
+.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
+  margin: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  width: 30%; }
+
+.endCreateEventButton {
+  width: 50%;
+  margin-left: 10%;
+  margin-right: 10%; }
+
+.changeLeaveButton {
+  width: 70%; }
+
+.goBackButton {
+  color: black;
+  border-color: black; }
+
+.selectLeaveDays {
+  font-size: 1em; }
+
 .event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest {
   text-align: center;
   margin: auto;
@@ -109,7 +136,8 @@
   padding-right: 10px;
   font-family: "Raleway", sans-serif;
   color: #1e3d37;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  border-radius: 5px; }
 
 .eventTitle {
   font-size: 1.7em; }
@@ -136,14 +164,6 @@
   margin-left: 45vw;
   margin-right: 45vw;
   margin-bottom: 1%; }
-
-.eventAttendanceButtons, .endCreateEventButton {
-  font-size: 0.8em;
-  border: 2px dashed #6dd5af;
-  border-style: dashed;
-  border-radius: 3px;
-  background-color: #ddf5f9;
-  margin: 1%; }
 
 ::-webkit-input-placeholder {
   color: #6dd5af;
@@ -184,6 +204,35 @@
 .resetSearch {
   margin: auto; }
 
+.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
+  font-size: 0.8em;
+  border: 2px dashed #6dd5af;
+  border-style: dashed;
+  border-radius: 3px;
+  background-color: #ddf5f9;
+  margin: 1%; }
+
+.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
+  margin: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  width: 30%; }
+
+.endCreateEventButton {
+  width: 50%;
+  margin-left: 10%;
+  margin-right: 10%; }
+
+.changeLeaveButton {
+  width: 70%; }
+
+.goBackButton {
+  color: black;
+  border-color: black; }
+
+.selectLeaveDays {
+  font-size: 1em; }
+
 .event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest {
   text-align: center;
   margin: auto;
@@ -195,7 +244,8 @@
   padding-right: 10px;
   font-family: "Raleway", sans-serif;
   color: #1e3d37;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  border-radius: 5px; }
 
 .eventTitle {
   font-size: 1.7em; }
@@ -223,15 +273,7 @@
   margin-right: 45vw;
   margin-bottom: 1%; }
 
-.eventAttendanceButtons, .endCreateEventButton {
-  font-size: 0.8em;
-  border: 2px dashed #6dd5af;
-  border-style: dashed;
-  border-radius: 3px;
-  background-color: #ddf5f9;
-  margin: 1%; }
-
-.createEventButtons, .resetSearch, .createEvent select, .applyLeaveDiv select, .messageAdminForm select, .emergencyDiv select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton, .changeLeaveButton {
+.createEventButtons, .resetSearch, .minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect, .selectParentGroup, .selectLeaveDays, .createPostButtons, .createGroupButtons, .createResButtons {
   color: #1e3d37;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
@@ -241,15 +283,6 @@
 .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv {
   padding-bottom: 30px;
   margin-top: 1%; }
-  .createEvent select, .applyLeaveDiv select, .messageAdminForm select, .emergencyDiv select {
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: #6dd5af;
-    font-size: 1em;
-    width: 28%; }
-
-.createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  margin-bottom: 3vh; }
 
 .detsInput.eventInput, .eventInput.detsInputLast {
   text-align: center;
@@ -265,15 +298,20 @@
 .dateSelect {
   margin: 3%; }
 
-.minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect {
+.minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect, .selectParentGroup, .selectLeaveDays {
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 1em;
   width: 20vw;
   margin-left: 2.5%;
-  margin-right: 2.5%; }
+  margin-right: 2.5%;
+  background-color: #6dd5af; }
 
-.endCreateEventButton {
+.selectParentGroup, .selectLeaveDays {
   width: 50%;
-  margin-left: 10%;
-  margin-right: 10%; }
+  font-size: 0.8em;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%; }
 
 .posts {
   margin-top: 9vh; }
@@ -339,14 +377,11 @@
   margin-left: 80%;
   margin-top: 1%; }
 
-.postTypeToggleShow, .eventAttendanceButtons, .endCreateEventButton {
+.postTypeToggleShow, .eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
   color: #6dd5af; }
 
 .alertTypeToggleShow {
   color: red; }
-
-.selectParentGroup {
-  border-radius: 10px; }
 
 .postResponses {
   margin-top: 5%;
@@ -390,15 +425,6 @@
   padding-bottom: 30px;
   margin-top: 1%; }
 
-.toggleButton, .selectParentGroup, .changeGroupButton, .changeLeaveButton {
-  border: 2px solid black;
-  margin: 2%;
-  background-color: #6dd5af;
-  font-size: 1em;
-  padding: 1%;
-  border-radius: 0%;
-  width: 30%; }
-
 .findGroup {
   margin-top: 9vh; }
 
@@ -424,9 +450,6 @@
 .messageAdminDets {
   margin-top: 3vh;
   margin-bottom: 3vh; }
-
-.changeLeaveButton {
-  width: 70%; }
 
 .reasonForLeaveInput {
   margin: 4%; }
@@ -469,6 +492,35 @@
 
 .resetSearch {
   margin: auto; }
+
+.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
+  font-size: 0.8em;
+  border: 2px dashed #6dd5af;
+  border-style: dashed;
+  border-radius: 3px;
+  background-color: #ddf5f9;
+  margin: 1%; }
+
+.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
+  margin: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  width: 30%; }
+
+.endCreateEventButton {
+  width: 50%;
+  margin-left: 10%;
+  margin-right: 10%; }
+
+.changeLeaveButton {
+  width: 70%; }
+
+.goBackButton {
+  color: black;
+  border-color: black; }
+
+.selectLeaveDays {
+  font-size: 1em; }
 
 .contentDiv {
   margin-top: 11vh; }
