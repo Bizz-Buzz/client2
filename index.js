@@ -65,7 +65,7 @@ const initialState = {
   selectedEvent: null,
   leaveRequestDetails: {
     group_id: null,
-    leave_reason: '',
+    leave_reason: null,
     year_id: null,
     month_id: null,
     day_id: null,

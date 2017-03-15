@@ -6,9 +6,12 @@ import renderAdminEmergency from './adminEmergency'
 module.exports = (state, dispatch) => {
   function renderAdminHeader() {
     return <div className="adminHeader">
-      <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'adminMessages'})}>Messages ({state.admin.adminMessages.length})</span>
-      <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'leaveRequests'})}>Leave ({state.admin.leaveRequests.length})</span>
-      <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'emergency'})}>Emergency ({state.admin.emergency.length})</span>
+    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Go Back</button>
+      <div className="adminBar">
+        <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'adminMessages'})}>Messages ({state.admin.adminMessages.length})</span>
+        <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'leaveRequests'})}>Leave ({state.admin.leaveRequests.length})</span>
+        <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'emergency'})}>Emergency ({state.admin.emergency.length})</span>
+      </div>
     </div>
   }
   function renderAdminView() {
@@ -24,7 +27,7 @@ module.exports = (state, dispatch) => {
     }
   }
   return <div className="groupAdmin">
-    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Go Back</button>
+
     {renderAdminHeader()}
     <div className='adminView'>
       {renderAdminView()}

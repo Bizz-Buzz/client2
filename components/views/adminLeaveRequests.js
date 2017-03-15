@@ -20,9 +20,15 @@ module.exports = (state, dispatch) => {
       </div>
     }
   }
+  function renderLeaveType(leaveRequest) {
+    if (leaveRequest.is_sick_leave == true) return 'Sick Leave'
+    return 'Annual Leave'
+  }
   function renderAdminLeaveRequest(leaveRequest) {
     return <div onClick={() => selectAdminItem(leaveRequest.request_id, 'leaveRequest')} className="adminLeaveRequest">
       <div className="adminLeaveRequestName">{leaveRequest.first_name} {leaveRequest.last_name}</div>
+      <div className="adminLeaveRequestDays">{renderLeaveType(leaveRequest)} for {leaveRequest.leave_days} days</div>
+      <div className="adminLeaveRequestDate">Starting {leaveRequest.day_id}/{leaveRequest.month_id}/{leaveRequest.year_id}</div>
       {renderMore(leaveRequest)}
       <div className="adminLeaveRequestGroup">{leaveRequest.group_name}</div>
 
