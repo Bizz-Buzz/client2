@@ -364,6 +364,10 @@
 .findGroup {
   margin-top: 9vh; }
 
+.messageAdminDets {
+  margin-top: 3vh;
+  margin-bottom: 3vh; }
+
 ::-webkit-input-placeholder {
   color: #df8764;
   font-family: "Raleway", sans-serif; }
