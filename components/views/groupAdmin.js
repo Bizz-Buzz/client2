@@ -6,9 +6,9 @@ import renderAdminEmergency from './adminEmergency'
 module.exports = (state, dispatch) => {
   function renderAdminHeader() {
     return <div className="adminHeader">
-      <p onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'adminMessages'})}>Messages ({state.admin.adminMessages.length})</p>
-      <p onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'leaveRequests'})}>Leave ({state.admin.leaveRequests.length})</p>
-      <p onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'emergency'})}>Emergency ({state.admin.emergency.length})</p>
+      <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'adminMessages'})}>Messages ({state.admin.adminMessages.length})</span>
+      <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'leaveRequests'})}>Leave ({state.admin.leaveRequests.length})</span>
+      <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'emergency'})}>Emergency ({state.admin.emergency.length})</span>
     </div>
   }
   function renderAdminView() {
