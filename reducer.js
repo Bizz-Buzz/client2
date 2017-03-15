@@ -146,6 +146,19 @@ module.exports = (state, action) => {
         if (message.message_id === payload) newState.admin.adminMessages.splice(index, 1)
       })
       return newState
+    case 'TOGGLE_REQUEST_PINNED':
+      console.log("toggling request id", payload);
+      newState.admin.leaveRequests.forEach((leaveRequest) => {
+        if (leaveRequest.request_id === payload) {
+          leaveRequest.is_pinned = !leaveRequest.is_pinned
+        }
+      })
+      return newState
+    case 'DELETE_LEAVE_REQUEST':
+      newState.admin.leaveRequests.forEach((leaveRequest, index) => {
+        if (leaveRequest.request_id === payload) newState.admin.leaveRequests.splice(index, 1)
+      })
+      return newState
     default:
       return newState
   }
