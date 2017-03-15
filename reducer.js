@@ -163,9 +163,9 @@ module.exports = (state, action) => {
       })
       return newState
     case 'DELETE_ADMIN_MESSAGE':
-      newState.admin.adminMessages.forEach((message, index) => {
-        if (message.message_id === payload) newState.admin.adminMessages.splice(index, 1)
-      })
+      // newState.admin.adminMessages.forEach((message, index) => {
+      //   if (message.message_id === payload) newState.admin.adminMessages.splice(index, 1)
+      // })
       return newState
     case 'TOGGLE_REQUEST_PINNED':
       console.log("toggling request id", payload);
@@ -176,9 +176,9 @@ module.exports = (state, action) => {
       })
       return newState
     case 'DELETE_LEAVE_REQUEST':
-      newState.admin.leaveRequests.forEach((leaveRequest, index) => {
-        if (leaveRequest.request_id === payload) newState.admin.leaveRequests.splice(index, 1)
-      })
+      // newState.admin.leaveRequests.forEach((leaveRequest, index) => {
+      //   if (leaveRequest.request_id === payload) newState.admin.leaveRequests.splice(index, 1)
+      // })
       return newState
     default:
       return newState
