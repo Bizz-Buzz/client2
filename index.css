@@ -371,6 +371,10 @@
   margin: 0;
   margin-top: 1%; }
 
+.unpinnedAdminMessagesHeader, .pinnedAdminMessagesHeader {
+  text-align: center;
+  font-size: 1.3em; }
+
 .messageAdminDets {
   margin-top: 3vh;
   margin-bottom: 3vh; }
