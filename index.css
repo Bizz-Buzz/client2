@@ -122,9 +122,6 @@
   color: black;
   border-color: black; }
 
-.selectLeaveDays {
-  font-size: 1em; }
-
 .event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest {
   text-align: center;
   margin: auto;
@@ -230,9 +227,6 @@
   color: black;
   border-color: black; }
 
-.selectLeaveDays {
-  font-size: 1em; }
-
 .event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest {
   text-align: center;
   margin: auto;
@@ -312,6 +306,9 @@
   font-size: 0.8em;
   margin-top: 2.5%;
   margin-bottom: 2.5%; }
+
+.selectLeaveDays {
+  font-size: 1em; }
 
 .posts {
   margin-top: 9vh; }
@@ -518,9 +515,6 @@
 .goBackButton {
   color: black;
   border-color: black; }
-
-.selectLeaveDays {
-  font-size: 1em; }
 
 .contentDiv {
   margin-top: 11vh; }
