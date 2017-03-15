@@ -131,6 +131,9 @@ module.exports = (state, action) => {
     case 'CHANGE_ADMIN_VIEW':
       newState.adminView = payload
       return newState
+    case 'SELECT_ADMIN_ITEM':
+      newState.adminSelected[payload.content_type] = payload.content
+      return newState
     default:
       return newState
   }
