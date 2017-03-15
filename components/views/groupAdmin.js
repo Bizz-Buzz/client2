@@ -23,7 +23,8 @@ module.exports = (state, dispatch) => {
         return renderAdminMessages(state, dispatch)
     }
   }
-  return <div>
+  return <div className="groupAdmin">
+    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Go Back</button>
     {renderAdminHeader()}
     <div className='adminView'>
       {renderAdminView()}
