@@ -1,5 +1,6 @@
 import React from 'react'
 import togglePin from '../../services/togglePinnedAdminMessage'
+import deleteMessage from '../../services/deleteAdminMessage'
 
 module.exports = (state, dispatch) => {
   function selectAdminItem(content, content_type) {
@@ -11,12 +12,11 @@ module.exports = (state, dispatch) => {
     } return <button className="toggleButton" onClick={() => togglePin(message, dispatch)}>Pin</button>
   }
   function renderMore(message) {
-    console.log({message, state});
     if (message.message_id === state.adminSelected.adminMessage) {
       return <div>
         <div className="adminMessageContent">{message.content}</div>
         {pinButton(message)}
-        <button className="toggleButton">Delete</button>
+        <button className="toggleButton" onClick={() => deleteMessage(message.message_id, dispatch)}>Delete</button>
       </div>
     } else {
       var snippet = message.content.slice(0, 14)
@@ -46,11 +46,11 @@ module.exports = (state, dispatch) => {
     })
     return <div className="adminMessages">
         <div className="pinnedAdminMessages">
-          <p className="pinnedAdminMessagesHeader">Pinned</p>
+          <p className="pinnedAdminMessagesHeader">Pinned ({pinned.length})</p>
           {renderSortedMessages(pinned)}
         </div>
         <div className="unpinnedAdminMessages">
-          <p className="unpinnedAdminMessagesHeader">Unpinned</p>
+          <p className="unpinnedAdminMessagesHeader">Unpinned ({unpinned.length})</p>
           {renderSortedMessages(unpinned)}
         </div>
     </div>

@@ -136,7 +136,14 @@ module.exports = (state, action) => {
       return newState
     case 'TOGGLE_MESSAGE_PINNED':
       newState.admin.adminMessages.forEach((message) => {
-        if (message.message_id === payload) message.is_pinned = !message.is_pinned
+        if (message.message_id === payload) {
+          message.is_pinned = !message.is_pinned
+        }
+      })
+      return newState
+    case 'DELETE_ADMIN_MESSAGE':
+      newState.admin.adminMessages.forEach((message, index) => {
+        if (message.message_id === payload) newState.admin.adminMessages.splice(index, 1)
       })
       return newState
     default:
