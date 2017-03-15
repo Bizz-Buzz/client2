@@ -82,7 +82,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequests {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -162,7 +162,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequests {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
