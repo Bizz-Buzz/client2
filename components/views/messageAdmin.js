@@ -28,7 +28,7 @@ module.exports = (state, dispatch) => {
     <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Back</button>
     <div>
       {renderGroupSelect()}
-      <input className="detsInput" onChange={(e) => updateAdminMessageDetails(e.target.value, 'content')} type="text" placeholder="message"></input>
+      <input className="detsInput messageAdminDets" onChange={(e) => updateAdminMessageDetails(e.target.value, 'content')} type="text" placeholder="message"></input>
       {renderSendAdminMessage()}
     </div>
   </div>
