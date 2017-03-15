@@ -28,7 +28,7 @@ module.exports = (state, dispatch) => {
     return <div onClick={() => selectAdminItem(message.message_id, 'adminMessage')} className="adminMessage">
       <div className="adminMessageFrom">{message.first_name} {message.last_name}</div>
       <div className="adminMessageGroup">{message.group_name}</div>
-
+      <div className="adminMessageGroup">{message.group_name}</div>
       <div className="adminMessageCreated">{message.message_created_at}</div>
       {renderMore(message)}
     </div>
