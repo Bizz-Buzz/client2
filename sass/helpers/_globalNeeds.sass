@@ -40,3 +40,38 @@
 .resetSearch
   @extend .createEventButtons
   margin: auto
+
+.eventAttendanceButtons
+  @extend .postTypeToggleShow
+  font-size: 0.8em
+  border: 2px dashed $popOfColor
+  border-style: dashed
+  border-radius: 3px
+  background-color: $background
+  margin: 1%
+
+.toggleButton
+  @extend .eventAttendanceButtons
+  margin: 2%
+  padding: 1%
+  border-radius: 5px
+  width: 30%
+
+.endCreateEventButton
+  @extend .eventAttendanceButtons
+  width: 50%
+  margin-left: 10%
+  margin-right: 10%
+
+.changeLeaveButton
+  @extend .toggleButton
+  width: 70%
+
+.goBackButton
+  @extend .toggleButton
+  color: black
+  border-color: black
+
+.selectLeaveDays
+  @extend .selectParentGroup
+  font-size: 1em

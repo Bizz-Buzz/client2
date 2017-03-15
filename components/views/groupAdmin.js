@@ -6,7 +6,7 @@ import renderAdminEmergency from './adminEmergency'
 module.exports = (state, dispatch) => {
   function renderAdminHeader() {
     return <div className="adminHeader">
-    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Go Back</button>
+    <button className="goBackButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Go Back</button>
       <div className="adminBar">
         <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'adminMessages'})}>Messages ({state.admin.adminMessages.length})</span>
         <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_ADMIN_VIEW', payload: 'leaveRequests'})}>Leave ({state.admin.leaveRequests.length})</span>
