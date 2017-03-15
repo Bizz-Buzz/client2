@@ -99,9 +99,17 @@ module.exports = (state, action) => {
       return newState
     case 'RECIEVE_EVENT':
       newState.events.unshift(payload)
-      var keys = Object.keys(newState.createEvent)
-      console.log({keys});
-      keys.forEach((prop) => newState.createEvent[prop] = null)
+      newState.createEvent = {
+        day_id: null,
+        month_id: null,
+        year_id: null,
+        hour_id: null,
+        minute_id: null,
+        group_id: null,
+        title: null,
+        description: null
+      }
+      newState.createEventToggle = false
       return newState
     case 'SELECT_EVENT':
       newState.selectedEvent = payload
@@ -121,6 +129,19 @@ module.exports = (state, action) => {
       newState.adminMessageDetails[payload.content_type] = payload.content
       return newState
     case 'ADMIN_POST_SUCCESS':
+      newState.adminMessageDetails = {
+        group_id: null,
+        content: null
+      }
+      newState.leaveRequestDetails = {
+        group_id: null,
+        leave_reason: null,
+        year_id: null,
+        month_id: null,
+        day_id: null,
+        leave_days: null,
+        is_sick_leave: true
+      }
       newState.successAlert = payload
       newState.view = 'adminSuccess'
       return newState
