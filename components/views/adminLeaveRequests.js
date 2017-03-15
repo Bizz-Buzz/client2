@@ -48,11 +48,11 @@ module.exports = (state, dispatch) => {
     })
     return <div className="adminLeaveRequests">
         <div className="pinnedLeaveRequests">
-          <p className="pinnedLeaveRequestsHeader">Pinned ({pinned.length})</p>
+          <p className="pinnedAdminMessagesHeader">Pinned ({pinned.length})</p>
           {renderSortedAdminLeaveRequests(pinned)}
         </div>
         <div className="unpinnedLeaveRequests">
-          <p className="unpinnedLeaveRequestsHeader">Unpinned ({unpinned.length})</p>
+          <p className="unpinnedAdminMessagesHeader">Unpinned ({unpinned.length})</p>
           {renderSortedAdminLeaveRequests(unpinned)}
         </div>
     </div>

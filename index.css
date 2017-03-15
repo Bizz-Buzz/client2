@@ -124,9 +124,7 @@
   color: #6dd5af; }
 
 .eventTime {
-  font-size: 1em;
-  float: right;
-  padding-bottom: 10px; }
+  font-size: 1em; }
 
 .searchEvents {
   text-align: center;
@@ -138,6 +136,14 @@
   margin-left: 45vw;
   margin-right: 45vw;
   margin-bottom: 1%; }
+
+.eventAttendanceButtons {
+  font-size: 0.8em;
+  border: 2px dashed #6dd5af;
+  border-style: dashed;
+  border-radius: 3px;
+  background-color: #ddf5f9;
+  margin: 1%; }
 
 ::-webkit-input-placeholder {
   color: #6dd5af;
@@ -204,9 +210,7 @@
   color: #6dd5af; }
 
 .eventTime {
-  font-size: 1em;
-  float: right;
-  padding-bottom: 10px; }
+  font-size: 1em; }
 
 .searchEvents {
   text-align: center;
@@ -218,6 +222,14 @@
   margin-left: 45vw;
   margin-right: 45vw;
   margin-bottom: 1%; }
+
+.eventAttendanceButtons {
+  font-size: 0.8em;
+  border: 2px dashed #6dd5af;
+  border-style: dashed;
+  border-radius: 3px;
+  background-color: #ddf5f9;
+  margin: 1%; }
 
 .createEventButtons, .resetSearch, .createEvent select, .applyLeaveDiv select, .messageAdminForm select, .emergencyDiv select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton, .changeLeaveButton {
   color: #1e3d37;
@@ -320,7 +332,7 @@
   margin-left: 80%;
   margin-top: 1%; }
 
-.postTypeToggleShow {
+.postTypeToggleShow, .eventAttendanceButtons {
   color: #6dd5af; }
 
 .alertTypeToggleShow {
