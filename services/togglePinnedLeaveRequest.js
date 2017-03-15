@@ -4,8 +4,8 @@ import url from '../requestUrl'
 module.exports = (leaveRequest, dispatch) => {
   request
     .post(`${url}admin/leaveRequests/pin`)
+    .send(leaveRequest)
     .withCredentials()
-    .send({leaveRequest})
     .end((err, res) => {
       if (!err) {
         console.log({res});
