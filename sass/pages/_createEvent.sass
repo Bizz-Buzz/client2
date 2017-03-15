@@ -11,17 +11,9 @@
   @extend .event
   padding-bottom: 30px
   margin-top: 1%
-  select
-    @extend .createEventButtons
-    border: 2px solid black
-    border-radius: 5px
-    background-color: $popOfColor
-    font-size: 1em
-    width: 28%
 
 .createEventButton
   @extend .smallButton
-  margin-bottom: 3vh
 
 .detsInput.eventInput
   text-align: center
@@ -38,13 +30,18 @@
 .dateSelect
   margin: 3%
 
-.minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect
+.minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect, .selectParentGroup
+  @extend .createEventButtons
+  border: 2px solid black
+  border-radius: 5px
+  font-size: 1em
   width: 20vw
   margin-left: 2.5%
   margin-right: 2.5%
+  background-color: $popOfColor
 
-.endCreateEventButton
-  @extend .eventAttendanceButtons
+.selectParentGroup
   width: 50%
-  margin-left: 10%
-  margin-right: 10%
+  font-size: 0.8em
+  margin-top: 2.5%
+  margin-bottom: 2.5%

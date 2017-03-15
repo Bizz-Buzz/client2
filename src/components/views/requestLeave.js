@@ -60,7 +60,7 @@ module.exports = (state, dispatch) => {
         {renderDaySelect()}
         {renderYearSelect()}
       </div>
-      <select onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leave_days')}>
+      <select className="selectLeaveDays" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leave_days')}>
         <option disabled selected>Leave Days</option>
         {renderLeaveDaysOptions(50)}
       </select>
@@ -93,7 +93,7 @@ module.exports = (state, dispatch) => {
     return <option value={group.group_id}>{group.group_name}</option>
   }
   function renderGroupSelect() {
-    return <select onChange={(e) => updateLeaveRequestDetails(e.target.value, 'group_id')}>
+    return <select className="selectParentGroup" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'group_id')}>
       <option disabled selected>Select Group</option>
       {state.groups.map((group) => renderGroupOption(group))}
     </select>
@@ -105,7 +105,7 @@ module.exports = (state, dispatch) => {
     } else return <button onClick={() => postLeaveRequest(state, dispatch)} className="toggleButton">Send Leave Request</button>
   }
   return (<div className="applyLeaveDiv">
-    <button className="toggleButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Go Back</button>
+    <button className="goBackButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Go Back</button>
     <div>
       {renderGroupSelect()}
       {renderContact()}
