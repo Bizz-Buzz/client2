@@ -134,6 +134,11 @@ module.exports = (state, action) => {
     case 'SELECT_ADMIN_ITEM':
       newState.adminSelected[payload.content_type] = payload.content
       return newState
+    case 'TOGGLE_MESSAGE_PINNED':
+      newState.admin.adminMessages.forEach((message) => {
+        if (message.message_id === payload) message.is_pinned = !message.is_pinned
+      })
+      return newState
     default:
       return newState
   }

@@ -7,8 +7,8 @@ module.exports = (state, dispatch) => {
   }
   function pinButton(message) {
     if (message.is_pinned) {
-      return <button>Unpin</button>
-    } return <button onClick={() => togglePin(message, dispatch)} >Pin</button>
+      return <button onClick={() => togglePin(message, dispatch)}>Unpin</button>
+    } return <button onClick={() => togglePin(message, dispatch)}>Pin</button>
   }
   function renderMore(message) {
     console.log({message, state});
@@ -27,7 +27,6 @@ module.exports = (state, dispatch) => {
   function renderAdminMessage(message) {
     return <div onClick={() => selectAdminItem(message.message_id, 'adminMessage')} className="adminMessage">
       <div className="adminMessageFrom">{message.first_name} {message.last_name}</div>
-      <div className="adminMessageGroup">{message.group_name}</div>
       <div className="adminMessageGroup">{message.group_name}</div>
       <div className="adminMessageCreated">{message.message_created_at}</div>
       {renderMore(message)}
