@@ -80,7 +80,12 @@ const initialState = {
   admin: {
     emergency: [],
     adminMessages: [],
-    leaveRequests: []
+    leaveRequests: [],
+  },
+  adminSelected: {
+    adminMessage: null,
+    emergency: null,
+    leaveRequest: null,
   }
 }
 
