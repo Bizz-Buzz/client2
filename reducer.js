@@ -99,9 +99,17 @@ module.exports = (state, action) => {
       return newState
     case 'RECIEVE_EVENT':
       newState.events.unshift(payload)
-      var keys = Object.keys(newState.createEvent)
-      console.log({keys});
-      keys.forEach((prop) => newState.createEvent[prop] = null)
+      newState.createEvent = {
+        day_id: null,
+        month_id: null,
+        year_id: null,
+        hour_id: null,
+        minute_id: null,
+        group_id: null,
+        title: null,
+        description: null
+      }
+      newState.createEventToggle = false
       return newState
     case 'SELECT_EVENT':
       newState.selectedEvent = payload
@@ -121,6 +129,19 @@ module.exports = (state, action) => {
       newState.adminMessageDetails[payload.content_type] = payload.content
       return newState
     case 'ADMIN_POST_SUCCESS':
+      newState.adminMessageDetails = {
+        group_id: null,
+        content: null
+      }
+      newState.leaveRequestDetails = {
+        group_id: null,
+        leave_reason: null,
+        year_id: null,
+        month_id: null,
+        day_id: null,
+        leave_days: null,
+        is_sick_leave: true
+      }
       newState.successAlert = payload
       newState.view = 'adminSuccess'
       return newState
@@ -130,6 +151,34 @@ module.exports = (state, action) => {
       return newState
     case 'CHANGE_ADMIN_VIEW':
       newState.adminView = payload
+      return newState
+    case 'SELECT_ADMIN_ITEM':
+      newState.adminSelected[payload.content_type] = payload.content
+      return newState
+    case 'TOGGLE_MESSAGE_PINNED':
+      newState.admin.adminMessages.forEach((message) => {
+        if (message.message_id === payload) {
+          message.is_pinned = !message.is_pinned
+        }
+      })
+      return newState
+    case 'DELETE_ADMIN_MESSAGE':
+      newState.admin.adminMessages.forEach((message, index) => {
+        if (message.message_id === payload) newState.admin.adminMessages.splice(index, 1)
+      })
+      return newState
+    case 'TOGGLE_REQUEST_PINNED':
+      console.log("toggling request id", payload);
+      newState.admin.leaveRequests.forEach((leaveRequest) => {
+        if (leaveRequest.request_id === payload) {
+          leaveRequest.is_pinned = !leaveRequest.is_pinned
+        }
+      })
+      return newState
+    case 'DELETE_LEAVE_REQUEST':
+      newState.admin.leaveRequests.forEach((leaveRequest, index) => {
+        if (leaveRequest.request_id === payload) newState.admin.leaveRequests.splice(index, 1)
+      })
       return newState
     default:
       return newState
