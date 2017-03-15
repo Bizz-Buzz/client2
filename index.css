@@ -137,7 +137,7 @@
   margin-right: 45vw;
   margin-bottom: 1%; }
 
-.eventAttendanceButtons {
+.eventAttendanceButtons, .endCreateEventButton {
   font-size: 0.8em;
   border: 2px dashed #6dd5af;
   border-style: dashed;
@@ -223,7 +223,7 @@
   margin-right: 45vw;
   margin-bottom: 1%; }
 
-.eventAttendanceButtons {
+.eventAttendanceButtons, .endCreateEventButton {
   font-size: 0.8em;
   border: 2px dashed #6dd5af;
   border-style: dashed;
@@ -243,8 +243,10 @@
   margin-top: 1%; }
   .createEvent select, .applyLeaveDiv select, .messageAdminForm select, .emergencyDiv select {
     border: 2px solid black;
+    border-radius: 5px;
     background-color: #6dd5af;
-    font-size: 1em; }
+    font-size: 1em;
+    width: 28%; }
 
 .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
   margin-bottom: 3vh; }
@@ -267,6 +269,11 @@
   width: 20vw;
   margin-left: 2.5%;
   margin-right: 2.5%; }
+
+.endCreateEventButton {
+  width: 50%;
+  margin-left: 10%;
+  margin-right: 10%; }
 
 .posts {
   margin-top: 9vh; }
@@ -332,11 +339,14 @@
   margin-left: 80%;
   margin-top: 1%; }
 
-.postTypeToggleShow, .eventAttendanceButtons {
+.postTypeToggleShow, .eventAttendanceButtons, .endCreateEventButton {
   color: #6dd5af; }
 
 .alertTypeToggleShow {
   color: red; }
+
+.selectParentGroup {
+  border-radius: 10px; }
 
 .postResponses {
   margin-top: 5%;

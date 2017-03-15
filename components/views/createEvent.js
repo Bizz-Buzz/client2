@@ -100,7 +100,7 @@ module.exports = (state, dispatch) => {
     var event = state.createEvent
     if (!event.group_id || !event.minute_id || !event.hour_id || !event.day_id || !event.month_id || !event.year_id || !event.title || !event.description) {
       return <div className="authErrorMsg pleaseSelectAllError">Please Fill In All Fields</div>
-    } else return <button onClick={(e) => postEventFunction(e)} className="toggleButton">Create Event</button>
+    } else return <button onClick={(e) => postEventFunction(e)} className="endCreateEventButton">Create Event</button>
   }
   return <div className="createEvent">
     <input onChange={(e) => updateCreateEvent(e.target.value, 'title')} className="detsInput eventInput" type="text" placeholder="Event Title"/>
