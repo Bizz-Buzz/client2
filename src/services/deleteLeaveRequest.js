@@ -6,7 +6,7 @@ module.exports = (request_id, dispatch) => {
   request
     .post(`${url}admin/leaveRequests/delete`)
     .withCredentials()
-    .send({request_id})
+    .send(request_id)
     .end((err, res) => {
       if (!err) {
         console.log({res});
