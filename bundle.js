@@ -1,2383 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var App = function (_Component) {
-  _inherits(App, _Component);
-
-  function App(props) {
-    _classCallCheck(this, App);
-
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
-  }
-
-  _createClass(App, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'h1',
-        null,
-        'Welcome to ',
-        this.props.name
-      );
-    }
-  }]);
-
-  return App;
-}(_react.Component);
-
-exports.default = App;
-
-},{"react":216}],2:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _login = require('../services/login');
-
-var _login2 = _interopRequireDefault(_login);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (_ref) {
-  var state = _ref.state,
-      dispatch = _ref.dispatch;
-
-  var goToSignUp = function goToSignUp() {
-    return dispatch({ type: 'CHANGE_ROUTE', payload: '/signUp' });
-  };
-  var saveEmail = function saveEmail(e) {
-    return dispatch({ type: 'UPDATE_LOGIN_DETAILS', payload: { change: 'username', value: e.target.value } });
-  };
-  var savePassword = function savePassword(e) {
-    return dispatch({ type: 'UPDATE_LOGIN_DETAILS', payload: { change: 'password', value: e.target.value } });
-  };
-  var loginButton = function loginButton(e) {
-    e.preventDefault();
-    (0, _login2.default)(state, dispatch);
-  };
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'div',
-      { className: '{state.theme} headingDiv' },
-      _react2.default.createElement(
-        'h1',
-        { className: 'primary mainHeading' },
-        'LOGIN'
-      ),
-      _react2.default.createElement(
-        'p',
-        { className: 'secondary subHeading' },
-        'Welcome to bizzBuzz'
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      null,
-      state.authError ? _react2.default.createElement(
-        'h1',
-        null,
-        state.authError
-      ) : "",
-      _react2.default.createElement(
-        'div',
-        { className: 'accInputDiv' },
-        _react2.default.createElement('input', { className: 'detsInput', onChange: saveEmail, type: 'text', placeholder: 'Email Address' }),
-        _react2.default.createElement('input', { className: 'detsInputLast', onChange: savePassword, type: 'password', placeholder: 'Password' })
-      ),
-      _react2.default.createElement(
-        'button',
-        { className: 'primary loginButton', onClick: loginButton, type: 'submit' },
-        'LOGIN'
-      )
-    ),
-    _react2.default.createElement(
-      'button',
-      { className: 'primary createAccountButton', onClick: goToSignUp },
-      'Create Account'
-    )
-  );
-};
-
-},{"../services/login":248,"react":216}],3:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _events = require('./views/events');
-
-var _events2 = _interopRequireDefault(_events);
-
-var _createEvent = require('./views/createEvent');
-
-var _createEvent2 = _interopRequireDefault(_createEvent);
-
-var _posts = require('./views/posts');
-
-var _posts2 = _interopRequireDefault(_posts);
-
-var _groups = require('./views/groups');
-
-var _groups2 = _interopRequireDefault(_groups);
-
-var _findGroup = require('./views/findGroup');
-
-var _findGroup2 = _interopRequireDefault(_findGroup);
-
-var _admin = require('./views/admin');
-
-var _admin2 = _interopRequireDefault(_admin);
-
-var _requestLeave = require('./views/requestLeave');
-
-var _requestLeave2 = _interopRequireDefault(_requestLeave);
-
-var _emergencyReport = require('./views/emergencyReport');
-
-var _emergencyReport2 = _interopRequireDefault(_emergencyReport);
-
-var _messageAdmin = require('./views/messageAdmin');
-
-var _messageAdmin2 = _interopRequireDefault(_messageAdmin);
-
-var _adminSuccess = require('./views/adminSuccess');
-
-var _adminSuccess2 = _interopRequireDefault(_adminSuccess);
-
-var _groupAdmin = require('./views/groupAdmin');
-
-var _groupAdmin2 = _interopRequireDefault(_groupAdmin);
-
-var _header = require('./views/header');
-
-var _header2 = _interopRequireDefault(_header);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (_ref) {
-  var state = _ref.state,
-      dispatch = _ref.dispatch;
-
-  console.log({ state: state });
-  function viewHandler() {
-    switch (state.view) {
-      case 'events':
-        return (0, _events2.default)(state, dispatch);
-      case 'posts':
-        console.log("render posts");
-        return (0, _posts2.default)(state, dispatch);
-      case 'groups':
-        return (0, _groups2.default)(state, dispatch);
-      case 'findGroup':
-        return (0, _findGroup2.default)(state, dispatch);
-      case 'admin':
-        return (0, _admin2.default)(state, dispatch);
-      case 'requestLeave':
-        return (0, _requestLeave2.default)(state, dispatch);
-      case 'emergency':
-        return (0, _emergencyReport2.default)(state, dispatch);
-      case 'messageAdmin':
-        return (0, _messageAdmin2.default)(state, dispatch);
-      case 'adminSuccess':
-        return (0, _adminSuccess2.default)(state, dispatch);
-      case 'groupAdmin':
-        return (0, _groupAdmin2.default)(state, dispatch);
-      default:
-        return (0, _events2.default)(state, dispatch);
-    }
-  }
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    (0, _header2.default)(state, dispatch),
-    _react2.default.createElement(
-      'div',
-      { className: 'contentDiv' },
-      viewHandler()
-    )
-  );
-};
-
-},{"./views/admin":5,"./views/adminSuccess":9,"./views/createEvent":10,"./views/emergencyReport":13,"./views/events":14,"./views/findGroup":15,"./views/groupAdmin":16,"./views/groups":17,"./views/header":18,"./views/messageAdmin":19,"./views/posts":20,"./views/requestLeave":21,"react":216}],4:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _signup = require('../services/signup');
-
-var _signup2 = _interopRequireDefault(_signup);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (_ref) {
-  var state = _ref.state,
-      dispatch = _ref.dispatch;
-
-  var savePassword = function savePassword(e) {
-    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'password', value: e.target.value } });
-  };
-  var saveConfirmPassword = function saveConfirmPassword(e) {
-    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'confirmPassword', value: e.target.value } });
-  };
-  var saveEmail = function saveEmail(e) {
-    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'email', value: e.target.value } });
-  };
-  var saveFirstName = function saveFirstName(e) {
-    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'first_name', value: e.target.value } });
-  };
-  var saveLastName = function saveLastName(e) {
-    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'last_name', value: e.target.value } });
-  };
-  var authorizeSignUp = function authorizeSignUp(e) {
-    e.preventDefault();
-    (0, _signup2.default)(state.signupDetails, dispatch);
-  };
-  return _react2.default.createElement(
-    'div',
-    { className: 'signUp' },
-    _react2.default.createElement(
-      'div',
-      { className: 'headingDiv' },
-      _react2.default.createElement(
-        'h1',
-        { className: 'mainHeading' },
-        'CREATE ACCOUNT'
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      null,
-      state.authError ? _react2.default.createElement(
-        'p',
-        { className: 'authErrorMsgSignUp' },
-        state.authError
-      ) : "",
-      _react2.default.createElement(
-        'div',
-        { className: 'accInputDiv' },
-        _react2.default.createElement('input', { className: 'detsInput', onChange: saveEmail, type: 'text', placeholder: 'Email' }),
-        _react2.default.createElement('input', { className: 'detsInput', onChange: savePassword, type: 'password', placeholder: 'Password' }),
-        _react2.default.createElement('input', { className: 'detsInput', onChange: saveConfirmPassword, type: 'password', placeholder: 'Confirm Password' }),
-        _react2.default.createElement('input', { className: 'detsInput', onChange: saveFirstName, type: 'text', placeholder: 'First Name' }),
-        _react2.default.createElement('input', { className: 'detsInputLast', onChange: saveLastName, type: 'text', placeholder: 'Last Name' })
-      ),
-      _react2.default.createElement(
-        'button',
-        { className: 'signUpButton', onClick: authorizeSignUp, type: 'submit' },
-        'Sign Up'
-      )
-    ),
-    _react2.default.createElement(
-      'button',
-      { className: 'cancelSignUpButton', onClick: function onClick() {
-          return dispatch({ type: 'CHANGE_ROUTE', payload: '/' });
-        }, type: 'submit' },
-      'Cancel'
-    )
-  );
-};
-
-},{"../services/signup":262,"react":216}],5:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _requestAdminData = require('../../services/requestAdminData');
-
-var _requestAdminData2 = _interopRequireDefault(_requestAdminData);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function renderGroupAdmin() {
-    var groups = state.groups.filter(function (group) {
-      return group.isAdmin;
-    });
-    console.log({ groups: groups });
-    if (groups.length != 0) {
-      return _react2.default.createElement(
-        'button',
-        { className: 'messageAdminsButton', onClick: function onClick() {
-            return (0, _requestAdminData2.default)(state, dispatch);
-          } },
-        'Group Admin'
-      );
-    }
-  }
-  return _react2.default.createElement(
-    'div',
-    { className: 'communication' },
-    _react2.default.createElement(
-      'button',
-      { className: 'leaveRequestButton', onClick: function onClick() {
-          return dispatch({ type: 'CHANGE_VIEW', payload: 'requestLeave' });
-        } },
-      'Request Leave'
-    ),
-    _react2.default.createElement(
-      'button',
-      { className: 'emergencyButton', onClick: function onClick() {
-          return dispatch({ type: 'CHANGE_VIEW', payload: 'emergency' });
-        } },
-      'Emergency'
-    ),
-    _react2.default.createElement(
-      'button',
-      { className: 'messageAdminsButton', onClick: function onClick() {
-          return dispatch({ type: 'CHANGE_VIEW', payload: 'messageAdmin' });
-        } },
-      'Message Admins'
-    ),
-    renderGroupAdmin()
-  );
-};
-
-},{"../../services/requestAdminData":256,"react":216}],6:[function(require,module,exports){
-"use strict";
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  return _react2.default.createElement(
-    "div",
-    { className: "adminEmergency" },
-    "emergency"
-  );
-};
-
-},{"react":216}],7:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _deleteLeaveRequest = require('../../services/deleteLeaveRequest');
-
-var _deleteLeaveRequest2 = _interopRequireDefault(_deleteLeaveRequest);
-
-var _togglePinnedLeaveRequest = require('../../services/togglePinnedLeaveRequest');
-
-var _togglePinnedLeaveRequest2 = _interopRequireDefault(_togglePinnedLeaveRequest);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function selectAdminItem(content, content_type) {
-    dispatch({ type: 'SELECT_ADMIN_ITEM', payload: { content: content, content_type: content_type } });
-  }
-  function pinButton(leaveRequest) {
-    if (leaveRequest.is_pinned) {
-      return _react2.default.createElement(
-        'button',
-        { className: 'toggleButton', onClick: function onClick() {
-            return (0, _togglePinnedLeaveRequest2.default)(leaveRequest, dispatch);
-          } },
-        'Unpin'
-      );
-    }return _react2.default.createElement(
-      'button',
-      { className: 'toggleButton', onClick: function onClick() {
-          return (0, _togglePinnedLeaveRequest2.default)(leaveRequest, dispatch);
-        } },
-      'Pin'
-    );
-  }
-  function renderMore(leaveRequest) {
-    if (leaveRequest.request_id === state.adminSelected.leaveRequest) {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'div',
-          { className: 'adminLeaveRequestReason' },
-          leaveRequest.leave_reason
-        ),
-        pinButton(leaveRequest),
-        _react2.default.createElement(
-          'button',
-          { className: 'toggleButton', onClick: function onClick() {
-              return (0, _deleteLeaveRequest2.default)(leaveRequest.request_id, dispatch);
-            } },
-          'Delete'
-        )
-      );
-    }
-  }
-  function renderLeaveType(leaveRequest) {
-    if (leaveRequest.is_sick_leave == true) return 'Sick Leave';
-    return 'Annual Leave';
-  }
-  function renderAdminLeaveRequest(leaveRequest) {
-    return _react2.default.createElement(
-      'div',
-      { onClick: function onClick() {
-          return selectAdminItem(leaveRequest.request_id, 'leaveRequest');
-        }, className: 'adminLeaveRequest' },
-      _react2.default.createElement(
-        'div',
-        { className: 'adminLeaveRequestName' },
-        leaveRequest.first_name,
-        ' ',
-        leaveRequest.last_name
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'adminLeaveRequestDays' },
-        renderLeaveType(leaveRequest),
-        ' for ',
-        leaveRequest.leave_days,
-        ' days'
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'adminLeaveRequestDate' },
-        'Starting ',
-        leaveRequest.day_id,
-        '/',
-        leaveRequest.month_id,
-        '/',
-        leaveRequest.year_id
-      ),
-      renderMore(leaveRequest),
-      _react2.default.createElement(
-        'div',
-        { className: 'adminLeaveRequestGroup' },
-        leaveRequest.group_name
-      )
-    );
-  }
-  function renderSortedAdminLeaveRequests(leaveRequests) {
-    return leaveRequests.map(function (leaveRequest) {
-      return renderAdminLeaveRequest(leaveRequest);
-    });
-  }
-  function renderAdminLeaveRequests() {
-    var pinned = [];
-    var unpinned = [];
-    state.admin.leaveRequests.forEach(function (leaveRequest) {
-      if (leaveRequest.is_pinned) pinned.push(leaveRequest);else unpinned.push(leaveRequest);
-    });
-    return _react2.default.createElement(
-      'div',
-      { className: 'adminLeaveRequests' },
-      _react2.default.createElement(
-        'div',
-        { className: 'pinnedLeaveRequests' },
-        _react2.default.createElement(
-          'p',
-          { className: 'pinnedAdminMessagesHeader' },
-          'Pinned (',
-          pinned.length,
-          ')'
-        ),
-        renderSortedAdminLeaveRequests(pinned)
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'unpinnedLeaveRequests' },
-        _react2.default.createElement(
-          'p',
-          { className: 'unpinnedAdminMessagesHeader' },
-          'Unpinned (',
-          unpinned.length,
-          ')'
-        ),
-        renderSortedAdminLeaveRequests(unpinned)
-      )
-    );
-  }
-  return renderAdminLeaveRequests();
-};
-
-},{"../../services/deleteLeaveRequest":247,"../../services/togglePinnedLeaveRequest":264,"react":216}],8:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _togglePinnedAdminMessage = require('../../services/togglePinnedAdminMessage');
-
-var _togglePinnedAdminMessage2 = _interopRequireDefault(_togglePinnedAdminMessage);
-
-var _deleteAdminMessage = require('../../services/deleteAdminMessage');
-
-var _deleteAdminMessage2 = _interopRequireDefault(_deleteAdminMessage);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function selectAdminItem(content, content_type) {
-    dispatch({ type: 'SELECT_ADMIN_ITEM', payload: { content: content, content_type: content_type } });
-  }
-  function pinButton(message) {
-    if (message.is_pinned) {
-      return _react2.default.createElement(
-        'button',
-        { className: 'toggleButton', onClick: function onClick() {
-            return (0, _togglePinnedAdminMessage2.default)(message, dispatch);
-          } },
-        'Unpin'
-      );
-    }return _react2.default.createElement(
-      'button',
-      { className: 'toggleButton', onClick: function onClick() {
-          return (0, _togglePinnedAdminMessage2.default)(message, dispatch);
-        } },
-      'Pin'
-    );
-  }
-  function renderMore(message) {
-    if (message.message_id === state.adminSelected.adminMessage) {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'div',
-          { className: 'adminMessageContent' },
-          message.content
-        ),
-        pinButton(message),
-        _react2.default.createElement(
-          'button',
-          { className: 'toggleButton', onClick: function onClick() {
-              return (0, _deleteAdminMessage2.default)(message.message_id, dispatch);
-            } },
-          'Delete'
-        )
-      );
-    } else {
-      var snippet = message.content.slice(0, 14);
-      if (message.content.length > 14) snippet += ' (...)';
-      return _react2.default.createElement(
-        'div',
-        { className: 'adminMessageContent' },
-        snippet
-      );
-    }
-  }
-  function renderAdminMessage(message) {
-    return _react2.default.createElement(
-      'div',
-      { onClick: function onClick() {
-          return selectAdminItem(message.message_id, 'adminMessage');
-        }, className: 'adminMessage' },
-      _react2.default.createElement(
-        'div',
-        { className: 'adminMessageFrom' },
-        message.first_name,
-        ' ',
-        message.last_name
-      ),
-      renderMore(message),
-      _react2.default.createElement(
-        'div',
-        { className: 'adminMessageGroup' },
-        message.group_name
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'adminMessageCreated' },
-        message.message_created_at
-      )
-    );
-  }
-  function renderSortedMessages(messages) {
-    return messages.map(function (message) {
-      return renderAdminMessage(message);
-    });
-  }
-  function renderAdminMessages() {
-    var pinned = [];
-    var unpinned = [];
-    state.admin.adminMessages.forEach(function (message) {
-      if (message.is_pinned) pinned.push(message);else unpinned.push(message);
-    });
-    return _react2.default.createElement(
-      'div',
-      { className: 'adminMessages' },
-      _react2.default.createElement(
-        'div',
-        { className: 'pinnedAdminMessages' },
-        _react2.default.createElement(
-          'p',
-          { className: 'pinnedAdminMessagesHeader' },
-          'Pinned (',
-          pinned.length,
-          ')'
-        ),
-        renderSortedMessages(pinned)
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'unpinnedAdminMessages' },
-        _react2.default.createElement(
-          'p',
-          { className: 'unpinnedAdminMessagesHeader' },
-          'Unpinned (',
-          unpinned.length,
-          ')'
-        ),
-        renderSortedMessages(unpinned)
-      )
-    );
-  }
-  return renderAdminMessages();
-};
-
-},{"../../services/deleteAdminMessage":246,"../../services/togglePinnedAdminMessage":263,"react":216}],9:[function(require,module,exports){
-"use strict";
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  return _react2.default.createElement(
-    "div",
-    { className: "groups" },
-    _react2.default.createElement(
-      "button",
-      { className: "toggleButton", onClick: function onClick() {
-          return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
-        } },
-      "Go Back"
-    ),
-    _react2.default.createElement(
-      "p",
-      { className: "successAlert" },
-      state.successAlert
-    )
-  );
-};
-
-},{"react":216}],10:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _dateTime = require('../../services/dateTime');
-
-var _dateTime2 = _interopRequireDefault(_dateTime);
-
-var _postEvent = require('../../services/postEvent');
-
-var _postEvent2 = _interopRequireDefault(_postEvent);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function updateCreateEvent(content, content_type) {
-    dispatch({ type: 'UPDATE_CREATE_EVENT', payload: { content: content, content_type: content_type } });
-  }
-  function renderGroupOption(option) {
-    return _react2.default.createElement(
-      'option',
-      { value: option.group_id },
-      option.group_name
-    );
-  }
-  function renderGroupSelect() {
-    var groupOptions = state.groups.filter(function (group) {
-      return group.isAdmin;
-    });
-    return _react2.default.createElement(
-      'select',
-      { className: 'selectParentGroup', onChange: function onChange(e) {
-          return updateCreateEvent(e.target.value, 'group_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Group'
-      ),
-      groupOptions.map(function (option) {
-        return renderGroupOption(option);
-      })
-    );
-  }
-  function renderMinuteSelect() {
-    var options = [];
-    for (var i = 0; i < 60; i++) {
-      options.push(i);
-    }return _react2.default.createElement(
-      'select',
-      { className: 'minuteSelect', onChange: function onChange(e) {
-          return updateCreateEvent(e.target.value, 'minute_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Minute'
-      ),
-      options.map(function (minute_id) {
-        var minutes = minute_id;
-        if (minutes < 10) minutes = '0' + minutes.toString();
-        return _react2.default.createElement(
-          'option',
-          { value: minute_id },
-          minutes
-        );
-      })
-    );
-  }
-  function renderHourSelect() {
-    var options = [];
-    for (var i = 0; i < 24; i++) {
-      options.push(i);
-    }return _react2.default.createElement(
-      'select',
-      { className: 'hourSelect', onChange: function onChange(e) {
-          return updateCreateEvent(e.target.value, 'hour_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Hour'
-      ),
-      options.map(function (hour_id) {
-        var hours = hour_id;
-        if (hours < 10) hours = '0' + hours.toString();
-        return _react2.default.createElement(
-          'option',
-          { value: hour_id },
-          hours
-        );
-      })
-    );
-  }
-  function renderDays(dayCount) {
-    console.log({ dayCount: dayCount });
-    var options = [];
-    for (var i = 1; i <= dayCount; i++) {
-      options.push(i);
-    }return options.map(function (day_id) {
-      return _react2.default.createElement(
-        'option',
-        { value: day_id },
-        day_id
-      );
-    });
-  }
-  function renderDaySelect() {
-    return _react2.default.createElement(
-      'select',
-      { onChange: function onChange(e) {
-          return updateCreateEvent(e.target.value, 'day_id');
-        }, className: 'daySelect' },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Day'
-      ),
-      renderDays(_dateTime2.default.months[state.createEvent.month_id || 0].dayCount)
-    );
-  }
-  function renderMonthSelect() {
-    return _react2.default.createElement(
-      'select',
-      { className: 'monthSelect', onChange: function onChange(e) {
-          return updateCreateEvent(e.target.value, 'month_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Month'
-      ),
-      _dateTime2.default.months.map(function (month) {
-        return _react2.default.createElement(
-          'option',
-          { value: month.id },
-          month.name
-        );
-      })
-    );
-  }
-  function renderYearOptions(current_year) {
-    var options = [];
-    for (var i = current_year; i <= current_year + 5; i++) {
-      options.push(_react2.default.createElement(
-        'option',
-        { value: i },
-        i
-      ));
-    }
-    return options;
-  }
-  function renderYearSelect() {
-    return _react2.default.createElement(
-      'select',
-      { className: 'yearSelect', onChange: function onChange(e) {
-          return updateCreateEvent(e.target.value, 'year_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Year'
-      ),
-      renderYearOptions(2017)
-    );
-  }
-  function renderDateTimeSelect() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'dateTime' },
-      _react2.default.createElement(
-        'div',
-        { className: 'dateSelect' },
-        renderMonthSelect(),
-        renderDaySelect(),
-        renderYearSelect()
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'timeSelect' },
-        renderHourSelect(),
-        renderMinuteSelect()
-      )
-    );
-  }
-  function postEventFunction(e) {
-    e.preventDefault();
-    (0, _postEvent2.default)(state, dispatch);
-  }
-  function renderCreateButton() {
-    var event = state.createEvent;
-    if (!event.group_id || !event.minute_id || !event.hour_id || !event.day_id || !event.month_id || !event.year_id || !event.title || !event.description) {
-      return _react2.default.createElement(
-        'div',
-        { className: 'authErrorMsg pleaseSelectAllError' },
-        'Please Fill In All Fields'
-      );
-    } else return _react2.default.createElement(
-      'button',
-      { onClick: function onClick(e) {
-          return postEventFunction(e);
-        }, className: 'endCreateEventButton' },
-      'Create Event'
-    );
-  }
-  return _react2.default.createElement(
-    'div',
-    { className: 'createEvent' },
-    _react2.default.createElement('input', { onChange: function onChange(e) {
-        return updateCreateEvent(e.target.value, 'title');
-      }, className: 'detsInput eventInput', type: 'text', placeholder: 'Event Title' }),
-    _react2.default.createElement('input', { onChange: function onChange(e) {
-        return updateCreateEvent(e.target.value, 'description');
-      }, className: 'detsInputLast eventInput', type: 'text', placeholder: 'Event Description' }),
-    renderDateTimeSelect(),
-    renderGroupSelect(),
-    renderCreateButton(),
-    _react2.default.createElement(
-      'div',
-      { className: 'createEventButtonsDiv' },
-      _react2.default.createElement(
-        'button',
-        { className: 'createEventButtons leftButton', onClick: function onClick() {
-            return dispatch({ type: 'TOGGLE', payload: 'createEventToggle' });
-          } },
-        'Cancel'
-      )
-    )
-  );
-};
-
-},{"../../services/dateTime":245,"../../services/postEvent":250,"react":216}],11:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _postGroup = require('../../services/postGroup');
-
-var _postGroup2 = _interopRequireDefault(_postGroup);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-	function updateCreateGroupDetails(content, content_type) {
-		dispatch({ type: 'UPDATE_CREATE_GROUP', payload: { content: content, content_type: content_type } });
-	}
-	function renderGroupInviteOption() {
-		if (state.createGroup.invite_only) return _react2.default.createElement(
-			'p',
-			null,
-			'Invite Only'
-		);
-		return _react2.default.createElement(
-			'p',
-			null,
-			'Open Group'
-		);
-	}
-	function renderOption(option) {
-		return _react2.default.createElement(
-			'option',
-			{ value: option.group_id },
-			option.group_name
-		);
-	}
-	function selectParentGroup() {
-		var parentOptions = state.groups.filter(function (group) {
-			return group.isAdmin;
-		});
-		return _react2.default.createElement(
-			'select',
-			{ className: 'selectParentGroup', onChange: function onChange(e) {
-					return updateCreateGroupDetails(e.target.value, 'parent_id');
-				} },
-			_react2.default.createElement(
-				'option',
-				{ value: ' ', disabled: true, selected: true },
-				'Parent Group'
-			),
-			parentOptions.map(function (option) {
-				return renderOption(option);
-			})
-		);
-	}
-	function inviteConditionHandler() {
-		return _react2.default.createElement(
-			'div',
-			null,
-			renderGroupInviteOption(),
-			_react2.default.createElement(
-				'button',
-				{ className: 'toggleButton', onClick: function onClick() {
-						return updateCreateGroupDetails(!state.createGroup.invite_only, "invite_only");
-					} },
-				'Toggle'
-			)
-		);
-	}
-	return _react2.default.createElement(
-		'div',
-		{ className: 'createGroup' },
-		_react2.default.createElement('input', { className: 'detsInput groupInput', onChange: function onChange(e) {
-				return updateCreateGroupDetails(e.target.value, 'group_name');
-			}, type: 'text', placeholder: 'Group Name' }),
-		_react2.default.createElement('input', { className: 'detsInputLast groupInput', onChange: function onChange(e) {
-				return updateCreateGroupDetails(e.target.value, 'group_description');
-			}, type: 'text', placeholder: 'Group Description' }),
-		inviteConditionHandler(),
-		selectParentGroup(),
-		_react2.default.createElement(
-			'div',
-			{ className: 'createGroupButtonsDiv' },
-			_react2.default.createElement(
-				'button',
-				{ className: 'createGroupButtons leftButton', onClick: function onClick() {
-						return dispatch({ type: 'TOGGLE', payload: 'createGroupToggle' });
-					} },
-				'Cancel'
-			),
-			_react2.default.createElement(
-				'button',
-				{ className: 'createGroupButtons rightButton', onClick: function onClick() {
-						return (0, _postGroup2.default)(state, dispatch);
-					} },
-				'Create'
-			)
-		)
-	);
-};
-
-},{"../../services/postGroup":251,"react":216}],12:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _postPost = require('../../services/postPost');
-
-var _postPost2 = _interopRequireDefault(_postPost);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function updatePostDetails(content, content_type) {
-    dispatch({ type: 'UPDATE_CREATE_POST', payload: {
-        content: content, content_type: content_type
-      } });
-  }
-  function renderOption(option) {
-    if (option.isAdmin) {
-      return _react2.default.createElement(
-        'option',
-        { value: option.group_id },
-        option.group_name
-      );
-    } else return _react2.default.createElement('p', null);
-  }
-  function groupHandler() {
-    var parentOptions = state.groups.filter(function (group) {
-      return group.isAdmin;
-    });
-    return _react2.default.createElement(
-      'select',
-      { className: 'selectParentGroup', onChange: function onChange(e) {
-          return updatePostDetails(e.target.value, 'group_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Group'
-      ),
-      parentOptions.map(function (option) {
-        return renderOption(option);
-      })
-    );
-  }
-  function renderAlertOption() {
-    if (state.createPost.is_alert) {
-      return _react2.default.createElement(
-        'p',
-        { className: 'postTypeToggleButton alertTypeToggleShow' },
-        'Alert'
-      );
-    }return _react2.default.createElement(
-      'p',
-      { className: 'postTypeToggleButton postTypeToggleShow' },
-      'Post'
-    );
-  }
-  function alertHandler() {
-    return _react2.default.createElement(
-      'div',
-      null,
-      renderAlertOption(),
-      _react2.default.createElement(
-        'button',
-        { className: 'toggleButton', onClick: function onClick() {
-            return updatePostDetails(!state.createPost.is_alert, "is_alert");
-          } },
-        'Toggle'
-      )
-    );
-  }
-  return _react2.default.createElement(
-    'div',
-    { className: 'createPost' },
-    _react2.default.createElement('input', { type: 'text', className: 'detsInput postInput', onChange: function onChange(e) {
-        return updatePostDetails(e.target.value, 'content');
-      }, placeholder: 'content' }),
-    _react2.default.createElement(
-      'button',
-      { className: 'createPostButtons leftButton', onClick: function onClick() {
-          return dispatch({ type: 'TOGGLE', payload: 'createPostToggle' });
-        } },
-      'Cancel'
-    ),
-    alertHandler(),
-    groupHandler(),
-    state.createPost.content.length >= 6 ? _react2.default.createElement(
-      'button',
-      { className: 'createPostButtons rightButton', onClick: function onClick() {
-          return (0, _postPost2.default)(state, dispatch);
-        } },
-      'Post'
-    ) : _react2.default.createElement(
-      'p',
-      null,
-      'Post too short'
-    )
-  );
-};
-
-},{"../../services/postPost":253,"react":216}],13:[function(require,module,exports){
-"use strict";
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  return _react2.default.createElement(
-    "div",
-    { className: "groups" },
-    _react2.default.createElement(
-      "button",
-      { className: "toggleButton", onClick: function onClick() {
-          return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
-        } },
-      "Go Back"
-    ),
-    _react2.default.createElement(
-      "div",
-      null,
-      "Emergency Reporting"
-    )
-  );
-};
-
-},{"react":216}],14:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _createEvent = require('./createEvent');
-
-var _createEvent2 = _interopRequireDefault(_createEvent);
-
-var _postRSVP = require('../../services/postRSVP');
-
-var _postRSVP2 = _interopRequireDefault(_postRSVP);
-
-var _dateTime = require('../../services/dateTime');
-
-var _dateTime2 = _interopRequireDefault(_dateTime);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function renderSearch() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'searchdiv' },
-      _react2.default.createElement('input', { className: 'detsInput searchEvents', onChange: function onChange(e) {
-          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: e.target.value, search_type: 'eventsSearch' } });
-        }, type: 'text', placeholder: 'Search Events' }),
-      _react2.default.createElement('input', { className: 'resetSearch', onClick: function onClick(e) {
-          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: null, search_type: 'eventsSearch' } });
-        }, type: 'reset', value: 'Reset' })
-    );
-  }
-  function renderRsvpButtons(event) {
-    var RSVP = state.RSVPs.find(function (RSVP) {
-      return RSVP.event_id == event.event_id;
-    });
-    console.log({ RSVP: RSVP });
-    if (RSVP) {
-      if (RSVP.going == true) {
-        return _react2.default.createElement(
-          'div',
-          { className: 'eventButtons' },
-          _react2.default.createElement(
-            'button',
-            { className: 'eventAttendanceButtons', onClick: function onClick() {
-                return (0, _postRSVP2.default)(event.event_id, false, dispatch, -1);
-              } },
-            'No Longer Attending'
-          )
-        );
-      } else {
-        return _react2.default.createElement(
-          'div',
-          { className: 'eventButtons' },
-          _react2.default.createElement(
-            'button',
-            { className: 'eventAttendanceButtons', onClick: function onClick() {
-                return (0, _postRSVP2.default)(event.event_id, true, dispatch, 1);
-              } },
-            'Can Attend'
-          )
-        );
-      }
-    } else {
-      return _react2.default.createElement(
-        'div',
-        { className: 'eventButtons' },
-        _react2.default.createElement(
-          'button',
-          { className: 'eventAttendanceButtons', onClick: function onClick() {
-              return (0, _postRSVP2.default)(event.event_id, true, dispatch, 1);
-            } },
-          'Attending'
-        ),
-        _react2.default.createElement(
-          'button',
-          { className: 'eventAttendanceButtons', onClick: function onClick() {
-              return (0, _postRSVP2.default)(event.event_id, false, dispatch, 0);
-            } },
-          'Not Attending'
-        )
-      );
-    }
-    console.log({ RSVP: RSVP });
-  }
-  function renderMore(event) {
-    return _react2.default.createElement(
-      'div',
-      { className: 'eventSelected' },
-      _react2.default.createElement(
-        'div',
-        { className: 'eventDescription' },
-        event.description
-      ),
-      renderRsvpButtons(event),
-      _react2.default.createElement(
-        'div',
-        { className: 'eventRsvpCount' },
-        event.RSVP_count,
-        ' attending'
-      )
-    );
-  }
-  function renderDate(event) {
-    var syntax = 'th';
-    if (event.day_id === 1) syntax = 'st';else if (event.day_id === 2) syntax = 'nd';else if (event.day_id === 3) syntax = 'rd';
-
-    return _react2.default.createElement(
-      'div',
-      { className: 'eventDate' },
-      event.day_id.toString() + syntax + ' ' + _dateTime2.default.months[event.month_id].name + ' ' + event.year_id
-    );
-  }
-  function renderTime(event) {
-    var minutes = event.minute_id;
-    if (minutes < 10) minutes = '0' + minutes.toString();
-    var hours = event.hour_id;
-    if (hours < 10) hours = '0' + hours.toString();
-    return _react2.default.createElement(
-      'div',
-      { className: 'eventTime' },
-      hours + ' : ' + minutes
-    );
-  }
-  function renderDateTime(event) {
-
-    return _react2.default.createElement(
-      'div',
-      { className: 'eventDateTime' },
-      renderDate(event),
-      renderTime(event)
-    );
-  }
-  function renderEvent(event) {
-    return _react2.default.createElement(
-      'div',
-      { onClick: function onClick() {
-          return dispatch({ type: 'SELECT_EVENT', payload: event.event_id });
-        }, className: 'event' },
-      _react2.default.createElement(
-        'div',
-        { className: 'eventTitle' },
-        event.title
-      ),
-      renderDateTime(event),
-      state.selectedEvent == event.event_id ? renderMore(event) : '',
-      _react2.default.createElement(
-        'div',
-        { className: 'eventName' },
-        event.first_name,
-        ' ',
-        event.last_name
-      )
-    );
-  }
-  function renderEvents() {
-    var events;
-    if (state.search.eventsSearch === '' || !state.search.eventsSearch) events = state.events;else events = state.events.filter(function (event) {
-      return event.title.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || '') || event.first_name.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || '') || event.last_name.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || '') || event.description.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || '') || (event.first_name.toLowerCase() + ' ' + event.last_name.toLowerCase()).includes(state.search.eventsSearch.toLowerCase() || '');
-    });
-
-    return events.map(function (event) {
-      return renderEvent(event);
-    });
-  }
-  return _react2.default.createElement(
-    'div',
-    { className: 'events' },
-    state.createEventToggle ? (0, _createEvent2.default)(state, dispatch) : _react2.default.createElement(
-      'button',
-      { className: 'createEventButton', onClick: function onClick() {
-          return dispatch({ type: 'TOGGLE', payload: 'createEventToggle' });
-        } },
-      'New Event'
-    ),
-    renderSearch(),
-    _react2.default.createElement(
-      'div',
-      { className: 'eventSorting' },
-      'Today'
-    ),
-    renderEvents()
-  );
-};
-
-},{"../../services/dateTime":245,"../../services/postRSVP":255,"./createEvent":10,"react":216}],15:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _createGroup = require('./createGroup');
-
-var _createGroup2 = _interopRequireDefault(_createGroup);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function renderSearch() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'searchdiv' },
-      _react2.default.createElement('input', { className: 'detsInput searchGroups', onChange: function onChange(e) {
-          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: e.target.value, search_type: 'findGroupSearch' } });
-        }, type: 'text', placeholder: 'Search Groups' }),
-      _react2.default.createElement('input', { className: 'resetSearch', onClick: function onClick(e) {
-          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: null, search_type: 'findGroupSearch' } });
-        }, type: 'reset', value: 'Reset' })
-    );
-  }
-  function renderRequestButtons(group) {
-    if (group.invite_only) {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'button',
-          { className: 'findGroupButton' },
-          'Request To Join'
-        )
-      );
-    } else return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'button',
-        { className: 'findGroupButton' },
-        'Join Group'
-      )
-    );
-  }
-  function renderMore(group) {
-    if (state.selectedGroup == group.group_id) {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'p',
-          { className: 'group_description' },
-          group.group_description
-        ),
-        renderRequestButtons(group)
-      );
-    } else return;
-  }
-  function renderGroup(group) {
-    return _react2.default.createElement(
-      'div',
-      { className: 'group', onClick: function onClick() {
-          return dispatch({ type: 'SELECT_GROUP', payload: group.group_id });
-        } },
-      _react2.default.createElement(
-        'p',
-        { className: 'groupName' },
-        group.group_name
-      ),
-      renderMore(group),
-      _react2.default.createElement(
-        'p',
-        { className: 'groupMemberCount' },
-        group.member_count,
-        ' members'
-      )
-    );
-  }
-  function renderGroups() {
-    var findGroup;
-
-    if (state.search.findGroupSearch === '' || !state.search.findGroupSearch) findGroup = state.findGroup;else findGroup = state.findGroup.filter(function (group) {
-      return group.group_name.toLowerCase().includes(state.search.findGroupSearch.toLowerCase() || '') || group.group_description.toLowerCase().includes(state.search.findGroupSearch.toLowerCase() || '') || group.member_count >= Number(state.groupsSearch);
-    });
-
-    if (state.findGroup.length > 0) {
-      return findGroup.map(function (group) {
-        return renderGroup(group);
-      });
-    } else {
-      _react2.default.createElement(
-        'p',
-        null,
-        'There are no groups to join'
-      );
-    }
-  }
-  return _react2.default.createElement(
-    'div',
-    { className: 'findGroup' },
-    _react2.default.createElement(
-      'button',
-      { className: 'findGroupButton', onClick: function onClick() {
-          return dispatch({ type: 'CHANGE_VIEW', payload: 'groups' });
-        } },
-      'Back to Groups'
-    ),
-    renderSearch(),
-    renderGroups()
-  );
-};
-
-},{"./createGroup":11,"react":216}],16:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _adminMessages = require('./adminMessages.js');
-
-var _adminMessages2 = _interopRequireDefault(_adminMessages);
-
-var _adminLeaveRequests = require('./adminLeaveRequests');
-
-var _adminLeaveRequests2 = _interopRequireDefault(_adminLeaveRequests);
-
-var _adminEmergency = require('./adminEmergency');
-
-var _adminEmergency2 = _interopRequireDefault(_adminEmergency);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function renderAdminHeader() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'adminHeader' },
-      _react2.default.createElement(
-        'button',
-        { className: 'toggleButton', onClick: function onClick() {
-            return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
-          } },
-        'Go Back'
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'adminBar' },
-        _react2.default.createElement(
-          'span',
-          { className: 'adminNavItem', onClick: function onClick() {
-              return dispatch({ type: 'CHANGE_ADMIN_VIEW', payload: 'adminMessages' });
-            } },
-          'Messages (',
-          state.admin.adminMessages.length,
-          ')'
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: 'adminNavItem', onClick: function onClick() {
-              return dispatch({ type: 'CHANGE_ADMIN_VIEW', payload: 'leaveRequests' });
-            } },
-          'Leave (',
-          state.admin.leaveRequests.length,
-          ')'
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: 'adminNavItem', onClick: function onClick() {
-              return dispatch({ type: 'CHANGE_ADMIN_VIEW', payload: 'emergency' });
-            } },
-          'Emergency (',
-          state.admin.emergency.length,
-          ')'
-        )
-      )
-    );
-  }
-  function renderAdminView() {
-    switch (state.adminView) {
-      case 'leaveRequests':
-        return (0, _adminLeaveRequests2.default)(state, dispatch);
-      case 'adminMessages':
-        return (0, _adminMessages2.default)(state, dispatch);
-      case 'emergency':
-        return (0, _adminEmergency2.default)(state, dispatch);
-      default:
-        return (0, _adminMessages2.default)(state, dispatch);
-    }
-  }
-  return _react2.default.createElement(
-    'div',
-    { className: 'groupAdmin' },
-    renderAdminHeader(),
-    _react2.default.createElement(
-      'div',
-      { className: 'adminView' },
-      renderAdminView()
-    )
-  );
-};
-
-},{"./adminEmergency":6,"./adminLeaveRequests":7,"./adminMessages.js":8,"react":216}],17:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _createGroup = require('./createGroup');
-
-var _createGroup2 = _interopRequireDefault(_createGroup);
-
-var _requestFindGroups = require('../../services/requestFindGroups');
-
-var _requestFindGroups2 = _interopRequireDefault(_requestFindGroups);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function renderSearch() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'searchdiv' },
-      _react2.default.createElement('input', { className: 'detsInput searchGroups', onChange: function onChange(e) {
-          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: e.target.value, search_type: 'groupsSearch' } });
-        }, type: 'text', placeholder: 'Search Groups' }),
-      _react2.default.createElement('input', { className: 'resetSearch', onClick: function onClick(e) {
-          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: null, search_type: 'groupsSearch' } });
-        }, type: 'reset', value: 'Reset' })
-    );
-  }
-  function renderRequestButtons(group) {
-    if (group.invite_only) {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'button',
-          { className: 'findGroupButton' },
-          'Request To Join'
-        )
-      );
-    } else return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(
-        'button',
-        { className: 'findGroupButton' },
-        'Join Group'
-      )
-    );
-  }
-  function renderMore(group) {
-    if (state.selectedGroup == group.group_id) {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'p',
-          { className: 'group_description' },
-          group.group_description
-        ),
-        state.currentGroup.group_id == group.group_id ? _react2.default.createElement(
-          'p',
-          null,
-          'This is your current group'
-        ) : _react2.default.createElement(
-          'button',
-          { className: 'changeGroupButton', onClick: function onClick() {
-              return dispatch({ type: 'CHANGE_GROUP', payload: group });
-            } },
-          'Switch Group'
-        )
-      );
-    } else return;
-  }
-  function renderGroup(group) {
-    return _react2.default.createElement(
-      'div',
-      { className: 'group', onClick: function onClick() {
-          return dispatch({ type: 'SELECT_GROUP', payload: group.group_id });
-        } },
-      _react2.default.createElement(
-        'p',
-        { className: 'groupName' },
-        group.group_name
-      ),
-      renderMore(group),
-      _react2.default.createElement(
-        'p',
-        { className: 'groupMemberCount' },
-        group.member_count,
-        ' members'
-      )
-    );
-  }
-  function renderGroups() {
-    var groups;
-
-    if (state.search.groupsSearch === '' || !state.search.groupsSearch) groups = state.groups;else groups = state.groups.filter(function (group) {
-      return group.group_name.toLowerCase().includes(state.search.groupsSearch.toLowerCase() || '') || group.group_description.toLowerCase().includes(state.search.groupsSearch.toLowerCase() || '') || group.member_count >= Number(state.groupsSearch);
-    });
-
-    return groups.map(function (group) {
-      return renderGroup(group);
-    });
-  }
-  return _react2.default.createElement(
-    'div',
-    { className: 'groups' },
-    _react2.default.createElement(
-      'button',
-      { className: 'findGroupButton', onClick: function onClick() {
-          return (0, _requestFindGroups2.default)(state, dispatch);
-        } },
-      'Find Groups'
-    ),
-    state.createGroupToggle ? (0, _createGroup2.default)(state, dispatch) : _react2.default.createElement(
-      'button',
-      { className: 'createGroupButton', onClick: function onClick() {
-          return dispatch({ type: 'TOGGLE', payload: 'createGroupToggle' });
-        } },
-      'New Group'
-    ),
-    renderSearch(),
-    renderGroups()
-  );
-};
-
-},{"../../services/requestFindGroups":258,"./createGroup":11,"react":216}],18:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _requestEvents = require('../../services/requestEvents');
-
-var _requestEvents2 = _interopRequireDefault(_requestEvents);
-
-var _requestPosts = require('../../services/requestPosts');
-
-var _requestPosts2 = _interopRequireDefault(_requestPosts);
-
-var _requestGroups = require('../../services/requestGroups');
-
-var _requestGroups2 = _interopRequireDefault(_requestGroups);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  return _react2.default.createElement(
-    'div',
-    { className: 'header' },
-    _react2.default.createElement(
-      'nav',
-      null,
-      _react2.default.createElement(
-        'span',
-        { className: 'navItem', onClick: function onClick() {
-            return (0, _requestEvents2.default)(state, dispatch);
-          } },
-        'Events '
-      ),
-      _react2.default.createElement(
-        'span',
-        { className: 'navItem', onClick: function onClick() {
-            return (0, _requestPosts2.default)(state, dispatch);
-          } },
-        'Posts '
-      ),
-      _react2.default.createElement(
-        'span',
-        { className: 'navItem', onClick: function onClick() {
-            return (0, _requestGroups2.default)(state, dispatch);
-          } },
-        'Groups'
-      ),
-      _react2.default.createElement(
-        'span',
-        { className: 'navItem', onClick: function onClick() {
-            return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
-          } },
-        'Admin'
-      )
-    )
-  );
-};
-
-},{"../../services/requestEvents":257,"../../services/requestGroups":259,"../../services/requestPosts":261,"react":216}],19:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _postAdminMessage = require('../../services/postAdminMessage');
-
-var _postAdminMessage2 = _interopRequireDefault(_postAdminMessage);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function updateAdminMessageDetails(content, content_type) {
-    dispatch({ type: 'UPDATE_ADMIN_MESSAGE_DETAILS', payload: { content: content, content_type: content_type } });
-  }
-  function renderGroupOption(group) {
-    return _react2.default.createElement(
-      'option',
-      { value: group.group_id },
-      group.group_name
-    );
-  }
-  function renderGroupSelect() {
-    return _react2.default.createElement(
-      'select',
-      { onChange: function onChange(e) {
-          return updateAdminMessageDetails(e.target.value, 'group_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { selected: true, disabled: true },
-        'Select Group'
-      ),
-      state.groups.map(function (group) {
-        return renderGroupOption(group);
-      })
-    );
-  }
-  function postAdminMessageFunction(e) {
-    e.preventDefault();
-    (0, _postAdminMessage2.default)(state, dispatch);
-  }
-  function renderSendAdminMessage() {
-    if (!state.adminMessageDetails.content || !state.adminMessageDetails.group_id) {
-      return _react2.default.createElement(
-        'div',
-        { className: 'authErrorMsg pleaseSelectAllError' },
-        'Please fill in all fields'
-      );
-    } else return _react2.default.createElement(
-      'button',
-      { className: 'toggleButton', onClick: function onClick(e) {
-          return (0, _postAdminMessage2.default)(state, dispatch);
-        } },
-      'Send Message'
-    );
-  }
-
-  return _react2.default.createElement(
-    'div',
-    { className: 'messageAdminForm' },
-    _react2.default.createElement(
-      'button',
-      { className: 'toggleButton', onClick: function onClick() {
-          return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
-        } },
-      'Back'
-    ),
-    _react2.default.createElement(
-      'div',
-      null,
-      renderGroupSelect(),
-      _react2.default.createElement('input', { className: 'detsInput messageAdminDets', onChange: function onChange(e) {
-          return updateAdminMessageDetails(e.target.value, 'content');
-        }, type: 'text', placeholder: 'message' }),
-      renderSendAdminMessage()
-    )
-  );
-};
-
-},{"../../services/postAdminMessage":249,"react":216}],20:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _createPost = require('./createPost');
-
-var _createPost2 = _interopRequireDefault(_createPost);
-
-var _requestPostRespones = require('../../services/requestPostRespones');
-
-var _requestPostRespones2 = _interopRequireDefault(_requestPostRespones);
-
-var _postPostResponse = require('../../services/postPostResponse');
-
-var _postPostResponse2 = _interopRequireDefault(_postPostResponse);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  function renderSearch() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'searchdiv' },
-      _react2.default.createElement('input', { className: 'detsInput searchPosts', onChange: function onChange(e) {
-          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: e.target.value, search_type: 'postsSearch' } });
-        }, type: 'text', placeholder: 'Search Posts' }),
-      _react2.default.createElement('input', { className: 'resetSearch', onClick: function onClick(e) {
-          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: null, search_type: 'postsSearch' } });
-        }, type: 'reset', value: 'Reset' })
-    );
-  }
-  function renderPostResponsediv() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'postResponseInput' },
-      _react2.default.createElement('input', { type: 'text', className: 'detsInput postInput customClass', onChange: function onChange(e) {
-          return dispatch({ type: "UPDATE_RESPONSE", payload: e.target.value });
-        }, placeholder: 'response' }),
-      state.postResponse.length < 200 ? _react2.default.createElement(
-        'button',
-        { className: 'createResButtons rightButton', onClick: function onClick() {
-            return (0, _postPostResponse2.default)(state, dispatch);
-          } },
-        'Respond'
-      ) : _react2.default.createElement(
-        'p',
-        { className: 'authErrorMsg' },
-        'Too many characters'
-      )
-    );
-  }
-  function renderResponse(response) {
-    return _react2.default.createElement(
-      'div',
-      { className: 'postResponse' },
-      _react2.default.createElement(
-        'p',
-        { className: 'responseName' },
-        response.last_name,
-        ':'
-      ),
-      _react2.default.createElement(
-        'p',
-        { className: 'responseContent' },
-        response.response_content
-      )
-    );
-  }
-  function renderRespones(post) {
-    if (state.selectedPost == post.post_id) {
-      return _react2.default.createElement(
-        'div',
-        { className: 'postResponses' },
-        renderPostResponsediv(),
-        state.postResponses.map(function (response) {
-          return renderResponse(response);
-        })
-      );
-    } else return _react2.default.createElement(
-      'div',
-      { className: 'postRespones' },
-      post.responses,
-      ' responses'
-    );
-  }
-  function renderPost(post) {
-    var customClass;
-    post.is_alert ? customClass = 'alertTypePost post' : customClass = 'postTypePost post';
-    return _react2.default.createElement(
-      'div',
-      { className: customClass, onClick: function onClick() {
-          return (0, _requestPostRespones2.default)(post.post_id, state, dispatch);
-        } },
-      _react2.default.createElement(
-        'div',
-        { className: 'postDets' },
-        _react2.default.createElement(
-          'div',
-          { className: 'postedAt rightButton' },
-          post.post_created_at
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'postContent' },
-        post.content
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'postedBy' },
-        post.first_name,
-        ' ',
-        post.last_name
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'postedBy' },
-        post.group_name
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'postDets' },
-        renderRespones(post)
-      )
-    );
-  }
-  function filterAlerts(posts) {
-    var alerts = posts.filter(function (post) {
-      return post.is_alert == true;
-    });
-    return alerts;
-  }
-  function renderPosts() {
-    var posts = state.posts;
-    if (state.alertsOnly) {
-      posts = filterAlerts(posts);
-    }
-    if (state.search.postsSearch === '' || !state.search.postsSearch) posts = posts;else posts = posts.filter(function (post) {
-      return post.group_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || '') || post.first_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || '') || post.last_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || '') || post.content.toLowerCase().includes(state.search.postsSearch.toLowerCase() || '') || (post.first_name.toLowerCase() + ' ' + post.last_name.toLowerCase()).includes(state.search.postsSearch.toLowerCase() || '');
-    });
-
-    return posts.map(function (post) {
-      return renderPost(post);
-    });
-  }
-  function toggleCreatePost() {
-    if (state.createPostToggle) return (0, _createPost2.default)(state, dispatch);else return _react2.default.createElement(
-      'button',
-      { className: 'createPostButton', onClick: function onClick() {
-          return dispatch({ type: 'TOGGLE', payload: 'createPostToggle' });
-        } },
-      'New Post'
-    );
-  }
-  function toggleAlertsOnly() {
-    dispatch({ type: "TOGGLE", payload: 'alertsOnly' });
-  }
-  function AlertToggleButton() {
-    if (state.alertsOnly) {
-      return _react2.default.createElement(
-        'button',
-        { onClick: function onClick() {
-            return toggleAlertsOnly();
-          }, className: 'createPostButton' },
-        'All Posts'
-      );
-    } else return _react2.default.createElement(
-      'button',
-      { onClick: function onClick() {
-          return toggleAlertsOnly();
-        }, className: 'createPostButton' },
-      'Alerts Only'
-    );
-  }
-
-  return _react2.default.createElement(
-    'div',
-    { className: 'posts' },
-    toggleCreatePost(),
-    AlertToggleButton(),
-    renderSearch(),
-    renderPosts()
-  );
-};
-
-},{"../../services/postPostResponse":254,"../../services/requestPostRespones":260,"./createPost":12,"react":216}],21:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _dateTime = require('../../services/dateTime');
-
-var _dateTime2 = _interopRequireDefault(_dateTime);
-
-var _postLeaveRequest = require('../../services/postLeaveRequest');
-
-var _postLeaveRequest2 = _interopRequireDefault(_postLeaveRequest);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = function (state, dispatch) {
-  var currentGroup = state.groups.find(function (group) {
-    return group.group_id == state.leaveRequestDetails.group_id;
-  }) || state.currentGroup.group_id;
-  function updateLeaveRequestDetails(content, content_type) {
-    console.log({ content: content, content_type: content_type });
-    dispatch({ type: 'UPDATE_LEAVE_REQUEST_DETAILS', payload: { content: content, content_type: content_type } });
-  }
-  function renderDays(dayCount) {
-    console.log({ dayCount: dayCount });
-    var options = [];
-    for (var i = 1; i <= dayCount; i++) {
-      options.push(i);
-    }return options.map(function (day_id) {
-      return _react2.default.createElement(
-        'option',
-        { value: day_id },
-        day_id
-      );
-    });
-  }
-  function renderDaySelect() {
-    return _react2.default.createElement(
-      'select',
-      { onChange: function onChange(e) {
-          return updateLeaveRequestDetails(e.target.value, 'day_id');
-        }, className: 'daySelect' },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Day'
-      ),
-      renderDays(_dateTime2.default.months[state.createEvent.month_id || 0].dayCount)
-    );
-  }
-  function renderMonthSelect() {
-    return _react2.default.createElement(
-      'select',
-      { className: 'monthSelect', onChange: function onChange(e) {
-          return updateLeaveRequestDetails(e.target.value, 'month_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Month'
-      ),
-      _dateTime2.default.months.map(function (month) {
-        return _react2.default.createElement(
-          'option',
-          { value: month.id },
-          month.name
-        );
-      })
-    );
-  }
-  function renderYearOptions(current_year) {
-    var options = [];
-    for (var i = current_year; i <= current_year + 5; i++) {
-      options.push(_react2.default.createElement(
-        'option',
-        { value: i },
-        i
-      ));
-    }
-    return options;
-  }
-  function renderYearSelect() {
-    return _react2.default.createElement(
-      'select',
-      { className: 'yearSelect', onChange: function onChange(e) {
-          return updateLeaveRequestDetails(e.target.value, 'year_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { value: ' ', disabled: true, selected: true },
-        'Year'
-      ),
-      renderYearOptions(2017)
-    );
-  }
-  function renderLeaveDaysOptions(count) {
-    var arr = [];
-    for (var i = 1; i <= count; i++) {
-      arr.push(_react2.default.createElement(
-        'option',
-        { value: i },
-        i
-      ));
-    }
-    return arr;
-  }
-  function renderDateTimeSelect() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'dateTime' },
-      _react2.default.createElement(
-        'div',
-        { className: 'dateSelect' },
-        renderMonthSelect(),
-        renderDaySelect(),
-        renderYearSelect()
-      ),
-      _react2.default.createElement(
-        'select',
-        { onChange: function onChange(e) {
-            return updateLeaveRequestDetails(e.target.value, 'leave_days');
-          } },
-        _react2.default.createElement(
-          'option',
-          { disabled: true, selected: true },
-          'Leave Days'
-        ),
-        renderLeaveDaysOptions(50)
-      )
-    );
-  }
-  function renderLeaveType() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'leaveType' },
-      state.leaveRequestDetails.is_sick_leave ? "Sick Leave" : "Annual Leave",
-      ' '
-    );
-  }
-
-  function renderLeavediv() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'leavediv' },
-      _react2.default.createElement(
-        'button',
-        { className: 'changeLeaveButton', onClick: function onClick(e) {
-            return updateLeaveRequestDetails(!state.leaveRequestDetails.is_sick_leave, 'is_sick_leave');
-          } },
-        'Change Leave Type'
-      ),
-      renderLeaveType(),
-      renderDateTimeSelect(),
-      _react2.default.createElement('input', { className: 'detsInput reasonForLeaveInput', onChange: function onChange(e) {
-          return updateLeaveRequestDetails(e.target.value, 'leave_reason');
-        }, type: 'text', placeholder: 'Reason for Leave' })
-    );
-  }
-  function renderContact() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'contactDetails' },
-      _react2.default.createElement(
-        'div',
-        { className: 'contactNumber' },
-        state.currentGroup.contact_number
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'contactEmail' },
-        state.currentGroup.contact_email
-      )
-    );
-  }
-  function renderGroupOption(group) {
-    return _react2.default.createElement(
-      'option',
-      { value: group.group_id },
-      group.group_name
-    );
-  }
-  function renderGroupSelect() {
-    return _react2.default.createElement(
-      'select',
-      { onChange: function onChange(e) {
-          return updateLeaveRequestDetails(e.target.value, 'group_id');
-        } },
-      _react2.default.createElement(
-        'option',
-        { disabled: true, selected: true },
-        'Select Group'
-      ),
-      state.groups.map(function (group) {
-        return renderGroupOption(group);
-      })
-    );
-  }
-  function renderRequestButton() {
-    var request = state.leaveRequestDetails;
-    if (!request.group_id || !request.day_id || !request.month_id || !request.year_id || !request.leave_reason || !request.leave_days) {
-      return _react2.default.createElement(
-        'div',
-        { className: 'authErrorMsg pleaseSelectAllError' },
-        'Please Select All Fields'
-      );
-    } else return _react2.default.createElement(
-      'button',
-      { onClick: function onClick() {
-          return (0, _postLeaveRequest2.default)(state, dispatch);
-        }, className: 'toggleButton' },
-      'Send Leave Request'
-    );
-  }
-  return _react2.default.createElement(
-    'div',
-    { className: 'applyLeaveDiv' },
-    _react2.default.createElement(
-      'button',
-      { className: 'toggleButton', onClick: function onClick() {
-          return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
-        } },
-      'Go Back'
-    ),
-    _react2.default.createElement(
-      'div',
-      null,
-      renderGroupSelect(),
-      renderContact(),
-      renderLeavediv(),
-      renderRequestButton()
-    )
-  );
-};
-
-},{"../../services/dateTime":245,"../../services/postLeaveRequest":252,"react":216}],22:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _app = require('./components/app');
-
-var _app2 = _interopRequireDefault(_app);
-
-var _sheetRouter = require('sheet-router');
-
-var _sheetRouter2 = _interopRequireDefault(_sheetRouter);
-
-var _redux = require('redux');
-
-var _login = require('./components/login');
-
-var _login2 = _interopRequireDefault(_login);
-
-var _signup = require('./components/signup');
-
-var _signup2 = _interopRequireDefault(_signup);
-
-var _main = require('./components/main');
-
-var _main2 = _interopRequireDefault(_main);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var reducer = require('./reducer');
-
-var app = document.createElement('div');
-document.querySelector('main').appendChild(app);
-
-var initialState = {
-  theme: 'default',
-  title: "Bizz-Buzz",
-  route: '/',
-  view: 'events',
-  isLoading: false,
-  loginDetails: {
-    username: ' ',
-    password: ' '
-  },
-  signupDetails: {},
-  authError: null,
-  user: {},
-  currentGroup: [],
-  search: {
-    eventsSearch: null
-  },
-  events: [],
-  RSVPs: [],
-  createEventToggle: false,
-  posts: [],
-  createPost: {
-    is_alert: false,
-    content: '',
-    group_id: 1
-  },
-  createPostToggle: false,
-  alertsOnly: false,
-  postResponse: '',
-  selectedPost: null,
-  postResponses: [],
-  groups: [],
-  findGroup: [],
-  selectedGroup: null,
-  createGroupToggle: false,
-  createGroup: {
-    parent_id: null,
-    invite_only: false
-  },
-  createEvent: {
-    day_id: null,
-    month_id: null,
-    year_id: null,
-    hour_id: null,
-    minute_id: null,
-    group_id: null,
-    title: null,
-    description: null
-  },
-  selectedEvent: null,
-  leaveRequestDetails: {
-    group_id: null,
-    leave_reason: null,
-    year_id: null,
-    month_id: null,
-    day_id: null,
-    leave_days: null,
-    is_sick_leave: true
-  },
-  adminMessageDetails: {
-    group_id: null,
-    content: null
-  },
-  adminView: null,
-  admin: {
-    emergency: [],
-    adminMessages: [],
-    leaveRequests: []
-  },
-  adminSelected: {
-    adminMessage: null,
-    emergency: null,
-    leaveRequest: null
-  }
-};
-
-var store = (0, _redux.createStore)(reducer, initialState);
-var getState = store.getState,
-    dispatch = store.dispatch,
-    subscribe = store.subscribe;
-
-
-var route = (0, _sheetRouter2.default)({ default: '/404' }, [['/', function (params) {
-  return _login2.default;
-}], ['/signUp', function (params) {
-  return _signup2.default;
-}], ['/bizz', function (params) {
-  return _main2.default;
-}]]);
-
-subscribe(function () {
-  console.log(getState().route);
-  var Component = route(getState().route);
-  (0, _reactDom.render)(_react2.default.createElement(Component, { state: getState(), dispatch: dispatch }), app);
-});
-
-(0, _reactDom.render)(_react2.default.createElement(_app2.default, { name: 'bizzBuzz' }), app);
-console.log('welcome to bizzBuzz');
-
-dispatch({ type: 'INIT' });
-
-},{"./components/app":1,"./components/login":2,"./components/main":3,"./components/signup":4,"./reducer":243,"react":216,"react-dom":65,"redux":222,"sheet-router":225}],23:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2871,7 +492,7 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"util/":238}],24:[function(require,module,exports){
+},{"util/":216}],2:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -2987,7 +608,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],25:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -3169,7 +790,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],26:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 (function (global){
 /*!
  * The buffer module from node.js, for the browser.
@@ -4962,7 +2583,7 @@ function isnan (val) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"base64-js":24,"ieee754":52,"isarray":53}],27:[function(require,module,exports){
+},{"base64-js":2,"ieee754":30,"isarray":31}],5:[function(require,module,exports){
 (function (Buffer){
 var clone = (function() {
 'use strict';
@@ -5223,7 +2844,7 @@ if (typeof module === 'object' && module.exports) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":26}],28:[function(require,module,exports){
+},{"buffer":4}],6:[function(require,module,exports){
 
 /**
  * Expose `Emitter`.
@@ -5388,7 +3009,7 @@ Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
 
-},{}],29:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -5474,7 +3095,7 @@ var EventListener = {
 
 module.exports = EventListener;
 }).call(this,require('_process'))
-},{"./emptyFunction":36,"_process":25}],30:[function(require,module,exports){
+},{"./emptyFunction":14,"_process":3}],8:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5510,7 +3131,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],31:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 "use strict";
 
 /**
@@ -5542,7 +3163,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],32:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5582,7 +3203,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":31}],33:[function(require,module,exports){
+},{"./camelize":9}],11:[function(require,module,exports){
 'use strict';
 
 /**
@@ -5622,7 +3243,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":46}],34:[function(require,module,exports){
+},{"./isTextNode":24}],12:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -5751,7 +3372,7 @@ function createArrayFromMixed(obj) {
 
 module.exports = createArrayFromMixed;
 }).call(this,require('_process'))
-},{"./invariant":44,"_process":25}],35:[function(require,module,exports){
+},{"./invariant":22,"_process":3}],13:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -5837,7 +3458,7 @@ function createNodesFromMarkup(markup, handleScript) {
 
 module.exports = createNodesFromMarkup;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":30,"./createArrayFromMixed":34,"./getMarkupWrap":40,"./invariant":44,"_process":25}],36:[function(require,module,exports){
+},{"./ExecutionEnvironment":8,"./createArrayFromMixed":12,"./getMarkupWrap":18,"./invariant":22,"_process":3}],14:[function(require,module,exports){
 "use strict";
 
 /**
@@ -5876,7 +3497,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],37:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -5898,7 +3519,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 }).call(this,require('_process'))
-},{"_process":25}],38:[function(require,module,exports){
+},{"_process":3}],16:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -5925,7 +3546,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],39:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 'use strict';
 
 /**
@@ -5960,7 +3581,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],40:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -6057,7 +3678,7 @@ function getMarkupWrap(nodeName) {
 
 module.exports = getMarkupWrap;
 }).call(this,require('_process'))
-},{"./ExecutionEnvironment":30,"./invariant":44,"_process":25}],41:[function(require,module,exports){
+},{"./ExecutionEnvironment":8,"./invariant":22,"_process":3}],19:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6096,7 +3717,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],42:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6129,7 +3750,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],43:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6168,7 +3789,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":42}],44:[function(require,module,exports){
+},{"./hyphenate":20}],22:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -6226,7 +3847,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 }).call(this,require('_process'))
-},{"_process":25}],45:[function(require,module,exports){
+},{"_process":3}],23:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6249,7 +3870,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],46:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6274,7 +3895,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":45}],47:[function(require,module,exports){
+},{"./isNode":23}],25:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6304,7 +3925,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],48:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6327,7 +3948,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":30}],49:[function(require,module,exports){
+},{"./ExecutionEnvironment":8}],27:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6361,7 +3982,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":48}],50:[function(require,module,exports){
+},{"./performance":26}],28:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -6429,7 +4050,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],51:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -6498,7 +4119,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"./emptyFunction":36,"_process":25}],52:[function(require,module,exports){
+},{"./emptyFunction":14,"_process":3}],30:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -6584,14 +4205,14 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],53:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = Array.isArray || function (arr) {
   return toString.call(arr) == '[object Array]';
 };
 
-},{}],54:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 var root = require('./_root');
 
 /** Built-in value references. */
@@ -6599,7 +4220,7 @@ var Symbol = root.Symbol;
 
 module.exports = Symbol;
 
-},{"./_root":61}],55:[function(require,module,exports){
+},{"./_root":39}],33:[function(require,module,exports){
 var Symbol = require('./_Symbol'),
     getRawTag = require('./_getRawTag'),
     objectToString = require('./_objectToString');
@@ -6629,7 +4250,7 @@ function baseGetTag(value) {
 
 module.exports = baseGetTag;
 
-},{"./_Symbol":54,"./_getRawTag":58,"./_objectToString":59}],56:[function(require,module,exports){
+},{"./_Symbol":32,"./_getRawTag":36,"./_objectToString":37}],34:[function(require,module,exports){
 (function (global){
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -6637,7 +4258,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 module.exports = freeGlobal;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],57:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 var overArg = require('./_overArg');
 
 /** Built-in value references. */
@@ -6645,7 +4266,7 @@ var getPrototype = overArg(Object.getPrototypeOf, Object);
 
 module.exports = getPrototype;
 
-},{"./_overArg":60}],58:[function(require,module,exports){
+},{"./_overArg":38}],36:[function(require,module,exports){
 var Symbol = require('./_Symbol');
 
 /** Used for built-in method references. */
@@ -6693,7 +4314,7 @@ function getRawTag(value) {
 
 module.exports = getRawTag;
 
-},{"./_Symbol":54}],59:[function(require,module,exports){
+},{"./_Symbol":32}],37:[function(require,module,exports){
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
 
@@ -6717,7 +4338,7 @@ function objectToString(value) {
 
 module.exports = objectToString;
 
-},{}],60:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 /**
  * Creates a unary function that invokes `func` with its argument transformed.
  *
@@ -6734,7 +4355,7 @@ function overArg(func, transform) {
 
 module.exports = overArg;
 
-},{}],61:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 var freeGlobal = require('./_freeGlobal');
 
 /** Detect free variable `self`. */
@@ -6745,7 +4366,7 @@ var root = freeGlobal || freeSelf || Function('return this')();
 
 module.exports = root;
 
-},{"./_freeGlobal":56}],62:[function(require,module,exports){
+},{"./_freeGlobal":34}],40:[function(require,module,exports){
 /**
  * Checks if `value` is object-like. A value is object-like if it's not `null`
  * and has a `typeof` result of "object".
@@ -6776,7 +4397,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],63:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 var baseGetTag = require('./_baseGetTag'),
     getPrototype = require('./_getPrototype'),
     isObjectLike = require('./isObjectLike');
@@ -6840,7 +4461,7 @@ function isPlainObject(value) {
 
 module.exports = isPlainObject;
 
-},{"./_baseGetTag":55,"./_getPrototype":57,"./isObjectLike":62}],64:[function(require,module,exports){
+},{"./_baseGetTag":33,"./_getPrototype":35,"./isObjectLike":40}],42:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -6932,12 +4553,12 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],65:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/ReactDOM');
 
-},{"./lib/ReactDOM":95}],66:[function(require,module,exports){
+},{"./lib/ReactDOM":73}],44:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7011,7 +4632,7 @@ var ARIADOMPropertyConfig = {
 };
 
 module.exports = ARIADOMPropertyConfig;
-},{}],67:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7035,7 +4656,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactDOMComponentTree":98,"fbjs/lib/focusNode":38}],68:[function(require,module,exports){
+},{"./ReactDOMComponentTree":76,"fbjs/lib/focusNode":16}],46:[function(require,module,exports){
 /**
  * Copyright 2013-present Facebook, Inc.
  * All rights reserved.
@@ -7420,7 +5041,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventPropagators":84,"./FallbackCompositionState":85,"./SyntheticCompositionEvent":149,"./SyntheticInputEvent":153,"fbjs/lib/ExecutionEnvironment":30}],69:[function(require,module,exports){
+},{"./EventPropagators":62,"./FallbackCompositionState":63,"./SyntheticCompositionEvent":127,"./SyntheticInputEvent":131,"fbjs/lib/ExecutionEnvironment":8}],47:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -7568,7 +5189,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],70:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -7779,7 +5400,7 @@ var CSSPropertyOperations = {
 
 module.exports = CSSPropertyOperations;
 }).call(this,require('_process'))
-},{"./CSSProperty":69,"./ReactInstrumentation":127,"./dangerousStyleValue":166,"_process":25,"fbjs/lib/ExecutionEnvironment":30,"fbjs/lib/camelizeStyleName":32,"fbjs/lib/hyphenateStyleName":43,"fbjs/lib/memoizeStringOnly":47,"fbjs/lib/warning":51}],71:[function(require,module,exports){
+},{"./CSSProperty":47,"./ReactInstrumentation":105,"./dangerousStyleValue":144,"_process":3,"fbjs/lib/ExecutionEnvironment":8,"fbjs/lib/camelizeStyleName":10,"fbjs/lib/hyphenateStyleName":21,"fbjs/lib/memoizeStringOnly":25,"fbjs/lib/warning":29}],49:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -7900,7 +5521,7 @@ var CallbackQueue = function () {
 
 module.exports = PooledClass.addPoolingTo(CallbackQueue);
 }).call(this,require('_process'))
-},{"./PooledClass":89,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],72:[function(require,module,exports){
+},{"./PooledClass":67,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],50:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -8221,7 +5842,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventPluginHub":81,"./EventPropagators":84,"./ReactDOMComponentTree":98,"./ReactUpdates":142,"./SyntheticEvent":151,"./getEventTarget":174,"./isEventSupported":182,"./isTextInputElement":183,"fbjs/lib/ExecutionEnvironment":30}],73:[function(require,module,exports){
+},{"./EventPluginHub":59,"./EventPropagators":62,"./ReactDOMComponentTree":76,"./ReactUpdates":120,"./SyntheticEvent":129,"./getEventTarget":152,"./isEventSupported":160,"./isTextInputElement":161,"fbjs/lib/ExecutionEnvironment":8}],51:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8448,7 +6069,7 @@ var DOMChildrenOperations = {
 
 module.exports = DOMChildrenOperations;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":74,"./Danger":78,"./ReactDOMComponentTree":98,"./ReactInstrumentation":127,"./createMicrosoftUnsafeLocalFunction":165,"./setInnerHTML":187,"./setTextContent":188,"_process":25}],74:[function(require,module,exports){
+},{"./DOMLazyTree":52,"./Danger":56,"./ReactDOMComponentTree":76,"./ReactInstrumentation":105,"./createMicrosoftUnsafeLocalFunction":143,"./setInnerHTML":165,"./setTextContent":166,"_process":3}],52:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -8566,7 +6187,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"./DOMNamespaces":75,"./createMicrosoftUnsafeLocalFunction":165,"./setInnerHTML":187,"./setTextContent":188}],75:[function(require,module,exports){
+},{"./DOMNamespaces":53,"./createMicrosoftUnsafeLocalFunction":143,"./setInnerHTML":165,"./setTextContent":166}],53:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -8586,7 +6207,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],76:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -8798,7 +6419,7 @@ var DOMProperty = {
 
 module.exports = DOMProperty;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],77:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],55:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9037,7 +6658,7 @@ var DOMPropertyOperations = {
 
 module.exports = DOMPropertyOperations;
 }).call(this,require('_process'))
-},{"./DOMProperty":76,"./ReactDOMComponentTree":98,"./ReactInstrumentation":127,"./quoteAttributeValueForBrowser":184,"_process":25,"fbjs/lib/warning":51}],78:[function(require,module,exports){
+},{"./DOMProperty":54,"./ReactDOMComponentTree":76,"./ReactInstrumentation":105,"./quoteAttributeValueForBrowser":162,"_process":3,"fbjs/lib/warning":29}],56:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9087,7 +6708,7 @@ var Danger = {
 
 module.exports = Danger;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":74,"./reactProdInvariant":185,"_process":25,"fbjs/lib/ExecutionEnvironment":30,"fbjs/lib/createNodesFromMarkup":35,"fbjs/lib/emptyFunction":36,"fbjs/lib/invariant":44}],79:[function(require,module,exports){
+},{"./DOMLazyTree":52,"./reactProdInvariant":163,"_process":3,"fbjs/lib/ExecutionEnvironment":8,"fbjs/lib/createNodesFromMarkup":13,"fbjs/lib/emptyFunction":14,"fbjs/lib/invariant":22}],57:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9113,7 +6734,7 @@ module.exports = Danger;
 var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
 
 module.exports = DefaultEventPluginOrder;
-},{}],80:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -9213,7 +6834,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventPropagators":84,"./ReactDOMComponentTree":98,"./SyntheticMouseEvent":155}],81:[function(require,module,exports){
+},{"./EventPropagators":62,"./ReactDOMComponentTree":76,"./SyntheticMouseEvent":133}],59:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9493,7 +7114,7 @@ var EventPluginHub = {
 
 module.exports = EventPluginHub;
 }).call(this,require('_process'))
-},{"./EventPluginRegistry":82,"./EventPluginUtils":83,"./ReactErrorUtils":118,"./accumulateInto":162,"./forEachAccumulated":170,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],82:[function(require,module,exports){
+},{"./EventPluginRegistry":60,"./EventPluginUtils":61,"./ReactErrorUtils":96,"./accumulateInto":140,"./forEachAccumulated":148,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],60:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9750,7 +7371,7 @@ var EventPluginRegistry = {
 
 module.exports = EventPluginRegistry;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],83:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],61:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -9978,7 +7599,7 @@ var EventPluginUtils = {
 
 module.exports = EventPluginUtils;
 }).call(this,require('_process'))
-},{"./ReactErrorUtils":118,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51}],84:[function(require,module,exports){
+},{"./ReactErrorUtils":96,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29}],62:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10114,7 +7735,7 @@ var EventPropagators = {
 
 module.exports = EventPropagators;
 }).call(this,require('_process'))
-},{"./EventPluginHub":81,"./EventPluginUtils":83,"./accumulateInto":162,"./forEachAccumulated":170,"_process":25,"fbjs/lib/warning":51}],85:[function(require,module,exports){
+},{"./EventPluginHub":59,"./EventPluginUtils":61,"./accumulateInto":140,"./forEachAccumulated":148,"_process":3,"fbjs/lib/warning":29}],63:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10209,7 +7830,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./PooledClass":89,"./getTextContentAccessor":179,"object-assign":64}],86:[function(require,module,exports){
+},{"./PooledClass":67,"./getTextContentAccessor":157,"object-assign":42}],64:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10421,7 +8042,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":76}],87:[function(require,module,exports){
+},{"./DOMProperty":54}],65:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -10480,7 +8101,7 @@ var KeyEscapeUtils = {
 };
 
 module.exports = KeyEscapeUtils;
-},{}],88:[function(require,module,exports){
+},{}],66:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10617,7 +8238,7 @@ var LinkedValueUtils = {
 
 module.exports = LinkedValueUtils;
 }).call(this,require('_process'))
-},{"./ReactPropTypesSecret":135,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"react/lib/React":194}],89:[function(require,module,exports){
+},{"./ReactPropTypesSecret":113,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"react/lib/React":172}],67:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -10731,7 +8352,7 @@ var PooledClass = {
 
 module.exports = PooledClass;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],90:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],68:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11059,7 +8680,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventPluginRegistry":82,"./ReactEventEmitterMixin":119,"./ViewportMetrics":161,"./getVendorPrefixedEventName":180,"./isEventSupported":182,"object-assign":64}],91:[function(require,module,exports){
+},{"./EventPluginRegistry":60,"./ReactEventEmitterMixin":97,"./ViewportMetrics":139,"./getVendorPrefixedEventName":158,"./isEventSupported":160,"object-assign":42}],69:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -11215,7 +8836,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":87,"./ReactReconciler":137,"./instantiateReactComponent":181,"./shouldUpdateReactComponent":189,"./traverseAllChildren":190,"_process":25,"fbjs/lib/warning":51,"react/lib/ReactComponentTreeHook":198}],92:[function(require,module,exports){
+},{"./KeyEscapeUtils":65,"./ReactReconciler":115,"./instantiateReactComponent":159,"./shouldUpdateReactComponent":167,"./traverseAllChildren":168,"_process":3,"fbjs/lib/warning":29,"react/lib/ReactComponentTreeHook":176}],70:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11245,7 +8866,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./DOMChildrenOperations":73,"./ReactDOMIDOperations":102}],93:[function(require,module,exports){
+},{"./DOMChildrenOperations":51,"./ReactDOMIDOperations":80}],71:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -11293,7 +8914,7 @@ var ReactComponentEnvironment = {
 
 module.exports = ReactComponentEnvironment;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],94:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],72:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -12197,7 +9818,7 @@ var ReactCompositeComponent = {
 
 module.exports = ReactCompositeComponent;
 }).call(this,require('_process'))
-},{"./ReactComponentEnvironment":93,"./ReactErrorUtils":118,"./ReactInstanceMap":126,"./ReactInstrumentation":127,"./ReactNodeTypes":132,"./ReactReconciler":137,"./checkReactTypeSpec":164,"./reactProdInvariant":185,"./shouldUpdateReactComponent":189,"_process":25,"fbjs/lib/emptyObject":37,"fbjs/lib/invariant":44,"fbjs/lib/shallowEqual":50,"fbjs/lib/warning":51,"object-assign":64,"react/lib/React":194,"react/lib/ReactCurrentOwner":199}],95:[function(require,module,exports){
+},{"./ReactComponentEnvironment":71,"./ReactErrorUtils":96,"./ReactInstanceMap":104,"./ReactInstrumentation":105,"./ReactNodeTypes":110,"./ReactReconciler":115,"./checkReactTypeSpec":142,"./reactProdInvariant":163,"./shouldUpdateReactComponent":167,"_process":3,"fbjs/lib/emptyObject":15,"fbjs/lib/invariant":22,"fbjs/lib/shallowEqual":28,"fbjs/lib/warning":29,"object-assign":42,"react/lib/React":172,"react/lib/ReactCurrentOwner":177}],73:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -12310,7 +9931,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactDOM;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":98,"./ReactDOMInvalidARIAHook":104,"./ReactDOMNullInputValuePropHook":105,"./ReactDOMUnknownPropertyHook":112,"./ReactDefaultInjection":115,"./ReactInstrumentation":127,"./ReactMount":130,"./ReactReconciler":137,"./ReactUpdates":142,"./ReactVersion":143,"./findDOMNode":168,"./getHostComponentFromComposite":175,"./renderSubtreeIntoContainer":186,"_process":25,"fbjs/lib/ExecutionEnvironment":30,"fbjs/lib/warning":51}],96:[function(require,module,exports){
+},{"./ReactDOMComponentTree":76,"./ReactDOMInvalidARIAHook":82,"./ReactDOMNullInputValuePropHook":83,"./ReactDOMUnknownPropertyHook":90,"./ReactDefaultInjection":93,"./ReactInstrumentation":105,"./ReactMount":108,"./ReactReconciler":115,"./ReactUpdates":120,"./ReactVersion":121,"./findDOMNode":146,"./getHostComponentFromComposite":153,"./renderSubtreeIntoContainer":164,"_process":3,"fbjs/lib/ExecutionEnvironment":8,"fbjs/lib/warning":29}],74:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13313,7 +10934,7 @@ _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mi
 
 module.exports = ReactDOMComponent;
 }).call(this,require('_process'))
-},{"./AutoFocusUtils":67,"./CSSPropertyOperations":70,"./DOMLazyTree":74,"./DOMNamespaces":75,"./DOMProperty":76,"./DOMPropertyOperations":77,"./EventPluginHub":81,"./EventPluginRegistry":82,"./ReactBrowserEventEmitter":90,"./ReactDOMComponentFlags":97,"./ReactDOMComponentTree":98,"./ReactDOMInput":103,"./ReactDOMOption":106,"./ReactDOMSelect":107,"./ReactDOMTextarea":110,"./ReactInstrumentation":127,"./ReactMultiChild":131,"./ReactServerRenderingTransaction":139,"./escapeTextContentForBrowser":167,"./isEventSupported":182,"./reactProdInvariant":185,"./validateDOMNesting":191,"_process":25,"fbjs/lib/emptyFunction":36,"fbjs/lib/invariant":44,"fbjs/lib/shallowEqual":50,"fbjs/lib/warning":51,"object-assign":64}],97:[function(require,module,exports){
+},{"./AutoFocusUtils":45,"./CSSPropertyOperations":48,"./DOMLazyTree":52,"./DOMNamespaces":53,"./DOMProperty":54,"./DOMPropertyOperations":55,"./EventPluginHub":59,"./EventPluginRegistry":60,"./ReactBrowserEventEmitter":68,"./ReactDOMComponentFlags":75,"./ReactDOMComponentTree":76,"./ReactDOMInput":81,"./ReactDOMOption":84,"./ReactDOMSelect":85,"./ReactDOMTextarea":88,"./ReactInstrumentation":105,"./ReactMultiChild":109,"./ReactServerRenderingTransaction":117,"./escapeTextContentForBrowser":145,"./isEventSupported":160,"./reactProdInvariant":163,"./validateDOMNesting":169,"_process":3,"fbjs/lib/emptyFunction":14,"fbjs/lib/invariant":22,"fbjs/lib/shallowEqual":28,"fbjs/lib/warning":29,"object-assign":42}],75:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -13331,7 +10952,7 @@ var ReactDOMComponentFlags = {
 };
 
 module.exports = ReactDOMComponentFlags;
-},{}],98:[function(require,module,exports){
+},{}],76:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13528,7 +11149,7 @@ var ReactDOMComponentTree = {
 
 module.exports = ReactDOMComponentTree;
 }).call(this,require('_process'))
-},{"./DOMProperty":76,"./ReactDOMComponentFlags":97,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],99:[function(require,module,exports){
+},{"./DOMProperty":54,"./ReactDOMComponentFlags":75,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],77:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13563,7 +11184,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 
 module.exports = ReactDOMContainerInfo;
 }).call(this,require('_process'))
-},{"./validateDOMNesting":191,"_process":25}],100:[function(require,module,exports){
+},{"./validateDOMNesting":169,"_process":3}],78:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -13623,7 +11244,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"./DOMLazyTree":74,"./ReactDOMComponentTree":98,"object-assign":64}],101:[function(require,module,exports){
+},{"./DOMLazyTree":52,"./ReactDOMComponentTree":76,"object-assign":42}],79:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13642,7 +11263,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],102:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -13676,7 +11297,7 @@ var ReactDOMIDOperations = {
 };
 
 module.exports = ReactDOMIDOperations;
-},{"./DOMChildrenOperations":73,"./ReactDOMComponentTree":98}],103:[function(require,module,exports){
+},{"./DOMChildrenOperations":51,"./ReactDOMComponentTree":76}],81:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -13956,7 +11577,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMInput;
 }).call(this,require('_process'))
-},{"./DOMPropertyOperations":77,"./LinkedValueUtils":88,"./ReactDOMComponentTree":98,"./ReactUpdates":142,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"object-assign":64}],104:[function(require,module,exports){
+},{"./DOMPropertyOperations":55,"./LinkedValueUtils":66,"./ReactDOMComponentTree":76,"./ReactUpdates":120,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"object-assign":42}],82:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14051,7 +11672,7 @@ var ReactDOMInvalidARIAHook = {
 
 module.exports = ReactDOMInvalidARIAHook;
 }).call(this,require('_process'))
-},{"./DOMProperty":76,"_process":25,"fbjs/lib/warning":51,"react/lib/ReactComponentTreeHook":198}],105:[function(require,module,exports){
+},{"./DOMProperty":54,"_process":3,"fbjs/lib/warning":29,"react/lib/ReactComponentTreeHook":176}],83:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14096,7 +11717,7 @@ var ReactDOMNullInputValuePropHook = {
 
 module.exports = ReactDOMNullInputValuePropHook;
 }).call(this,require('_process'))
-},{"_process":25,"fbjs/lib/warning":51,"react/lib/ReactComponentTreeHook":198}],106:[function(require,module,exports){
+},{"_process":3,"fbjs/lib/warning":29,"react/lib/ReactComponentTreeHook":176}],84:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14221,7 +11842,7 @@ var ReactDOMOption = {
 
 module.exports = ReactDOMOption;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":98,"./ReactDOMSelect":107,"_process":25,"fbjs/lib/warning":51,"object-assign":64,"react/lib/React":194}],107:[function(require,module,exports){
+},{"./ReactDOMComponentTree":76,"./ReactDOMSelect":85,"_process":3,"fbjs/lib/warning":29,"object-assign":42,"react/lib/React":172}],85:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14423,7 +12044,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMSelect;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":88,"./ReactDOMComponentTree":98,"./ReactUpdates":142,"_process":25,"fbjs/lib/warning":51,"object-assign":64}],108:[function(require,module,exports){
+},{"./LinkedValueUtils":66,"./ReactDOMComponentTree":76,"./ReactUpdates":120,"_process":3,"fbjs/lib/warning":29,"object-assign":42}],86:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -14635,7 +12256,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":178,"./getTextContentAccessor":179,"fbjs/lib/ExecutionEnvironment":30}],109:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":156,"./getTextContentAccessor":157,"fbjs/lib/ExecutionEnvironment":8}],87:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14801,7 +12422,7 @@ _assign(ReactDOMTextComponent.prototype, {
 
 module.exports = ReactDOMTextComponent;
 }).call(this,require('_process'))
-},{"./DOMChildrenOperations":73,"./DOMLazyTree":74,"./ReactDOMComponentTree":98,"./escapeTextContentForBrowser":167,"./reactProdInvariant":185,"./validateDOMNesting":191,"_process":25,"fbjs/lib/invariant":44,"object-assign":64}],110:[function(require,module,exports){
+},{"./DOMChildrenOperations":51,"./DOMLazyTree":52,"./ReactDOMComponentTree":76,"./escapeTextContentForBrowser":145,"./reactProdInvariant":163,"./validateDOMNesting":169,"_process":3,"fbjs/lib/invariant":22,"object-assign":42}],88:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -14963,7 +12584,7 @@ function _handleChange(event) {
 
 module.exports = ReactDOMTextarea;
 }).call(this,require('_process'))
-},{"./LinkedValueUtils":88,"./ReactDOMComponentTree":98,"./ReactUpdates":142,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"object-assign":64}],111:[function(require,module,exports){
+},{"./LinkedValueUtils":66,"./ReactDOMComponentTree":76,"./ReactUpdates":120,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"object-assign":42}],89:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -15101,7 +12722,7 @@ module.exports = {
   traverseEnterLeave: traverseEnterLeave
 };
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],112:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],90:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15215,7 +12836,7 @@ var ReactDOMUnknownPropertyHook = {
 
 module.exports = ReactDOMUnknownPropertyHook;
 }).call(this,require('_process'))
-},{"./DOMProperty":76,"./EventPluginRegistry":82,"_process":25,"fbjs/lib/warning":51,"react/lib/ReactComponentTreeHook":198}],113:[function(require,module,exports){
+},{"./DOMProperty":54,"./EventPluginRegistry":60,"_process":3,"fbjs/lib/warning":29,"react/lib/ReactComponentTreeHook":176}],91:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -15578,7 +13199,7 @@ if (/[?&]react_perf\b/.test(url)) {
 
 module.exports = ReactDebugTool;
 }).call(this,require('_process'))
-},{"./ReactHostOperationHistoryHook":123,"./ReactInvalidSetStateWarningHook":128,"_process":25,"fbjs/lib/ExecutionEnvironment":30,"fbjs/lib/performanceNow":49,"fbjs/lib/warning":51,"react/lib/ReactComponentTreeHook":198}],114:[function(require,module,exports){
+},{"./ReactHostOperationHistoryHook":101,"./ReactInvalidSetStateWarningHook":106,"_process":3,"fbjs/lib/ExecutionEnvironment":8,"fbjs/lib/performanceNow":27,"fbjs/lib/warning":29,"react/lib/ReactComponentTreeHook":176}],92:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15646,7 +13267,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./ReactUpdates":142,"./Transaction":160,"fbjs/lib/emptyFunction":36,"object-assign":64}],115:[function(require,module,exports){
+},{"./ReactUpdates":120,"./Transaction":138,"fbjs/lib/emptyFunction":14,"object-assign":42}],93:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15732,7 +13353,7 @@ function inject() {
 module.exports = {
   inject: inject
 };
-},{"./ARIADOMPropertyConfig":66,"./BeforeInputEventPlugin":68,"./ChangeEventPlugin":72,"./DefaultEventPluginOrder":79,"./EnterLeaveEventPlugin":80,"./HTMLDOMPropertyConfig":86,"./ReactComponentBrowserEnvironment":92,"./ReactDOMComponent":96,"./ReactDOMComponentTree":98,"./ReactDOMEmptyComponent":100,"./ReactDOMTextComponent":109,"./ReactDOMTreeTraversal":111,"./ReactDefaultBatchingStrategy":114,"./ReactEventListener":120,"./ReactInjection":124,"./ReactReconcileTransaction":136,"./SVGDOMPropertyConfig":144,"./SelectEventPlugin":145,"./SimpleEventPlugin":146}],116:[function(require,module,exports){
+},{"./ARIADOMPropertyConfig":44,"./BeforeInputEventPlugin":46,"./ChangeEventPlugin":50,"./DefaultEventPluginOrder":57,"./EnterLeaveEventPlugin":58,"./HTMLDOMPropertyConfig":64,"./ReactComponentBrowserEnvironment":70,"./ReactDOMComponent":74,"./ReactDOMComponentTree":76,"./ReactDOMEmptyComponent":78,"./ReactDOMTextComponent":87,"./ReactDOMTreeTraversal":89,"./ReactDefaultBatchingStrategy":92,"./ReactEventListener":98,"./ReactInjection":102,"./ReactReconcileTransaction":114,"./SVGDOMPropertyConfig":122,"./SelectEventPlugin":123,"./SimpleEventPlugin":124}],94:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -15752,7 +13373,7 @@ module.exports = {
 var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 module.exports = REACT_ELEMENT_TYPE;
-},{}],117:[function(require,module,exports){
+},{}],95:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -15782,7 +13403,7 @@ var ReactEmptyComponent = {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{}],118:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -15861,7 +13482,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactErrorUtils;
 }).call(this,require('_process'))
-},{"_process":25}],119:[function(require,module,exports){
+},{"_process":3}],97:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -15894,7 +13515,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":81}],120:[function(require,module,exports){
+},{"./EventPluginHub":59}],98:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16049,7 +13670,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./PooledClass":89,"./ReactDOMComponentTree":98,"./ReactUpdates":142,"./getEventTarget":174,"fbjs/lib/EventListener":29,"fbjs/lib/ExecutionEnvironment":30,"fbjs/lib/getUnboundedScrollPosition":41,"object-assign":64}],121:[function(require,module,exports){
+},{"./PooledClass":67,"./ReactDOMComponentTree":76,"./ReactUpdates":120,"./getEventTarget":152,"fbjs/lib/EventListener":7,"fbjs/lib/ExecutionEnvironment":8,"fbjs/lib/getUnboundedScrollPosition":19,"object-assign":42}],99:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16071,7 +13692,7 @@ var ReactFeatureFlags = {
 };
 
 module.exports = ReactFeatureFlags;
-},{}],122:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -16141,7 +13762,7 @@ var ReactHostComponent = {
 
 module.exports = ReactHostComponent;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],123:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],101:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -16175,7 +13796,7 @@ var ReactHostOperationHistoryHook = {
 };
 
 module.exports = ReactHostOperationHistoryHook;
-},{}],124:[function(require,module,exports){
+},{}],102:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16209,7 +13830,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":76,"./EventPluginHub":81,"./EventPluginUtils":83,"./ReactBrowserEventEmitter":90,"./ReactComponentEnvironment":93,"./ReactEmptyComponent":117,"./ReactHostComponent":122,"./ReactUpdates":142}],125:[function(require,module,exports){
+},{"./DOMProperty":54,"./EventPluginHub":59,"./EventPluginUtils":61,"./ReactBrowserEventEmitter":68,"./ReactComponentEnvironment":71,"./ReactEmptyComponent":95,"./ReactHostComponent":100,"./ReactUpdates":120}],103:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16333,7 +13954,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":108,"fbjs/lib/containsNode":33,"fbjs/lib/focusNode":38,"fbjs/lib/getActiveElement":39}],126:[function(require,module,exports){
+},{"./ReactDOMSelection":86,"fbjs/lib/containsNode":11,"fbjs/lib/focusNode":16,"fbjs/lib/getActiveElement":17}],104:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16381,7 +14002,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],127:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -16407,7 +14028,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = { debugTool: debugTool };
 }).call(this,require('_process'))
-},{"./ReactDebugTool":113,"_process":25}],128:[function(require,module,exports){
+},{"./ReactDebugTool":91,"_process":3}],106:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -16446,7 +14067,7 @@ var ReactInvalidSetStateWarningHook = {
 
 module.exports = ReactInvalidSetStateWarningHook;
 }).call(this,require('_process'))
-},{"_process":25,"fbjs/lib/warning":51}],129:[function(require,module,exports){
+},{"_process":3,"fbjs/lib/warning":29}],107:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -16496,7 +14117,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":163}],130:[function(require,module,exports){
+},{"./adler32":141}],108:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17036,7 +14657,7 @@ var ReactMount = {
 
 module.exports = ReactMount;
 }).call(this,require('_process'))
-},{"./DOMLazyTree":74,"./DOMProperty":76,"./ReactBrowserEventEmitter":90,"./ReactDOMComponentTree":98,"./ReactDOMContainerInfo":99,"./ReactDOMFeatureFlags":101,"./ReactFeatureFlags":121,"./ReactInstanceMap":126,"./ReactInstrumentation":127,"./ReactMarkupChecksum":129,"./ReactReconciler":137,"./ReactUpdateQueue":141,"./ReactUpdates":142,"./instantiateReactComponent":181,"./reactProdInvariant":185,"./setInnerHTML":187,"./shouldUpdateReactComponent":189,"_process":25,"fbjs/lib/emptyObject":37,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"react/lib/React":194,"react/lib/ReactCurrentOwner":199}],131:[function(require,module,exports){
+},{"./DOMLazyTree":52,"./DOMProperty":54,"./ReactBrowserEventEmitter":68,"./ReactDOMComponentTree":76,"./ReactDOMContainerInfo":77,"./ReactDOMFeatureFlags":79,"./ReactFeatureFlags":99,"./ReactInstanceMap":104,"./ReactInstrumentation":105,"./ReactMarkupChecksum":107,"./ReactReconciler":115,"./ReactUpdateQueue":119,"./ReactUpdates":120,"./instantiateReactComponent":159,"./reactProdInvariant":163,"./setInnerHTML":165,"./shouldUpdateReactComponent":167,"_process":3,"fbjs/lib/emptyObject":15,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"react/lib/React":172,"react/lib/ReactCurrentOwner":177}],109:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17488,7 +15109,7 @@ var ReactMultiChild = {
 
 module.exports = ReactMultiChild;
 }).call(this,require('_process'))
-},{"./ReactChildReconciler":91,"./ReactComponentEnvironment":93,"./ReactInstanceMap":126,"./ReactInstrumentation":127,"./ReactReconciler":137,"./flattenChildren":169,"./reactProdInvariant":185,"_process":25,"fbjs/lib/emptyFunction":36,"fbjs/lib/invariant":44,"react/lib/ReactCurrentOwner":199}],132:[function(require,module,exports){
+},{"./ReactChildReconciler":69,"./ReactComponentEnvironment":71,"./ReactInstanceMap":104,"./ReactInstrumentation":105,"./ReactReconciler":115,"./flattenChildren":147,"./reactProdInvariant":163,"_process":3,"fbjs/lib/emptyFunction":14,"fbjs/lib/invariant":22,"react/lib/ReactCurrentOwner":177}],110:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17530,7 +15151,7 @@ var ReactNodeTypes = {
 
 module.exports = ReactNodeTypes;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"react/lib/React":194}],133:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"react/lib/React":172}],111:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17626,7 +15247,7 @@ var ReactOwner = {
 
 module.exports = ReactOwner;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],134:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],112:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17653,7 +15274,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactPropTypeLocationNames;
 }).call(this,require('_process'))
-},{"_process":25}],135:[function(require,module,exports){
+},{"_process":3}],113:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17670,7 +15291,7 @@ module.exports = ReactPropTypeLocationNames;
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
-},{}],136:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -17850,7 +15471,7 @@ PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
 }).call(this,require('_process'))
-},{"./CallbackQueue":71,"./PooledClass":89,"./ReactBrowserEventEmitter":90,"./ReactInputSelection":125,"./ReactInstrumentation":127,"./ReactUpdateQueue":141,"./Transaction":160,"_process":25,"object-assign":64}],137:[function(require,module,exports){
+},{"./CallbackQueue":49,"./PooledClass":67,"./ReactBrowserEventEmitter":68,"./ReactInputSelection":103,"./ReactInstrumentation":105,"./ReactUpdateQueue":119,"./Transaction":138,"_process":3,"object-assign":42}],115:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18020,7 +15641,7 @@ var ReactReconciler = {
 
 module.exports = ReactReconciler;
 }).call(this,require('_process'))
-},{"./ReactInstrumentation":127,"./ReactRef":138,"_process":25,"fbjs/lib/warning":51}],138:[function(require,module,exports){
+},{"./ReactInstrumentation":105,"./ReactRef":116,"_process":3,"fbjs/lib/warning":29}],116:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18109,7 +15730,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":133}],139:[function(require,module,exports){
+},{"./ReactOwner":111}],117:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -18201,7 +15822,7 @@ PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
 }).call(this,require('_process'))
-},{"./PooledClass":89,"./ReactInstrumentation":127,"./ReactServerUpdateQueue":140,"./Transaction":160,"_process":25,"object-assign":64}],140:[function(require,module,exports){
+},{"./PooledClass":67,"./ReactInstrumentation":105,"./ReactServerUpdateQueue":118,"./Transaction":138,"_process":3,"object-assign":42}],118:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -18342,7 +15963,7 @@ var ReactServerUpdateQueue = function () {
 
 module.exports = ReactServerUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactUpdateQueue":141,"_process":25,"fbjs/lib/warning":51}],141:[function(require,module,exports){
+},{"./ReactUpdateQueue":119,"_process":3,"fbjs/lib/warning":29}],119:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -18570,7 +16191,7 @@ var ReactUpdateQueue = {
 
 module.exports = ReactUpdateQueue;
 }).call(this,require('_process'))
-},{"./ReactInstanceMap":126,"./ReactInstrumentation":127,"./ReactUpdates":142,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"react/lib/ReactCurrentOwner":199}],142:[function(require,module,exports){
+},{"./ReactInstanceMap":104,"./ReactInstrumentation":105,"./ReactUpdates":120,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"react/lib/ReactCurrentOwner":177}],120:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -18823,7 +16444,7 @@ var ReactUpdates = {
 
 module.exports = ReactUpdates;
 }).call(this,require('_process'))
-},{"./CallbackQueue":71,"./PooledClass":89,"./ReactFeatureFlags":121,"./ReactReconciler":137,"./Transaction":160,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"object-assign":64}],143:[function(require,module,exports){
+},{"./CallbackQueue":49,"./PooledClass":67,"./ReactFeatureFlags":99,"./ReactReconciler":115,"./Transaction":138,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"object-assign":42}],121:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18837,7 +16458,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '15.4.2';
-},{}],144:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19139,7 +16760,7 @@ Object.keys(ATTRS).forEach(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],145:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19330,7 +16951,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventPropagators":84,"./ReactDOMComponentTree":98,"./ReactInputSelection":125,"./SyntheticEvent":151,"./isTextInputElement":183,"fbjs/lib/ExecutionEnvironment":30,"fbjs/lib/getActiveElement":39,"fbjs/lib/shallowEqual":50}],146:[function(require,module,exports){
+},{"./EventPropagators":62,"./ReactDOMComponentTree":76,"./ReactInputSelection":103,"./SyntheticEvent":129,"./isTextInputElement":161,"fbjs/lib/ExecutionEnvironment":8,"fbjs/lib/getActiveElement":17,"fbjs/lib/shallowEqual":28}],124:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -19560,7 +17181,7 @@ var SimpleEventPlugin = {
 
 module.exports = SimpleEventPlugin;
 }).call(this,require('_process'))
-},{"./EventPropagators":84,"./ReactDOMComponentTree":98,"./SyntheticAnimationEvent":147,"./SyntheticClipboardEvent":148,"./SyntheticDragEvent":150,"./SyntheticEvent":151,"./SyntheticFocusEvent":152,"./SyntheticKeyboardEvent":154,"./SyntheticMouseEvent":155,"./SyntheticTouchEvent":156,"./SyntheticTransitionEvent":157,"./SyntheticUIEvent":158,"./SyntheticWheelEvent":159,"./getEventCharCode":171,"./reactProdInvariant":185,"_process":25,"fbjs/lib/EventListener":29,"fbjs/lib/emptyFunction":36,"fbjs/lib/invariant":44}],147:[function(require,module,exports){
+},{"./EventPropagators":62,"./ReactDOMComponentTree":76,"./SyntheticAnimationEvent":125,"./SyntheticClipboardEvent":126,"./SyntheticDragEvent":128,"./SyntheticEvent":129,"./SyntheticFocusEvent":130,"./SyntheticKeyboardEvent":132,"./SyntheticMouseEvent":133,"./SyntheticTouchEvent":134,"./SyntheticTransitionEvent":135,"./SyntheticUIEvent":136,"./SyntheticWheelEvent":137,"./getEventCharCode":149,"./reactProdInvariant":163,"_process":3,"fbjs/lib/EventListener":7,"fbjs/lib/emptyFunction":14,"fbjs/lib/invariant":22}],125:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19599,7 +17220,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"./SyntheticEvent":151}],148:[function(require,module,exports){
+},{"./SyntheticEvent":129}],126:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19637,7 +17258,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":151}],149:[function(require,module,exports){
+},{"./SyntheticEvent":129}],127:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19673,7 +17294,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":151}],150:[function(require,module,exports){
+},{"./SyntheticEvent":129}],128:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19709,7 +17330,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":155}],151:[function(require,module,exports){
+},{"./SyntheticMouseEvent":133}],129:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -19979,7 +17600,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
   }
 }
 }).call(this,require('_process'))
-},{"./PooledClass":89,"_process":25,"fbjs/lib/emptyFunction":36,"fbjs/lib/warning":51,"object-assign":64}],152:[function(require,module,exports){
+},{"./PooledClass":67,"_process":3,"fbjs/lib/emptyFunction":14,"fbjs/lib/warning":29,"object-assign":42}],130:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20015,7 +17636,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":158}],153:[function(require,module,exports){
+},{"./SyntheticUIEvent":136}],131:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20052,7 +17673,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":151}],154:[function(require,module,exports){
+},{"./SyntheticEvent":129}],132:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20136,7 +17757,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":158,"./getEventCharCode":171,"./getEventKey":172,"./getEventModifierState":173}],155:[function(require,module,exports){
+},{"./SyntheticUIEvent":136,"./getEventCharCode":149,"./getEventKey":150,"./getEventModifierState":151}],133:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20208,7 +17829,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":158,"./ViewportMetrics":161,"./getEventModifierState":173}],156:[function(require,module,exports){
+},{"./SyntheticUIEvent":136,"./ViewportMetrics":139,"./getEventModifierState":151}],134:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20253,7 +17874,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":158,"./getEventModifierState":173}],157:[function(require,module,exports){
+},{"./SyntheticUIEvent":136,"./getEventModifierState":151}],135:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20292,7 +17913,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"./SyntheticEvent":151}],158:[function(require,module,exports){
+},{"./SyntheticEvent":129}],136:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20351,7 +17972,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":151,"./getEventTarget":174}],159:[function(require,module,exports){
+},{"./SyntheticEvent":129,"./getEventTarget":152}],137:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20405,7 +18026,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":155}],160:[function(require,module,exports){
+},{"./SyntheticMouseEvent":133}],138:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20632,7 +18253,7 @@ var TransactionImpl = {
 
 module.exports = TransactionImpl;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],161:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],139:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20659,7 +18280,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],162:[function(require,module,exports){
+},{}],140:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -20719,7 +18340,7 @@ function accumulateInto(current, next) {
 
 module.exports = accumulateInto;
 }).call(this,require('_process'))
-},{"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44}],163:[function(require,module,exports){
+},{"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22}],141:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20763,7 +18384,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],164:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20852,7 +18473,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocationNames":134,"./ReactPropTypesSecret":135,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"react/lib/ReactComponentTreeHook":198}],165:[function(require,module,exports){
+},{"./ReactPropTypeLocationNames":112,"./ReactPropTypesSecret":113,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"react/lib/ReactComponentTreeHook":176}],143:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20884,7 +18505,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],166:[function(require,module,exports){
+},{}],144:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -20965,7 +18586,7 @@ function dangerousStyleValue(name, value, component) {
 
 module.exports = dangerousStyleValue;
 }).call(this,require('_process'))
-},{"./CSSProperty":69,"_process":25,"fbjs/lib/warning":51}],167:[function(require,module,exports){
+},{"./CSSProperty":47,"_process":3,"fbjs/lib/warning":29}],145:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -21088,7 +18709,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],168:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -21150,7 +18771,7 @@ function findDOMNode(componentOrElement) {
 
 module.exports = findDOMNode;
 }).call(this,require('_process'))
-},{"./ReactDOMComponentTree":98,"./ReactInstanceMap":126,"./getHostComponentFromComposite":175,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"react/lib/ReactCurrentOwner":199}],169:[function(require,module,exports){
+},{"./ReactDOMComponentTree":76,"./ReactInstanceMap":104,"./getHostComponentFromComposite":153,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"react/lib/ReactCurrentOwner":177}],147:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -21228,7 +18849,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":87,"./traverseAllChildren":190,"_process":25,"fbjs/lib/warning":51,"react/lib/ReactComponentTreeHook":198}],170:[function(require,module,exports){
+},{"./KeyEscapeUtils":65,"./traverseAllChildren":168,"_process":3,"fbjs/lib/warning":29,"react/lib/ReactComponentTreeHook":176}],148:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21259,7 +18880,7 @@ function forEachAccumulated(arr, cb, scope) {
 }
 
 module.exports = forEachAccumulated;
-},{}],171:[function(require,module,exports){
+},{}],149:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21309,7 +18930,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],172:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21411,7 +19032,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":171}],173:[function(require,module,exports){
+},{"./getEventCharCode":149}],151:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21454,7 +19075,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],174:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21489,7 +19110,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],175:[function(require,module,exports){
+},{}],153:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21519,7 +19140,7 @@ function getHostComponentFromComposite(inst) {
 }
 
 module.exports = getHostComponentFromComposite;
-},{"./ReactNodeTypes":132}],176:[function(require,module,exports){
+},{"./ReactNodeTypes":110}],154:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21560,7 +19181,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],177:[function(require,module,exports){
+},{}],155:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21581,7 +19202,7 @@ function getNextDebugID() {
 }
 
 module.exports = getNextDebugID;
-},{}],178:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21655,7 +19276,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],179:[function(require,module,exports){
+},{}],157:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21688,7 +19309,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":30}],180:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":8}],158:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21789,7 +19410,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"fbjs/lib/ExecutionEnvironment":30}],181:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":8}],159:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -21919,7 +19540,7 @@ function instantiateReactComponent(node, shouldHaveDebugID) {
 
 module.exports = instantiateReactComponent;
 }).call(this,require('_process'))
-},{"./ReactCompositeComponent":94,"./ReactEmptyComponent":117,"./ReactHostComponent":122,"./getNextDebugID":177,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"object-assign":64}],182:[function(require,module,exports){
+},{"./ReactCompositeComponent":72,"./ReactEmptyComponent":95,"./ReactHostComponent":100,"./getNextDebugID":155,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"object-assign":42}],160:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21979,7 +19600,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":30}],183:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":8}],161:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22030,7 +19651,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],184:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22056,7 +19677,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":167}],185:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":145}],163:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22095,7 +19716,7 @@ function reactProdInvariant(code) {
 }
 
 module.exports = reactProdInvariant;
-},{}],186:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22111,7 +19732,7 @@ module.exports = reactProdInvariant;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":130}],187:[function(require,module,exports){
+},{"./ReactMount":108}],165:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22209,7 +19830,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"./DOMNamespaces":75,"./createMicrosoftUnsafeLocalFunction":165,"fbjs/lib/ExecutionEnvironment":30}],188:[function(require,module,exports){
+},{"./DOMNamespaces":53,"./createMicrosoftUnsafeLocalFunction":143,"fbjs/lib/ExecutionEnvironment":8}],166:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22261,7 +19882,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":167,"./setInnerHTML":187,"fbjs/lib/ExecutionEnvironment":30}],189:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":145,"./setInnerHTML":165,"fbjs/lib/ExecutionEnvironment":8}],167:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22303,7 +19924,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],190:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -22481,7 +20102,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":87,"./ReactElementSymbol":116,"./getIteratorFn":176,"./reactProdInvariant":185,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"react/lib/ReactCurrentOwner":199}],191:[function(require,module,exports){
+},{"./KeyEscapeUtils":65,"./ReactElementSymbol":94,"./getIteratorFn":154,"./reactProdInvariant":163,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"react/lib/ReactCurrentOwner":177}],169:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -22865,11 +20486,11 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = validateDOMNesting;
 }).call(this,require('_process'))
-},{"_process":25,"fbjs/lib/emptyFunction":36,"fbjs/lib/warning":51,"object-assign":64}],192:[function(require,module,exports){
-arguments[4][87][0].apply(exports,arguments)
-},{"dup":87}],193:[function(require,module,exports){
-arguments[4][89][0].apply(exports,arguments)
-},{"./reactProdInvariant":214,"_process":25,"dup":89,"fbjs/lib/invariant":44}],194:[function(require,module,exports){
+},{"_process":3,"fbjs/lib/emptyFunction":14,"fbjs/lib/warning":29,"object-assign":42}],170:[function(require,module,exports){
+arguments[4][65][0].apply(exports,arguments)
+},{"dup":65}],171:[function(require,module,exports){
+arguments[4][67][0].apply(exports,arguments)
+},{"./reactProdInvariant":192,"_process":3,"dup":67,"fbjs/lib/invariant":22}],172:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -22960,7 +20581,7 @@ var React = {
 
 module.exports = React;
 }).call(this,require('_process'))
-},{"./ReactChildren":195,"./ReactClass":196,"./ReactComponent":197,"./ReactDOMFactories":200,"./ReactElement":201,"./ReactElementValidator":203,"./ReactPropTypes":206,"./ReactPureComponent":208,"./ReactVersion":209,"./onlyChild":213,"_process":25,"fbjs/lib/warning":51,"object-assign":64}],195:[function(require,module,exports){
+},{"./ReactChildren":173,"./ReactClass":174,"./ReactComponent":175,"./ReactDOMFactories":178,"./ReactElement":179,"./ReactElementValidator":181,"./ReactPropTypes":184,"./ReactPureComponent":186,"./ReactVersion":187,"./onlyChild":191,"_process":3,"fbjs/lib/warning":29,"object-assign":42}],173:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23151,7 +20772,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":193,"./ReactElement":201,"./traverseAllChildren":215,"fbjs/lib/emptyFunction":36}],196:[function(require,module,exports){
+},{"./PooledClass":171,"./ReactElement":179,"./traverseAllChildren":193,"fbjs/lib/emptyFunction":14}],174:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -23870,7 +21491,7 @@ var ReactClass = {
 
 module.exports = ReactClass;
 }).call(this,require('_process'))
-},{"./ReactComponent":197,"./ReactElement":201,"./ReactNoopUpdateQueue":204,"./ReactPropTypeLocationNames":205,"./reactProdInvariant":214,"_process":25,"fbjs/lib/emptyObject":37,"fbjs/lib/invariant":44,"fbjs/lib/warning":51,"object-assign":64}],197:[function(require,module,exports){
+},{"./ReactComponent":175,"./ReactElement":179,"./ReactNoopUpdateQueue":182,"./ReactPropTypeLocationNames":183,"./reactProdInvariant":192,"_process":3,"fbjs/lib/emptyObject":15,"fbjs/lib/invariant":22,"fbjs/lib/warning":29,"object-assign":42}],175:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -23990,7 +21611,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = ReactComponent;
 }).call(this,require('_process'))
-},{"./ReactNoopUpdateQueue":204,"./canDefineProperty":210,"./reactProdInvariant":214,"_process":25,"fbjs/lib/emptyObject":37,"fbjs/lib/invariant":44,"fbjs/lib/warning":51}],198:[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":182,"./canDefineProperty":188,"./reactProdInvariant":192,"_process":3,"fbjs/lib/emptyObject":15,"fbjs/lib/invariant":22,"fbjs/lib/warning":29}],176:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2016-present, Facebook, Inc.
@@ -24326,7 +21947,7 @@ var ReactComponentTreeHook = {
 
 module.exports = ReactComponentTreeHook;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":199,"./reactProdInvariant":214,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51}],199:[function(require,module,exports){
+},{"./ReactCurrentOwner":177,"./reactProdInvariant":192,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29}],177:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -24357,7 +21978,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],200:[function(require,module,exports){
+},{}],178:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -24529,7 +22150,7 @@ var ReactDOMFactories = {
 
 module.exports = ReactDOMFactories;
 }).call(this,require('_process'))
-},{"./ReactElement":201,"./ReactElementValidator":203,"_process":25}],201:[function(require,module,exports){
+},{"./ReactElement":179,"./ReactElementValidator":181,"_process":3}],179:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -24872,9 +22493,9 @@ ReactElement.isValidElement = function (object) {
 
 module.exports = ReactElement;
 }).call(this,require('_process'))
-},{"./ReactCurrentOwner":199,"./ReactElementSymbol":202,"./canDefineProperty":210,"_process":25,"fbjs/lib/warning":51,"object-assign":64}],202:[function(require,module,exports){
-arguments[4][116][0].apply(exports,arguments)
-},{"dup":116}],203:[function(require,module,exports){
+},{"./ReactCurrentOwner":177,"./ReactElementSymbol":180,"./canDefineProperty":188,"_process":3,"fbjs/lib/warning":29,"object-assign":42}],180:[function(require,module,exports){
+arguments[4][94][0].apply(exports,arguments)
+},{"dup":94}],181:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -25110,7 +22731,7 @@ var ReactElementValidator = {
 
 module.exports = ReactElementValidator;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":198,"./ReactCurrentOwner":199,"./ReactElement":201,"./canDefineProperty":210,"./checkReactTypeSpec":211,"./getIteratorFn":212,"_process":25,"fbjs/lib/warning":51}],204:[function(require,module,exports){
+},{"./ReactComponentTreeHook":176,"./ReactCurrentOwner":177,"./ReactElement":179,"./canDefineProperty":188,"./checkReactTypeSpec":189,"./getIteratorFn":190,"_process":3,"fbjs/lib/warning":29}],182:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2015-present, Facebook, Inc.
@@ -25208,9 +22829,9 @@ var ReactNoopUpdateQueue = {
 
 module.exports = ReactNoopUpdateQueue;
 }).call(this,require('_process'))
-},{"_process":25,"fbjs/lib/warning":51}],205:[function(require,module,exports){
-arguments[4][134][0].apply(exports,arguments)
-},{"_process":25,"dup":134}],206:[function(require,module,exports){
+},{"_process":3,"fbjs/lib/warning":29}],183:[function(require,module,exports){
+arguments[4][112][0].apply(exports,arguments)
+},{"_process":3,"dup":112}],184:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -25646,9 +23267,9 @@ function getClassName(propValue) {
 
 module.exports = ReactPropTypes;
 }).call(this,require('_process'))
-},{"./ReactElement":201,"./ReactPropTypeLocationNames":205,"./ReactPropTypesSecret":207,"./getIteratorFn":212,"_process":25,"fbjs/lib/emptyFunction":36,"fbjs/lib/warning":51}],207:[function(require,module,exports){
-arguments[4][135][0].apply(exports,arguments)
-},{"dup":135}],208:[function(require,module,exports){
+},{"./ReactElement":179,"./ReactPropTypeLocationNames":183,"./ReactPropTypesSecret":185,"./getIteratorFn":190,"_process":3,"fbjs/lib/emptyFunction":14,"fbjs/lib/warning":29}],185:[function(require,module,exports){
+arguments[4][113][0].apply(exports,arguments)
+},{"dup":113}],186:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25690,9 +23311,9 @@ _assign(ReactPureComponent.prototype, ReactComponent.prototype);
 ReactPureComponent.prototype.isPureReactComponent = true;
 
 module.exports = ReactPureComponent;
-},{"./ReactComponent":197,"./ReactNoopUpdateQueue":204,"fbjs/lib/emptyObject":37,"object-assign":64}],209:[function(require,module,exports){
-arguments[4][143][0].apply(exports,arguments)
-},{"dup":143}],210:[function(require,module,exports){
+},{"./ReactComponent":175,"./ReactNoopUpdateQueue":182,"fbjs/lib/emptyObject":15,"object-assign":42}],187:[function(require,module,exports){
+arguments[4][121][0].apply(exports,arguments)
+},{"dup":121}],188:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -25720,7 +23341,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = canDefineProperty;
 }).call(this,require('_process'))
-},{"_process":25}],211:[function(require,module,exports){
+},{"_process":3}],189:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -25809,9 +23430,9 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":198,"./ReactPropTypeLocationNames":205,"./ReactPropTypesSecret":207,"./reactProdInvariant":214,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51}],212:[function(require,module,exports){
-arguments[4][176][0].apply(exports,arguments)
-},{"dup":176}],213:[function(require,module,exports){
+},{"./ReactComponentTreeHook":176,"./ReactPropTypeLocationNames":183,"./ReactPropTypesSecret":185,"./reactProdInvariant":192,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29}],190:[function(require,module,exports){
+arguments[4][154][0].apply(exports,arguments)
+},{"dup":154}],191:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -25851,9 +23472,9 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 }).call(this,require('_process'))
-},{"./ReactElement":201,"./reactProdInvariant":214,"_process":25,"fbjs/lib/invariant":44}],214:[function(require,module,exports){
-arguments[4][185][0].apply(exports,arguments)
-},{"dup":185}],215:[function(require,module,exports){
+},{"./ReactElement":179,"./reactProdInvariant":192,"_process":3,"fbjs/lib/invariant":22}],192:[function(require,module,exports){
+arguments[4][163][0].apply(exports,arguments)
+},{"dup":163}],193:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -26031,12 +23652,12 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":192,"./ReactCurrentOwner":199,"./ReactElementSymbol":202,"./getIteratorFn":212,"./reactProdInvariant":214,"_process":25,"fbjs/lib/invariant":44,"fbjs/lib/warning":51}],216:[function(require,module,exports){
+},{"./KeyEscapeUtils":170,"./ReactCurrentOwner":177,"./ReactElementSymbol":180,"./getIteratorFn":190,"./reactProdInvariant":192,"_process":3,"fbjs/lib/invariant":22,"fbjs/lib/warning":29}],194:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":194}],217:[function(require,module,exports){
+},{"./lib/React":172}],195:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -26095,7 +23716,7 @@ function applyMiddleware() {
     };
   };
 }
-},{"./compose":220}],218:[function(require,module,exports){
+},{"./compose":198}],196:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -26147,7 +23768,7 @@ function bindActionCreators(actionCreators, dispatch) {
   }
   return boundActionCreators;
 }
-},{}],219:[function(require,module,exports){
+},{}],197:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -26292,7 +23913,7 @@ function combineReducers(reducers) {
   };
 }
 }).call(this,require('_process'))
-},{"./createStore":221,"./utils/warning":223,"_process":25,"lodash/isPlainObject":63}],220:[function(require,module,exports){
+},{"./createStore":199,"./utils/warning":201,"_process":3,"lodash/isPlainObject":41}],198:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -26331,7 +23952,7 @@ function compose() {
     }, last.apply(undefined, arguments));
   };
 }
-},{}],221:[function(require,module,exports){
+},{}],199:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -26593,7 +24214,7 @@ function createStore(reducer, preloadedState, enhancer) {
     replaceReducer: replaceReducer
   }, _ref2[_symbolObservable2['default']] = observable, _ref2;
 }
-},{"lodash/isPlainObject":63,"symbol-observable":233}],222:[function(require,module,exports){
+},{"lodash/isPlainObject":41,"symbol-observable":211}],200:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -26642,7 +24263,7 @@ exports.bindActionCreators = _bindActionCreators2['default'];
 exports.applyMiddleware = _applyMiddleware2['default'];
 exports.compose = _compose2['default'];
 }).call(this,require('_process'))
-},{"./applyMiddleware":217,"./bindActionCreators":218,"./combineReducers":219,"./compose":220,"./createStore":221,"./utils/warning":223,"_process":25}],223:[function(require,module,exports){
+},{"./applyMiddleware":195,"./bindActionCreators":196,"./combineReducers":197,"./compose":198,"./createStore":199,"./utils/warning":201,"_process":3}],201:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -26668,7 +24289,7 @@ function warning(message) {
   } catch (e) {}
   /* eslint-enable no-empty */
 }
-},{}],224:[function(require,module,exports){
+},{}],202:[function(require,module,exports){
 /* eslint-disable no-useless-escape */
 var electron = '^(file:\/\/|\/)(.*\.html?\/?)?'
 var protocol = '^(http(s)?(:\/\/))?(www\.)?'
@@ -26692,7 +24313,7 @@ function pathname (route, isElectron) {
   return route.replace(suffix, '').replace(normalize, '/')
 }
 
-},{}],225:[function(require,module,exports){
+},{}],203:[function(require,module,exports){
 var pathname = require('./_pathname')
 var wayfarer = require('wayfarer')
 var assert = require('assert')
@@ -26799,7 +24420,7 @@ function thunkify (cb) {
   }
 }
 
-},{"./_pathname":224,"assert":23,"wayfarer":239}],226:[function(require,module,exports){
+},{"./_pathname":202,"assert":1,"wayfarer":217}],204:[function(require,module,exports){
 /**
  * Root reference for iframes.
  */
@@ -27732,7 +25353,7 @@ request.put = function(url, data, fn){
   return req;
 };
 
-},{"./is-function":227,"./is-object":228,"./request-base":229,"./response-base":230,"./should-retry":231,"component-emitter":28}],227:[function(require,module,exports){
+},{"./is-function":205,"./is-object":206,"./request-base":207,"./response-base":208,"./should-retry":209,"component-emitter":6}],205:[function(require,module,exports){
 /**
  * Check if `fn` is a function.
  *
@@ -27749,7 +25370,7 @@ function isFunction(fn) {
 
 module.exports = isFunction;
 
-},{"./is-object":228}],228:[function(require,module,exports){
+},{"./is-object":206}],206:[function(require,module,exports){
 /**
  * Check if `obj` is an object.
  *
@@ -27764,7 +25385,7 @@ function isObject(obj) {
 
 module.exports = isObject;
 
-},{}],229:[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 /**
  * Module of mixed-in functions shared between node and client code
  */
@@ -28357,7 +25978,7 @@ RequestBase.prototype._setTimeouts = function() {
   }
 }
 
-},{"./is-object":228}],230:[function(require,module,exports){
+},{"./is-object":206}],208:[function(require,module,exports){
 
 /**
  * Module dependencies.
@@ -28492,7 +26113,7 @@ ResponseBase.prototype._setStatusProperties = function(status){
     this.notFound = 404 == status;
 };
 
-},{"./utils":232}],231:[function(require,module,exports){
+},{"./utils":210}],209:[function(require,module,exports){
 var ERROR_CODES = [
   'ECONNRESET',
   'ETIMEDOUT',
@@ -28515,7 +26136,7 @@ module.exports = function shouldRetry(err, res) {
   if (err && 'timeout' in err && err.code == 'ECONNABORTED') return true;
   return false;
 };
-},{}],232:[function(require,module,exports){
+},{}],210:[function(require,module,exports){
 
 /**
  * Return the mime type for the given `str`.
@@ -28584,10 +26205,10 @@ exports.cleanHeader = function(header, shouldStripCookie){
   }
   return header;
 };
-},{}],233:[function(require,module,exports){
+},{}],211:[function(require,module,exports){
 module.exports = require('./lib/index');
 
-},{"./lib/index":234}],234:[function(require,module,exports){
+},{"./lib/index":212}],212:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -28619,7 +26240,7 @@ if (typeof self !== 'undefined') {
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./ponyfill":235}],235:[function(require,module,exports){
+},{"./ponyfill":213}],213:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28643,7 +26264,7 @@ function symbolObservablePonyfill(root) {
 
 	return result;
 };
-},{}],236:[function(require,module,exports){
+},{}],214:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -28668,14 +26289,14 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],237:[function(require,module,exports){
+},{}],215:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],238:[function(require,module,exports){
+},{}],216:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -29265,7 +26886,7 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":237,"_process":25,"inherits":236}],239:[function(require,module,exports){
+},{"./support/isBuffer":215,"_process":3,"inherits":214}],217:[function(require,module,exports){
 var assert = require('assert')
 var trie = require('./trie')
 
@@ -29329,7 +26950,7 @@ function Wayfarer (dft) {
   }
 }
 
-},{"./trie":240,"assert":23}],240:[function(require,module,exports){
+},{"./trie":218,"assert":1}],218:[function(require,module,exports){
 var mutate = require('xtend/mutable')
 var assert = require('assert')
 var xtend = require('xtend')
@@ -29446,7 +27067,7 @@ Trie.prototype.mount = function (route, trie) {
   }
 }
 
-},{"assert":23,"xtend":241,"xtend/mutable":242}],241:[function(require,module,exports){
+},{"assert":1,"xtend":219,"xtend/mutable":220}],219:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -29467,7 +27088,7 @@ function extend() {
     return target
 }
 
-},{}],242:[function(require,module,exports){
+},{}],220:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -29486,7 +27107,2247 @@ function extend(target) {
     return target
 }
 
-},{}],243:[function(require,module,exports){
+},{}],221:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_Component) {
+  _inherits(App, _Component);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+  }
+
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'h1',
+        null,
+        'Welcome to ',
+        this.props.name
+      );
+    }
+  }]);
+
+  return App;
+}(_react.Component);
+
+exports.default = App;
+
+},{"react":194}],222:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _login = require('../services/login');
+
+var _login2 = _interopRequireDefault(_login);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (_ref) {
+  var state = _ref.state,
+      dispatch = _ref.dispatch;
+
+  var goToSignUp = function goToSignUp() {
+    return dispatch({ type: 'CHANGE_ROUTE', payload: '/signUp' });
+  };
+  var saveEmail = function saveEmail(e) {
+    return dispatch({ type: 'UPDATE_LOGIN_DETAILS', payload: { change: 'username', value: e.target.value } });
+  };
+  var savePassword = function savePassword(e) {
+    return dispatch({ type: 'UPDATE_LOGIN_DETAILS', payload: { change: 'password', value: e.target.value } });
+  };
+  var loginButton = function loginButton(e) {
+    e.preventDefault();
+    (0, _login2.default)(state, dispatch);
+  };
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'div',
+      { className: '{state.theme} headingDiv' },
+      _react2.default.createElement(
+        'h1',
+        { className: 'primary mainHeading' },
+        'LOGIN'
+      ),
+      _react2.default.createElement(
+        'p',
+        { className: 'secondary subHeading' },
+        'Welcome to bizzBuzz'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      state.authError ? _react2.default.createElement(
+        'h1',
+        null,
+        state.authError
+      ) : "",
+      _react2.default.createElement(
+        'div',
+        { className: 'accInputDiv' },
+        _react2.default.createElement('input', { className: 'detsInput', onChange: saveEmail, type: 'text', placeholder: 'Email Address' }),
+        _react2.default.createElement('input', { className: 'detsInputLast', onChange: savePassword, type: 'password', placeholder: 'Password' })
+      ),
+      _react2.default.createElement(
+        'button',
+        { className: 'primary loginButton', onClick: loginButton, type: 'submit' },
+        'LOGIN'
+      )
+    ),
+    _react2.default.createElement(
+      'button',
+      { className: 'primary createAccountButton', onClick: goToSignUp },
+      'Create Account'
+    )
+  );
+};
+
+},{"../services/login":247,"react":194}],223:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _events = require('./views/events');
+
+var _events2 = _interopRequireDefault(_events);
+
+var _createEvent = require('./views/createEvent');
+
+var _createEvent2 = _interopRequireDefault(_createEvent);
+
+var _posts = require('./views/posts');
+
+var _posts2 = _interopRequireDefault(_posts);
+
+var _groups = require('./views/groups');
+
+var _groups2 = _interopRequireDefault(_groups);
+
+var _findGroup = require('./views/findGroup');
+
+var _findGroup2 = _interopRequireDefault(_findGroup);
+
+var _admin = require('./views/admin');
+
+var _admin2 = _interopRequireDefault(_admin);
+
+var _requestLeave = require('./views/requestLeave');
+
+var _requestLeave2 = _interopRequireDefault(_requestLeave);
+
+var _emergencyReport = require('./views/emergencyReport');
+
+var _emergencyReport2 = _interopRequireDefault(_emergencyReport);
+
+var _messageAdmin = require('./views/messageAdmin');
+
+var _messageAdmin2 = _interopRequireDefault(_messageAdmin);
+
+var _adminSuccess = require('./views/adminSuccess');
+
+var _adminSuccess2 = _interopRequireDefault(_adminSuccess);
+
+var _groupAdmin = require('./views/groupAdmin');
+
+var _groupAdmin2 = _interopRequireDefault(_groupAdmin);
+
+var _header = require('./views/header');
+
+var _header2 = _interopRequireDefault(_header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (_ref) {
+  var state = _ref.state,
+      dispatch = _ref.dispatch;
+
+  console.log({ state: state });
+  function viewHandler() {
+    switch (state.view) {
+      case 'events':
+        return (0, _events2.default)(state, dispatch);
+      case 'posts':
+        console.log("render posts");
+        return (0, _posts2.default)(state, dispatch);
+      case 'groups':
+        return (0, _groups2.default)(state, dispatch);
+      case 'findGroup':
+        return (0, _findGroup2.default)(state, dispatch);
+      case 'admin':
+        return (0, _admin2.default)(state, dispatch);
+      case 'requestLeave':
+        return (0, _requestLeave2.default)(state, dispatch);
+      case 'emergency':
+        return (0, _emergencyReport2.default)(state, dispatch);
+      case 'messageAdmin':
+        return (0, _messageAdmin2.default)(state, dispatch);
+      case 'adminSuccess':
+        return (0, _adminSuccess2.default)(state, dispatch);
+      case 'groupAdmin':
+        return (0, _groupAdmin2.default)(state, dispatch);
+      default:
+        return (0, _events2.default)(state, dispatch);
+    }
+  }
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    (0, _header2.default)(state, dispatch),
+    _react2.default.createElement(
+      'div',
+      { className: 'contentDiv' },
+      viewHandler()
+    )
+  );
+};
+
+},{"./views/admin":225,"./views/adminSuccess":229,"./views/createEvent":230,"./views/emergencyReport":233,"./views/events":234,"./views/findGroup":235,"./views/groupAdmin":236,"./views/groups":237,"./views/header":238,"./views/messageAdmin":239,"./views/posts":240,"./views/requestLeave":241,"react":194}],224:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _signup = require('../services/signup');
+
+var _signup2 = _interopRequireDefault(_signup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (_ref) {
+  var state = _ref.state,
+      dispatch = _ref.dispatch;
+
+  var savePassword = function savePassword(e) {
+    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'password', value: e.target.value } });
+  };
+  var saveConfirmPassword = function saveConfirmPassword(e) {
+    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'confirmPassword', value: e.target.value } });
+  };
+  var saveEmail = function saveEmail(e) {
+    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'email', value: e.target.value } });
+  };
+  var saveFirstName = function saveFirstName(e) {
+    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'first_name', value: e.target.value } });
+  };
+  var saveLastName = function saveLastName(e) {
+    return dispatch({ type: 'UPDATE_SIGNUP_DETAILS', payload: { change: 'last_name', value: e.target.value } });
+  };
+  var authorizeSignUp = function authorizeSignUp(e) {
+    e.preventDefault();
+    (0, _signup2.default)(state.signupDetails, dispatch);
+  };
+  return _react2.default.createElement(
+    'div',
+    { className: 'signUp' },
+    _react2.default.createElement(
+      'div',
+      { className: 'headingDiv' },
+      _react2.default.createElement(
+        'h1',
+        { className: 'mainHeading' },
+        'CREATE ACCOUNT'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      state.authError ? _react2.default.createElement(
+        'p',
+        { className: 'authErrorMsgSignUp' },
+        state.authError
+      ) : "",
+      _react2.default.createElement(
+        'div',
+        { className: 'accInputDiv' },
+        _react2.default.createElement('input', { className: 'detsInput', onChange: saveEmail, type: 'text', placeholder: 'Email' }),
+        _react2.default.createElement('input', { className: 'detsInput', onChange: savePassword, type: 'password', placeholder: 'Password' }),
+        _react2.default.createElement('input', { className: 'detsInput', onChange: saveConfirmPassword, type: 'password', placeholder: 'Confirm Password' }),
+        _react2.default.createElement('input', { className: 'detsInput', onChange: saveFirstName, type: 'text', placeholder: 'First Name' }),
+        _react2.default.createElement('input', { className: 'detsInputLast', onChange: saveLastName, type: 'text', placeholder: 'Last Name' })
+      ),
+      _react2.default.createElement(
+        'button',
+        { className: 'signUpButton', onClick: authorizeSignUp, type: 'submit' },
+        'Sign Up'
+      )
+    ),
+    _react2.default.createElement(
+      'button',
+      { className: 'cancelSignUpButton', onClick: function onClick() {
+          return dispatch({ type: 'CHANGE_ROUTE', payload: '/' });
+        }, type: 'submit' },
+      'Cancel'
+    )
+  );
+};
+
+},{"../services/signup":261,"react":194}],225:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _requestAdminData = require('../../services/requestAdminData');
+
+var _requestAdminData2 = _interopRequireDefault(_requestAdminData);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function renderGroupAdmin() {
+    var groups = state.groups.filter(function (group) {
+      return group.isAdmin;
+    });
+    console.log({ groups: groups });
+    if (groups.length != 0) {
+      return _react2.default.createElement(
+        'button',
+        { className: 'messageAdminsButton', onClick: function onClick() {
+            return (0, _requestAdminData2.default)(state, dispatch);
+          } },
+        'Group Admin'
+      );
+    }
+  }
+  return _react2.default.createElement(
+    'div',
+    { className: 'communication' },
+    _react2.default.createElement(
+      'button',
+      { className: 'leaveRequestButton', onClick: function onClick() {
+          return dispatch({ type: 'CHANGE_VIEW', payload: 'requestLeave' });
+        } },
+      'Request Leave'
+    ),
+    _react2.default.createElement(
+      'button',
+      { className: 'emergencyButton', onClick: function onClick() {
+          return dispatch({ type: 'CHANGE_VIEW', payload: 'emergency' });
+        } },
+      'Emergency'
+    ),
+    _react2.default.createElement(
+      'button',
+      { className: 'messageAdminsButton', onClick: function onClick() {
+          return dispatch({ type: 'CHANGE_VIEW', payload: 'messageAdmin' });
+        } },
+      'Message Admins'
+    ),
+    renderGroupAdmin()
+  );
+};
+
+},{"../../services/requestAdminData":255,"react":194}],226:[function(require,module,exports){
+"use strict";
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  return _react2.default.createElement(
+    "div",
+    { className: "adminEmergency" },
+    "emergency"
+  );
+};
+
+},{"react":194}],227:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _deleteLeaveRequest = require('../../services/deleteLeaveRequest');
+
+var _deleteLeaveRequest2 = _interopRequireDefault(_deleteLeaveRequest);
+
+var _togglePinnedLeaveRequest = require('../../services/togglePinnedLeaveRequest');
+
+var _togglePinnedLeaveRequest2 = _interopRequireDefault(_togglePinnedLeaveRequest);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function selectAdminItem(content, content_type) {
+    dispatch({ type: 'SELECT_ADMIN_ITEM', payload: { content: content, content_type: content_type } });
+  }
+  function pinButton(leaveRequest) {
+    if (leaveRequest.is_pinned) {
+      return _react2.default.createElement(
+        'button',
+        { className: 'toggleButton', onClick: function onClick() {
+            return (0, _togglePinnedLeaveRequest2.default)(leaveRequest, dispatch);
+          } },
+        'Unpin'
+      );
+    }return _react2.default.createElement(
+      'button',
+      { className: 'toggleButton', onClick: function onClick() {
+          return (0, _togglePinnedLeaveRequest2.default)(leaveRequest, dispatch);
+        } },
+      'Pin'
+    );
+  }
+  function renderMore(leaveRequest) {
+    if (leaveRequest.request_id === state.adminSelected.leaveRequest) {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'adminLeaveRequestReason' },
+          leaveRequest.leave_reason
+        ),
+        pinButton(leaveRequest),
+        _react2.default.createElement(
+          'button',
+          { className: 'toggleButton', onClick: function onClick() {
+              return (0, _deleteLeaveRequest2.default)(leaveRequest.request_id, dispatch);
+            } },
+          'Delete'
+        )
+      );
+    }
+  }
+  function renderLeaveType(leaveRequest) {
+    if (leaveRequest.is_sick_leave == true) return 'Sick Leave';
+    return 'Annual Leave';
+  }
+  function renderAdminLeaveRequest(leaveRequest) {
+    return _react2.default.createElement(
+      'div',
+      { onClick: function onClick() {
+          return selectAdminItem(leaveRequest.request_id, 'leaveRequest');
+        }, className: 'adminLeaveRequest' },
+      _react2.default.createElement(
+        'div',
+        { className: 'adminLeaveRequestName' },
+        leaveRequest.first_name,
+        ' ',
+        leaveRequest.last_name
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'adminLeaveRequestDays' },
+        renderLeaveType(leaveRequest),
+        ' for ',
+        leaveRequest.leave_days,
+        ' days'
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'adminLeaveRequestDate' },
+        'Starting ',
+        leaveRequest.day_id,
+        '/',
+        leaveRequest.month_id,
+        '/',
+        leaveRequest.year_id
+      ),
+      renderMore(leaveRequest),
+      _react2.default.createElement(
+        'div',
+        { className: 'adminLeaveRequestGroup' },
+        leaveRequest.group_name
+      )
+    );
+  }
+  function renderSortedAdminLeaveRequests(leaveRequests) {
+    return leaveRequests.map(function (leaveRequest) {
+      return renderAdminLeaveRequest(leaveRequest);
+    });
+  }
+  function renderAdminLeaveRequests() {
+    var pinned = [];
+    var unpinned = [];
+    state.admin.leaveRequests.forEach(function (leaveRequest) {
+      if (leaveRequest.is_pinned) pinned.push(leaveRequest);else unpinned.push(leaveRequest);
+    });
+    return _react2.default.createElement(
+      'div',
+      { className: 'adminLeaveRequests' },
+      _react2.default.createElement(
+        'div',
+        { className: 'pinnedLeaveRequests' },
+        _react2.default.createElement(
+          'p',
+          { className: 'pinnedAdminMessagesHeader' },
+          'Pinned (',
+          pinned.length,
+          ')'
+        ),
+        renderSortedAdminLeaveRequests(pinned)
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'unpinnedLeaveRequests' },
+        _react2.default.createElement(
+          'p',
+          { className: 'unpinnedAdminMessagesHeader' },
+          'Unpinned (',
+          unpinned.length,
+          ')'
+        ),
+        renderSortedAdminLeaveRequests(unpinned)
+      )
+    );
+  }
+  return renderAdminLeaveRequests();
+};
+
+},{"../../services/deleteLeaveRequest":246,"../../services/togglePinnedLeaveRequest":263,"react":194}],228:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _togglePinnedAdminMessage = require('../../services/togglePinnedAdminMessage');
+
+var _togglePinnedAdminMessage2 = _interopRequireDefault(_togglePinnedAdminMessage);
+
+var _deleteAdminMessage = require('../../services/deleteAdminMessage');
+
+var _deleteAdminMessage2 = _interopRequireDefault(_deleteAdminMessage);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function selectAdminItem(content, content_type) {
+    dispatch({ type: 'SELECT_ADMIN_ITEM', payload: { content: content, content_type: content_type } });
+  }
+  function pinButton(message) {
+    if (message.is_pinned) {
+      return _react2.default.createElement(
+        'button',
+        { className: 'toggleButton', onClick: function onClick() {
+            return (0, _togglePinnedAdminMessage2.default)(message, dispatch);
+          } },
+        'Unpin'
+      );
+    }return _react2.default.createElement(
+      'button',
+      { className: 'toggleButton', onClick: function onClick() {
+          return (0, _togglePinnedAdminMessage2.default)(message, dispatch);
+        } },
+      'Pin'
+    );
+  }
+  function renderMore(message) {
+    if (message.message_id === state.adminSelected.adminMessage) {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'adminMessageContent' },
+          message.content
+        ),
+        pinButton(message),
+        _react2.default.createElement(
+          'button',
+          { className: 'toggleButton', onClick: function onClick() {
+              return (0, _deleteAdminMessage2.default)(message.message_id, dispatch);
+            } },
+          'Delete'
+        )
+      );
+    } else {
+      var snippet = message.content.slice(0, 14);
+      if (message.content.length > 14) snippet += ' (...)';
+      return _react2.default.createElement(
+        'div',
+        { className: 'adminMessageContent' },
+        snippet
+      );
+    }
+  }
+  function renderAdminMessage(message) {
+    return _react2.default.createElement(
+      'div',
+      { onClick: function onClick() {
+          return selectAdminItem(message.message_id, 'adminMessage');
+        }, className: 'adminMessage' },
+      _react2.default.createElement(
+        'div',
+        { className: 'adminMessageFrom' },
+        message.first_name,
+        ' ',
+        message.last_name
+      ),
+      renderMore(message),
+      _react2.default.createElement(
+        'div',
+        { className: 'adminMessageGroup' },
+        message.group_name
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'adminMessageCreated' },
+        message.message_created_at
+      )
+    );
+  }
+  function renderSortedMessages(messages) {
+    return messages.map(function (message) {
+      return renderAdminMessage(message);
+    });
+  }
+  function renderAdminMessages() {
+    var pinned = [];
+    var unpinned = [];
+    state.admin.adminMessages.forEach(function (message) {
+      if (message.is_pinned) pinned.push(message);else unpinned.push(message);
+    });
+    return _react2.default.createElement(
+      'div',
+      { className: 'adminMessages' },
+      _react2.default.createElement(
+        'div',
+        { className: 'pinnedAdminMessages' },
+        _react2.default.createElement(
+          'p',
+          { className: 'pinnedAdminMessagesHeader' },
+          'Pinned (',
+          pinned.length,
+          ')'
+        ),
+        renderSortedMessages(pinned)
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'unpinnedAdminMessages' },
+        _react2.default.createElement(
+          'p',
+          { className: 'unpinnedAdminMessagesHeader' },
+          'Unpinned (',
+          unpinned.length,
+          ')'
+        ),
+        renderSortedMessages(unpinned)
+      )
+    );
+  }
+  return renderAdminMessages();
+};
+
+},{"../../services/deleteAdminMessage":245,"../../services/togglePinnedAdminMessage":262,"react":194}],229:[function(require,module,exports){
+"use strict";
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  return _react2.default.createElement(
+    "div",
+    { className: "groups" },
+    _react2.default.createElement(
+      "button",
+      { className: "toggleButton", onClick: function onClick() {
+          return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
+        } },
+      "Go Back"
+    ),
+    _react2.default.createElement(
+      "p",
+      { className: "successAlert" },
+      state.successAlert
+    )
+  );
+};
+
+},{"react":194}],230:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _dateTime = require('../../services/dateTime');
+
+var _dateTime2 = _interopRequireDefault(_dateTime);
+
+var _postEvent = require('../../services/postEvent');
+
+var _postEvent2 = _interopRequireDefault(_postEvent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function updateCreateEvent(content, content_type) {
+    dispatch({ type: 'UPDATE_CREATE_EVENT', payload: { content: content, content_type: content_type } });
+  }
+  function renderGroupOption(option) {
+    return _react2.default.createElement(
+      'option',
+      { value: option.group_id },
+      option.group_name
+    );
+  }
+  function renderGroupSelect() {
+    var groupOptions = state.groups.filter(function (group) {
+      return group.isAdmin;
+    });
+    return _react2.default.createElement(
+      'select',
+      { className: 'selectParentGroup', onChange: function onChange(e) {
+          return updateCreateEvent(e.target.value, 'group_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Group'
+      ),
+      groupOptions.map(function (option) {
+        return renderGroupOption(option);
+      })
+    );
+  }
+  function renderMinuteSelect() {
+    var options = [];
+    for (var i = 0; i < 60; i++) {
+      options.push(i);
+    }return _react2.default.createElement(
+      'select',
+      { className: 'minuteSelect', onChange: function onChange(e) {
+          return updateCreateEvent(e.target.value, 'minute_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Minute'
+      ),
+      options.map(function (minute_id) {
+        var minutes = minute_id;
+        if (minutes < 10) minutes = '0' + minutes.toString();
+        return _react2.default.createElement(
+          'option',
+          { value: minute_id },
+          minutes
+        );
+      })
+    );
+  }
+  function renderHourSelect() {
+    var options = [];
+    for (var i = 0; i < 24; i++) {
+      options.push(i);
+    }return _react2.default.createElement(
+      'select',
+      { className: 'hourSelect', onChange: function onChange(e) {
+          return updateCreateEvent(e.target.value, 'hour_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Hour'
+      ),
+      options.map(function (hour_id) {
+        var hours = hour_id;
+        if (hours < 10) hours = '0' + hours.toString();
+        return _react2.default.createElement(
+          'option',
+          { value: hour_id },
+          hours
+        );
+      })
+    );
+  }
+  function renderDays(dayCount) {
+    console.log({ dayCount: dayCount });
+    var options = [];
+    for (var i = 1; i <= dayCount; i++) {
+      options.push(i);
+    }return options.map(function (day_id) {
+      return _react2.default.createElement(
+        'option',
+        { value: day_id },
+        day_id
+      );
+    });
+  }
+  function renderDaySelect() {
+    return _react2.default.createElement(
+      'select',
+      { onChange: function onChange(e) {
+          return updateCreateEvent(e.target.value, 'day_id');
+        }, className: 'daySelect' },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Day'
+      ),
+      renderDays(_dateTime2.default.months[state.createEvent.month_id || 0].dayCount)
+    );
+  }
+  function renderMonthSelect() {
+    return _react2.default.createElement(
+      'select',
+      { className: 'monthSelect', onChange: function onChange(e) {
+          return updateCreateEvent(e.target.value, 'month_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Month'
+      ),
+      _dateTime2.default.months.map(function (month) {
+        return _react2.default.createElement(
+          'option',
+          { value: month.id },
+          month.name
+        );
+      })
+    );
+  }
+  function renderYearOptions(current_year) {
+    var options = [];
+    for (var i = current_year; i <= current_year + 5; i++) {
+      options.push(_react2.default.createElement(
+        'option',
+        { value: i },
+        i
+      ));
+    }
+    return options;
+  }
+  function renderYearSelect() {
+    return _react2.default.createElement(
+      'select',
+      { className: 'yearSelect', onChange: function onChange(e) {
+          return updateCreateEvent(e.target.value, 'year_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Year'
+      ),
+      renderYearOptions(2017)
+    );
+  }
+  function renderDateTimeSelect() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'dateTime' },
+      _react2.default.createElement(
+        'div',
+        { className: 'dateSelect' },
+        renderMonthSelect(),
+        renderDaySelect(),
+        renderYearSelect()
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'timeSelect' },
+        renderHourSelect(),
+        renderMinuteSelect()
+      )
+    );
+  }
+  function postEventFunction(e) {
+    e.preventDefault();
+    (0, _postEvent2.default)(state, dispatch);
+  }
+  function renderCreateButton() {
+    var event = state.createEvent;
+    if (!event.group_id || !event.minute_id || !event.hour_id || !event.day_id || !event.month_id || !event.year_id || !event.title || !event.description) {
+      return _react2.default.createElement(
+        'div',
+        { className: 'authErrorMsg pleaseSelectAllError' },
+        'Please Fill In All Fields'
+      );
+    } else return _react2.default.createElement(
+      'button',
+      { onClick: function onClick(e) {
+          return postEventFunction(e);
+        }, className: 'endCreateEventButton' },
+      'Create Event'
+    );
+  }
+  return _react2.default.createElement(
+    'div',
+    { className: 'createEvent' },
+    _react2.default.createElement('input', { onChange: function onChange(e) {
+        return updateCreateEvent(e.target.value, 'title');
+      }, className: 'detsInput eventInput', type: 'text', placeholder: 'Event Title' }),
+    _react2.default.createElement('input', { onChange: function onChange(e) {
+        return updateCreateEvent(e.target.value, 'description');
+      }, className: 'detsInputLast eventInput', type: 'text', placeholder: 'Event Description' }),
+    renderDateTimeSelect(),
+    renderGroupSelect(),
+    renderCreateButton(),
+    _react2.default.createElement(
+      'div',
+      { className: 'createEventButtonsDiv' },
+      _react2.default.createElement(
+        'button',
+        { className: 'createEventButtons leftButton', onClick: function onClick() {
+            return dispatch({ type: 'TOGGLE', payload: 'createEventToggle' });
+          } },
+        'Cancel'
+      )
+    )
+  );
+};
+
+},{"../../services/dateTime":244,"../../services/postEvent":249,"react":194}],231:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _postGroup = require('../../services/postGroup');
+
+var _postGroup2 = _interopRequireDefault(_postGroup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+	function updateCreateGroupDetails(content, content_type) {
+		dispatch({ type: 'UPDATE_CREATE_GROUP', payload: { content: content, content_type: content_type } });
+	}
+	function renderGroupInviteOption() {
+		if (state.createGroup.invite_only) return _react2.default.createElement(
+			'p',
+			null,
+			'Invite Only'
+		);
+		return _react2.default.createElement(
+			'p',
+			null,
+			'Open Group'
+		);
+	}
+	function renderOption(option) {
+		return _react2.default.createElement(
+			'option',
+			{ value: option.group_id },
+			option.group_name
+		);
+	}
+	function selectParentGroup() {
+		var parentOptions = state.groups.filter(function (group) {
+			return group.isAdmin;
+		});
+		return _react2.default.createElement(
+			'select',
+			{ className: 'selectParentGroup', onChange: function onChange(e) {
+					return updateCreateGroupDetails(e.target.value, 'parent_id');
+				} },
+			_react2.default.createElement(
+				'option',
+				{ value: ' ', disabled: true, selected: true },
+				'Parent Group'
+			),
+			parentOptions.map(function (option) {
+				return renderOption(option);
+			})
+		);
+	}
+	function inviteConditionHandler() {
+		return _react2.default.createElement(
+			'div',
+			null,
+			renderGroupInviteOption(),
+			_react2.default.createElement(
+				'button',
+				{ className: 'toggleButton', onClick: function onClick() {
+						return updateCreateGroupDetails(!state.createGroup.invite_only, "invite_only");
+					} },
+				'Toggle'
+			)
+		);
+	}
+	return _react2.default.createElement(
+		'div',
+		{ className: 'createGroup' },
+		_react2.default.createElement('input', { className: 'detsInput groupInput', onChange: function onChange(e) {
+				return updateCreateGroupDetails(e.target.value, 'group_name');
+			}, type: 'text', placeholder: 'Group Name' }),
+		_react2.default.createElement('input', { className: 'detsInputLast groupInput', onChange: function onChange(e) {
+				return updateCreateGroupDetails(e.target.value, 'group_description');
+			}, type: 'text', placeholder: 'Group Description' }),
+		inviteConditionHandler(),
+		selectParentGroup(),
+		_react2.default.createElement(
+			'div',
+			{ className: 'createGroupButtonsDiv' },
+			_react2.default.createElement(
+				'button',
+				{ className: 'createGroupButtons leftButton', onClick: function onClick() {
+						return dispatch({ type: 'TOGGLE', payload: 'createGroupToggle' });
+					} },
+				'Cancel'
+			),
+			_react2.default.createElement(
+				'button',
+				{ className: 'createGroupButtons rightButton', onClick: function onClick() {
+						return (0, _postGroup2.default)(state, dispatch);
+					} },
+				'Create'
+			)
+		)
+	);
+};
+
+},{"../../services/postGroup":250,"react":194}],232:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _postPost = require('../../services/postPost');
+
+var _postPost2 = _interopRequireDefault(_postPost);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function updatePostDetails(content, content_type) {
+    dispatch({ type: 'UPDATE_CREATE_POST', payload: {
+        content: content, content_type: content_type
+      } });
+  }
+  function renderOption(option) {
+    if (option.isAdmin) {
+      return _react2.default.createElement(
+        'option',
+        { value: option.group_id },
+        option.group_name
+      );
+    } else return _react2.default.createElement('p', null);
+  }
+  function groupHandler() {
+    var parentOptions = state.groups.filter(function (group) {
+      return group.isAdmin;
+    });
+    return _react2.default.createElement(
+      'select',
+      { className: 'selectParentGroup', onChange: function onChange(e) {
+          return updatePostDetails(e.target.value, 'group_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Group'
+      ),
+      parentOptions.map(function (option) {
+        return renderOption(option);
+      })
+    );
+  }
+  function renderAlertOption() {
+    if (state.createPost.is_alert) {
+      return _react2.default.createElement(
+        'p',
+        { className: 'postTypeToggleButton alertTypeToggleShow' },
+        'Alert'
+      );
+    }return _react2.default.createElement(
+      'p',
+      { className: 'postTypeToggleButton postTypeToggleShow' },
+      'Post'
+    );
+  }
+  function alertHandler() {
+    return _react2.default.createElement(
+      'div',
+      null,
+      renderAlertOption(),
+      _react2.default.createElement(
+        'button',
+        { className: 'toggleButton', onClick: function onClick() {
+            return updatePostDetails(!state.createPost.is_alert, "is_alert");
+          } },
+        'Toggle'
+      )
+    );
+  }
+  return _react2.default.createElement(
+    'div',
+    { className: 'createPost' },
+    _react2.default.createElement('input', { type: 'text', className: 'detsInput postInput', onChange: function onChange(e) {
+        return updatePostDetails(e.target.value, 'content');
+      }, placeholder: 'content' }),
+    _react2.default.createElement(
+      'button',
+      { className: 'createPostButtons leftButton', onClick: function onClick() {
+          return dispatch({ type: 'TOGGLE', payload: 'createPostToggle' });
+        } },
+      'Cancel'
+    ),
+    alertHandler(),
+    groupHandler(),
+    state.createPost.content.length >= 6 ? _react2.default.createElement(
+      'button',
+      { className: 'createPostButtons rightButton', onClick: function onClick() {
+          return (0, _postPost2.default)(state, dispatch);
+        } },
+      'Post'
+    ) : _react2.default.createElement(
+      'p',
+      null,
+      'Post too short'
+    )
+  );
+};
+
+},{"../../services/postPost":252,"react":194}],233:[function(require,module,exports){
+"use strict";
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  return _react2.default.createElement(
+    "div",
+    { className: "groups" },
+    _react2.default.createElement(
+      "button",
+      { className: "toggleButton", onClick: function onClick() {
+          return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
+        } },
+      "Go Back"
+    ),
+    _react2.default.createElement(
+      "div",
+      null,
+      "Emergency Reporting"
+    )
+  );
+};
+
+},{"react":194}],234:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _createEvent = require('./createEvent');
+
+var _createEvent2 = _interopRequireDefault(_createEvent);
+
+var _postRSVP = require('../../services/postRSVP');
+
+var _postRSVP2 = _interopRequireDefault(_postRSVP);
+
+var _dateTime = require('../../services/dateTime');
+
+var _dateTime2 = _interopRequireDefault(_dateTime);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function renderSearch() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'searchdiv' },
+      _react2.default.createElement('input', { className: 'detsInput searchEvents', onChange: function onChange(e) {
+          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: e.target.value, search_type: 'eventsSearch' } });
+        }, type: 'text', placeholder: 'Search Events' }),
+      _react2.default.createElement('input', { className: 'resetSearch', onClick: function onClick(e) {
+          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: null, search_type: 'eventsSearch' } });
+        }, type: 'reset', value: 'Reset' })
+    );
+  }
+  function renderRsvpButtons(event) {
+    var RSVP = state.RSVPs.find(function (RSVP) {
+      return RSVP.event_id == event.event_id;
+    });
+    console.log({ RSVP: RSVP });
+    if (RSVP) {
+      if (RSVP.going == true) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'eventButtons' },
+          _react2.default.createElement(
+            'button',
+            { className: 'eventAttendanceButtons', onClick: function onClick() {
+                return (0, _postRSVP2.default)(event.event_id, false, dispatch, -1);
+              } },
+            'No Longer Attending'
+          )
+        );
+      } else {
+        return _react2.default.createElement(
+          'div',
+          { className: 'eventButtons' },
+          _react2.default.createElement(
+            'button',
+            { className: 'eventAttendanceButtons', onClick: function onClick() {
+                return (0, _postRSVP2.default)(event.event_id, true, dispatch, 1);
+              } },
+            'Can Attend'
+          )
+        );
+      }
+    } else {
+      return _react2.default.createElement(
+        'div',
+        { className: 'eventButtons' },
+        _react2.default.createElement(
+          'button',
+          { className: 'eventAttendanceButtons', onClick: function onClick() {
+              return (0, _postRSVP2.default)(event.event_id, true, dispatch, 1);
+            } },
+          'Attending'
+        ),
+        _react2.default.createElement(
+          'button',
+          { className: 'eventAttendanceButtons', onClick: function onClick() {
+              return (0, _postRSVP2.default)(event.event_id, false, dispatch, 0);
+            } },
+          'Not Attending'
+        )
+      );
+    }
+    console.log({ RSVP: RSVP });
+  }
+  function renderMore(event) {
+    return _react2.default.createElement(
+      'div',
+      { className: 'eventSelected' },
+      _react2.default.createElement(
+        'div',
+        { className: 'eventDescription' },
+        event.description
+      ),
+      renderRsvpButtons(event),
+      _react2.default.createElement(
+        'div',
+        { className: 'eventRsvpCount' },
+        event.RSVP_count,
+        ' attending'
+      )
+    );
+  }
+  function renderDate(event) {
+    var syntax = 'th';
+    if (event.day_id === 1) syntax = 'st';else if (event.day_id === 2) syntax = 'nd';else if (event.day_id === 3) syntax = 'rd';
+
+    return _react2.default.createElement(
+      'div',
+      { className: 'eventDate' },
+      event.day_id.toString() + syntax + ' ' + _dateTime2.default.months[event.month_id].name + ' ' + event.year_id
+    );
+  }
+  function renderTime(event) {
+    var minutes = event.minute_id;
+    if (minutes < 10) minutes = '0' + minutes.toString();
+    var hours = event.hour_id;
+    if (hours < 10) hours = '0' + hours.toString();
+    return _react2.default.createElement(
+      'div',
+      { className: 'eventTime' },
+      hours + ' : ' + minutes
+    );
+  }
+  function renderDateTime(event) {
+
+    return _react2.default.createElement(
+      'div',
+      { className: 'eventDateTime' },
+      renderDate(event),
+      renderTime(event)
+    );
+  }
+  function renderEvent(event) {
+    return _react2.default.createElement(
+      'div',
+      { onClick: function onClick() {
+          return dispatch({ type: 'SELECT_EVENT', payload: event.event_id });
+        }, className: 'event' },
+      _react2.default.createElement(
+        'div',
+        { className: 'eventTitle' },
+        event.title
+      ),
+      renderDateTime(event),
+      state.selectedEvent == event.event_id ? renderMore(event) : '',
+      _react2.default.createElement(
+        'div',
+        { className: 'eventName' },
+        event.first_name,
+        ' ',
+        event.last_name
+      )
+    );
+  }
+  function renderEvents() {
+    var events;
+    if (state.search.eventsSearch === '' || !state.search.eventsSearch) events = state.events;else events = state.events.filter(function (event) {
+      return event.title.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || '') || event.first_name.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || '') || event.last_name.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || '') || event.description.toLowerCase().includes(state.search.eventsSearch.toLowerCase() || '') || (event.first_name.toLowerCase() + ' ' + event.last_name.toLowerCase()).includes(state.search.eventsSearch.toLowerCase() || '');
+    });
+
+    return events.map(function (event) {
+      return renderEvent(event);
+    });
+  }
+  return _react2.default.createElement(
+    'div',
+    { className: 'events' },
+    state.createEventToggle ? (0, _createEvent2.default)(state, dispatch) : _react2.default.createElement(
+      'button',
+      { className: 'createEventButton', onClick: function onClick() {
+          return dispatch({ type: 'TOGGLE', payload: 'createEventToggle' });
+        } },
+      'New Event'
+    ),
+    renderSearch(),
+    _react2.default.createElement(
+      'div',
+      { className: 'eventSorting' },
+      'Today'
+    ),
+    renderEvents()
+  );
+};
+
+},{"../../services/dateTime":244,"../../services/postRSVP":254,"./createEvent":230,"react":194}],235:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _createGroup = require('./createGroup');
+
+var _createGroup2 = _interopRequireDefault(_createGroup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function renderSearch() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'searchdiv' },
+      _react2.default.createElement('input', { className: 'detsInput searchGroups', onChange: function onChange(e) {
+          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: e.target.value, search_type: 'findGroupSearch' } });
+        }, type: 'text', placeholder: 'Search Groups' }),
+      _react2.default.createElement('input', { className: 'resetSearch', onClick: function onClick(e) {
+          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: null, search_type: 'findGroupSearch' } });
+        }, type: 'reset', value: 'Reset' })
+    );
+  }
+  function renderRequestButtons(group) {
+    if (group.invite_only) {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'button',
+          { className: 'findGroupButton' },
+          'Request To Join'
+        )
+      );
+    } else return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'button',
+        { className: 'findGroupButton' },
+        'Join Group'
+      )
+    );
+  }
+  function renderMore(group) {
+    if (state.selectedGroup == group.group_id) {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'p',
+          { className: 'group_description' },
+          group.group_description
+        ),
+        renderRequestButtons(group)
+      );
+    } else return;
+  }
+  function renderGroup(group) {
+    return _react2.default.createElement(
+      'div',
+      { className: 'group', onClick: function onClick() {
+          return dispatch({ type: 'SELECT_GROUP', payload: group.group_id });
+        } },
+      _react2.default.createElement(
+        'p',
+        { className: 'groupName' },
+        group.group_name
+      ),
+      renderMore(group),
+      _react2.default.createElement(
+        'p',
+        { className: 'groupMemberCount' },
+        group.member_count,
+        ' members'
+      )
+    );
+  }
+  function renderGroups() {
+    var findGroup;
+
+    if (state.search.findGroupSearch === '' || !state.search.findGroupSearch) findGroup = state.findGroup;else findGroup = state.findGroup.filter(function (group) {
+      return group.group_name.toLowerCase().includes(state.search.findGroupSearch.toLowerCase() || '') || group.group_description.toLowerCase().includes(state.search.findGroupSearch.toLowerCase() || '') || group.member_count >= Number(state.groupsSearch);
+    });
+
+    if (state.findGroup.length > 0) {
+      return findGroup.map(function (group) {
+        return renderGroup(group);
+      });
+    } else {
+      _react2.default.createElement(
+        'p',
+        null,
+        'There are no groups to join'
+      );
+    }
+  }
+  return _react2.default.createElement(
+    'div',
+    { className: 'findGroup' },
+    _react2.default.createElement(
+      'button',
+      { className: 'findGroupButton', onClick: function onClick() {
+          return dispatch({ type: 'CHANGE_VIEW', payload: 'groups' });
+        } },
+      'Back to Groups'
+    ),
+    renderSearch(),
+    renderGroups()
+  );
+};
+
+},{"./createGroup":231,"react":194}],236:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _adminMessages = require('./adminMessages.js');
+
+var _adminMessages2 = _interopRequireDefault(_adminMessages);
+
+var _adminLeaveRequests = require('./adminLeaveRequests');
+
+var _adminLeaveRequests2 = _interopRequireDefault(_adminLeaveRequests);
+
+var _adminEmergency = require('./adminEmergency');
+
+var _adminEmergency2 = _interopRequireDefault(_adminEmergency);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function renderAdminHeader() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'adminHeader' },
+      _react2.default.createElement(
+        'button',
+        { className: 'toggleButton', onClick: function onClick() {
+            return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
+          } },
+        'Go Back'
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'adminBar' },
+        _react2.default.createElement(
+          'span',
+          { className: 'adminNavItem', onClick: function onClick() {
+              return dispatch({ type: 'CHANGE_ADMIN_VIEW', payload: 'adminMessages' });
+            } },
+          'Messages (',
+          state.admin.adminMessages.length,
+          ')'
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: 'adminNavItem', onClick: function onClick() {
+              return dispatch({ type: 'CHANGE_ADMIN_VIEW', payload: 'leaveRequests' });
+            } },
+          'Leave (',
+          state.admin.leaveRequests.length,
+          ')'
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: 'adminNavItem', onClick: function onClick() {
+              return dispatch({ type: 'CHANGE_ADMIN_VIEW', payload: 'emergency' });
+            } },
+          'Emergency (',
+          state.admin.emergency.length,
+          ')'
+        )
+      )
+    );
+  }
+  function renderAdminView() {
+    switch (state.adminView) {
+      case 'leaveRequests':
+        return (0, _adminLeaveRequests2.default)(state, dispatch);
+      case 'adminMessages':
+        return (0, _adminMessages2.default)(state, dispatch);
+      case 'emergency':
+        return (0, _adminEmergency2.default)(state, dispatch);
+      default:
+        return (0, _adminMessages2.default)(state, dispatch);
+    }
+  }
+  return _react2.default.createElement(
+    'div',
+    { className: 'groupAdmin' },
+    renderAdminHeader(),
+    _react2.default.createElement(
+      'div',
+      { className: 'adminView' },
+      renderAdminView()
+    )
+  );
+};
+
+},{"./adminEmergency":226,"./adminLeaveRequests":227,"./adminMessages.js":228,"react":194}],237:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _createGroup = require('./createGroup');
+
+var _createGroup2 = _interopRequireDefault(_createGroup);
+
+var _requestFindGroups = require('../../services/requestFindGroups');
+
+var _requestFindGroups2 = _interopRequireDefault(_requestFindGroups);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function renderSearch() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'searchdiv' },
+      _react2.default.createElement('input', { className: 'detsInput searchGroups', onChange: function onChange(e) {
+          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: e.target.value, search_type: 'groupsSearch' } });
+        }, type: 'text', placeholder: 'Search Groups' }),
+      _react2.default.createElement('input', { className: 'resetSearch', onClick: function onClick(e) {
+          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: null, search_type: 'groupsSearch' } });
+        }, type: 'reset', value: 'Reset' })
+    );
+  }
+  function renderRequestButtons(group) {
+    if (group.invite_only) {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'button',
+          { className: 'findGroupButton' },
+          'Request To Join'
+        )
+      );
+    } else return _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'button',
+        { className: 'findGroupButton' },
+        'Join Group'
+      )
+    );
+  }
+  function renderMore(group) {
+    if (state.selectedGroup == group.group_id) {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'p',
+          { className: 'group_description' },
+          group.group_description
+        ),
+        state.currentGroup.group_id == group.group_id ? _react2.default.createElement(
+          'p',
+          null,
+          'This is your current group'
+        ) : _react2.default.createElement(
+          'button',
+          { className: 'changeGroupButton', onClick: function onClick() {
+              return dispatch({ type: 'CHANGE_GROUP', payload: group });
+            } },
+          'Switch Group'
+        )
+      );
+    } else return;
+  }
+  function renderGroup(group) {
+    return _react2.default.createElement(
+      'div',
+      { className: 'group', onClick: function onClick() {
+          return dispatch({ type: 'SELECT_GROUP', payload: group.group_id });
+        } },
+      _react2.default.createElement(
+        'p',
+        { className: 'groupName' },
+        group.group_name
+      ),
+      renderMore(group),
+      _react2.default.createElement(
+        'p',
+        { className: 'groupMemberCount' },
+        group.member_count,
+        ' members'
+      )
+    );
+  }
+  function renderGroups() {
+    var groups;
+
+    if (state.search.groupsSearch === '' || !state.search.groupsSearch) groups = state.groups;else groups = state.groups.filter(function (group) {
+      return group.group_name.toLowerCase().includes(state.search.groupsSearch.toLowerCase() || '') || group.group_description.toLowerCase().includes(state.search.groupsSearch.toLowerCase() || '') || group.member_count >= Number(state.groupsSearch);
+    });
+
+    return groups.map(function (group) {
+      return renderGroup(group);
+    });
+  }
+  return _react2.default.createElement(
+    'div',
+    { className: 'groups' },
+    _react2.default.createElement(
+      'button',
+      { className: 'findGroupButton', onClick: function onClick() {
+          return (0, _requestFindGroups2.default)(state, dispatch);
+        } },
+      'Find Groups'
+    ),
+    state.createGroupToggle ? (0, _createGroup2.default)(state, dispatch) : _react2.default.createElement(
+      'button',
+      { className: 'createGroupButton', onClick: function onClick() {
+          return dispatch({ type: 'TOGGLE', payload: 'createGroupToggle' });
+        } },
+      'New Group'
+    ),
+    renderSearch(),
+    renderGroups()
+  );
+};
+
+},{"../../services/requestFindGroups":257,"./createGroup":231,"react":194}],238:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _requestEvents = require('../../services/requestEvents');
+
+var _requestEvents2 = _interopRequireDefault(_requestEvents);
+
+var _requestPosts = require('../../services/requestPosts');
+
+var _requestPosts2 = _interopRequireDefault(_requestPosts);
+
+var _requestGroups = require('../../services/requestGroups');
+
+var _requestGroups2 = _interopRequireDefault(_requestGroups);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'header' },
+    _react2.default.createElement(
+      'nav',
+      null,
+      _react2.default.createElement(
+        'span',
+        { className: 'navItem', onClick: function onClick() {
+            return (0, _requestEvents2.default)(state, dispatch);
+          } },
+        'Events '
+      ),
+      _react2.default.createElement(
+        'span',
+        { className: 'navItem', onClick: function onClick() {
+            return (0, _requestPosts2.default)(state, dispatch);
+          } },
+        'Posts '
+      ),
+      _react2.default.createElement(
+        'span',
+        { className: 'navItem', onClick: function onClick() {
+            return (0, _requestGroups2.default)(state, dispatch);
+          } },
+        'Groups'
+      ),
+      _react2.default.createElement(
+        'span',
+        { className: 'navItem', onClick: function onClick() {
+            return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
+          } },
+        'Admin'
+      )
+    )
+  );
+};
+
+},{"../../services/requestEvents":256,"../../services/requestGroups":258,"../../services/requestPosts":260,"react":194}],239:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _postAdminMessage = require('../../services/postAdminMessage');
+
+var _postAdminMessage2 = _interopRequireDefault(_postAdminMessage);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function updateAdminMessageDetails(content, content_type) {
+    dispatch({ type: 'UPDATE_ADMIN_MESSAGE_DETAILS', payload: { content: content, content_type: content_type } });
+  }
+  function renderGroupOption(group) {
+    return _react2.default.createElement(
+      'option',
+      { value: group.group_id },
+      group.group_name
+    );
+  }
+  function renderGroupSelect() {
+    return _react2.default.createElement(
+      'select',
+      { onChange: function onChange(e) {
+          return updateAdminMessageDetails(e.target.value, 'group_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { selected: true, disabled: true },
+        'Select Group'
+      ),
+      state.groups.map(function (group) {
+        return renderGroupOption(group);
+      })
+    );
+  }
+  function postAdminMessageFunction(e) {
+    e.preventDefault();
+    (0, _postAdminMessage2.default)(state, dispatch);
+  }
+  function renderSendAdminMessage() {
+    if (!state.adminMessageDetails.content || !state.adminMessageDetails.group_id) {
+      return _react2.default.createElement(
+        'div',
+        { className: 'authErrorMsg pleaseSelectAllError' },
+        'Please fill in all fields'
+      );
+    } else return _react2.default.createElement(
+      'button',
+      { className: 'toggleButton', onClick: function onClick(e) {
+          return (0, _postAdminMessage2.default)(state, dispatch);
+        } },
+      'Send Message'
+    );
+  }
+
+  return _react2.default.createElement(
+    'div',
+    { className: 'messageAdminForm' },
+    _react2.default.createElement(
+      'button',
+      { className: 'toggleButton', onClick: function onClick() {
+          return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
+        } },
+      'Back'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      renderGroupSelect(),
+      _react2.default.createElement('input', { className: 'detsInput messageAdminDets', onChange: function onChange(e) {
+          return updateAdminMessageDetails(e.target.value, 'content');
+        }, type: 'text', placeholder: 'message' }),
+      renderSendAdminMessage()
+    )
+  );
+};
+
+},{"../../services/postAdminMessage":248,"react":194}],240:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _createPost = require('./createPost');
+
+var _createPost2 = _interopRequireDefault(_createPost);
+
+var _requestPostRespones = require('../../services/requestPostRespones');
+
+var _requestPostRespones2 = _interopRequireDefault(_requestPostRespones);
+
+var _postPostResponse = require('../../services/postPostResponse');
+
+var _postPostResponse2 = _interopRequireDefault(_postPostResponse);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  function renderSearch() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'searchdiv' },
+      _react2.default.createElement('input', { className: 'detsInput searchPosts', onChange: function onChange(e) {
+          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: e.target.value, search_type: 'postsSearch' } });
+        }, type: 'text', placeholder: 'Search Posts' }),
+      _react2.default.createElement('input', { className: 'resetSearch', onClick: function onClick(e) {
+          return dispatch({ type: 'UPDATE_SEARCH', payload: { search: null, search_type: 'postsSearch' } });
+        }, type: 'reset', value: 'Reset' })
+    );
+  }
+  function renderPostResponsediv() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'postResponseInput' },
+      _react2.default.createElement('input', { type: 'text', className: 'detsInput postInput customClass', onChange: function onChange(e) {
+          return dispatch({ type: "UPDATE_RESPONSE", payload: e.target.value });
+        }, placeholder: 'response' }),
+      state.postResponse.length < 200 ? _react2.default.createElement(
+        'button',
+        { className: 'createResButtons rightButton', onClick: function onClick() {
+            return (0, _postPostResponse2.default)(state, dispatch);
+          } },
+        'Respond'
+      ) : _react2.default.createElement(
+        'p',
+        { className: 'authErrorMsg' },
+        'Too many characters'
+      )
+    );
+  }
+  function renderResponse(response) {
+    return _react2.default.createElement(
+      'div',
+      { className: 'postResponse' },
+      _react2.default.createElement(
+        'p',
+        { className: 'responseName' },
+        response.last_name,
+        ':'
+      ),
+      _react2.default.createElement(
+        'p',
+        { className: 'responseContent' },
+        response.response_content
+      )
+    );
+  }
+  function renderRespones(post) {
+    if (state.selectedPost == post.post_id) {
+      return _react2.default.createElement(
+        'div',
+        { className: 'postResponses' },
+        renderPostResponsediv(),
+        state.postResponses.map(function (response) {
+          return renderResponse(response);
+        })
+      );
+    } else return _react2.default.createElement(
+      'div',
+      { className: 'postRespones' },
+      post.responses,
+      ' responses'
+    );
+  }
+  function renderPost(post) {
+    var customClass;
+    post.is_alert ? customClass = 'alertTypePost post' : customClass = 'postTypePost post';
+    return _react2.default.createElement(
+      'div',
+      { className: customClass, onClick: function onClick() {
+          return (0, _requestPostRespones2.default)(post.post_id, state, dispatch);
+        } },
+      _react2.default.createElement(
+        'div',
+        { className: 'postDets' },
+        _react2.default.createElement(
+          'div',
+          { className: 'postedAt rightButton' },
+          post.post_created_at
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'postContent' },
+        post.content
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'postedBy' },
+        post.first_name,
+        ' ',
+        post.last_name
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'postedBy' },
+        post.group_name
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'postDets' },
+        renderRespones(post)
+      )
+    );
+  }
+  function filterAlerts(posts) {
+    var alerts = posts.filter(function (post) {
+      return post.is_alert == true;
+    });
+    return alerts;
+  }
+  function renderPosts() {
+    var posts = state.posts;
+    if (state.alertsOnly) {
+      posts = filterAlerts(posts);
+    }
+    if (state.search.postsSearch === '' || !state.search.postsSearch) posts = posts;else posts = posts.filter(function (post) {
+      return post.group_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || '') || post.first_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || '') || post.last_name.toLowerCase().includes(state.search.postsSearch.toLowerCase() || '') || post.content.toLowerCase().includes(state.search.postsSearch.toLowerCase() || '') || (post.first_name.toLowerCase() + ' ' + post.last_name.toLowerCase()).includes(state.search.postsSearch.toLowerCase() || '');
+    });
+
+    return posts.map(function (post) {
+      return renderPost(post);
+    });
+  }
+  function toggleCreatePost() {
+    if (state.createPostToggle) return (0, _createPost2.default)(state, dispatch);else return _react2.default.createElement(
+      'button',
+      { className: 'createPostButton', onClick: function onClick() {
+          return dispatch({ type: 'TOGGLE', payload: 'createPostToggle' });
+        } },
+      'New Post'
+    );
+  }
+  function toggleAlertsOnly() {
+    dispatch({ type: "TOGGLE", payload: 'alertsOnly' });
+  }
+  function AlertToggleButton() {
+    if (state.alertsOnly) {
+      return _react2.default.createElement(
+        'button',
+        { onClick: function onClick() {
+            return toggleAlertsOnly();
+          }, className: 'createPostButton' },
+        'All Posts'
+      );
+    } else return _react2.default.createElement(
+      'button',
+      { onClick: function onClick() {
+          return toggleAlertsOnly();
+        }, className: 'createPostButton' },
+      'Alerts Only'
+    );
+  }
+
+  return _react2.default.createElement(
+    'div',
+    { className: 'posts' },
+    toggleCreatePost(),
+    AlertToggleButton(),
+    renderSearch(),
+    renderPosts()
+  );
+};
+
+},{"../../services/postPostResponse":253,"../../services/requestPostRespones":259,"./createPost":232,"react":194}],241:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _dateTime = require('../../services/dateTime');
+
+var _dateTime2 = _interopRequireDefault(_dateTime);
+
+var _postLeaveRequest = require('../../services/postLeaveRequest');
+
+var _postLeaveRequest2 = _interopRequireDefault(_postLeaveRequest);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = function (state, dispatch) {
+  var currentGroup = state.groups.find(function (group) {
+    return group.group_id == state.leaveRequestDetails.group_id;
+  }) || state.currentGroup.group_id;
+  function updateLeaveRequestDetails(content, content_type) {
+    console.log({ content: content, content_type: content_type });
+    dispatch({ type: 'UPDATE_LEAVE_REQUEST_DETAILS', payload: { content: content, content_type: content_type } });
+  }
+  function renderDays(dayCount) {
+    console.log({ dayCount: dayCount });
+    var options = [];
+    for (var i = 1; i <= dayCount; i++) {
+      options.push(i);
+    }return options.map(function (day_id) {
+      return _react2.default.createElement(
+        'option',
+        { value: day_id },
+        day_id
+      );
+    });
+  }
+  function renderDaySelect() {
+    return _react2.default.createElement(
+      'select',
+      { onChange: function onChange(e) {
+          return updateLeaveRequestDetails(e.target.value, 'day_id');
+        }, className: 'daySelect' },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Day'
+      ),
+      renderDays(_dateTime2.default.months[state.createEvent.month_id || 0].dayCount)
+    );
+  }
+  function renderMonthSelect() {
+    return _react2.default.createElement(
+      'select',
+      { className: 'monthSelect', onChange: function onChange(e) {
+          return updateLeaveRequestDetails(e.target.value, 'month_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Month'
+      ),
+      _dateTime2.default.months.map(function (month) {
+        return _react2.default.createElement(
+          'option',
+          { value: month.id },
+          month.name
+        );
+      })
+    );
+  }
+  function renderYearOptions(current_year) {
+    var options = [];
+    for (var i = current_year; i <= current_year + 5; i++) {
+      options.push(_react2.default.createElement(
+        'option',
+        { value: i },
+        i
+      ));
+    }
+    return options;
+  }
+  function renderYearSelect() {
+    return _react2.default.createElement(
+      'select',
+      { className: 'yearSelect', onChange: function onChange(e) {
+          return updateLeaveRequestDetails(e.target.value, 'year_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { value: ' ', disabled: true, selected: true },
+        'Year'
+      ),
+      renderYearOptions(2017)
+    );
+  }
+  function renderLeaveDaysOptions(count) {
+    var arr = [];
+    for (var i = 1; i <= count; i++) {
+      arr.push(_react2.default.createElement(
+        'option',
+        { value: i },
+        i
+      ));
+    }
+    return arr;
+  }
+  function renderDateTimeSelect() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'dateTime' },
+      _react2.default.createElement(
+        'div',
+        { className: 'dateSelect' },
+        renderMonthSelect(),
+        renderDaySelect(),
+        renderYearSelect()
+      ),
+      _react2.default.createElement(
+        'select',
+        { onChange: function onChange(e) {
+            return updateLeaveRequestDetails(e.target.value, 'leave_days');
+          } },
+        _react2.default.createElement(
+          'option',
+          { disabled: true, selected: true },
+          'Leave Days'
+        ),
+        renderLeaveDaysOptions(50)
+      )
+    );
+  }
+  function renderLeaveType() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'leaveType' },
+      state.leaveRequestDetails.is_sick_leave ? "Sick Leave" : "Annual Leave",
+      ' '
+    );
+  }
+
+  function renderLeavediv() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'leavediv' },
+      _react2.default.createElement(
+        'button',
+        { className: 'changeLeaveButton', onClick: function onClick(e) {
+            return updateLeaveRequestDetails(!state.leaveRequestDetails.is_sick_leave, 'is_sick_leave');
+          } },
+        'Change Leave Type'
+      ),
+      renderLeaveType(),
+      renderDateTimeSelect(),
+      _react2.default.createElement('input', { className: 'detsInput reasonForLeaveInput', onChange: function onChange(e) {
+          return updateLeaveRequestDetails(e.target.value, 'leave_reason');
+        }, type: 'text', placeholder: 'Reason for Leave' })
+    );
+  }
+  function renderContact() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'contactDetails' },
+      _react2.default.createElement(
+        'div',
+        { className: 'contactNumber' },
+        state.currentGroup.contact_number
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'contactEmail' },
+        state.currentGroup.contact_email
+      )
+    );
+  }
+  function renderGroupOption(group) {
+    return _react2.default.createElement(
+      'option',
+      { value: group.group_id },
+      group.group_name
+    );
+  }
+  function renderGroupSelect() {
+    return _react2.default.createElement(
+      'select',
+      { onChange: function onChange(e) {
+          return updateLeaveRequestDetails(e.target.value, 'group_id');
+        } },
+      _react2.default.createElement(
+        'option',
+        { disabled: true, selected: true },
+        'Select Group'
+      ),
+      state.groups.map(function (group) {
+        return renderGroupOption(group);
+      })
+    );
+  }
+  function renderRequestButton() {
+    var request = state.leaveRequestDetails;
+    if (!request.group_id || !request.day_id || !request.month_id || !request.year_id || !request.leave_reason || !request.leave_days) {
+      return _react2.default.createElement(
+        'div',
+        { className: 'authErrorMsg pleaseSelectAllError' },
+        'Please Select All Fields'
+      );
+    } else return _react2.default.createElement(
+      'button',
+      { onClick: function onClick() {
+          return (0, _postLeaveRequest2.default)(state, dispatch);
+        }, className: 'toggleButton' },
+      'Send Leave Request'
+    );
+  }
+  return _react2.default.createElement(
+    'div',
+    { className: 'applyLeaveDiv' },
+    _react2.default.createElement(
+      'button',
+      { className: 'toggleButton', onClick: function onClick() {
+          return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
+        } },
+      'Go Back'
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      renderGroupSelect(),
+      renderContact(),
+      renderLeavediv(),
+      renderRequestButton()
+    )
+  );
+};
+
+},{"../../services/dateTime":244,"../../services/postLeaveRequest":251,"react":194}],242:[function(require,module,exports){
 "use strict";
 
 var clone = require('clone');
@@ -29678,21 +29539,21 @@ module.exports = function (state, action) {
   }
 };
 
-},{"clone":27}],244:[function(require,module,exports){
+},{"clone":5}],243:[function(require,module,exports){
 "use strict";
 
 var heroku = 'https://bizzbuzz2.herokuapp.com/api/v1/';
 var local = "http://localhost:3000/api/v1/";
 module.exports = heroku;
 
-},{}],245:[function(require,module,exports){
+},{}],244:[function(require,module,exports){
 'use strict';
 
 module.exports = {
    months: [{ name: 'January', id: 0, dayCount: 31, leapYear: false, leapDays: 0 }, { name: 'February', id: 1, dayCount: 28, leapYear: true, leapDays: 27 }, { name: 'March', id: 2, dayCount: 31, leapYear: false, leapDays: 0 }, { name: 'April', id: 3, dayCount: 30, leapYear: false, leapDays: 0 }, { name: 'May', id: 4, dayCount: 31, leapYear: false, leapDays: 0 }, { name: 'June', id: 5, dayCount: 30, leapYear: false, leapDays: 0 }, { name: 'July', id: 6, dayCount: 31, leapYear: false, leapDays: 0 }, { name: 'August', id: 7, dayCount: 31, leapYear: false, leapDays: 0 }, { name: 'September', id: 8, dayCount: 30, leapYear: false, leapDays: 0 }, { name: 'October', id: 9, dayCount: 31, leapYear: false, leapDays: 0 }, { name: 'November', id: 10, dayCount: 30, leapYear: false, leapDays: 0 }, { name: 'December', id: 11, dayCount: 31, leapYear: false, leapDays: 0 }]
 };
 
-},{}],246:[function(require,module,exports){
+},{}],245:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29715,7 +29576,7 @@ module.exports = function (message_id, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],247:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],246:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29738,7 +29599,7 @@ module.exports = function (request_id, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],248:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],247:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29767,7 +29628,7 @@ module.exports = function (_ref, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],249:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],248:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29791,7 +29652,7 @@ module.exports = function (_ref, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],250:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],249:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29815,7 +29676,7 @@ module.exports = function (_ref, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],251:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],250:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29843,7 +29704,7 @@ module.exports = function (state, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],252:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],251:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29866,7 +29727,7 @@ module.exports = function (state, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],253:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],252:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29888,7 +29749,7 @@ module.exports = function (state, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],254:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],253:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29909,7 +29770,7 @@ module.exports = function (state, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],255:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],254:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29931,7 +29792,7 @@ module.exports = function (event_id, going, dispatch, change) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],256:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],255:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -29957,7 +29818,7 @@ module.exports = function (state, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"react":216,"superagent":226}],257:[function(require,module,exports){
+},{"../requestUrl":243,"react":194,"superagent":204}],256:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -29979,7 +29840,7 @@ module.exports = function (state, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],258:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],257:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -30001,7 +29862,7 @@ module.exports = function (state, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],259:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],258:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -30023,7 +29884,7 @@ module.exports = function (state, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],260:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],259:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -30047,7 +29908,7 @@ module.exports = function (post_id, state, dispatch) {
   }
 };
 
-},{"../requestUrl":244,"superagent":226}],261:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],260:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -30068,7 +29929,7 @@ module.exports = function (state, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],262:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],261:[function(require,module,exports){
 "use strict";
 
 var _superagent = require("superagent");
@@ -30106,7 +29967,7 @@ module.exports = function (_ref, dispatch) {
   }
 };
 
-},{"superagent":226}],263:[function(require,module,exports){
+},{"superagent":204}],262:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -30128,7 +29989,7 @@ module.exports = function (message, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}],264:[function(require,module,exports){
+},{"../requestUrl":243,"superagent":204}],263:[function(require,module,exports){
 'use strict';
 
 var _superagent = require('superagent');
@@ -30150,4 +30011,143 @@ module.exports = function (leaveRequest, dispatch) {
   });
 };
 
-},{"../requestUrl":244,"superagent":226}]},{},[22]);
+},{"../requestUrl":243,"superagent":204}],264:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _app = require('./components/app');
+
+var _app2 = _interopRequireDefault(_app);
+
+var _sheetRouter = require('sheet-router');
+
+var _sheetRouter2 = _interopRequireDefault(_sheetRouter);
+
+var _redux = require('redux');
+
+var _login = require('./components/login');
+
+var _login2 = _interopRequireDefault(_login);
+
+var _signup = require('./components/signup');
+
+var _signup2 = _interopRequireDefault(_signup);
+
+var _main = require('./components/main');
+
+var _main2 = _interopRequireDefault(_main);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var reducer = require('./reducer');
+
+var app = document.createElement('div');
+document.querySelector('main').appendChild(app);
+
+var initialState = {
+  theme: 'default',
+  title: "Bizz-Buzz",
+  route: '/',
+  view: 'events',
+  isLoading: false,
+  loginDetails: {
+    username: ' ',
+    password: ' '
+  },
+  signupDetails: {},
+  authError: null,
+  user: {},
+  currentGroup: [],
+  search: {
+    eventsSearch: null
+  },
+  events: [],
+  RSVPs: [],
+  createEventToggle: false,
+  posts: [],
+  createPost: {
+    is_alert: false,
+    content: '',
+    group_id: 1
+  },
+  createPostToggle: false,
+  alertsOnly: false,
+  postResponse: '',
+  selectedPost: null,
+  postResponses: [],
+  groups: [],
+  findGroup: [],
+  selectedGroup: null,
+  createGroupToggle: false,
+  createGroup: {
+    parent_id: null,
+    invite_only: false
+  },
+  createEvent: {
+    day_id: null,
+    month_id: null,
+    year_id: null,
+    hour_id: null,
+    minute_id: null,
+    group_id: null,
+    title: null,
+    description: null
+  },
+  selectedEvent: null,
+  leaveRequestDetails: {
+    group_id: null,
+    leave_reason: null,
+    year_id: null,
+    month_id: null,
+    day_id: null,
+    leave_days: null,
+    is_sick_leave: true
+  },
+  adminMessageDetails: {
+    group_id: null,
+    content: null
+  },
+  adminView: null,
+  admin: {
+    emergency: [],
+    adminMessages: [],
+    leaveRequests: []
+  },
+  adminSelected: {
+    adminMessage: null,
+    emergency: null,
+    leaveRequest: null
+  }
+};
+
+var store = (0, _redux.createStore)(reducer, initialState);
+var getState = store.getState,
+    dispatch = store.dispatch,
+    subscribe = store.subscribe;
+
+
+var route = (0, _sheetRouter2.default)({ default: '/404' }, [['/', function (params) {
+  return _login2.default;
+}], ['/signUp', function (params) {
+  return _signup2.default;
+}], ['/bizz', function (params) {
+  return _main2.default;
+}]]);
+
+subscribe(function () {
+  console.log(getState().route);
+  var Component = route(getState().route);
+  (0, _reactDom.render)(_react2.default.createElement(Component, { state: getState(), dispatch: dispatch }), app);
+});
+
+(0, _reactDom.render)(_react2.default.createElement(_app2.default, { name: 'bizzBuzz' }), app);
+console.log('welcome to bizzBuzz');
+
+dispatch({ type: 'INIT' });
+
+},{"./components/app":221,"./components/login":222,"./components/main":223,"./components/signup":224,"./reducer":242,"react":194,"react-dom":43,"redux":200,"sheet-router":203}]},{},[264]);
