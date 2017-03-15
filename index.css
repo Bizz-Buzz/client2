@@ -82,7 +82,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequests {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -162,7 +162,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequests {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -243,10 +243,10 @@
 .posts {
   margin-top: 9vh; }
 
-.postContent, .adminMessageContent {
+.postContent, .adminMessageContent, .adminLeaveRequestReason {
   font-size: 1.2em; }
 
-.postedBy, .adminMessageFrom {
+.postedBy, .adminMessageFrom, .adminLeaveRequestName {
   font-size: 1em; }
 
 .postedAt, .adminMessageCreated {
@@ -270,7 +270,7 @@
       margin-left: 85%;
       font-size: 1.3em; } }
 
-.postRespones, .adminMessageGroup {
+.postRespones, .adminMessageGroup, .adminLeaveRequestGroup {
   font-size: 1em;
   float: right;
   padding-bottom: 10px;
@@ -364,7 +364,7 @@
 .findGroup {
   margin-top: 9vh; }
 
-.adminMessageGroup {
+.adminMessageGroup, .adminLeaveRequestGroup {
   float: left; }
 
 .adminMessageCreated {
