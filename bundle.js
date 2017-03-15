@@ -27782,7 +27782,7 @@ module.exports = function (state, dispatch) {
     { className: "groups" },
     _react2.default.createElement(
       "button",
-      { className: "toggleButton", onClick: function onClick() {
+      { className: "goBackButton", onClick: function onClick() {
           return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
         } },
       "Go Back"
@@ -28248,7 +28248,7 @@ module.exports = function (state, dispatch) {
     { className: "groups" },
     _react2.default.createElement(
       "button",
-      { className: "toggleButton", onClick: function onClick() {
+      { className: "goBackButton", onClick: function onClick() {
           return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
         } },
       "Go Back"
@@ -28591,7 +28591,7 @@ module.exports = function (state, dispatch) {
       { className: 'adminHeader' },
       _react2.default.createElement(
         'button',
-        { className: 'toggleButton', onClick: function onClick() {
+        { className: 'goBackButton', onClick: function onClick() {
             return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
           } },
         'Go Back'
@@ -28868,7 +28868,7 @@ module.exports = function (state, dispatch) {
   function renderGroupSelect() {
     return _react2.default.createElement(
       'select',
-      { onChange: function onChange(e) {
+      { className: 'selectParentGroup', onChange: function onChange(e) {
           return updateAdminMessageDetails(e.target.value, 'group_id');
         } },
       _react2.default.createElement(
@@ -28906,7 +28906,7 @@ module.exports = function (state, dispatch) {
     { className: 'messageAdminForm' },
     _react2.default.createElement(
       'button',
-      { className: 'toggleButton', onClick: function onClick() {
+      { className: 'goBackButton', onClick: function onClick() {
           return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
         } },
       'Back'
@@ -29232,7 +29232,7 @@ module.exports = function (state, dispatch) {
       ),
       _react2.default.createElement(
         'select',
-        { onChange: function onChange(e) {
+        { className: 'selectLeaveDays', onChange: function onChange(e) {
             return updateLeaveRequestDetails(e.target.value, 'leave_days');
           } },
         _react2.default.createElement(
@@ -29297,7 +29297,7 @@ module.exports = function (state, dispatch) {
   function renderGroupSelect() {
     return _react2.default.createElement(
       'select',
-      { onChange: function onChange(e) {
+      { className: 'selectParentGroup', onChange: function onChange(e) {
           return updateLeaveRequestDetails(e.target.value, 'group_id');
         } },
       _react2.default.createElement(
@@ -29331,7 +29331,7 @@ module.exports = function (state, dispatch) {
     { className: 'applyLeaveDiv' },
     _react2.default.createElement(
       'button',
-      { className: 'toggleButton', onClick: function onClick() {
+      { className: 'goBackButton', onClick: function onClick() {
           return dispatch({ type: 'CHANGE_VIEW', payload: 'admin' });
         } },
       'Go Back'
@@ -29591,7 +29591,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 module.exports = function (request_id, dispatch) {
   console.log({ request_id: request_id });
-  _superagent2.default.post(_requestUrl2.default + 'admin/leaveRequests/delete').withCredentials().send({ request_id: request_id }).end(function (err, res) {
+  _superagent2.default.post(_requestUrl2.default + 'admin/leaveRequests/delete').withCredentials().send(request_id).end(function (err, res) {
     if (!err) {
       console.log({ res: res });
       dispatch({ type: 'DELETE_LEAVE_REQUEST', payload: request_id });
