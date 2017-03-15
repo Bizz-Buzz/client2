@@ -82,7 +82,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -162,7 +162,7 @@
 .resetSearch {
   margin: auto; }
 
-.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage {
   text-align: center;
   margin: auto;
   border: 5px solid #393939;
@@ -243,34 +243,34 @@
 .posts {
   margin-top: 9vh; }
 
-.postContent {
+.postContent, .adminMessageContent {
   font-size: 1.2em; }
 
-.postedBy {
+.postedBy, .adminMessageFrom {
   font-size: 1em; }
 
-.postedAt {
+.postedAt, .adminMessageCreated {
   font-size: 0.8em;
   float: right;
   margin-left: 50%; }
   @media screen and (min-width: 499px) {
-    .postedAt {
+    .postedAt, .adminMessageCreated {
       margin-left: 63.5%;
       font-size: 1em; } }
   @media screen and (min-width: 768px) {
-    .postedAt {
+    .postedAt, .adminMessageCreated {
       margin-left: 70%;
       font-size: 1em; } }
   @media screen and (min-width: 768px) {
-    .postedAt {
+    .postedAt, .adminMessageCreated {
       margin-left: 75%;
       font-size: 1em; } }
   @media screen and (min-width: 1440px) {
-    .postedAt {
+    .postedAt, .adminMessageCreated {
       margin-left: 85%;
       font-size: 1.3em; } }
 
-.postRespones {
+.postRespones, .adminMessageGroup {
   font-size: 1em;
   float: right;
   padding-bottom: 10px;
@@ -363,6 +363,13 @@
 
 .findGroup {
   margin-top: 9vh; }
+
+.adminMessageGroup {
+  float: left; }
+
+.adminMessageCreated {
+  margin: 0;
+  margin-top: 1%; }
 
 .messageAdminDets {
   margin-top: 3vh;
