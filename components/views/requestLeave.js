@@ -76,10 +76,10 @@ module.exports = (state, dispatch) => {
 
   function renderLeavediv() {
     return <div className="leavediv">
-      <button className="toggleButton" onClick={(e) => updateLeaveRequestDetails(!state.leaveRequestDetails.is_sick_leave, 'is_sick_leave')}>Change Leave Type</button>
+      <button className="changeLeaveButton" onClick={(e) => updateLeaveRequestDetails(!state.leaveRequestDetails.is_sick_leave, 'is_sick_leave')}>Change Leave Type</button>
       {renderLeaveType()}
       {renderDateTimeSelect()}
-      <input className="detsInput" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leave_reason')} type="text" placeholder="Reason for Leave"></input>
+      <input className="detsInput reasonForLeaveInput" onChange={(e) => updateLeaveRequestDetails(e.target.value, 'leave_reason')} type="text" placeholder="Reason for Leave"></input>
 
     </div>
   }

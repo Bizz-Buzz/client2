@@ -7,8 +7,8 @@ module.exports = (state, dispatch) => {
   }
   function pinButton(message) {
     if (message.is_pinned) {
-      return <button onClick={() => togglePin(message, dispatch)}>Unpin</button>
-    } return <button onClick={() => togglePin(message, dispatch)}>Pin</button>
+      return <button className="toggleButton" onClick={() => togglePin(message, dispatch)}>Unpin</button>
+    } return <button className="toggleButton" onClick={() => togglePin(message, dispatch)}>Pin</button>
   }
   function renderMore(message) {
     console.log({message, state});
@@ -16,7 +16,7 @@ module.exports = (state, dispatch) => {
       return <div>
         <div className="adminMessageContent">{message.content}</div>
         {pinButton(message)}
-        <button>Delete</button>
+        <button className="toggleButton">Delete</button>
       </div>
     } else {
       var snippet = message.content.slice(0, 14)
@@ -27,9 +27,9 @@ module.exports = (state, dispatch) => {
   function renderAdminMessage(message) {
     return <div onClick={() => selectAdminItem(message.message_id, 'adminMessage')} className="adminMessage">
       <div className="adminMessageFrom">{message.first_name} {message.last_name}</div>
+      {renderMore(message)}
       <div className="adminMessageGroup">{message.group_name}</div>
       <div className="adminMessageCreated">{message.message_created_at}</div>
-      {renderMore(message)}
     </div>
   }
   function renderSortedMessages(messages) {
