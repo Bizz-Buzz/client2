@@ -7,8 +7,8 @@ module.exports = (state, dispatch) => {
   }
   function pinButton(message) {
     if (message.is_pinned) {
-      return <button className="toggleButton">Unpin</button>
-    } return <button className="toggleButton" onClick={() => togglePin(message, dispatch)} >Pin</button>
+      return <button className="toggleButton" onClick={() => togglePin(message, dispatch)}>Unpin</button>
+    } return <button className="toggleButton" onClick={() => togglePin(message, dispatch)}>Pin</button>
   }
   function renderMore(message) {
     console.log({message, state});
