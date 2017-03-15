@@ -100,7 +100,8 @@ module.exports = (state, action) => {
     case 'RECIEVE_EVENT':
       newState.events.unshift(payload)
       var keys = Object.keys(newState.createEvent)
-      keys.forEach((prop) => prop = null)
+      console.log({keys});
+      keys.forEach((prop) => newState.createEvent[prop] = null)
       return newState
     case 'SELECT_EVENT':
       newState.selectedEvent = payload
@@ -112,6 +113,23 @@ module.exports = (state, action) => {
           event.RSVP_count += payload.change
         }
       })
+      return newState
+    case 'UPDATE_LEAVE_REQUEST_DETAILS':
+      newState.leaveRequestDetails[payload.content_type] = payload.content
+      return newState
+    case 'UPDATE_ADMIN_MESSAGE_DETAILS':
+      newState.adminMessageDetails[payload.content_type] = payload.content
+      return newState
+    case 'ADMIN_POST_SUCCESS':
+      newState.successAlert = payload
+      newState.view = 'adminSuccess'
+      return newState
+    case 'RECIEVE_ADMIN_DATA':
+      newState.admin = payload
+      newState.view = 'groupAdmin'
+      return newState
+    case 'CHANGE_ADMIN_VIEW':
+      newState.adminView = payload
       return newState
     default:
       return newState
