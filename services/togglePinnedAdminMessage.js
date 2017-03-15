@@ -8,5 +8,9 @@ module.exports = (message, dispatch) => {
     .withCredentials()
     .end((err, res) => {
       console.log(res);
+      if (!err) {
+       dispatch({ type: 'TOGGLE_MESSAGE_PINNED', payload: message.message_id })
+      }
+      else dispatch({ type: 'CHANGE_ROUTE', payload: '/' })
     })
 }
