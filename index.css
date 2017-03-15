@@ -203,7 +203,7 @@
   margin-right: 45vw;
   margin-bottom: 1%; }
 
-.createEventButtons, .resetSearch, .createEvent select, .applyLeaveDiv select, .messageAdminForm select, .emergencyDiv select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton {
+.createEventButtons, .resetSearch, .createEvent select, .applyLeaveDiv select, .messageAdminForm select, .emergencyDiv select, .createPostButtons, .createGroupButtons, .createResButtons, .toggleButton, .selectParentGroup, .changeGroupButton, .changeLeaveButton {
   color: #393939;
   font-size: 1em;
   font-family: "Raleway", sans-serif;
@@ -352,14 +352,14 @@
   padding-bottom: 30px;
   margin-top: 1%; }
 
-.toggleButton, .selectParentGroup, .changeGroupButton {
+.toggleButton, .selectParentGroup, .changeGroupButton, .changeLeaveButton {
   border: 2px solid black;
   margin: 2%;
   background-color: #df8764;
   font-size: 1em;
   padding: 1%;
-  width: 50%;
-  border-radius: 0%; }
+  border-radius: 0%;
+  width: 30%; }
 
 .findGroup {
   margin-top: 9vh; }
@@ -374,6 +374,12 @@
 .messageAdminDets {
   margin-top: 3vh;
   margin-bottom: 3vh; }
+
+.changeLeaveButton {
+  width: 70%; }
+
+.reasonForLeaveInput {
+  margin: 4%; }
 
 ::-webkit-input-placeholder {
   color: #df8764;
