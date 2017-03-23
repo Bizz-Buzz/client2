@@ -7,13 +7,13 @@ module.exports = (state, dispatch) => {
   function renderChild () {
     switch (state.groupView) {
       case 'groupSettings':
-        return renderGroupSettings()
+        return renderGroupSettings(state, dispatch)
       case 'groupInvite':
-        return renderGroupInvite()
+        return renderGroupInvite(state, dispatch)
       case 'groupMembers':
-        return renderGroupMembers()
+        return renderGroupMembers(state, dispatch)
       default:
-        return renderGroupMembers()
+        return renderGroupMembers(state, dispatch)
     }
   }
   function renderGroupHeader () {
@@ -29,6 +29,5 @@ module.exports = (state, dispatch) => {
   return <div className="groupView">
     {renderGroupHeader()}
     {renderChild()}
-    this is the group view hahahhahaha
   </div>
 }
