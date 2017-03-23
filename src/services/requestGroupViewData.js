@@ -9,7 +9,7 @@ module.exports = (group, dispatch) => {
     .end((err, res) => {
       if (!err) {
         console.log({res});
-        dispatch({type: 'VIEW_GROUP', payload: group})
+        dispatch({type: 'VIEW_GROUP', payload: {group, groupData: res.body}})
       } else console.log({err});
     })
 }

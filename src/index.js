@@ -87,7 +87,8 @@ const initialState = {
     emergency: null,
     leaveRequest: null,
   },
-  groupView: null
+  groupView: null,
+  viewingGroup: null
 }
 
 var store = createStore(reducer, initialState)
