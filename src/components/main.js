@@ -10,6 +10,7 @@ import renderEmergencyReport from './views/emergencyReport'
 import renderMessageAdmin from './views/messageAdmin'
 import renderAdminSuccess from './views/adminSuccess'
 import renderGroupAdmin from './views/groupAdmin'
+import renderGroupView from './views/groupView'
 import header from './views/header'
 
 module.exports = ({ state, dispatch }) => {
@@ -37,6 +38,8 @@ module.exports = ({ state, dispatch }) => {
         return renderAdminSuccess(state, dispatch)
       case 'groupAdmin':
         return renderGroupAdmin(state, dispatch)
+      case 'groupView':
+        return renderGroupView(state, dispatch)
       default:
         return renderEvents(state, dispatch)
     }

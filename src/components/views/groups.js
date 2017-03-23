@@ -18,6 +18,9 @@ module.exports = (state, dispatch) => {
       <button className="findGroupButton">Join Group</button>
     </div>
   }
+  function viewGroup (group) {
+    dispatch({type: 'VIEW_GROUP', payload: group})
+  }
   function renderMore (group) {
     if (state.selectedGroup == group.group_id) {
       return <div>
@@ -25,10 +28,9 @@ module.exports = (state, dispatch) => {
         {state.currentGroup.group_id == group.group_id
         ? <p>This is your current group</p>
         : <button className="changeGroupButton" onClick={() => dispatch({type: 'CHANGE_GROUP', payload: group})}>Switch Group</button>}
-
+        <button className="changeGroupButton" onClick={() => viewGroup(group)}>View Group</button>
       </div>
     } else return
-
   }
   function renderGroup (group) {
     return <div className='group' onClick={() => dispatch({type: 'SELECT_GROUP', payload: group.group_id})}>
@@ -39,7 +41,6 @@ module.exports = (state, dispatch) => {
   }
   function renderGroups () {
     var groups
-
     if (state.search.groupsSearch === '' || !state.search.groupsSearch) groups = state.groups
     else groups = state.groups.filter((group) => {
       return (group.group_name.toLowerCase().includes(state.search.groupsSearch.toLowerCase() || ''))
@@ -50,13 +51,12 @@ module.exports = (state, dispatch) => {
     return groups.map((group) => renderGroup(group))
   }
   return <div className="groups">
-			<button className="findGroupButton" onClick={() => requestUnjoinedGroups(state, dispatch)}>Find Groups</button>
-
-			{state.createGroupToggle
-	      ? renderCreateGroup(state, dispatch)
-	      : <button className="createGroupButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createGroupToggle'})}>New Group</button>
-	    }
-      {renderSearch()}
-      {renderGroups()}
+		<button className="findGroupButton" onClick={() => requestUnjoinedGroups(state, dispatch)}>Find Groups</button>
+		{state.createGroupToggle
+      ? renderCreateGroup(state, dispatch)
+      : <button className="createGroupButton" onClick={() => dispatch({type: 'TOGGLE', payload: 'createGroupToggle'})}>New Group</button>
+    }
+    {renderSearch()}
+    {renderGroups()}
   </div>
 }
