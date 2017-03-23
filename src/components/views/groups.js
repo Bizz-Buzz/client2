@@ -23,7 +23,7 @@ module.exports = (state, dispatch) => {
     if (state.selectedGroup == group.group_id) {
       return <div>
         <p className="group_description">{group.group_description}</p>
-        {state.currentGroup.group_id == group.group_id
+        {state.currentGroup.group.group_id == group.group_id
         ? <p>This is your current group</p>
         : <button className="changeGroupButton" onClick={() => dispatch({type: 'CHANGE_GROUP', payload: group})}>Switch Group</button>}
         <button className="changeGroupButton" onClick={() => requestGroupViewData(group, dispatch)}>View Group</button>
