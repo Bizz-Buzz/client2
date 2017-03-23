@@ -108,7 +108,6 @@ module.exports = (state, dispatch) => {
     <button className="goBackButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'admin'})}>Go Back</button>
     <div>
       {renderGroupSelect()}
-      {renderContact()}
       {renderLeavediv()}
       {renderRequestButton()}
     </div>

@@ -26,7 +26,12 @@ const initialState = {
   signupDetails: {},
   authError: null,
   user: {},
-  currentGroup: [],
+  currentGroup: {
+    group: null,
+    groupMembers: [],
+    invitesIn: [],
+    invitesOut: []
+  },
   search: {
     eventsSearch: null
   },
@@ -87,8 +92,7 @@ const initialState = {
     emergency: null,
     leaveRequest: null,
   },
-  groupView: null,
-  viewingGroup: null
+  groupView: null
 }
 
 var store = createStore(reducer, initialState)

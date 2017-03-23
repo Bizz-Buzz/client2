@@ -8,7 +8,7 @@ module.exports = (state, dispatch) => {
   }
   function renderMembers() {
     return <div>
-      {state.viewingGroup.groupMembers.map((member) => {
+      {state.currentGroup.groupMembers.map((member) => {
         return renderMember(member)
       })}
     </div>
