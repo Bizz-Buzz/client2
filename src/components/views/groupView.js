@@ -17,12 +17,12 @@ module.exports = (state, dispatch) => {
     }
   }
   function renderGroupHeader () {
-    return <div className="adminHeader">
+    return <div className="groupHeader">
     <button className="goBackButton" onClick={() => dispatch({type: 'CHANGE_VIEW', payload: 'groups'})}>Go Back</button>
       <div className="adminBar">
-        <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_GROUP_VIEW', payload: 'groupMembers'})}>Members</span>
-        <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_GROUP_VIEW', payload: 'groupInvite'})}>Invite</span>
-        <span className="adminNavItem" onClick={() => dispatch({type: 'CHANGE_GROUP_VIEW', payload: 'groupSettings'})}>Settings</span>
+        <span className="groupNavItem" onClick={() => dispatch({type: 'CHANGE_GROUP_VIEW', payload: 'groupMembers'})}>Members</span>
+        <span className="groupNavItem" onClick={() => dispatch({type: 'CHANGE_GROUP_VIEW', payload: 'groupInvite'})}>Invite</span>
+        <span className="groupNavItem" onClick={() => dispatch({type: 'CHANGE_GROUP_VIEW', payload: 'groupSettings'})}>Settings</span>
       </div>
     </div>
   }
