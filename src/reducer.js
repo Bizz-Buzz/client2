@@ -181,8 +181,12 @@ module.exports = (state, action) => {
       })
       return newState
     case 'VIEW_GROUP':
-      newState.currentGroup = payload
+      newState.currentGroup = payload.group
+      newState.viewingGroup = payload.groupData
       newState.view = 'groupView'
+      return newState
+    case 'CHANGE_GROUP_VIEW':
+      newState.groupView = payload
       return newState
     default:
       return newState
