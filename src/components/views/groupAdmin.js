@@ -27,7 +27,6 @@ module.exports = (state, dispatch) => {
     }
   }
   return <div className="groupAdmin">
-
     {renderAdminHeader()}
     <div className='adminView'>
       {renderAdminView()}

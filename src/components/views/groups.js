@@ -1,6 +1,7 @@
 import React from 'react'
 import renderCreateGroup from './createGroup'
 import requestUnjoinedGroups from '../../services/requestFindGroups'
+import requestGroupViewData from '../../services/requestGroupViewData'
 
 module.exports = (state, dispatch) => {
   function renderSearch () {
@@ -18,9 +19,6 @@ module.exports = (state, dispatch) => {
       <button className="findGroupButton">Join Group</button>
     </div>
   }
-  function viewGroup (group) {
-    dispatch({type: 'VIEW_GROUP', payload: group})
-  }
   function renderMore (group) {
     if (state.selectedGroup == group.group_id) {
       return <div>
@@ -28,7 +26,7 @@ module.exports = (state, dispatch) => {
         {state.currentGroup.group_id == group.group_id
         ? <p>This is your current group</p>
         : <button className="changeGroupButton" onClick={() => dispatch({type: 'CHANGE_GROUP', payload: group})}>Switch Group</button>}
-        <button className="changeGroupButton" onClick={() => viewGroup(group)}>View Group</button>
+        <button className="changeGroupButton" onClick={() => requestGroupViewData(group, dispatch)}>View Group</button>
       </div>
     } else return
   }
