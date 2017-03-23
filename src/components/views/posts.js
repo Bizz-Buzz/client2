@@ -20,7 +20,7 @@ module.exports = (state, dispatch) => {
   }
   function renderResponse(response) {
     return <div className="postResponse">
-      <p className="responseName">{response.last_name}:</p><p className="responseContent">{response.response_content}</p>
+      <span className="responseName">{response.last_name}:</span><span className="responseContent"> {response.response_content}</span>
     </div>
   }
   function renderRespones(post) {
