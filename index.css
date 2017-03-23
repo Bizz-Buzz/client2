@@ -89,9 +89,7 @@
   float: right; }
 
 .searchdiv {
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 5%; }
+  margin: 5%; }
 
 .resetSearch {
   margin: auto; }
@@ -194,9 +192,7 @@
   float: right; }
 
 .searchdiv {
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 5%; }
+  margin: 5%; }
 
 .resetSearch {
   margin: auto; }
@@ -347,12 +343,12 @@
   color: #6dd5af; }
 
 .alertTypePost {
-  background-color: #d2b6b6;
+  background-color: #FFC7C1;
   border-color: #6dd5af; }
   .alertTypePost input {
-    background-color: #d2b6b6; }
+    background-color: #FFC7C1; }
   .alertTypePost button {
-    background-color: #d2b6b6; }
+    background-color: #FFC7C1; }
 
 .searchPosts {
   text-align: center;
@@ -496,9 +492,7 @@
   float: right; }
 
 .searchdiv {
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 5%; }
+  margin: 5%; }
 
 .resetSearch {
   margin: auto; }
