@@ -1,5 +1,6 @@
 import React from 'react'
 import renderCreateGroup from './createGroup'
+import postIncomingInvite from '../../services/postIncomingInvite'
 
 module.exports = (state, dispatch) => {
   function renderSearch () {
@@ -11,7 +12,7 @@ module.exports = (state, dispatch) => {
   function renderRequestButtons (group) {
     if (group.invite_only) {
       return <div>
-        <button className="findGroupButton">Request To Join</button>
+        <button className="findGroupButton" onClick={() => postIncomingInvite({group_id: group.group_id, user_id: state.user.user_id}, dispatch)}>Request To Join</button>
       </div>
     } else return <div>
       <button className="findGroupButton">Join Group</button>

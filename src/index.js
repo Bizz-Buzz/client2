@@ -29,8 +29,8 @@ const initialState = {
   currentGroup: {
     group: null,
     groupMembers: [],
-    invitesIn: [],
-    invitesOut: []
+    invitesIncoming: [],
+    invitesOutgoing: []
   },
   search: {
     eventsSearch: null
