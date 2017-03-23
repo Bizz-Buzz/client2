@@ -381,15 +381,28 @@
   color: red; }
 
 .postResponses {
+  margin: auto;
   margin-top: 5%;
-  width: 80%;
-  margin: auto; }
+  width: 100%;
+  border: 2px dashed #6dd5af;
+  border-style: dashed;
+  padding-top: 5%;
+  padding-bottom: 5%; }
 
 .createResButtons {
   margin-bottom: 5%; }
 
 .postResponseInput {
   margin-bottom: 15%; }
+
+.responseName {
+  color: #6dd5af; }
+
+.responseContent {
+  margin: 0px; }
+
+.postResponse {
+  margin: 1%; }
 
 .group {
   padding: 0; }
