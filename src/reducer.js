@@ -36,7 +36,7 @@ module.exports = (state, action) => {
       newState.view = payload
       return newState
     case 'CHANGE_GROUP':
-      newState.currentGroup = payload
+      newState.currentGroup.group = payload
       return newState
     case 'UPDATE_SEARCH':
       newState.search[payload.search_type] = payload.search
@@ -186,6 +186,9 @@ module.exports = (state, action) => {
       return newState
     case 'CHANGE_GROUP_VIEW':
       newState.groupView = payload
+      return newState
+    case 'TOGGLE_SEND_INVITE':
+      newState.sendInviteToggle = !newState.sendInviteToggle
       return newState
     default:
       return newState
