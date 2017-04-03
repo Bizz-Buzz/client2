@@ -376,6 +376,17 @@
 .alertTypeToggleShow {
   color: red; }
 
+.createPostEnter {
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 0.8em;
+  border: 2px dashed #92b0bb;
+  color: #92b0bb;
+  border-style: dashed;
+  border-radius: 3px;
+  background-color: #eeeeee;
+  width: 30%; }
+
 .postResponses {
   margin: auto;
   margin-top: 5%;
