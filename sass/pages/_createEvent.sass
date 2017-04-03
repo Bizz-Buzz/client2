@@ -1,19 +1,15 @@
 @import ../pages/events
 
-.createEventButtons
-  color: $darkColor
-  font-size: 1em
-  font-family: $textFont
-  background-color: $background
-  border: none
-
 .createEvent
   @extend .event
   padding-bottom: 30px
   margin-top: 1%
 
+.createEventButtons
+  @extend .createXButtons
+
 .createEventButton
-  @extend .smallButton
+  @extend .createXButton
 
 .detsInput.eventInput
   text-align: center
@@ -25,7 +21,6 @@
   margin-left: 10%
   margin-right: 15%
   margin: auto
-
 
 .dateSelect
   margin: 3%

@@ -2,70 +2,9 @@
   color: $popOfColor
   font-family: $textFont
 
-.allButtons
-  background-color: $background
-  border: 5px solid $darkColor
-  padding: 0
-  color: $darkColor
-
-.bigButton
-  @extend .allButtons
-  font-family: $headingFont
-  font-size: 2em
-  width: 80%
-  height: 10vh
-  margin-left: 10%
-
-
-.smallButton
-  @extend .bigButton
-  width: 65%
-  margin-left: 17.5%
-  font-family: $textFont
-  font-size: 1.3em
-  height: 7vh
-  margin-top: 1%
-
-.leftButton
-  float: left
-
-.rightButton
-  float: right
-
 .searchdiv
   margin: 5%
 
 .resetSearch
   @extend .createEventButtons
   margin: auto
-
-.eventAttendanceButtons
-  @extend .postTypeToggleShow
-  font-size: 0.8em
-  border: 2px dashed $popOfColor
-  border-style: dashed
-  border-radius: 3px
-  background-color: $background
-  margin: 1%
-
-.toggleButton
-  @extend .eventAttendanceButtons
-  margin: 2%
-  padding: 1%
-  border-radius: 5px
-  width: 30%
-
-.endCreateEventButton
-  @extend .eventAttendanceButtons
-  width: 50%
-  margin-left: 10%
-  margin-right: 10%
-
-.changeLeaveButton
-  @extend .toggleButton
-  width: 70%
-
-.goBackButton
-  @extend .toggleButton
-  color: black
-  border-color: black
