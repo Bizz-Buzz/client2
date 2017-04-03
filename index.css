@@ -120,7 +120,7 @@
   color: black;
   border-color: black; }
 
-.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest, .groupMemberName {
   text-align: center;
   margin: auto;
   border: 5px solid #4d4242;
@@ -223,7 +223,7 @@
   color: black;
   border-color: black; }
 
-.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest {
+.event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest, .groupMemberName {
   text-align: center;
   margin: auto;
   border: 5px solid #4d4242;
