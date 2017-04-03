@@ -1,3 +1,73 @@
+::-webkit-input-placeholder {
+  color: #92b0bb;
+  font-family: "Raleway", sans-serif; }
+
+.searchdiv {
+  margin: 5%; }
+
+.resetSearch {
+  margin: auto; }
+
+.allButtons, .bigButton, .smallButton, .createXButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton, .createAccountButton, .cancelSignUpButton, .loginButton, .signUpButton {
+  background-color: #eeeeee;
+  border: 5px solid #4d4242;
+  padding: 0;
+  color: #4d4242; }
+
+.bigButton, .smallButton, .createXButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton, .createAccountButton, .cancelSignUpButton, .loginButton, .signUpButton {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2em;
+  width: 80%;
+  height: 10vh;
+  margin-left: 10%; }
+
+.smallButton, .createXButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton, .createAccountButton, .cancelSignUpButton {
+  width: 65%;
+  margin-left: 17.5%;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3em;
+  height: 7vh;
+  margin-top: 1%; }
+
+.leftButton {
+  float: left; }
+
+.rightButton {
+  float: right; }
+
+.createXButtons, .createEventButtons, .resetSearch, .minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect, .selectParentGroup, .selectLeaveDays, .createPostButtons, .createGroupButtons, .createResButtons {
+  color: #4d4242;
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+  background-color: #eeeeee;
+  border: none; }
+
+.eventAttendanceButtons, .endCreateEventButton, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
+  font-size: 0.8em;
+  border: 2px dashed #92b0bb;
+  border-style: dashed;
+  border-radius: 3px;
+  background-color: #eeeeee;
+  margin: 1%; }
+
+.endCreateEventButton {
+  width: 50%;
+  margin-left: 10%;
+  margin-right: 10%; }
+
+.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
+  margin: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  width: 30%; }
+
+.changeLeaveButton {
+  width: 70%; }
+
+.goBackButton {
+  color: black;
+  border-color: black; }
+
 .detsInput, .detsInputLast {
   width: 90%;
   background-color: #eeeeee;
@@ -61,64 +131,11 @@
   color: #92b0bb;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  background-color: #eeeeee;
-  border: 5px solid #4d4242;
-  padding: 0;
-  color: #4d4242; }
-
-.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  font-family: "Open Sans", sans-serif;
-  font-size: 2em;
-  width: 80%;
-  height: 10vh;
-  margin-left: 10%; }
-
-.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  width: 65%;
-  margin-left: 17.5%;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.3em;
-  height: 7vh;
-  margin-top: 1%; }
-
-.leftButton {
-  float: left; }
-
-.rightButton {
-  float: right; }
-
 .searchdiv {
   margin: 5%; }
 
 .resetSearch {
   margin: auto; }
-
-.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
-  font-size: 0.8em;
-  border: 2px dashed #92b0bb;
-  border-style: dashed;
-  border-radius: 3px;
-  background-color: #eeeeee;
-  margin: 1%; }
-
-.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
-  margin: 2%;
-  padding: 1%;
-  border-radius: 5px;
-  width: 30%; }
-
-.endCreateEventButton {
-  width: 50%;
-  margin-left: 10%;
-  margin-right: 10%; }
-
-.changeLeaveButton {
-  width: 70%; }
-
-.goBackButton {
-  color: black;
-  border-color: black; }
 
 .event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest, .groupMemberName {
   text-align: center;
@@ -164,64 +181,11 @@
   color: #92b0bb;
   font-family: "Raleway", sans-serif; }
 
-.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  background-color: #eeeeee;
-  border: 5px solid #4d4242;
-  padding: 0;
-  color: #4d4242; }
-
-.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  font-family: "Open Sans", sans-serif;
-  font-size: 2em;
-  width: 80%;
-  height: 10vh;
-  margin-left: 10%; }
-
-.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  width: 65%;
-  margin-left: 17.5%;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.3em;
-  height: 7vh;
-  margin-top: 1%; }
-
-.leftButton {
-  float: left; }
-
-.rightButton {
-  float: right; }
-
 .searchdiv {
   margin: 5%; }
 
 .resetSearch {
   margin: auto; }
-
-.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
-  font-size: 0.8em;
-  border: 2px dashed #92b0bb;
-  border-style: dashed;
-  border-radius: 3px;
-  background-color: #eeeeee;
-  margin: 1%; }
-
-.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
-  margin: 2%;
-  padding: 1%;
-  border-radius: 5px;
-  width: 30%; }
-
-.endCreateEventButton {
-  width: 50%;
-  margin-left: 10%;
-  margin-right: 10%; }
-
-.changeLeaveButton {
-  width: 70%; }
-
-.goBackButton {
-  color: black;
-  border-color: black; }
 
 .event, .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv, .post, .createPost, .group, .createGroup, .adminMessage, .adminLeaveRequest, .groupMemberName {
   text-align: center;
@@ -262,13 +226,6 @@
   margin-left: 45vw;
   margin-right: 45vw;
   margin-bottom: 1%; }
-
-.createEventButtons, .resetSearch, .minuteSelect, .hourSelect, .monthSelect, .daySelect, .yearSelect, .selectParentGroup, .selectLeaveDays, .createPostButtons, .createGroupButtons, .createResButtons {
-  color: #4d4242;
-  font-size: 1em;
-  font-family: "Raleway", sans-serif;
-  background-color: #eeeeee;
-  border: none; }
 
 .createEvent, .applyLeaveDiv, .messageAdminForm, .emergencyDiv {
   padding-bottom: 30px;
@@ -370,7 +327,7 @@
   margin-left: 80%;
   margin-top: 1%; }
 
-.postTypeToggleShow, .eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
+.postTypeToggleShow, .eventAttendanceButtons, .endCreateEventButton, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
   color: #92b0bb; }
 
 .alertTypeToggleShow {
@@ -470,69 +427,6 @@
 
 .reasonForLeaveInput {
   margin: 4%; }
-
-::-webkit-input-placeholder {
-  color: #92b0bb;
-  font-family: "Raleway", sans-serif; }
-
-.allButtons, .bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  background-color: #eeeeee;
-  border: 5px solid #4d4242;
-  padding: 0;
-  color: #4d4242; }
-
-.bigButton, .loginButton, .signUpButton, .smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  font-family: "Open Sans", sans-serif;
-  font-size: 2em;
-  width: 80%;
-  height: 10vh;
-  margin-left: 10%; }
-
-.smallButton, .createAccountButton, .cancelSignUpButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton {
-  width: 65%;
-  margin-left: 17.5%;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.3em;
-  height: 7vh;
-  margin-top: 1%; }
-
-.leftButton {
-  float: left; }
-
-.rightButton {
-  float: right; }
-
-.searchdiv {
-  margin: 5%; }
-
-.resetSearch {
-  margin: auto; }
-
-.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
-  font-size: 0.8em;
-  border: 2px dashed #92b0bb;
-  border-style: dashed;
-  border-radius: 3px;
-  background-color: #eeeeee;
-  margin: 1%; }
-
-.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
-  margin: 2%;
-  padding: 1%;
-  border-radius: 5px;
-  width: 30%; }
-
-.endCreateEventButton {
-  width: 50%;
-  margin-left: 10%;
-  margin-right: 10%; }
-
-.changeLeaveButton {
-  width: 70%; }
-
-.goBackButton {
-  color: black;
-  border-color: black; }
 
 .contentDiv {
   margin-top: 11vh; }
