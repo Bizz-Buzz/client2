@@ -1,4 +1,5 @@
 import React from 'react'
+import requestUserList from '../../services/requestUserList'
 
 module.exports = (state, dispatch) => {
   function renderInviteForm () {
@@ -7,7 +8,8 @@ module.exports = (state, dispatch) => {
     </div>
   }
   function renderInviteButton () {
-    return <button className="createPostButton" onClick={() => dispatch({type: 'TOGGLE_SEND_INVITE'})}>Send Invite</button>
+    return <button className="createPostButton" onClick={() => requestUserList(state, dispatch)}>Send Invite</button>
+
   }
   function renderSendInvite () {
     if (state.sendInviteToggle) return renderInviteForm()
