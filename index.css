@@ -94,7 +94,7 @@
 .resetSearch {
   margin: auto; }
 
-.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .createPostEnter, .changeGroupButton, .endCreateEventButton {
+.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
   font-size: 0.8em;
   border: 2px dashed #92b0bb;
   border-style: dashed;
@@ -102,7 +102,7 @@
   background-color: #eeeeee;
   margin: 1%; }
 
-.toggleButton, .changeLeaveButton, .goBackButton, .createPostEnter, .changeGroupButton {
+.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
   margin: 2%;
   padding: 1%;
   border-radius: 5px;
@@ -197,7 +197,7 @@
 .resetSearch {
   margin: auto; }
 
-.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .createPostEnter, .changeGroupButton, .endCreateEventButton {
+.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
   font-size: 0.8em;
   border: 2px dashed #92b0bb;
   border-style: dashed;
@@ -205,7 +205,7 @@
   background-color: #eeeeee;
   margin: 1%; }
 
-.toggleButton, .changeLeaveButton, .goBackButton, .createPostEnter, .changeGroupButton {
+.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
   margin: 2%;
   padding: 1%;
   border-radius: 5px;
@@ -370,14 +370,22 @@
   margin-left: 80%;
   margin-top: 1%; }
 
-.postTypeToggleShow, .eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .createPostEnter, .changeGroupButton, .endCreateEventButton {
+.postTypeToggleShow, .eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
   color: #92b0bb; }
 
 .alertTypeToggleShow {
   color: red; }
 
 .createPostEnter {
-  background-color: red; }
+  margin-left: 20%;
+  margin-right: 20%;
+  font-size: 0.8em;
+  border: 2px dashed #92b0bb;
+  color: #92b0bb;
+  border-style: dashed;
+  border-radius: 3px;
+  background-color: #eeeeee;
+  width: 30%; }
 
 .postResponses {
   margin: auto;
@@ -500,7 +508,7 @@
 .resetSearch {
   margin: auto; }
 
-.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .createPostEnter, .changeGroupButton, .endCreateEventButton {
+.eventAttendanceButtons, .toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton, .endCreateEventButton {
   font-size: 0.8em;
   border: 2px dashed #92b0bb;
   border-style: dashed;
@@ -508,7 +516,7 @@
   background-color: #eeeeee;
   margin: 1%; }
 
-.toggleButton, .changeLeaveButton, .goBackButton, .createPostEnter, .changeGroupButton {
+.toggleButton, .changeLeaveButton, .goBackButton, .changeGroupButton {
   margin: 2%;
   padding: 1%;
   border-radius: 5px;
