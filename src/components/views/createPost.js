@@ -39,7 +39,7 @@ module.exports = (state, dispatch) => {
     {alertHandler()}
     {groupHandler()}
     {state.createPost.content.length >= 6
-    ? <button className="createPostButtons rightButton" onClick={() => postPost(state, dispatch)}>Post</button>
+    ? <button className="createPostEnter" onClick={() => postPost(state, dispatch)}>Post</button>
     : <p>Post too short</p>}
   </div>
 }
