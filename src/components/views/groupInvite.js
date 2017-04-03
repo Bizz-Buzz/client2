@@ -8,8 +8,8 @@ module.exports = (state, dispatch) => {
     </div>
   }
   function renderInviteButton () {
-    // return <button onClick={() => dispatch({type: 'TOGGLE_SEND_INVITE'})}>Send Invite</button>
-    return <button onClick={() => requestUserList(state, dispatch)}>Send Invite</button>
+    return <button className="createPostButton" onClick={() => requestUserList(state, dispatch)}>Send Invite</button>
+
   }
   function renderSendInvite () {
     if (state.sendInviteToggle) return renderInviteForm()
