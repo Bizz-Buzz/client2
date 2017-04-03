@@ -8,20 +8,20 @@
 .resetSearch {
   margin: auto; }
 
-.allButtons, .bigButton, .smallButton, .createXButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton, .createAccountButton, .cancelSignUpButton, .loginButton, .signUpButton {
+.allButtons, .bigButton, .smallButton, .createXButton, .createEventButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .createPostButton, .findGroupButton, .createGroupButton, .createAccountButton, .cancelSignUpButton, .loginButton, .signUpButton {
   background-color: #eeeeee;
   border: 5px solid #4d4242;
   padding: 0;
   color: #4d4242; }
 
-.bigButton, .smallButton, .createXButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton, .createAccountButton, .cancelSignUpButton, .loginButton, .signUpButton {
+.bigButton, .smallButton, .createXButton, .createEventButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .createPostButton, .findGroupButton, .createGroupButton, .createAccountButton, .cancelSignUpButton, .loginButton, .signUpButton {
   font-family: "Open Sans", sans-serif;
   font-size: 2em;
   width: 80%;
   height: 10vh;
   margin-left: 10%; }
 
-.smallButton, .createXButton, .createEventButton, .createPostButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .findGroupButton, .createGroupButton, .createAccountButton, .cancelSignUpButton {
+.smallButton, .createXButton, .createEventButton, .leaveRequestButton, .emergencyButton, .messageAdminsButton, .createPostButton, .findGroupButton, .createGroupButton, .createAccountButton, .cancelSignUpButton {
   width: 65%;
   margin-left: 17.5%;
   font-family: "Raleway", sans-serif;
